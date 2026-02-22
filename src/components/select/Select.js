@@ -31,7 +31,6 @@ export const Select = ({
       required={required}
       onChange={handleOnChange}
       value={value}
-      defaultValue={selected}
       disabled={disabled}
       className={classNames(
         "select",

@@ -55,7 +55,7 @@ export const App = () => {
   }, []);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       {isMobile ? (
         <Switch>
           <Route path="/editor/:listId/edit">{<EditList isMobile />}</Route>

@@ -26,13 +26,13 @@ export const NewList = ({ isMobile }) => {
   const { language } = useLanguage();
   const gameSystems = getGameSystems();
   const lists = useSelector((state) => state.lists);
-  const [game, setGame] = useState("the-old-world-gcomp");
-  const [army, setArmy] = useState("beastmen-brayherds-gcomp");
+  const [game, setGame] = useState("the-old-world");
+  const [army, setArmy] = useState("beastmen-brayherds");
   const [compositionRule, setCompositionRule] = useState("open-war");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [points, setPoints] = useState(2500);
-  const [armyComposition, setArmyComposition] = useState("beastmen-brayherds-gcomp");
+  const [armyComposition, setArmyComposition] = useState("beastmen-brayherds");
   const [redirect, setRedirect] = useState(null);
   const armies = gameSystems
     .filter(({ id }) => id === game)[0]
@@ -140,6 +140,15 @@ export const NewList = ({ isMobile }) => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
+  useEffect(() => {
+  if (army && armies.length > 0) {
+    const selectedArmy = armies.find(({ id }) => id === army);
+    if (selectedArmy?.armyComposition) {
+      setArmyComposition(selectedArmy.armyComposition[0]);
+    }
+  }
+  }, [game, army, armies]);
+
   return (
     <>
       {redirect && <Redirect to={`/editor/${redirect}`} />}
@@ -191,7 +200,7 @@ export const NewList = ({ isMobile }) => {
             id="army"
             options={armies}
             onChange={handleArmyChange}
-            selected="empire-of-man"
+            selected={army}
             spaceBottom
             required
           />
@@ -206,14 +215,14 @@ export const NewList = ({ isMobile }) => {
                   ...journalArmies.map((journalArmy) => ({
                     id: journalArmy,
                     name_en:
-                      journalArmy === army
+                      journalArmy === army || journalArmy === army.replace('-gcomp', '')
                         ? intl.formatMessage({ id: "new.grandArmy" })
                         : nameMap[journalArmy][`name_${language}`] ||
                           nameMap[journalArmy].name_en,
                   })),
                 ]}
                 onChange={handleArcaneJournalChange}
-                selected={army}
+                selected={armyComposition}
                 spaceBottom
               />
             </>
@@ -309,3 +318,4 @@ export const NewList = ({ isMobile }) => {
     </>
   );
 };
+

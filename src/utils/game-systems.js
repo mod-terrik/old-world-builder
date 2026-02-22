@@ -1,8 +1,9 @@
 import theOldWorld from "../assets/the-old-world.json";
+import theOldWorldGcomp from "../assets/the-old-world-gcomp.json";
 
 export const getGameSystems = () => {
   const customSystems = JSON.parse(localStorage.getItem("owb.systems")) || [];
-  const allGameSystems = [theOldWorld, ...customSystems];
+  const allGameSystems = [theOldWorldGcomp,theOldWorld, ...customSystems];
 
   return allGameSystems;
 };

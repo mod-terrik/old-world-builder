@@ -1,8 +1,7 @@
 {
   "name": "old-world-builder",
   "version": "1.26.7",
-  "author": "Nico Thiebes",
-  "homepage": "https://old-world-builder.com",
+  "homepage": "https://owb.grra.me",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.2",

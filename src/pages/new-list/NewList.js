@@ -26,13 +26,13 @@ export const NewList = ({ isMobile }) => {
   const { language } = useLanguage();
   const gameSystems = getGameSystems();
   const lists = useSelector((state) => state.lists);
-  const [game, setGame] = useState("the-old-world");
-  const [army, setArmy] = useState("empire-of-man");
+  const [game, setGame] = useState("the-old-world-gcomp");
+  const [army, setArmy] = useState("beastmen-brayherds-gcomp");
   const [compositionRule, setCompositionRule] = useState("open-war");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [points, setPoints] = useState(2000);
-  const [armyComposition, setArmyComposition] = useState("empire-of-man");
+  const [points, setPoints] = useState(2500);
+  const [armyComposition, setArmyComposition] = useState("beastmen-brayherds-gcomp");
   const [redirect, setRedirect] = useState(null);
   const armies = gameSystems
     .filter(({ id }) => id === game)[0]

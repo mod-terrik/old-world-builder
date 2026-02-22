@@ -83,7 +83,7 @@ export const Add = ({ isMobile }) => {
 
   useEffect(() => {
     if (list && !army && type !== "allies") {
-      const isCustom = game.id !== "the-old-world";
+      const isCustom = game.id !== "the-old-world" && game.id !== "the-old-world-gcomp"; 
 
       if (isCustom) {
         const data = getCustomDatasetData(list.army);
@@ -114,7 +114,7 @@ export const Add = ({ isMobile }) => {
     } else if (list && type === "allies" && allAllies.length === 0 && allies) {
       setAlliesLoaded(false);
       allies.forEach(({ army, armyComposition, magicItemsArmy }, index) => {
-        const isCustom = game.id !== "the-old-world";
+        const isCustom = game.id !== "the-old-world" && game.id !== "the-old-world-gcomp";
         const customData = isCustom && getCustomDatasetData(army);
 
         if (customData) {
@@ -164,7 +164,7 @@ export const Add = ({ isMobile }) => {
       setMercenariesLoaded(false);
       mercenaries[list.armyComposition] &&
         mercenaries[list.armyComposition].forEach((mercenary, index) => {
-          const isCustom = game.id !== "the-old-world";
+          const isCustom = game.id !== "the-old-world" && game.id !== "the-old-world-gcomp";
           const customData = isCustom && getCustomDatasetData(mercenary.army);
 
           if (customData) {

@@ -1,7 +1,7 @@
 {
   "name": "old-world-builder",
   "version": "1.26.7",
-  "homepage": "https://owb.grra.me",
+  "homepage": "/owb",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.2",

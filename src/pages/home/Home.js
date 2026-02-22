@@ -35,9 +35,6 @@ import bretonnia from "../../assets/army-icons/bretonnia.svg";
 import cathay from "../../assets/army-icons/cathay.svg";
 import renegade from "../../assets/army-icons/renegade.svg";
 import forg3dBanner from "../../assets/forg3d.jpg";
-import fantasyweltDe from "../../assets/fantasywelt_de.jpg";
-import fantasyweltEn from "../../assets/fantasywelt_en.jpg";
-import mwgForge from "../../assets/mwg-forge.gif";
 import { swap } from "../../utils/collection";
 import { useLanguage } from "../../utils/useLanguage";
 import { updateLocalList, updateListsFolder } from "../../utils/list";
@@ -754,60 +751,6 @@ export const Home = ({ isMobile }) => {
         </Button>
 
         <hr />
-
-        <p>
-          <b>
-            <i>
-              <FormattedMessage id="home.sponsored" />
-            </i>
-          </b>
-        </p>
-
-        <a
-          className="home__banner-link"
-          href="https://tinyurl.com/Forg3dOWB"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src={forg3dBanner}
-            className="home__banner-image"
-            alt={intl.formatMessage({ id: "home.forg3d" })}
-            loading="lazy"
-          />
-        </a>
-
-        {timezone === "europe" ? (
-          <a
-            className="home__banner-link"
-            href={`https://www.fantasywelt.de/?wsa=jcdi7h53acjhc${
-              language === "de" ? "&lang=ger" : "&lang=eng"
-            }`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src={language === "de" ? fantasyweltDe : fantasyweltEn}
-              className="home__banner-image"
-              alt={intl.formatMessage({ id: "home.fantasywelt" })}
-              loading="lazy"
-            />
-          </a>
-        ) : (
-          <a
-            className="home__banner-link"
-            href="https://miniwargamingforge.com?sca_ref=6115787.XxehNS6tUCHiFExD"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src={mwgForge}
-              className="home__banner-image"
-              alt={intl.formatMessage({ id: "home.mwgForge" })}
-              loading="lazy"
-            />
-          </a>
-        )}
       </MainComponent>
     </>
   );

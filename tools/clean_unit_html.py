@@ -6,12 +6,18 @@ Usage:
   python3 clean_unit_html.py --fetch <unit-slug> [--out <dir>]
 """
 
-import sys, os, json, urllib.request
+import sys, os, re, json, urllib.request
 
 BASE_URL   = "https://tow.whfb.app"
 BUILD_ID   = "Z8fFjDNe5IyXteSHILQuO"
 OUTPUT_DIR = "../rules/unit"
 CSS_BASE   = "/owb/rules"
+
+# Path to rules-map.js, relative to this script's location
+RULES_MAP_PATH = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)),
+    "..", "src", "components", "rules-index", "rules-map.js"
+)
 
 CONTENT_TYPE_PATHS = {
     "specialRule":  "/special-rules",
@@ -255,6 +261,58 @@ def render(fields, slug):
     )
 
 
+# ── rules-map.js injection ────────────────────────────────────────────────────
+
+def slug_to_display_name(slug):
+    """Convert a hyphenated slug to a space-separated display name."""
+    return slug.replace("-", " ")
+
+
+def inject_rules_map_entry(slug, rules_map_path):
+    """
+    Insert a new fullUrl entry for `slug` at the top of the
+    `const additionalOWBRules` object in rules-map.js.
+
+    Skips insertion if the slug is already present.
+    """
+    display_name = slug_to_display_name(slug)
+    full_url = f"https://owapps.grra.me/owb/rules/unit/{slug}.html?minimal=true"
+    new_entry = f'  "{display_name}": {{ fullUrl: "{full_url}" }},\n'
+
+    # Resolve the path relative to this script when the default is used
+    if not os.path.isabs(rules_map_path):
+        rules_map_path = os.path.join(
+            os.path.dirname(os.path.abspath(__file__)), rules_map_path
+        )
+
+    if not os.path.exists(rules_map_path):
+        print(f"  [rules-map] WARNING: file not found at {rules_map_path} — skipping injection")
+        return
+
+    with open(rules_map_path, "r", encoding="utf-8") as f:
+        content = f.read()
+
+    # Guard: skip if an entry for this slug already exists
+    if f'"{display_name}"' in content or f"'{display_name}'" in content:
+        print(f"  [rules-map] Entry for \"{display_name}\" already exists — skipping")
+        return
+
+    # Find the opening brace of `const additionalOWBRules = {`
+    # and insert immediately after it (i.e. as the first entry).
+    pattern = r'(const additionalOWBRules\s*=\s*\{)(\s*\n)'
+    replacement = r'\1\n' + new_entry + r'\2'
+    new_content, n = re.subn(pattern, replacement, content, count=1)
+
+    if n == 0:
+        print("  [rules-map] WARNING: could not locate `const additionalOWBRules = {` — skipping injection")
+        return
+
+    with open(rules_map_path, "w", encoding="utf-8") as f:
+        f.write(new_content)
+
+    print(f"  [rules-map] Injected entry: \"{display_name}\" → {full_url}")
+
+
 # ── fetch & save ──────────────────────────────────────────────────────────────
 
 def fetch_json(slug):
@@ -265,7 +323,7 @@ def fetch_json(slug):
         return json.loads(r.read().decode())
 
 
-def fetch_unit(slug, out_dir):
+def fetch_unit(slug, out_dir, rules_map_path):
     print(f"\nFetching: {slug}")
     try:
         data = fetch_json(slug)
@@ -281,6 +339,9 @@ def fetch_unit(slug, out_dir):
         f.write(html)
     print(f"  Saved: {dest}  ({len(html):,} bytes)")
 
+    # Inject the new entry into rules-map.js
+    inject_rules_map_entry(slug, rules_map_path)
+
 
 def main():
     if len(sys.argv) < 3 or sys.argv[1] != "--fetch":
@@ -292,10 +353,14 @@ def main():
         i = sys.argv.index("--out")
         if i + 1 < len(sys.argv):
             out_dir = sys.argv[i + 1]
-    fetch_unit(slug, out_dir)
+    rules_map_path = RULES_MAP_PATH
+    if "--rules-map" in sys.argv:
+        i = sys.argv.index("--rules-map")
+        if i + 1 < len(sys.argv):
+            rules_map_path = sys.argv[i + 1]
+    fetch_unit(slug, out_dir, rules_map_path)
     print("\nDone.")
 
 
 if __name__ == "__main__":
     main()
-

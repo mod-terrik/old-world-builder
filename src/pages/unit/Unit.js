@@ -60,6 +60,7 @@ export const Unit = ({ isMobile, previewData = {} }) => {
   const units = list ? list[type] : null;
   const unit = units ? units.find(({ id }) => id === unitId) : previewUnit;
   const army = useSelector((state) => state.army);
+  const armyId = army?.id;
   const detachmentActive =
     unit &&
     unit?.options?.length > 0 &&
@@ -487,7 +488,9 @@ export const Unit = ({ isMobile, previewData = {} }) => {
   }, [list]);
 
   useEffect(() => {
-    if (list && !army) {
+    const needsFetch = list && (!army || armyId !== list.army);
+
+    if (needsFetch) {
       const isCustom = game.id !== "the-old-world";
 
       if (isCustom) {
@@ -517,7 +520,7 @@ export const Unit = ({ isMobile, previewData = {} }) => {
         });
       }
     }
-  }, [list, army, dispatch, game]);
+  }, [list, army, armyId, dispatch, game]);
 
   if (redirect === true) {
     return <Redirect to={`/editor/${listId}`} />;
@@ -1769,22 +1772,6 @@ export const Unit = ({ isMobile, previewData = {} }) => {
                   }
                   return false;
                 }
-                // if (
-                //   lore === "primal-magic" &&
-                //   ((unitArmyComposition !== "wild-herd" &&
-                //     unit.name_en !== "Kralmaw") ||
-                //     unit.name_en !== "Kralmaw") &&
-                //   unit.items
-                //     .find((items) => items.name_en === "Magic Items")
-                //     ?.selected.find((item) => item.name_en === "Goretooth*") ===
-                //     undefined &&
-                //   index !== 0
-                // ) {
-                //   if (unit.activeLore === "primal-magic") {
-                //     handleLoresChange(lores[0]);
-                //   }
-                //   return false;
-                // }
                 if (
                   lore === "lore-of-the-wilds" &&
                   unitArmyComposition !== "host-of-talsyn" &&

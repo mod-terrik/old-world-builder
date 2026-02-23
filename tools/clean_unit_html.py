@@ -277,7 +277,7 @@ def inject_rules_map_entry(slug, rules_map_path):
     """
     display_name = slug_to_display_name(slug)
     full_url = f"https://owapps.grra.me/owb/rules/unit/{slug}.html?minimal=true"
-    new_entry = f'  "{display_name}": {{ fullUrl: "{full_url}" }},\n'
+    new_entry = f'  "{display_name}": {{ fullUrl: "{full_url}" }},'
 
     # Resolve the path relative to this script when the default is used
     if not os.path.isabs(rules_map_path):
@@ -297,10 +297,11 @@ def inject_rules_map_entry(slug, rules_map_path):
         print(f"  [rules-map] Entry for \"{display_name}\" already exists — skipping")
         return
 
-    # Find the opening brace of `const additionalOWBRules = {`
-    # and insert immediately after it (i.e. as the first entry).
-    pattern = r'(const additionalOWBRules\s*=\s*\{)(\s*\n)'
-    replacement = r'\1\n' + new_entry + r'\2'
+    # Find the opening brace of `const additionalOWBRules = {` and insert
+    # the new entry immediately after it on the very next line, with no
+    # blank line between the brace and the new entry.
+    pattern = r'(const additionalOWBRules\s*=\s*\{\n)'
+    replacement = r'\1' + new_entry + '\n'
     new_content, n = re.subn(pattern, replacement, content, count=1)
 
     if n == 0:

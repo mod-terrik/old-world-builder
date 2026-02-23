@@ -7,24 +7,10 @@ import errorsReducer from "./state/errors";
 import rulesIndexReducer from "./state/rules-index";
 import settingsReducer from "./state/settings";
 
-const STORAGE_KEY = "owb_state";
-
-const loadState = () => {
-  try {
-    const serialized = localStorage.getItem(STORAGE_KEY);
-    if (!serialized) return undefined;
-    return JSON.parse(serialized);
-  } catch {
-    return undefined;
-  }
-};
-
 const saveState = (state) => {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify({
-      lists: state.lists,
-      settings: state.settings,
-    }));
+    localStorage.setItem("owb.lists", JSON.stringify(state.lists));
+    localStorage.setItem("owb.settings", JSON.stringify(state.settings));
   } catch {
     // ignore write errors
   }
@@ -39,7 +25,6 @@ const store = configureStore({
     rulesIndex: rulesIndexReducer,
     settings: settingsReducer,
   },
-  preloadedState: loadState(),
 });
 
 store.subscribe(() => saveState(store.getState()));

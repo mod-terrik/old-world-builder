@@ -61,6 +61,7 @@ export const Unit = ({ isMobile, previewData = {} }) => {
   const unit = units ? units.find(({ id }) => id === unitId) : previewUnit;
   const army = useSelector((state) => state.army);
   const armyId = army?.id;
+  const armyReady = army && armyId === list?.army;
   const detachmentActive =
     unit &&
     unit?.options?.length > 0 &&
@@ -70,7 +71,7 @@ export const Unit = ({ isMobile, previewData = {} }) => {
       ),
     );
   const detachments =
-    army &&
+    armyReady &&
     [...army.core, ...army.special, ...army.rare].filter(
       (coreUnit) => coreUnit.detachment,
     );
@@ -501,6 +502,7 @@ export const Unit = ({ isMobile, previewData = {} }) => {
             getArmyData({
               data,
               armyComposition: list.armyComposition,
+              armyId: list.army,
             }),
           ),
         );
@@ -513,6 +515,7 @@ export const Unit = ({ isMobile, previewData = {} }) => {
                 getArmyData({
                   data,
                   armyComposition: list.armyComposition || list.army,
+                  armyId: list.army,
                 }),
               ),
             );
@@ -526,7 +529,7 @@ export const Unit = ({ isMobile, previewData = {} }) => {
     return <Redirect to={`/editor/${listId}`} />;
   }
 
-  if (!unit || (!army && !isPreview)) {
+  if (!unit || (!armyReady && !isPreview)) {
     if (isMobile) {
       return (
         <>
@@ -879,6 +882,7 @@ export const Unit = ({ isMobile, previewData = {} }) => {
                                       type="checkbox"
                                       id={`command-${id}-option-${optionIndex}`}
                                       value={`${id}-${optionIndex}`}
+
                                       onChange={() =>
                                         handleCommandChange(id, optionIndex)
                                       }

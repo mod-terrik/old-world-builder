@@ -39,8 +39,6 @@ export const Add = ({ isMobile }) => {
   );
   const gameSystems = getGameSystems();
   const army = useSelector((state) => state.army);
-  const armyId = army?.id;
-  const armyReady = army && armyId === list?.army;
   const game = gameSystems.find((game) => game.id === list?.game);
   const armyData = game?.armies.find((army) => army.id === list.army);
   const allies = armyData?.allies;
@@ -84,9 +82,7 @@ export const Add = ({ isMobile }) => {
   }, [location.pathname]);
 
   useEffect(() => {
-    const needsFetch = list && (!army || armyId !== list.army) && type !== "allies";
-
-    if (needsFetch) {
+    if (list && !army && type !== "allies") {
       const isCustom = game.id !== "the-old-world" && game.id !== "the-old-world-gcomp";
 
       if (isCustom) {
@@ -216,14 +212,14 @@ export const Add = ({ isMobile }) => {
         });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [list, army, armyId, allies, type]);
+  }, [list, army, allies, type]);
 
   if (redirect) {
     return <Redirect to={`/editor/${listId}/${type}/${redirect}`} />;
   }
 
   if (
-    (!armyReady && type !== "allies" && type !== "mercenaries") ||
+    (!army && type !== "allies" && type !== "mercenaries") ||
     (type === "allies" && allAllies.length > 0 && !alliesLoaded) ||
     (type === "allies" &&
       !allies &&

@@ -60,8 +60,11 @@ export const Unit = ({ isMobile, previewData = {} }) => {
   const units = list ? list[type] : null;
   const unit = units ? units.find(({ id }) => id === unitId) : previewUnit;
   const army = useSelector((state) => state.army);
-  const armyId = army?.id;
-  const armyReady = army && armyId === list?.army;
+  const detachments =
+    army &&
+    [...army.core, ...army.special, ...army.rare].filter(
+      (coreUnit) => coreUnit.detachment,
+    );
   const detachmentActive =
     unit &&
     unit?.options?.length > 0 &&
@@ -69,11 +72,6 @@ export const Unit = ({ isMobile, previewData = {} }) => {
       unit.options.find(
         (option) => option.name_en === "Detachment" && option.active,
       ),
-    );
-  const detachments =
-    armyReady &&
-    [...army.core, ...army.special, ...army.rare].filter(
-      (coreUnit) => coreUnit.detachment,
     );
   const handleRemove = (unitId) => {
     dispatch(removeUnit({ listId, type, unitId }));
@@ -489,9 +487,7 @@ export const Unit = ({ isMobile, previewData = {} }) => {
   }, [list]);
 
   useEffect(() => {
-    const needsFetch = list && (!army || armyId !== list.army);
-
-    if (needsFetch) {
+    if (list && !army) {
       const isCustom = game.id !== "the-old-world";
 
       if (isCustom) {
@@ -523,13 +519,13 @@ export const Unit = ({ isMobile, previewData = {} }) => {
         });
       }
     }
-  }, [list, army, armyId, dispatch, game]);
+  }, [list, army, dispatch, game]);
 
   if (redirect === true) {
     return <Redirect to={`/editor/${listId}`} />;
   }
 
-  if (!unit || (!armyReady && !isPreview)) {
+  if (!unit || (!army && !isPreview)) {
     if (isMobile) {
       return (
         <>

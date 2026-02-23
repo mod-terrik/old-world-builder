@@ -10,7 +10,7 @@ import sys, os, json, urllib.request
 
 BASE_URL   = "https://tow.whfb.app"
 BUILD_ID   = "Z8fFjDNe5IyXteSHILQuO"
-OUTPUT_DIR = "/docker/nginx/html/warhammer/owb/rules/unit"
+OUTPUT_DIR = "../rules/unit"
 CSS_BASE   = "/owb/rules"
 
 CONTENT_TYPE_PATHS = {

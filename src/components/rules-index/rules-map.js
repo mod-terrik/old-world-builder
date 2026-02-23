@@ -1,7 +1,7 @@
 import rulesIndexExport from "./rules-index-export.json";
 
 const additionalOWBRules = {
-  "gnoblar scraplauncher": { fullUrl: "https://owapps.grra.me/unit/gnoblar-scraplauncher.html" },
+  "gnoblar scraplauncher": { fullUrl: "https://owapps.grra.me/rules/unit/gnoblar-scraplauncher.html?minimal=true" },
   "throwing spears": { url: "weapons-of-war/throwing-spear" },
   halberds: { url: "weapons-of-war/halberd" },
   "additional hand weapons": {

@@ -31,7 +31,7 @@ export const RulesIndex = () => {
       : normalizeRuleName(activeRule.replace(" {renegade}", ""));
   const synonym = synonyms[normalizedName];
   const ruleData = rulesMap[normalizedName] || rulesMap[synonym];
-  const rulePath = ruleData?.url;
+  const rulePath = ruleData?.fullUrl || (ruleData?.url ? `https://tow.whfb.app/${ruleData.url}?minimal=true&utm_source=owb&utm_medium=referral` : null);
 
   return (
     <Dialog open={open} onClose={handleClose}>
@@ -43,7 +43,7 @@ export const RulesIndex = () => {
               "rules-index__iframe",
               !isLoading && "rules-index__iframe--show"
             )}
-            src={`https://tow.whfb.app/${rulePath}?minimal=true&utm_source=owb&utm_medium=referral`}
+            src={rulePath}
             title="Warhammer: The Old World Online Rules Index"
             height="500"
             width="700"
@@ -56,5 +56,5 @@ export const RulesIndex = () => {
         </p>
       )}
     </Dialog>
-  );
+  )
 };

@@ -16,7 +16,7 @@ import "./RuleWithIcon.css";
 // The path will be prefixed with PUBLIC_URL automatically.
 // ============================================================
 const LOCAL_UNIT_REDIRECTS = {
-  "gnoblar-scraplauncher": "https://owapps.grra.me/localrules/unit/gnoblar-scraplauncher",
+  "gnoblar-scraplauncher": "unit/gnoblar-scraplauncher",
   // "iron-blaster": "/rules/unit/iron-blaster",
   // "mournfang-pack": "/rules/unit/mournfang-pack",
 };

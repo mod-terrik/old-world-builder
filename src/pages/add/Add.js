@@ -71,7 +71,7 @@ export const Add = ({ isMobile }) => {
           id: "app.points",
         })}`}</i>
       </button>
-      <RuleWithIcon name={unit.name_en} isDark className="add__rules-icon" />
+      <RuleWithIcon name={unit.name_en} unitSlug={unit.id} isDark className="add__rules-icon" />
     </li>
   );
 

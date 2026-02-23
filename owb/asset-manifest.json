@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/owb/static/css/main.c2e9d420.css",
+    "main.js": "/owb/static/js/main.0c79c841.js",
+    "static/js/453.2225aa02.chunk.js": "/owb/static/js/453.2225aa02.chunk.js",
+    "static/media/spain.svg": "/owb/static/media/spain.fe46f7a778fdc34b4cb31895f52d2247.svg",
+    "service-worker.js": "/owb/service-worker.js",
+    "static/media/symbol-defs.svg": "/owb/static/media/symbol-defs.b63db73bab285fb87f387671451f5909.svg",
+    "static/media/wood-elves.svg": "/owb/static/media/wood-elves.2b1066f8b82dc538ef1c9848d30911ab.svg",
+    "static/media/greenskins.svg": "/owb/static/media/greenskins.ea460b464152f5a93cc8550adc0a40fe.svg",
+    "static/media/usa.svg": "/owb/static/media/usa.699fdb72b59257b15c15b5c08cfe4b3d.svg",
+    "static/media/vampire-counts.svg": "/owb/static/media/vampire-counts.fd13d874116de00f9855c6d96285c1d0.svg",
+    "static/media/ogres.svg": "/owb/static/media/ogres.8b76905b48d6dc99e2717dc991ec120c.svg",
+    "static/media/cathay.svg": "/owb/static/media/cathay.e1fa7318954bf9fe21467238f7d1b71c.svg",
+    "static/media/high-elves.svg": "/owb/static/media/high-elves.446a07c8c1502e6229747d52b78b99f5.svg",
+    "static/media/chaos-warriors.svg": "/owb/static/media/chaos-warriors.95dbc8c2e20911b0d0f50eec0ecc875b.svg",
+    "static/media/chaos-deamons.svg": "/owb/static/media/chaos-deamons.1f26ab656855514be12c0e7db8c6b32d.svg",
+    "static/media/beastmen.svg": "/owb/static/media/beastmen.6a9fce0fd733488c35e356bda2e042f4.svg",
+    "static/media/tomb-kings.svg": "/owb/static/media/tomb-kings.9b30c54116cba0104b185153a5a522dd.svg",
+    "static/media/skaven.svg": "/owb/static/media/skaven.76cb48b7ee586866d155fdf90d147f72.svg",
+    "index.html": "/owb/index.html",
+    "static/media/owb.svg": "/owb/static/media/owb.d3620178330194a2108c5d16ee252a3f.svg",
+    "static/media/lizardmen.svg": "/owb/static/media/lizardmen.1864459dda98e2341482261f911f4fbe.svg",
+    "static/media/dark-elves.svg": "/owb/static/media/dark-elves.9d17a9e44a1dc8c532b8e9c195bb9349.svg",
+    "static/media/dwarfs.svg": "/owb/static/media/dwarfs.d1515ee28ee729eab0223051e8213f1e.svg",
+    "static/media/bretonnia.svg": "/owb/static/media/bretonnia.e5c3a1d0cda0c8b9b86cda30f5d33f90.svg",
+    "static/media/chaos-dwarfs.svg": "/owb/static/media/chaos-dwarfs.ee5f1bd3dabda3d5856f199d52b3b526.svg",
+    "static/media/the-empire.svg": "/owb/static/media/the-empire.f1e4a7fe4bc53e6ca0a4453905db6ea6.svg",
+    "static/media/renegade.svg": "/owb/static/media/renegade.acc9366d70bf05847d8cc5b3a54cd971.svg",
+    "static/media/china.svg": "/owb/static/media/china.45b22766aa096ac5e98dcbdcda75f9f9.svg",
+    "static/media/germany.svg": "/owb/static/media/germany.d9625f93cc14fcc164d63bed94bec76e.svg",
+    "static/media/italy.svg": "/owb/static/media/italy.bb2033dcda58d584b313a60a850a36cb.svg",
+    "static/media/polen.svg": "/owb/static/media/polen.0882b3e3846c9861e7150d74c94a7ee9.svg",
+    "static/media/france.svg": "/owb/static/media/france.bf26b172fbb19d5193a5a0a28e69c4ba.svg",
+    "main.c2e9d420.css.map": "/owb/static/css/main.c2e9d420.css.map",
+    "main.0c79c841.js.map": "/owb/static/js/main.0c79c841.js.map",
+    "453.2225aa02.chunk.js.map": "/owb/static/js/453.2225aa02.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c2e9d420.css",
+    "static/js/main.0c79c841.js"
+  ]
+}

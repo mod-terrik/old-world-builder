@@ -10,13 +10,6 @@ import { openRulesIndex } from "../../state/rules-index";
 import { rulesMap, synonyms } from "./rules-map";
 import "./RuleWithIcon.css";
 
-const getLocalHref = (unitSlug) => {
-  if (!unitSlug) return null;
-  const local = LOCAL_UNIT_REDIRECTS[unitSlug];
-  if (!local) return null;
-  return local;
-};
-
 export const RuleWithIcon = ({ name, unitSlug, isDark, className }) => {
   const dispatch = useDispatch();
   const intl = useIntl();
@@ -24,8 +17,6 @@ export const RuleWithIcon = ({ name, unitSlug, isDark, className }) => {
   if (!name && !unitSlug) {
     return null;
   }
-
-  const localHref = getLocalHref(unitSlug);
 
   const normalizedName = normalizeRuleName(name);
   const synonym = synonyms[normalizedName];

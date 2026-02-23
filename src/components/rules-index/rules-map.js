@@ -1,7 +1,9 @@
 import rulesIndexExport from "./rules-index-export.json";
 
 const additionalOWBRules = {
+  "bloodletters of khorne": { fullUrl: "https://owapps.grra.me/owb/rules/unit/bloodletters-of-khorne.html?minimal=true" },
   "gnoblar scraplauncher": { fullUrl: "https://owapps.grra.me/owb/rules/unit/gnoblar-scraplauncher.html?minimal=true" },
+  "questing knights": { fullUrl: "https://owapps.grra.me/owb/rules/unit/questing-knights.html?minimal=true" },
   "throwing spears": { url: "weapons-of-war/throwing-spear" },
   halberds: { url: "weapons-of-war/halberd" },
   "additional hand weapons": {

@@ -7,6 +7,7 @@ Usage:
 """
 
 import sys, os, re, json, urllib.request
+from html import unescape
 
 BASE_URL   = "https://tow.whfb.app"
 BUILD_ID   = "Z8fFjDNe5IyXteSHILQuO"
@@ -30,32 +31,6 @@ CONTENT_TYPE_PATHS = {
 }
 
 STAT_KEYS = ["Name", "M", "WS", "BS", "S", "T", "W", "I", "A", "Ld"]
-
-DISCLAIMER = (
-    '<footer class="german-comp-disclaimer">'
-    '<p><em>This ruleset has been modified for German Comp use only. '
-    'It is not legal for any other Old World comp, official or otherwise.</em></p>'
-    '</footer>'
-)
-
-HEAD = (
-    '<!DOCTYPE html><html lang="en" class="index-tow"><head>'
-    '<meta charSet="utf-8"/>'
-    '<meta name="viewport" content="width=device-width, initial-scale=1.0"/>'
-    '<link rel="apple-touch-icon" sizes="180x180" href="https://tow.whfb.app/icons/tow/apple-touch-icon.png"/>'
-    '<link rel="icon" type="image/png" sizes="32x32" href="/owb/rules/icons/tow/favicon-32x32.png"/>'
-    '<link rel="icon" type="image/png" sizes="16x16" href="/owb/rules/icons/tow/favicon-16x16.png"/>'
-    '<link rel="manifest" href="/owb/rules/icons/tow/site.webmanifest"/>'
-    '<link rel="shortcut icon" href="/owb/rules/icons/tow/favicon.ico"/>'
-    '<meta name="theme-color" content="#ffffff"/>'
-    '<title>{title} | Warhammer: The Old World</title>'
-    '<link rel="canonical" href="{slug}.html"/>'
-    '<link rel="preload" href="{css}/29367497e701a5f5.css" as="style"/>'
-    '<link rel="stylesheet" href="{css}/29367497e701a5f5.css" data-n-g=""/>'
-    '<link rel="preload" href="{css}/0f8fcb57f7477acb.css" as="style"/>'
-    '<link rel="stylesheet" href="{css}/0f8fcb57f7477acb.css" data-n-p=""/>'
-    '</head>'
-)
 
 
 # ── helpers ───────────────────────────────────────────────────────────────────
@@ -151,11 +126,11 @@ def render_equipment(field):
             group = f.get("groupName", "")
             note  = f.get("note", "")
             inner = f"<b>{esc(group)}:</b> {esc(note)} {link}" if group else link
-            lis  += f"<li><p>{inner}</p></li>"
-        body = f"<ul>{lis}</ul>"
+            lis  += f"\n              <li>\n                <p>{inner}</p>\n              </li>"
+        body = f"<ul>{lis}\n            </ul>\n            <p></p>"
     else:
         return ""
-    return f'<div class="unit-profile__details--equipment"><strong>Equipment:</strong>{body}</div>'
+    return f'\n          <div class="unit-profile__details--equipment">\n            <strong>Equipment:</strong>{body}\n          </div>'
 
 
 def render_special_rules(field):
@@ -175,8 +150,9 @@ def render_special_rules(field):
         return ""
     links = ", ".join(f'<a href="{h}">{l}</a>' for h, l in pairs)
     return (
-        f'<div class="unit-profile__details--special-rules unit-profile__details--link-list">'
-        f'<strong>Special Rules:</strong> {links}</div>'
+        f'\n          <div class="unit-profile__details--special-rules unit-profile__details--link-list">\n'
+        f'            <strong>Special Rules:</strong> {links}\n'
+        f'          </div>'
     )
 
 
@@ -194,31 +170,25 @@ def render(fields, slug):
     unit_size = fields.get("unitSize", "")
     armour    = fields.get("armourValue") or ""
 
-    # stat table
-    th = '<th class="css-9p6xbs" data-test-id="cf-ui-table-cell">'
-    header = f'{th}</th>' + "".join(f'{th}{k}</th>' for k in STAT_KEYS[1:])
+    # stat table - with formatting
+    th = '            <th class="css-9p6xbs" data-test-id="cf-ui-table-cell">'
+    header = f'{th}</th>\n' + "".join(f'{th}{k}</th>\n' for k in STAT_KEYS[1:])
     rows = ""
     for row in fields.get("unitProfile", []):
-        cells = "".join(
-            f'<td class="css-s8xoeu" data-test-id="cf-ui-table-cell">{esc(str(row.get(k))) if row.get(k) is not None else "-"}</td>'
-            for k in STAT_KEYS
-        )
-        rows += f'<tr class="css-1sydf7g" data-test-id="cf-ui-table-row">{cells}</tr>'
+        cells = ""
+        for k in STAT_KEYS:
+            val = str(row.get(k)) if row.get(k) is not None else "-"
+            cells += f'\n              <td class="css-s8xoeu" data-test-id="cf-ui-table-cell">{esc(val)}</td>'
+        rows += f'\n            <tr class="css-1sydf7g" data-test-id="cf-ui-table-row">{cells}\n            </tr>'
 
-    table = (
-        f'<div class="table-wrapper {slug}">'
-        f'<table class="generic-table unit-profile-table css-1hz7skb" data-test-id="cf-ui-table" cellPadding="0" cellSpacing="0">'
-        f'<thead class="css-1sojo49" data-test-id="cf-ui-table-head"><tr class="css-1sydf7g" data-test-id="cf-ui-table-row">{header}</tr></thead>'
-        f'<tbody class="css-0" data-test-id="cf-ui-table-body">{rows}</tbody>'
-        f'</table></div>'
-    )
+    table = f'''\n        <div class="table-wrapper {slug}">\n          <table class="generic-table unit-profile-table css-1hz7skb" data-test-id="cf-ui-table" cellPadding="0" cellSpacing="0">\n            <thead class="css-1sojo49" data-test-id="cf-ui-table-head">\n              <tr class="css-1sydf7g" data-test-id="cf-ui-table-row">\n{header}              </tr>\n            </thead>\n            <tbody class="css-0" data-test-id="cf-ui-table-body">{rows}\n            </tbody>\n          </table>\n        </div>'''
 
     # details block
     def detail(css, label, val):
-        return f'<div class="unit-profile__details--{css}"><strong>{label}:</strong> {val}</div>'
+        return f'\n          <div class="unit-profile__details--{css}">\n            <strong>{label}:</strong> {val}\n          </div>'
 
     details = (
-        f'<div class="unit-profile__details">'
+        f'\n        <div class="unit-profile__details">'
         + detail("points",        "Cost",          f"{esc(str(cost))} points per model")
         + detail("unit-category", "Unit Category", render_detail_link(fields.get("unitCategory"), "/troop-types-in-detail"))
         + detail("troop-type",    "Troop Type",    render_detail_link(fields.get("troopType"),    "/troop-types-in-detail"))
@@ -227,38 +197,73 @@ def render(fields, slug):
         + (detail("armour-value", "Armour Value",  esc(str(armour))) if armour else "")
         + render_equipment(fields.get("equipment"))
         + render_special_rules(fields.get("specialRules"))
-        + '</div>'
+        + '\n        </div>'
     )
 
     # breadcrumb (only when army data present)
     breadcrumb = ""
     if army_slug:
-        date_li    = f'<li class="update-timestamp">Last update: {esc(last_upd)}</li>' if last_upd else ""
+        date_li    = f'\n            <li class="update-timestamp">Last update: {esc(last_upd)}</li>' if last_upd else ""
         breadcrumb = (
-            f'<div class="breadcrumb__wrapper">'
-            f'<ul class="breadcrumb"><li class="breadcrumb-link"><a href="{BASE_URL}/army/{army_slug}">{esc(army_name)}</a></li></ul>'
-            f'<ul class="breadcrumb">{date_li}</ul>'
-            f'</div>'
+            f'\n        <div class="breadcrumb__wrapper">\n'
+            f'          <ul class="breadcrumb">\n'
+            f'            <li class="breadcrumb-link">\n'
+            f'              <a href="{BASE_URL}/army/{army_slug}">{esc(army_name)}</a>\n'
+            f'            </li>\n'
+            f'          </ul>\n'
+            f'          <ul class="breadcrumb">{date_li}\n'
+            f'          </ul>\n'
+            f'        </div>'
         )
 
     css_path = f"{CSS_BASE}/_next/static/css"
-    head = HEAD.format(title=esc(name), slug=slug, css=css_path)
-
-    return (
-        head
-        + '<body><div id="__next">'
-        + '<div data-test-id="cf-ui-workbench" class="css-1kvywv3 default-view tow-index ">'
-        + '<div class="css-9szchg">'
-        + '<main data-test-id="cf-ui-workbench-content" id="main-content" class="css-17h5a9m main-content">'
-        + '<div class="css-flqhol">'
-        + '<p class="minimal-source"><span>Source: <a href="https://tow.whfb.app" target="_blank">Warhammer: The Old World Online Rules Index</a></span></p>'
-        + f'<h1 class="page-title">{esc(name)}</h1>'
-        + breadcrumb
-        + f'<div class="unit-profile {slug}">{table}{details}</div>'
-        + '</div>'
-        + DISCLAIMER
-        + '</main></div></div></div></body></html>\n'
+    disclaimer = (
+        f'\n        <footer class="german-comp-disclaimer">\n'
+        f'          <p>\n'
+        f'            <em>This ruleset has been modified for German Comp use only. '
+        f'It is not legal for any other Old World comp, official or otherwise.</em>\n'
+        f'          </p>\n'
+        f'        </footer>'
     )
+
+    return f'''<!DOCTYPE html>
+<html lang="en" class="index-tow">
+  <head>
+    <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://tow.whfb.app/icons/tow/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="/owb/rules/icons/tow/favicon-32x32.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/owb/rules/icons/tow/favicon-16x16.png"/>
+    <link rel="manifest" href="/owb/rules/icons/tow/site.webmanifest"/>
+    <link rel="shortcut icon" href="/owb/rules/icons/tow/favicon.ico"/>
+    <meta name="theme-color" content="#ffffff"/>
+    <title>{esc(name)} | Warhammer: The Old World</title>
+    <link rel="canonical" href="{slug}.html"/>
+    <link rel="preload" href="{css_path}/29367497e701a5f5.css" as="style"/>
+    <link rel="stylesheet" href="{css_path}/29367497e701a5f5.css" data-n-g=""/>
+    <link rel="preload" href="{css_path}/0f8fcb57f7477acb.css" as="style"/>
+    <link rel="stylesheet" href="{css_path}/0f8fcb57f7477acb.css" data-n-p=""/>
+  </head>
+  <body>
+    <div id="__next">
+      <div data-test-id="cf-ui-workbench" class="css-1kvywv3 default-view tow-index ">
+        <div class="css-9szchg">
+          <main data-test-id="cf-ui-workbench-content" id="main-content" class="css-17h5a9m main-content">
+            <div class="css-flqhol">
+              <p class="minimal-source">
+                <span>Source: <a href="https://tow.whfb.app" target="_blank">Warhammer: The Old World Online Rules Index</a></span>
+              </p>
+              <h1 class="page-title">{esc(name)}</h1>{breadcrumb}
+              <div class="unit-profile {slug}">{table}{details}
+              </div>
+            </div>{disclaimer}
+          </main>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+'''
 
 
 # ── stats extraction and formatting ───────────────────────────────────────────

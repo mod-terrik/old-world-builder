@@ -1,9 +1,29 @@
 import rulesIndexExport from "./rules-index-export.json";
 
 const additionalOWBRules = {
-  "bloodletters of khorne": { fullUrl: "https://owapps.grra.me/owb/rules/unit/bloodletters-of-khorne.html?minimal=true" },
-  "gnoblar scraplauncher": { fullUrl: "https://owapps.grra.me/owb/rules/unit/gnoblar-scraplauncher.html?minimal=true" },
-  "questing knights": { fullUrl: "https://owapps.grra.me/owb/rules/unit/questing-knights.html?minimal=true" },
+  "bloodletters of khorne": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/bloodletters-of-khorne.html?minimal=true",
+    stats: [
+      { Name: "Bloodletter", M: "5", WS: "5", BS: "3", S: "4", T: "4", W: "1", I: "4", A: "1", Ld: "7" },
+      { Name: "Bloodreaper", M: "5", WS: "5", BS: "3", S: "4", T: "4", W: "1", I: "4", A: "2", Ld: "7" },
+    ],
+  },
+  "gnoblar scraplauncher": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/gnoblar-scraplauncher.html?minimal=true",
+    stats: [
+      { Name: "Scraplauncher", M: "-", WS: "-", BS: "-", S: "5", T: "6", W: "5", I: "-", A: "-", Ld: "-" },
+      { Name: "Gnoblar Scrapper (x7)", M: "-", WS: "2", BS: "3", S: "2", T: "-", W: "-", I: "3", A: "1", Ld: "5" },
+      { Name: "Rhinox (x1)", M: "6", WS: "3", BS: "-", S: "5", T: "-", W: "-", I: "2", A: "3", Ld: "-" },
+    ],
+  },
+  "questing knights": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/questing-knights.html?minimal=true",
+    stats: [
+      { Name: "Questing Knight", M: "-", WS: "5", BS: "2", S: "4", T: "3", W: "1", I: "4", A: "2", Ld: "8" },
+      { Name: "Paragon", M: "-", WS: "5", BS: "2", S: "4", T: "3", W: "1", I: "4", A: "3", Ld: "8" },
+      { Name: "Bretonnian Warhorse", M: "8", WS: "3", BS: "-", S: "3", T: "-", W: "-", I: "3", A: "1", Ld: "-" },
+    ],
+  },
   "throwing spears": { url: "weapons-of-war/throwing-spear" },
   halberds: { url: "weapons-of-war/halberd" },
   "additional hand weapons": {

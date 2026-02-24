@@ -1077,6 +1077,15 @@
       "equipment": [],
       "armor": [],
       "options": [
+         {
+          "name_en": "Level 2 Wizard",
+          "name_de": "Zauberer der Stufe 2",
+          "name_fr": "Sorcier de Niveau 2",
+          "name_pl": "Czarodziej poziomu 2",
+          "points": 0,
+          "perModel": true,
+          "active": true
+        },
         {
           "name_en": "Level 3 Wizard",
           "name_cn": "3级法师",
@@ -2765,9 +2774,6 @@
       "name_fr": "Sœurs de l'Épine",
       "name_pl": "Siostry Ciernia",
       "id": "sisters-of-the-thorn",
-      "notes": {
-        "name_en": "Sisters of the orn may choose their Spells from their chosen lore or the lore of Athel Loren"
-      },
       "points": 22,
       "minimum": 5,
       "maximum": 20,

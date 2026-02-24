@@ -1,6 +1,46 @@
 import rulesIndexExport from "./rules-index-export.json";
 
 const additionalOWBRules = {
+  "grave guard": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/grave-guard.html?minimal=true",
+    stats: [
+      { Name: "Grave Guard", M: "4", WS: "3", BS: "3", S: "4", T: "4", W: "1", I: "3", A: "1", Ld: "7" },
+      { Name: "Seneschal", M: "4", WS: "3", BS: "3", S: "4", T: "4", W: "1", I: "3", A: "2", Ld: "7" }
+    ]
+  },
+  "tomb guard": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/tomb-guard.html?minimal=true",
+    stats: [
+      { Name: "Tomb Guard", M: "4", WS: "3", BS: "3", S: "4", T: "4", W: "1", I: "2", A: "1", Ld: "7" },
+      { Name: "Tomb Captain", M: "4", WS: "3", BS: "3", S: "4", T: "4", W: "1", I: "3", A: "2", Ld: "7" }
+    ]
+  },
+  "sea guard garrison commander": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/sea-guard-garrison-commander.html?minimal=true",
+    stats: [
+      { Name: "Sea Guard Garrison Commander", M: "5", WS: "6", BS: "7", S: "4", T: "3", W: "3", I: "5", A: "3", Ld: "9" }
+    ]
+  },
+  "demigryph": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/demigryph.html?minimal=true",
+    stats: [
+      { Name: "Demigryph", M: "7", WS: "4", BS: "-", S: "5", T: "-", W: "(+1)", I: "4", A: "3", Ld: "-" }
+    ]
+  },
+  "shieldbearers": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/shieldbearers.html?minimal=true",
+    stats: [
+      { Name: "Shieldbearers", M: "3", WS: "5", BS: "-", S: "4", T: "-", W: "(+3)", I: "2", A: "3", Ld: "-" }
+    ]
+  },
+  "grail reliquae": { fullUrl: "https://owapps.grra.me/owb/rules/unit/grail-reliquae.html?minimal=true" },
+  "the green knight": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/the-green-knight.html?minimal=true",
+    stats: [
+      { Name: "The Green Knight", M: "-", WS: "7", BS: "3", S: "4", T: "4", W: "4", I: "6", A: "4", Ld: "9" },
+      { Name: "The Shadow Steed", M: "8", WS: "4", BS: "-", S: "4", T: "-", W: "-", I: "4", A: "1", Ld: "-" }
+    ]
+  },
   "wildwood rangers": {
     fullUrl: "https://owapps.grra.me/owb/rules/unit/wildwood-rangers.html?minimal=true",
     stats: [

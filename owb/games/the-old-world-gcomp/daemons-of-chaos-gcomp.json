@@ -3989,14 +3989,14 @@
           },
           "options": [
             {
-              "name_en": "Exalted Flamer",
-              "name_cn": "高阶火妖",
+              "name_en": "Level 1 Wizard (Exalted Flamer)",
               "name_de": "Exalted Flamer",
               "name_es": "Exalted Flamer",
               "name_fr": "Incendiaire Exalté",
               "name_it": "Exalted Flamer",
               "name_pl": "Exalted Flamer",
-              "points": 40
+              "points": 40,
+              "exclusive": true 
             },
             {
               "name_en": "Level 2 Wizard (Exalted Flamer)",
@@ -4006,7 +4006,7 @@
               "name_fr": "Sorcier de Niveau 2 (Incendiaire Exalté)",
               "name_it": "Level 2 Wizard (Exalted Flamer)",
               "name_pl": "Level 2 Wizard (Exalted Flamer)",
-              "points": 30,
+              "points": 70,
               "exclusive": true
             },
             {
@@ -4017,7 +4017,7 @@
               "name_fr": "Sorcier de Niveau 3 (Incendiaire Exalté)",
               "name_it": "Level 3 Wizard (Exalted Flamer)",
               "name_pl": "Level 3 Wizard (Exalted Flamer)",
-              "points": 60,
+              "points": 100,
               "exclusive": true
             }
           ]

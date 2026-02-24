@@ -261,6 +261,45 @@ def render(fields, slug):
     )
 
 
+# ── stats extraction and formatting ───────────────────────────────────────────
+
+def extract_stats_from_fields(fields):
+    """Extract and format unit stats from JSON fields."""
+    unit_profile = fields.get("unitProfile", [])
+    if not unit_profile:
+        return None
+
+    stats = []
+    for row in unit_profile:
+        stat_dict = {}
+        for key in STAT_KEYS:
+            value = row.get(key)
+            if value is None or value == "":
+                value = "-"
+            else:
+                value = str(value)
+            stat_dict[key] = value
+        stats.append(stat_dict)
+
+    return stats if stats else None
+
+
+def format_stats_for_js(stats):
+    """Format stats array for JavaScript code."""
+    if not stats:
+        return None
+
+    lines = []
+    for stat in stats:
+        # Format as: { Name: "...", M: "...", ... }
+        fields = ", ".join(
+            f'{key}: "{stat.get(key, "-")}"' for key in STAT_KEYS
+        )
+        lines.append(f"      {{ {fields} }}")
+
+    return "[\n" + ",\n".join(lines) + "\n    ]"
+
+
 # ── rules-map.js injection ────────────────────────────────────────────────────
 
 def slug_to_display_name(slug):
@@ -268,16 +307,17 @@ def slug_to_display_name(slug):
     return slug.replace("-", " ")
 
 
-def inject_rules_map_entry(slug, rules_map_path):
+def inject_rules_map_entry(slug, stats, rules_map_path):
     """
-    Insert a new fullUrl entry for `slug` at the top of the
+    Insert a new entry with fullUrl and stats for `slug` at the top of the
     `const additionalOWBRules` object in rules-map.js.
 
-    Skips insertion if the slug is already present.
+    If the slug already exists:
+    - If it has no stats array, inject stats
+    - If it already has stats, skip
     """
     display_name = slug_to_display_name(slug)
     full_url = f"https://owapps.grra.me/owb/rules/unit/{slug}.html?minimal=true"
-    new_entry = f'  "{display_name}": {{ fullUrl: "{full_url}" }},'
 
     # Resolve the path relative to this script when the default is used
     if not os.path.isabs(rules_map_path):
@@ -292,26 +332,62 @@ def inject_rules_map_entry(slug, rules_map_path):
     with open(rules_map_path, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # Guard: skip if an entry for this slug already exists
-    if f'"{display_name}"' in content or f"'{display_name}'" in content:
-        print(f"  [rules-map] Entry for \"{display_name}\" already exists — skipping")
-        return
+    # Check if entry exists
+    entry_exists = f'"{display_name}"' in content or f"'{display_name}'" in content
 
-    # Find the opening brace of `const additionalOWBRules = {` and insert
-    # the new entry immediately after it on the very next line, with no
-    # blank line between the brace and the new entry.
-    pattern = r'(const additionalOWBRules\s*=\s*\{\n)'
-    replacement = r'\1' + new_entry + '\n'
-    new_content, n = re.subn(pattern, replacement, content, count=1)
+    if entry_exists:
+        # Check if it already has stats
+        # Look for the entry and see if it has a stats: field
+        entry_pattern = rf'"{re.escape(display_name)}":\s*\{{[^}}]*\}}'
+        match = re.search(entry_pattern, content)
+        if match and "stats:" in match.group(0):
+            print(f"  [rules-map] Entry for \"{display_name}\" already has stats — skipping")
+            return
 
-    if n == 0:
-        print("  [rules-map] WARNING: could not locate `const additionalOWBRules = {` — skipping injection")
-        return
+        # Entry exists but no stats — inject stats into existing entry
+        if stats:
+            stats_js = format_stats_for_js(stats)
+            if stats_js:
+                # Find and update the entry
+                pattern = rf'("{re.escape(display_name)}":\s*\{{\s*fullUrl:[^,]+)(,?\s*\}})'
+                replacement = rf'\1,\n    stats: {stats_js}\2'
+                new_content, count = re.subn(pattern, replacement, content, count=1)
 
-    with open(rules_map_path, "w", encoding="utf-8") as f:
-        f.write(new_content)
+                if count > 0:
+                    with open(rules_map_path, "w", encoding="utf-8") as f:
+                        f.write(new_content)
+                    print(f"  [rules-map] Updated entry with {len(stats)} stat line(s) for \"{display_name}\"")
+                else:
+                    print(f"  [rules-map] WARNING: Could not update entry for \"{display_name}\"")
+        else:
+            print(f"  [rules-map] Entry for \"{display_name}\" exists (no stats in source data)")
+    else:
+        # Create new entry with both fullUrl and stats
+        if stats:
+            stats_js = format_stats_for_js(stats)
+            new_entry = (
+                f'  "{display_name}": {{\n'
+                f'    fullUrl: "{full_url}",\n'
+                f'    stats: {stats_js}\n'
+                f'  }}'
+            )
+        else:
+            new_entry = f'  "{display_name}": {{ fullUrl: "{full_url}" }}'
 
-    print(f"  [rules-map] Injected entry: \"{display_name}\" → {full_url}")
+        # Find the opening brace of `const additionalOWBRules = {` and insert
+        pattern = r'(const additionalOWBRules\s*=\s*\{\n)'
+        replacement = r'\1' + new_entry + ',\n'
+        new_content, n = re.subn(pattern, replacement, content, count=1)
+
+        if n == 0:
+            print("  [rules-map] WARNING: could not locate `const additionalOWBRules = {` — skipping injection")
+            return
+
+        with open(rules_map_path, "w", encoding="utf-8") as f:
+            f.write(new_content)
+
+        stat_info = f" with {len(stats)} stat line(s)" if stats else " (no stats in source data)"
+        print(f"  [rules-map] Injected new entry{stat_info} for \"{display_name}\" → {full_url}")
 
 
 # ── fetch & save ──────────────────────────────────────────────────────────────
@@ -333,15 +409,26 @@ def fetch_unit(slug, out_dir, rules_map_path):
     fields = data.get("pageProps", {}).get("entry", {}).get("fields", {})
     if not fields:
         sys.exit("  [error] No fields in JSON response")
+
+    # Extract stats from JSON
+    stats = extract_stats_from_fields(fields)
+    if stats:
+        print(f"  Extracted {len(stats)} stat line(s):")
+        for stat in stats:
+            print(f"    - {stat.get('Name', 'Unknown')}")
+    else:
+        print("  No stats found in source data")
+
+    # Render HTML
     html = render(fields, slug)
     os.makedirs(out_dir, exist_ok=True)
     dest = os.path.join(out_dir, f"{slug}.html")
     with open(dest, "w", encoding="utf-8") as f:
         f.write(html)
-    print(f"  Saved: {dest}  ({len(html):,} bytes)")
+    print(f"  Saved HTML: {dest}  ({len(html):,} bytes)")
 
-    # Inject the new entry into rules-map.js
-    inject_rules_map_entry(slug, rules_map_path)
+    # Inject the new entry with stats into rules-map.js
+    inject_rules_map_entry(slug, stats, rules_map_path)
 
 
 def main():

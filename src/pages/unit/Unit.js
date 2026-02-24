@@ -913,7 +913,7 @@ export const Unit = ({ isMobile, previewData = {} }) => {
                                     language,
                                   })}
                                 </Fragment>
-ow              );
+                              );
                             })}
                           <hr className="unit__command-option-hr" />
                         </Fragment>

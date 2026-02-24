@@ -1,6 +1,26 @@
 import rulesIndexExport from "./rules-index-export.json";
 
 const additionalOWBRules = {
+  "high priest of ulric": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/high-priest-of-ulric.html?minimal=true",
+    stats: [
+      { Name: "High Priest of Ulric", M: "4", WS: "5", BS: "3", S: "4", T: "4", W: "3", I: "5", A: "3", Ld: "9" }
+    ]
+  },
+  "lector of sigmar": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/lector-of-sigmar.html?minimal=true",
+    stats: [
+      { Name: "Lector of Sigmar", M: "4", WS: "5", BS: "3", S: "4", T: "4", W: "3", I: "5", A: "3", Ld: "9" }
+    ]
+  },
+  "sisters of the thorn": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/sisters-of-the-thorn.html?minimal=true",
+    stats: [
+      { Name: "Sister of the Thorn", M: "-", WS: "4", BS: "5", S: "3", T: "3", W: "1", I: "4", A: "1", Ld: "9" },
+      { Name: "Handmaiden of the Thorn", M: "-", WS: "4", BS: "6", S: "3", T: "3", W: "1", I: "4", A: "2", Ld: "9" },
+      { Name: "Steed of Isha", M: "8", WS: "3", BS: "-", S: "4", T: "-", W: "-", I: "4", A: "1", Ld: "-" }
+    ]
+  },
   "grave guard": {
     fullUrl: "https://owapps.grra.me/owb/rules/unit/grave-guard.html?minimal=true",
     stats: [

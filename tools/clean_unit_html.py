@@ -32,6 +32,20 @@ CONTENT_TYPE_PATHS = {
 
 STAT_KEYS = ["Name", "M", "WS", "BS", "S", "T", "W", "I", "A", "Ld"]
 
+# Full stat names for comments
+STAT_NAMES = {
+    "Name": "Unit Name",
+    "M": "Movement",
+    "WS": "Weapon Skill",
+    "BS": "Ballistic Skill",
+    "S": "Strength",
+    "T": "Toughness",
+    "W": "Wounds",
+    "I": "Initiative",
+    "A": "Attacks",
+    "Ld": "Leadership"
+}
+
 
 # ── helpers ───────────────────────────────────────────────────────────────────
 
@@ -170,16 +184,23 @@ def render(fields, slug):
     unit_size = fields.get("unitSize", "")
     armour    = fields.get("armourValue") or ""
 
-    # stat table - with formatting
+    # stat table - with formatting and comments for easy editing
     th = '            <th class="css-9p6xbs" data-test-id="cf-ui-table-cell">'
     header = f'{th}</th>\n' + "".join(f'{th}{k}</th>\n' for k in STAT_KEYS[1:])
+    
     rows = ""
-    for row in fields.get("unitProfile", []):
-        cells = ""
+    for row_idx, row in enumerate(fields.get("unitProfile", [])):
+        unit_name = row.get("Name", f"Unit {row_idx + 1}")
+        rows += f'\n            <!-- Stats for: {unit_name} -->'
+        rows += f'\n            <tr class="css-1sydf7g" data-test-id="cf-ui-table-row">'
+        
         for k in STAT_KEYS:
             val = str(row.get(k)) if row.get(k) is not None else "-"
-            cells += f'\n              <td class="css-s8xoeu" data-test-id="cf-ui-table-cell">{esc(val)}</td>'
-        rows += f'\n            <tr class="css-1sydf7g" data-test-id="cf-ui-table-row">{cells}\n            </tr>'
+            stat_name = STAT_NAMES.get(k, k)
+            rows += f'\n              <!-- {stat_name}: {val} -->'
+            rows += f'\n              <td class="css-s8xoeu" data-test-id="cf-ui-table-cell">{esc(val)}</td>'
+        
+        rows += '\n            </tr>'
 
     table = f'''\n        <div class="table-wrapper {slug}">\n          <table class="generic-table unit-profile-table css-1hz7skb" data-test-id="cf-ui-table" cellPadding="0" cellSpacing="0">\n            <thead class="css-1sojo49" data-test-id="cf-ui-table-head">\n              <tr class="css-1sydf7g" data-test-id="cf-ui-table-row">\n{header}              </tr>\n            </thead>\n            <tbody class="css-0" data-test-id="cf-ui-table-body">{rows}\n            </tbody>\n          </table>\n        </div>'''
 

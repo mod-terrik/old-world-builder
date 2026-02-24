@@ -1,6 +1,6 @@
 import { updateIds } from "./id";
 
-export const getArmyData = ({ data, armyComposition, armyId }) => {
+export const getArmyData = ({ data, armyComposition }) => {
   // Remove units that don't belong to the army composition
   const characters =
     data &&
@@ -102,7 +102,6 @@ export const getArmyData = ({ data, armyComposition, armyId }) => {
   );
 
   return {
-    id: armyId,
     lords: updateIds(data.lords),
     heroes: updateIds(data.heroes),
     characters: updateIds(allCharacters),

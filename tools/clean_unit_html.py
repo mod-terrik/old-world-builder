@@ -46,6 +46,9 @@ STAT_NAMES = {
     "Ld": "Leadership"
 }
 
+# Editable stats (excludes Name)
+EDITABLE_STATS = ["M", "WS", "BS", "S", "T", "W", "I", "A", "Ld"]
+
 
 # ── helpers ───────────────────────────────────────────────────────────────────
 
@@ -287,6 +290,119 @@ def render(fields, slug):
 '''
 
 
+# ── interactive stat editing ──────────────────────────────────────────────────
+
+def edit_unit_stats(fields):
+    """
+    Interactively edit unit stats before generating HTML.
+    Prompts user to modify M, WS, BS, S, T, W, I, A, Ld values.
+    """
+    unit_profile = fields.get("unitProfile", [])
+    if not unit_profile:
+        print("\n  No unit profile found to edit.")
+        return fields
+    
+    print("\n" + "="*60)
+    print("STAT EDITING")
+    print("="*60)
+    
+    # Ask if user wants to edit stats
+    response = input("\nWould you like to edit unit stats? (y/n): ").strip().lower()
+    if response not in ['y', 'yes']:
+        print("  Skipping stat editing.")
+        return fields
+    
+    # Display current stats
+    print("\nCurrent Stats:")
+    for idx, row in enumerate(unit_profile):
+        unit_name = row.get("Name", f"Unit {idx + 1}")
+        print(f"\n  [{idx + 1}] {unit_name}")
+        for key in EDITABLE_STATS:
+            val = row.get(key, "-")
+            stat_name = STAT_NAMES.get(key, key)
+            print(f"      {key:3s} ({stat_name:15s}): {val}")
+    
+    # Select which unit to edit (if multiple)
+    unit_idx = 0
+    if len(unit_profile) > 1:
+        while True:
+            try:
+                choice = input(f"\nWhich unit would you like to edit? (1-{len(unit_profile)}): ").strip()
+                unit_idx = int(choice) - 1
+                if 0 <= unit_idx < len(unit_profile):
+                    break
+                else:
+                    print(f"  Please enter a number between 1 and {len(unit_profile)}.")
+            except ValueError:
+                print("  Invalid input. Please enter a number.")
+    
+    selected_unit = unit_profile[unit_idx]
+    unit_name = selected_unit.get("Name", "Unit")
+    print(f"\nEditing: {unit_name}")
+    print("Enter the stat abbreviation (M, WS, BS, S, T, W, I, A, Ld) and new value.")
+    print("Type 'done' when finished.\n")
+    
+    changes_made = False
+    
+    while True:
+        # Show current stats
+        print("\nCurrent values:")
+        for key in EDITABLE_STATS:
+            val = selected_unit.get(key, "-")
+            print(f"  {key}: {val}", end="  ")
+        print()
+        
+        # Get stat to edit
+        stat_input = input("\nEnter stat to edit (or 'done'): ").strip().upper()
+        
+        if stat_input.lower() == 'done':
+            break
+        
+        if stat_input not in EDITABLE_STATS:
+            print(f"  Invalid stat. Choose from: {', '.join(EDITABLE_STATS)}")
+            continue
+        
+        # Get new value
+        current_val = selected_unit.get(stat_input, "-")
+        print(f"  Current {stat_input} ({STAT_NAMES[stat_input]}): {current_val}")
+        
+        new_value = input(f"  Enter new value (or press Enter to skip): ").strip()
+        
+        if not new_value:
+            continue
+        
+        # Validate value (should be numeric or '-')
+        if new_value != '-':
+            try:
+                # Try to convert to int/float
+                if '.' in new_value:
+                    float(new_value)
+                else:
+                    int(new_value)
+            except ValueError:
+                print(f"  Invalid value '{new_value}'. Please enter a number or '-'.")
+                continue
+        
+        # Update the stat
+        selected_unit[stat_input] = new_value if new_value == '-' else (int(new_value) if '.' not in new_value else float(new_value))
+        print(f"  ✓ Updated {stat_input} from {current_val} to {new_value}")
+        changes_made = True
+    
+    if changes_made:
+        print("\n" + "="*60)
+        print("FINAL STATS AFTER EDITING:")
+        print("="*60)
+        print(f"\n  {unit_name}:")
+        for key in EDITABLE_STATS:
+            val = selected_unit.get(key, "-")
+            print(f"    {key:3s} ({STAT_NAMES[key]:15s}): {val}")
+        print()
+    else:
+        print("\n  No changes made.")
+    
+    return fields
+
+
 # ── stats extraction and formatting ───────────────────────────────────────────
 
 def extract_stats_from_fields(fields):
@@ -436,10 +552,13 @@ def fetch_unit(slug, out_dir, rules_map_path):
     if not fields:
         sys.exit("  [error] No fields in JSON response")
 
-    # Extract stats from JSON
+    # INTERACTIVE STAT EDITING - Added here before HTML generation
+    fields = edit_unit_stats(fields)
+
+    # Extract stats from JSON (now potentially modified)
     stats = extract_stats_from_fields(fields)
     if stats:
-        print(f"  Extracted {len(stats)} stat line(s):")
+        print(f"\n  Extracted {len(stats)} stat line(s):")
         for stat in stats:
             print(f"    - {stat.get('Name', 'Unknown')}")
     else:

@@ -1,6 +1,13 @@
 import rulesIndexExport from "./rules-index-export.json";
 
 const additionalOWBRules = {
+  "wildwood rangers": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/wildwood-rangers.html?minimal=true",
+    stats: [
+      { Name: "Wildwood Ranger", M: "5", WS: "5", BS: "4", S: "4", T: "3", W: "1", I: "4", A: "1", Ld: "9" },
+      { Name: "Wildwood Warden", M: "5", WS: "5", BS: "4", S: "4", T: "3", W: "1", I: "4", A: "2", Ld: "9" }
+    ]
+  },
   "kharibdyss": {
     fullUrl: "https://owapps.grra.me/owb/rules/unit/kharibdyss.html?minimal=true",
     stats: [

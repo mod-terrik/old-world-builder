@@ -2294,11 +2294,11 @@
         "name_fr": "Ordre Serré, Attaques Supplémentaires (+PV restants), Immunisé à la Psychologie, Grande Cible, Dresseurs de Monstres, Régénération (5+), Attaques de Piétinement (D3), Terreur"
       },
       "notes": {
-        "name_en": "0-1 Special choice War Hydra or Kharibdyss if your general is a High Beastmaster. Change Toughness to 6.",
-        "name_cn": "0-1 Special choice War Hydra或Kharibdyss if your general is a High Beastmaster. Change Toughness to 6.",
-        "name_de": "0-1 if your general is a High Beastmaster. Change Toughness to 6.",
-        "name_es": "0-1 Hidra de guerra o Kharibdyss si tu general es un Gran señor de las bestias. Change Toughness to 6.",
-        "name_fr": "0-1 Hydre de Guerre ou Kharibdyss en choix Spécial si votre général est un Haut Belluaire. Change Toughness to 6."
+        "name_en": "0-1 Special choice War Hydra or Kharibdyss if your general is a High Beastmaster.",
+        "name_cn": "0-1 Special choice War Hydra或Kharibdyss if your general is a High Beastmaster.",
+        "name_de": "0-1 if your general is a High Beastmaster.",
+        "name_es": "0-1 Hidra de guerra o Kharibdyss si tu general es un Gran señor de las bestias",
+        "name_fr": "0-1 Hydre de Guerre ou Kharibdyss en choix Spécial si votre général est un Haut Belluaire."
       }
     },
     {
@@ -2346,11 +2346,11 @@
         "name_fr": "Hurlement Abyssal, Ordre Serré, Immunisé à la Psychologie, Grande Cible, Dresseurs de Monstres, Attaques de Piétinement (D3+1), Terreur"
       },
       "notes": {
-        "name_en": "0-1 if your general is a High Beastmaster. Change Toughness to 6.",
-        "name_cn": "0-1if your general is a High Beastmaster. Change Toughness to 6.",
-        "name_de": "0-1 if your general is a High Beastmaster. Change Toughness to 6.",
-        "name_es": "0-1 Hidra de guerra o Kharibdyss si tu general es un Gran señor de las bestias. Change Toughness to 6.",
-        "name_fr": "0-1 si votre général est un Haut Belluaire. Change Toughness to 6."
+        "name_en": "0-1 if your general is a High Beastmaster.",
+        "name_cn": "0-1if your general is a High Beastmaster.",
+        "name_de": "0-1 if your general is a High Beastmaster.",
+        "name_es": "0-1 Hidra de guerra o Kharibdyss si tu general es un Gran señor de las bestias",
+        "name_fr": "0-1 si votre général est un Haut Belluair"
       }
     }
   ],

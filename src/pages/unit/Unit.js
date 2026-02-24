@@ -487,37 +487,37 @@ export const Unit = ({ isMobile, previewData = {} }) => {
   }, [list]);
 
   useEffect(() => {
-    if (list && !army) {
-      const isCustom = game.id !== "the-old-world";
+    if (!list || !game || army) {
+      return;
+    }
 
-      if (isCustom) {
-        const data = getCustomDatasetData(list.army);
+    const isCustom = game.id !== "the-old-world";
 
-        dispatch(
-          setArmy(
-            getArmyData({
-              data,
-              armyComposition: list.armyComposition,
-              armyId: list.army,
-            }),
-          ),
-        );
-      } else {
-        fetcher({
-          url: `games/${list.game}/${list.army}`,
-          onSuccess: (data) => {
-            dispatch(
-              setArmy(
-                getArmyData({
-                  data,
-                  armyComposition: list.armyComposition || list.army,
-                  armyId: list.army,
-                }),
-              ),
-            );
-          },
-        });
-      }
+    if (isCustom) {
+      const data = getCustomDatasetData(list.army);
+
+      dispatch(
+        setArmy(
+          getArmyData({
+            data,
+            armyComposition: list.armyComposition,
+          }),
+        ),
+      );
+    } else {
+      fetcher({
+        url: `games/${list.game}/${list.army}`,
+        onSuccess: (data) => {
+          dispatch(
+            setArmy(
+              getArmyData({
+                data,
+                armyComposition: list.armyComposition || list.army,
+              }),
+            ),
+          );
+        },
+      });
     }
   }, [list, army, dispatch, game]);
 
@@ -1535,6 +1535,7 @@ export const Unit = ({ isMobile, previewData = {} }) => {
                                                 })}
                                               </i>
                                             </label>
+
                                           </div>
                                         );
                                       })}

@@ -1,6 +1,32 @@
 import rulesIndexExport from "./rules-index-export.json";
 
 const additionalOWBRules = {
+  "kharibdyss": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/kharibdyss.html?minimal=true",
+    stats: [
+      { Name: "Kharibdyss", M: "6", WS: "5", BS: "0", S: "7", T: "5", W: "5", I: "3", A: "5", Ld: "6" },
+      { Name: "Beastmaster Handlers (x2)", M: "6", WS: "4", BS: "-", S: "3", T: "-", W: "-", I: "4", A: "1", Ld: "8" }
+    ]
+  },
+  "war hydra": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/war-hydra.html?minimal=true",
+    stats: [
+      { Name: "War Hydra", M: "6", WS: "4", BS: "0", S: "5", T: "5", W: "5", I: "3", A: "2", Ld: "6" },
+      { Name: "Beastmaster Handlers (x2)", M: "6", WS: "4", BS: "-", S: "3", T: "-", W: "-", I: "4", A: "1", Ld: "8" }
+    ]
+  },
+  "cygor": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/cygor.html?minimal=true",
+    stats: [
+      { Name: "Cygor", M: "7", WS: "2", BS: "1", S: "6", T: "5", W: "6", I: "3", A: "4", Ld: "8" }
+    ]
+  },
+  "dragon ogre shaggoth": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/dragon-ogre-shaggoth.html?minimal=true",
+    stats: [
+      { Name: "Shaggoth", M: "7", WS: "6", BS: "2", S: "6", T: "5", W: "6", I: "4", A: "5", Ld: "9" }
+    ]
+  },
   "bloodletters of khorne": {
     fullUrl: "https://owapps.grra.me/owb/rules/unit/bloodletters-of-khorne.html?minimal=true",
     stats: [

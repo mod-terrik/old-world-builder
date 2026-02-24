@@ -292,52 +292,14 @@ def render(fields, slug):
 
 # ── interactive stat editing ──────────────────────────────────────────────────
 
-def edit_unit_stats(fields):
+def edit_single_unit(unit_profile, unit_idx):
     """
-    Interactively edit unit stats before generating HTML.
-    Prompts user to modify M, WS, BS, S, T, W, I, A, Ld values.
+    Edit a single unit's stats interactively.
+    Returns True if changes were made, False otherwise.
     """
-    unit_profile = fields.get("unitProfile", [])
-    if not unit_profile:
-        print("\n  No unit profile found to edit.")
-        return fields
-    
-    print("\n" + "="*60)
-    print("STAT EDITING")
-    print("="*60)
-    
-    # Ask if user wants to edit stats
-    response = input("\nWould you like to edit unit stats? (y/n): ").strip().lower()
-    if response not in ['y', 'yes']:
-        print("  Skipping stat editing.")
-        return fields
-    
-    # Display current stats
-    print("\nCurrent Stats:")
-    for idx, row in enumerate(unit_profile):
-        unit_name = row.get("Name", f"Unit {idx + 1}")
-        print(f"\n  [{idx + 1}] {unit_name}")
-        for key in EDITABLE_STATS:
-            val = row.get(key, "-")
-            stat_name = STAT_NAMES.get(key, key)
-            print(f"      {key:3s} ({stat_name:15s}): {val}")
-    
-    # Select which unit to edit (if multiple)
-    unit_idx = 0
-    if len(unit_profile) > 1:
-        while True:
-            try:
-                choice = input(f"\nWhich unit would you like to edit? (1-{len(unit_profile)}): ").strip()
-                unit_idx = int(choice) - 1
-                if 0 <= unit_idx < len(unit_profile):
-                    break
-                else:
-                    print(f"  Please enter a number between 1 and {len(unit_profile)}.")
-            except ValueError:
-                print("  Invalid input. Please enter a number.")
-    
     selected_unit = unit_profile[unit_idx]
     unit_name = selected_unit.get("Name", "Unit")
+    
     print(f"\nEditing: {unit_name}")
     print("Enter the stat abbreviation (M, WS, BS, S, T, W, I, A, Ld) and new value.")
     print("Type 'done' when finished.\n")
@@ -388,14 +350,99 @@ def edit_unit_stats(fields):
         print(f"  ✓ Updated {stat_input} from {current_val} to {new_value}")
         changes_made = True
     
-    if changes_made:
+    return changes_made
+
+
+def edit_unit_stats(fields):
+    """
+    Interactively edit unit stats before generating HTML.
+    Prompts user to modify M, WS, BS, S, T, W, I, A, Ld values.
+    Now supports editing multiple units sequentially.
+    """
+    unit_profile = fields.get("unitProfile", [])
+    if not unit_profile:
+        print("\n  No unit profile found to edit.")
+        return fields
+    
+    print("\n" + "="*60)
+    print("STAT EDITING")
+    print("="*60)
+    
+    # Ask if user wants to edit stats
+    response = input("\nWould you like to edit unit stats? (y/n): ").strip().lower()
+    if response not in ['y', 'yes']:
+        print("  Skipping stat editing.")
+        return fields
+    
+    # Display all units with stats
+    print("\nCurrent Stats:")
+    for idx, row in enumerate(unit_profile):
+        unit_name = row.get("Name", f"Unit {idx + 1}")
+        print(f"\n  [{idx + 1}] {unit_name}")
+        for key in EDITABLE_STATS:
+            val = row.get(key, "-")
+            stat_name = STAT_NAMES.get(key, key)
+            print(f"      {key:3s} ({stat_name:15s}): {val}")
+    
+    # Keep track of which units have been edited
+    edited_units = set()
+    any_changes = False
+    
+    while True:
+        # Select which unit to edit
+        unit_idx = 0
+        if len(unit_profile) > 1:
+            available_units = [f"{i+1}" for i in range(len(unit_profile))]
+            print(f"\nAvailable units: {', '.join(available_units)}")
+            if edited_units:
+                edited_list = ', '.join([str(i+1) for i in sorted(edited_units)])
+                print(f"Already edited: {edited_list}")
+            
+            while True:
+                try:
+                    choice = input(f"\nWhich unit would you like to edit? (1-{len(unit_profile)} or 'done' to finish): ").strip()
+                    if choice.lower() == 'done':
+                        unit_idx = None
+                        break
+                    unit_idx = int(choice) - 1
+                    if 0 <= unit_idx < len(unit_profile):
+                        break
+                    else:
+                        print(f"  Please enter a number between 1 and {len(unit_profile)}.")
+                except ValueError:
+                    print("  Invalid input. Please enter a number or 'done'.")
+        
+        # Check if user is done editing
+        if unit_idx is None:
+            break
+        
+        # Edit the selected unit
+        if edit_single_unit(unit_profile, unit_idx):
+            edited_units.add(unit_idx)
+            any_changes = True
+        
+        # For single-unit profiles, break after first edit
+        if len(unit_profile) == 1:
+            break
+        
+        # Ask if they want to edit another unit
+        if len(unit_profile) > 1:
+            more = input("\nWould you like to edit another unit? (y/n): ").strip().lower()
+            if more not in ['y', 'yes']:
+                break
+    
+    # Show final stats for all edited units
+    if any_changes:
         print("\n" + "="*60)
         print("FINAL STATS AFTER EDITING:")
         print("="*60)
-        print(f"\n  {unit_name}:")
-        for key in EDITABLE_STATS:
-            val = selected_unit.get(key, "-")
-            print(f"    {key:3s} ({STAT_NAMES[key]:15s}): {val}")
+        for idx in sorted(edited_units):
+            unit = unit_profile[idx]
+            unit_name = unit.get("Name", f"Unit {idx + 1}")
+            print(f"\n  {unit_name}:")
+            for key in EDITABLE_STATS:
+                val = unit.get(key, "-")
+                print(f"    {key:3s} ({STAT_NAMES[key]:15s}): {val}")
         print()
     else:
         print("\n  No changes made.")

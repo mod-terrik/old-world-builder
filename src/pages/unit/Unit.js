@@ -487,20 +487,19 @@ export const Unit = ({ isMobile, previewData = {} }) => {
   }, [list]);
 
   useEffect(() => {
-    if (!list || !game || army) {
-      return;
-    }
+    if (!list || !game) return;
+    if (army && army.id === list.army) return;
 
     const isCustom = game.id !== "the-old-world";
 
     if (isCustom) {
       const data = getCustomDatasetData(list.army);
-
       dispatch(
         setArmy(
           getArmyData({
             data,
             armyComposition: list.armyComposition,
+            armyId: list.army,
           }),
         ),
       );
@@ -513,6 +512,7 @@ export const Unit = ({ isMobile, previewData = {} }) => {
               getArmyData({
                 data,
                 armyComposition: list.armyComposition || list.army,
+                armyId: list.army,
               }),
             ),
           );
@@ -878,7 +878,6 @@ export const Unit = ({ isMobile, previewData = {} }) => {
                                       type="checkbox"
                                       id={`command-${id}-option-${optionIndex}`}
                                       value={`${id}-${optionIndex}`}
-
                                       onChange={() =>
                                         handleCommandChange(id, optionIndex)
                                       }
@@ -914,7 +913,7 @@ export const Unit = ({ isMobile, previewData = {} }) => {
                                     language,
                                   })}
                                 </Fragment>
-                              );
+ow              );
                             })}
                           <hr className="unit__command-option-hr" />
                         </Fragment>
@@ -1535,7 +1534,6 @@ export const Unit = ({ isMobile, previewData = {} }) => {
                                                 })}
                                               </i>
                                             </label>
-
                                           </div>
                                         );
                                       })}

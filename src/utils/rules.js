@@ -4061,9 +4061,15 @@ export const getMinPercentData = ({
   points,
   armyComposition,
 }) => {
-  const minPercent = rules[armyComposition]
-    ? rules[armyComposition][type].minPercent
-    : rules["grand-army"][type].minPercent;
+  const categoryData = rules[armyComposition]
+    ? rules[armyComposition][type]
+    : rules["grand-army"][type];
+
+  if (!categoryData) {
+    return { points: 0, overLimit: false, diff: 0 };
+  }
+
+  const minPercent = categoryData.minPercent ?? 0;
   const minPoints = Math.floor((armyPoints / 100) * minPercent);
 
   return {

@@ -1,6 +1,50 @@
 import rulesIndexExport from "./rules-index-export.json";
 
 const additionalOWBRules = {
+  "serrated maw": { fullUrl: "https://owapps.grra.me/owb/rules/weapons-of-war/serrated-maw.html?minimal=true" },
+  "chaos trolls": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/chaos-trolls.html?minimal=true",
+    stats: [
+      { Name: "Chaos Troll", M: "6", WS: "3", BS: "1", S: "5", T: "4", W: "3", I: "2", A: "4", Ld: "4" }
+    ]
+  },
+  "common troll mob": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/common-troll-mob.html?minimal=true",
+    stats: [
+      { Name: "Common Troll", M: "6", WS: "3", BS: "1", S: "5", T: "4", W: "3", I: "2", A: "4", Ld: "4" }
+    ]
+  },
+  "river troll mob": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/river-troll-mob.html?minimal=true",
+    stats: [
+      { Name: "River Troll", M: "6", WS: "3", BS: "1", S: "5", T: "4", W: "4", I: "1", A: "4", Ld: "4" }
+    ]
+  },
+  "stone troll mob": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/stone-troll-mob.html?minimal=true",
+    stats: [
+      { Name: "Stone Troll", M: "6", WS: "3", BS: "1", S: "5", T: "4", W: "3", I: "1", A: "4", Ld: "5" }
+    ]
+  },
+  "the fellblade": { fullUrl: "https://owapps.grra.me/owb/rules/magic-items/the-fellblade.html?minimal=true" },
+  "plagueclaw catapult": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/plagueclaw-catapult.html?minimal=true",
+    stats: [
+      { Name: "Plagueclaw Catapult", M: "-", WS: "-", BS: "-", S: "-", T: "6", W: "4", I: "-", A: "-", Ld: "-" },
+      { Name: "Plague Monk Crew", M: "5", WS: "3", BS: "3", S: "3", T: "4", W: "3", I: "2", A: "D3+3", Ld: "6" }
+    ]
+  },
+  "poisoned wind globadiers": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/poisoned-wind-globadiers.html?minimal=true",
+    stats: [
+      { Name: "Globadier", M: "5", WS: "3", BS: "4", S: "3", T: "3", W: "1", I: "4", A: "1", Ld: "5" }
+    ]
+  },"warplock jezzails": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/warplock-jezzails.html?minimal=true",
+    stats: [
+      { Name: "Jezzail Team", M: "5", WS: "3", BS: "4", S: "3", T: "3", W: "1", I: "3", A: "2", Ld: "5" }
+    ]
+  },
   "high priest of ulric": {
     fullUrl: "https://owapps.grra.me/owb/rules/unit/high-priest-of-ulric.html?minimal=true",
     stats: [

@@ -314,27 +314,6 @@ export const getPoints = ({ type, list }) => {
   return points;
 };
 
-// New function to calculate core points excluding units with doNotCountTowardsMinimum flag
-export const getCorePointsForMinimum = (list) => {
-  let points = 0;
-
-  if (list.core) {
-    list.core.forEach((unit) => {
-      // Skip units that have the doNotCountTowardsMinimum flag set to true
-      if (!unit.doNotCountTowardsMinimum) {
-        points += getUnitPoints(
-          { ...unit, type: "core" },
-          {
-            armyComposition: list.armyComposition || list.army,
-          },
-        );
-      }
-    });
-  }
-
-  return points;
-};
-
 export const getAllPoints = (list) => {
   const lordsPoints = getPoints({ list, type: "lords" });
   const heroesPoints = getPoints({ list, type: "heroes" });
@@ -356,4 +335,3 @@ export const getAllPoints = (list) => {
     alliesPoints
   );
 };
-

@@ -15,7 +15,7 @@ import { ListItem } from "../../components/list/ListItem";
 import { ErrorMessage } from "../../components/error-message";
 import { getAllOptions, getUnitName } from "../../utils/unit";
 import { throttle } from "../../utils/throttle";
-import { getUnitPoints, getPoints, getAllPoints, getCorePointsForMinimum } from "../../utils/points";
+import { getUnitPoints, getPoints, getAllPoints } from "../../utils/points";
 import { useLanguage } from "../../utils/useLanguage";
 import { validateList } from "../../utils/validation";
 import { removeFromLocalList, updateLocalList } from "../../utils/list";
@@ -106,7 +106,6 @@ export const Editor = ({ isMobile }) => {
   const heroesPoints = getPoints({ list, type: "heroes" });
   const charactersPoints = getPoints({ list, type: "characters" });
   const corePoints = getPoints({ list, type: "core" });
-  const corePointsForMinimum = getCorePointsForMinimum(list);
   const specialPoints = getPoints({ list, type: "special" });
   const rarePoints = getPoints({ list, type: "rare" });
   const mercenariesPoints = getPoints({ list, type: "mercenaries" });
@@ -138,7 +137,7 @@ export const Editor = ({ isMobile }) => {
   const coreData = getMinPercentData({
     type: "core",
     armyPoints: list.points,
-    points: corePointsForMinimum,
+    points: corePoints,
     armyComposition,
   });
   const specialData = getMaxPercentData({

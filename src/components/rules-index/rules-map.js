@@ -1,6 +1,8 @@
 import rulesIndexExport from "./rules-index-export.json";
 
 const additionalOWBRules = {
+  "vanguard": { fullUrl: "https://owapps.grra.me/owb/rules/special-rules/vanguard.html?minimal=true" },
+  "thrusting spear": { fullUrl: "https://owapps.grra.me/owb/rules/weapons-of-war/thrusting-spear.html?minimal=true" },
   "saurus scar veteran": {
     fullUrl: "https://owapps.grra.me/owb/rules/unit/saurus-scar-veteran.html?minimal=true",
     stats: [

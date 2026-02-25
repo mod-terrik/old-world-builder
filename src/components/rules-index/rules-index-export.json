@@ -2139,7 +2139,7 @@
   "timmm-berrr!": { "url": "special-rules/timmm-berrr", "page": "RB, p. 179" },
   "unbreakable": { "url": "special-rules/unbreakable", "page": "RB, p. 179" },
   "unstable": { "url": "special-rules/unstable", "page": "RB, p. 180" },
-  "vanguard": { "url": "special-rules/vanguard", "page": "RB, p. 180" },
+  "vanguard": { "fullUrl": "https://owapps.grra.me/owb/rules/special-rules/vanguard", "page": "RB, p. 180" },
   "veteran": { "url": "special-rules/veteran", "page": "RB, p. 180" },
   "volley fire": { "url": "special-rules/volley-fire", "page": "RB, p. 180" },
   "warband": { "url": "special-rules/warband", "page": "RB, p. 180" },
@@ -3113,7 +3113,7 @@
     "page": "OK, p. 26, AJ:O&GT, p. 40"
   },
   "thrusting spear": {
-    "url": "weapons-of-war/thrusting-spear",
+    "fullUrl": "https://owapps.grra.me/owb/rules/weapons-of-war/thrusting-spear",
     "page": "RB, p. 215"
   },
   "daemonic talons": {

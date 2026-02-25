@@ -1238,6 +1238,7 @@
       "points": 3,
       "minimum": 20,
       "maximum": 40,
+      "doNotCountTowardsMinimum": true,
       "command": [
         {
           "name_en": "Standard bearer",

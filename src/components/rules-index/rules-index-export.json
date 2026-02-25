@@ -1356,7 +1356,7 @@
     "url": "special-rules/eye-of-the-dragon",
     "page": "AJ:AoGC, p. 34"
   },
-  "zzzzap!": { "url": "special-rules/zzzzap", "page": "SK, p. 17" },
+  "zzzzap!": { "fullUrl": "https://owapps.grra.me/owb/rules/special-rules/zzzzap.html", "page": "SK, p. 17" },
   "skilled duellist": {
     "url": "special-rules/skilled-duellist",
     "page": "AJ:EoM, p. 35"

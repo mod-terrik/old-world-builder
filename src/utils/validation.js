@@ -614,7 +614,7 @@ export const validateList = ({ list, language, intl }) => {
 
     if (coreGraveGuardPoints > 400) {
       errors.push({
-        message: "You cannot have more than 400 points of Grave Guard",
+        message: "misc.error.graveGuard400Points",
         section: "core",
       });
     }

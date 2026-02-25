@@ -105,6 +105,7 @@
   "misc.error.battleMarch25PercentPerRare": "Maximum 25% of your points can be spent on a single rare unit",
   "misc.error.battleMarch25PercentPerMercenary": "Maximum 25% of your points can be spent on a single mercenary unit",
   "misc.error.battleMarchMultiple0XUnits": "You can only have a single '0-X per 1000 points' unit in your list",
+  "misc.error.graveGuard400Points": "You cannot have more than 400 points of Grave Guard in the Core section",
   "pwa.button": "Install app",
   "pwa.prompt": "Old World Builder can be installed as an app on your device. Install now?",
   "editor.add": "Add",

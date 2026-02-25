@@ -28,7 +28,7 @@ const additionalOWBRules = {
   },
   "the fellblade": { fullUrl: "https://owapps.grra.me/owb/rules/magic-items/the-fellblade.html?minimal=true" },
   "plagueclaw catapult": {
-    fullUrl: "https://owapps.grra.me/owb/rules/weapons-of-war/plagueclaw-catapult.html?minimal=true",
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/plagueclaw-catapult.html?minimal=true",
     stats: [
       { Name: "Plagueclaw Catapult", M: "-", WS: "-", BS: "-", S: "-", T: "6", W: "4", I: "-", A: "-", Ld: "-" },
       { Name: "Plague Monk Crew", M: "5", WS: "3", BS: "3", S: "3", T: "4", W: "3", I: "2", A: "D3+3", Ld: "6" }

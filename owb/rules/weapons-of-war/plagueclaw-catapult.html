@@ -15,6 +15,25 @@
     <link rel="stylesheet" href="/owb/rules/_next/static/css/29367497e701a5f5.css">
     <link rel="preload" href="/owb/rules/_next/static/css/0f8fcb57f7477acb.css" as="style">
     <link rel="stylesheet" href="/owb/rules/_next/static/css/0f8fcb57f7477acb.css">
+    <style>
+      /* Make weapon profile tables full width */
+      .weapon-profile-table {
+        width: 100%;
+      }
+      /* Center-align all cells in weapon profile tables */
+      .weapon-profile-table tbody td {
+        text-align: center;
+        vertical-align: middle;
+      }
+      /* Stack special rules vertically using spans */
+      .profile-table span {
+        display: block;
+        margin: 0;
+      }
+      .profile-table span:nth-of-type(n+2) {
+        margin-top: .25rem !important;
+      }
+    </style>
   </head>
   <body>
     <div id="__next">
@@ -28,7 +47,7 @@
               <h1 class="page-title">Plagueclaw Catapult</h1>
               <div class="rule-entry weapon-of-war plagueclaw-catapult">
         <div class="table-wrapper plagueclaw-catapult">
-          <table class="generic-table weapon-profile-table css-1hz7skb" data-test-id="cf-ui-table" cellpadding="0" cellspacing="0">
+          <table class="generic-table weapon-profile-table profile-table css-1hz7skb" data-test-id="cf-ui-table" cellpadding="0" cellspacing="0">
             <thead class="css-1sojo49" data-test-id="cf-ui-table-head">
               <tr class="css-1sydf7g" data-test-id="cf-ui-table-row">
                 <th class="css-9p6xbs" data-test-id="cf-ui-table-cell">Range</th>
@@ -42,13 +61,12 @@
                 <td class="css-s8xoeu" data-test-id="cf-ui-table-cell">12-72"</td>
                 <td class="css-s8xoeu" data-test-id="cf-ui-table-cell">2(4)</td>
                 <td class="css-s8xoeu" data-test-id="cf-ui-table-cell">-3</td>
-                <td class="css-s8xoeu" data-test-id="cf-ui-table-cell"><p><a href="https://tow.whfb.app/special-rules/bombardment">Bombardment</a>, <a href="https://tow.whfb.app/special-rules/cumbersome">Cumbersome</a>, <a href="https://tow.whfb.app/special-rules/move-or-shoot">Move or Shoot</a><a href="https://tow.whfb.app/special-rules/multiple-wounds">Multiple Wounds (D3+1)</a></p></td>
+                <td class="css-s8xoeu" data-test-id="cf-ui-table-cell"><span class="detailed-link"><a href="https://tow.whfb.app/special-rules/bombardment">Bombardment</a></span><span class="detailed-link"><a href="https://tow.whfb.app/special-rules/cumbersome">Cumbersome</a></span><span class="detailed-link"><a href="https://tow.whfb.app/special-rules/move-or-shoot">Move or Shoot</a></span><span class="detailed-link"><a href="https://tow.whfb.app/special-rules/multiple-wounds">Multiple Wounds (D3+1)</a></span</td>
               </tr>
             </tbody>
           </table>
         </div>
         <div class="rule-entry__notes">
-          <em>Notes:</em>
           <p><b><i>Notes:</i></b><i> This weapon shoots like a </i><a href="https://tow.whfb.app/special-rules/stone-throwers"><i>stone thrower</i></a><i>, using the </i><a href="https://tow.whfb.app/special-rules/bombardment"><i>Bombardment</i></a><i> special rule, a 5" blast template and the </i><a href="https://tow.whfb.app/special-rules/stone-thrower-misfire-table"><i>Stone Thrower Misfire table</i></a><i>. When making a roll To Wound for this weapon, a roll of a natural 6 is always a success, even if the target's Toughness is so high that the weapon would not normally be able to wound it. The <a href="https://tow.whfb.app/special-rules/multiple-wounds">Multiple Wounds (D3+1)</a> special rule applies only to a single model whose base lies underneath the central hole of the blast template.</i></p>
         </div>
               </div>

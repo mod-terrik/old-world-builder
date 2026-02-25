@@ -300,6 +300,17 @@ def render_rt(node, ctx="auto"):
         # For entry-hyperlinks, use context="auto" to let entry_url() read the contentType + ruleType
         return f'<a href="{entry_url(node["data"]["target"], "auto")}">{inner()}</a>'
     elif nt == "paragraph":
+        # Handle paragraphs with multiple text segments (for multi-line cells like Range)
+        # If this is a table cell context, check for multiple text nodes
+        if ctx == "table-cell":
+            # Collect all text values from direct text children
+            text_values = []
+            for child in content:
+                if isinstance(child, dict) and child.get("nodeType") == "text":
+                    text_values.append(esc(child.get("value", "")))
+            # If we have multiple text values, join with <br>
+            if len(text_values) > 1:
+                return "<br>".join(text_values)
         return f"<p>{inner()}</p>"
     elif nt == "unordered-list":
         return "<ul>" + "".join(f"<li>{render_rt(i, ctx)}</li>" for i in content) + "</ul>"
@@ -316,9 +327,25 @@ def render_rt(node, ctx="auto"):
         cells_html = "".join(render_rt(cell, ctx) for cell in content)
         return f'<tr class="css-1sydf7g" data-test-id="cf-ui-table-row">{cells_html}</tr>'
     elif nt == "table-header-cell":
-        return f'<th class="css-9p6xbs" data-test-id="cf-ui-table-cell">{inner()}</th>'
+        return f'<th class="css-9p6xbs" data-test-id="cf-ui-table-cell">{render_rt(content[0], "table-cell") if content else ""}</th>'
     elif nt == "table-cell":
-        return f'<td class="css-s8xoeu" data-test-id="cf-ui-table-cell">{inner()}</td>'
+        # Pass table-cell context to handle multi-line content
+        cell_html = ""
+        for child in content:
+            if isinstance(child, dict) and child.get("nodeType") == "paragraph":
+                # For paragraphs in table cells, render specially to handle multi-line
+                para_content = child.get("content", [])
+                text_values = []
+                for text_node in para_content:
+                    if isinstance(text_node, dict) and text_node.get("nodeType") == "text":
+                        text_values.append(esc(text_node.get("value", "")))
+                if text_values:
+                    cell_html += "<br>".join(text_values)
+                else:
+                    cell_html += render_rt(child, "table-cell")
+            else:
+                cell_html += render_rt(child, "table-cell")
+        return f'<td class="css-s8xoeu" data-test-id="cf-ui-table-cell">{cell_html}</td>'
     else:
         return inner()
 
@@ -353,11 +380,24 @@ def collect_links(node, ctx="auto"):
 def _scalar_or_rt(val):
     """
     Render a profile cell value: plain scalar, rich-text doc, or list of
-    linked entries.  Returns '-' for absent/empty values.
+    linked entries. Returns '-' for absent/empty values.
+    Handles multi-paragraph rich-text by extracting all text nodes and joining with <br>.
     """
     if not _is_present(val):
         return "-"
     if isinstance(val, dict) and "content" in val:
+        # Handle rich-text with multiple paragraphs (like Range with multiple values)
+        text_values = []
+        for para in val.get("content", []):
+            if isinstance(para, dict) and para.get("nodeType") == "paragraph":
+                for text_node in para.get("content", []):
+                    if isinstance(text_node, dict) and text_node.get("nodeType") == "text":
+                        text_val = text_node.get("value", "").strip()
+                        if text_val:
+                            text_values.append(esc(text_val))
+        if text_values:
+            return "<br>".join(text_values)
+        # Fallback to standard rendering
         return render_rt(val)
     if isinstance(val, list):
         parts = []
@@ -375,6 +415,61 @@ def _scalar_or_rt(val):
             else:
                 parts.append(esc(str(item)))
         return ", ".join(parts) if parts else "-"
+    return esc(str(val))
+
+
+def _format_special_rules_cell(val):
+    """
+    Format special rules as a vertical list using <span class="detailed-link"> elements.
+    Each rule gets wrapped in a span so the CSS stacks them on separate lines.
+    SVG icons are removed for a cleaner appearance.
+    
+    Handles both:
+    - List of linked entries (most common for unit pages)
+    - Rich-text documents with entry-hyperlinks (weapons-of-war embedded profiles)
+    """
+    if not _is_present(val):
+        return "-"
+    
+    # Handle rich-text documents (extract entry-hyperlinks and format them)
+    if isinstance(val, dict) and "content" in val:
+        # Extract all entry-hyperlinks from the rich-text document
+        links = collect_links(val, "rules")
+        if links:
+            parts = []
+            for href, label in links:
+                parts.append(
+                    f'<span class="detailed-link">'
+                    f'<a href="{href}">{label}</a>'
+                    f'</span>'
+                )
+            return "".join(parts)
+        # If no links found, fall back to standard rich-text rendering
+        return render_rt(val)
+    
+    # Handle list of linked entries (most common for special rules)
+    if isinstance(val, list):
+        parts = []
+        for item in val:
+            if isinstance(item, dict):
+                f    = item.get("fields", {})
+                name = f.get("name", "")
+                slug = f.get("slug", "")
+                ct   = item.get("sys", {}).get("contentType", {}).get("sys", {}).get("id", "")
+                path = CONTENT_TYPE_PATHS.get(ct, "/special-rules")
+                if slug:
+                    parts.append(
+                        f'<span class="detailed-link">'
+                        f'<a href="{BASE_URL}{path}/{slug}">{esc(name)}</a>'
+                        f'</span>'
+                    )
+                elif name:
+                    parts.append(f'<span class="detailed-link">{esc(name)}</span>')
+            else:
+                parts.append(f'<span class="detailed-link">{esc(str(item))}</span>')
+        
+        return "".join(parts) if parts else "-"
+    
     return esc(str(val))
 
 
@@ -405,6 +500,25 @@ def html_shell(title_text, body_html, canonical_path):
     <link rel="stylesheet" href="{css_path}/29367497e701a5f5.css">
     <link rel="preload" href="{css_path}/0f8fcb57f7477acb.css" as="style">
     <link rel="stylesheet" href="{css_path}/0f8fcb57f7477acb.css">
+    <style>
+      /* Make weapon profile tables full width */
+      .weapon-profile-table {{
+        width: 100%;
+      }}
+      /* Center-align all cells in weapon profile tables */
+      .weapon-profile-table tbody td {{
+        text-align: center;
+        vertical-align: middle;
+      }}
+      /* Stack special rules vertically using spans */
+      .profile-table span {{
+        display: block;
+        margin: 0;
+      }}
+      .profile-table span:nth-of-type(n+2) {{
+        margin-top: .25rem !important;
+      }}
+    </style>
   </head>
   <body>
     <div id="__next">
@@ -519,7 +633,7 @@ def render_profile_table(fields, slug):
         return ""
 
     sr_field    = fields.get("specialRules")
-    sr_col_html = _scalar_or_rt(sr_field) if _is_present(sr_field) else "-"
+    sr_col_html = _format_special_rules_cell(sr_field) if _is_present(sr_field) else "-"
 
     def _th(label):
         return f'\n                <th class="css-9p6xbs" data-test-id="cf-ui-table-cell">{label}</th>'
@@ -532,7 +646,7 @@ def render_profile_table(fields, slug):
 
     return (
         f'\n        <div class="table-wrapper {slug}">'
-        f'\n          <table class="generic-table weapon-profile-table css-1hz7skb"'
+        f'\n          <table class="generic-table weapon-profile-table profile-table css-1hz7skb"'
         f' data-test-id="cf-ui-table" cellpadding="0" cellspacing="0">'
         f'\n            <thead class="css-1sojo49" data-test-id="cf-ui-table-head">'
         f'\n              <tr class="css-1sydf7g" data-test-id="cf-ui-table-row">'

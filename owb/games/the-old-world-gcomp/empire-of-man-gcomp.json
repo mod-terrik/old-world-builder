@@ -221,11 +221,6 @@
           "name_fr": "Demigriffon",
           "name_es": "Semigrifo",
           "points": 50,
-          "notes": {
-            "name_en": "Toughness +1",
-            "name_de": "+1 Widerstand",
-            "name_fr": "+1 endurance"
-          }
         },
         {
           "name_en": "Griffon {empire}",
@@ -511,11 +506,6 @@
           "name_fr": "Demigriffon",
           "name_es": "Semigrifo",
           "points": 50,
-          "notes": {
-            "name_en": "Toughness +1",
-            "name_de": "+1 Widerstand",
-            "name_fr": "+1 endurance"
-          }
         },
         {
           "name_en": "Griffon {empire}",
@@ -1168,11 +1158,6 @@
           "name_fr": "Demigriffon",
           "name_es": "Semigrifo",
           "points": 50,
-          "notes": {
-            "name_en": "Toughness +1",
-            "name_de": "+1 Widerstand",
-            "name_fr": "+1 endurance"
-          }
         },
         {
           "name_en": "Griffon {empire}",
@@ -1544,11 +1529,6 @@
           "name_fr": "Demigriffon",
           "name_es": "Semigrifo",
           "points": 50,
-          "notes": {
-            "name_en": "Toughness +1",
-            "name_de": "+1 Widerstand",
-            "name_fr": "+1 endurance"
-          }
         },
         {
           "name_en": "Griffon {empire}",
@@ -2005,11 +1985,6 @@
             "knightly-order-panther",
             "knightly-order-fiery-heart"
           ],
-          "notes": {
-            "name_en": "Toughness +1",
-            "name_de": "+1 Widerstand",
-            "name_fr": "+1 endurance"
-          }
         }
       ],
       "items": [
@@ -2203,11 +2178,6 @@
             "knightly-order-fiery-heart",
             "knightly-order-blazing-sun"
           ],
-          "notes": {
-            "name_en": "Toughness +1",
-            "name_de": "+1 Widerstand",
-            "name_fr": "+1 endurance"
-          }
         }
       ],
       "items": [
@@ -2392,11 +2362,6 @@
             "knightly-order-panther",
             "knightly-order-white-wolf"
           ],
-          "notes": {
-            "name_en": "Toughness +1",
-            "name_de": "+1 Widerstand",
-            "name_fr": "+1 endurance"
-          }
         }
       ],
       "items": [
@@ -2594,11 +2559,6 @@
             "knightly-order-white-wolf",
             "knightly-order-blazing-sun"
           ],
-          "notes": {
-            "name_en": "Toughness +1",
-            "name_de": "+1 Widerstand",
-            "name_fr": "+1 endurance"
-          }
         }
       ],
       "items": [

@@ -76,6 +76,14 @@ const isGraveGuard = (unit) => {
   return unitName.toLowerCase().includes("grave") && unitName.toLowerCase().includes("guard");
 };
 
+/**
+ * Check if the army is Vampire Counts or a Vampire Counts-based composition (like Renegade)
+ */
+const isVampireCountsArmy = (list) => {
+  return list.army === "vampire-counts" || 
+         (list.armyComposition && list.armyComposition.includes("vampire-counts"));
+};
+
 export const validateList = ({ list, language, intl }) => {
   const errors = [];
   const generals = !list?.characters?.length
@@ -598,7 +606,8 @@ export const validateList = ({ list, language, intl }) => {
   }
 
   // Vampire Counts - Grave Guard 400 points limit (Core section only)
-  if (list.army === "vampire-counts" && list?.core?.length) {
+  // Works for both base Vampire Counts army and Vampire Counts-based compositions (e.g., Renegade)
+  if (isVampireCountsArmy(list) && list?.core?.length) {
     let coreGraveGuardPoints = 0;
     list.core.forEach((unit) => {
       if (isGraveGuard(unit)) {

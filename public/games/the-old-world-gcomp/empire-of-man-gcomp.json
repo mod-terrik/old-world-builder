@@ -221,6 +221,8 @@
           "name_fr": "Demigriffon",
           "name_es": "Semigrifo",
           "points": 50,
+          "notes": {
+          }
         },
         {
           "name_en": "Griffon {empire}",
@@ -506,6 +508,8 @@
           "name_fr": "Demigriffon",
           "name_es": "Semigrifo",
           "points": 50,
+          "notes": {
+          }
         },
         {
           "name_en": "Griffon {empire}",
@@ -1158,6 +1162,8 @@
           "name_fr": "Demigriffon",
           "name_es": "Semigrifo",
           "points": 50,
+          "notes": {
+          }
         },
         {
           "name_en": "Griffon {empire}",
@@ -1529,6 +1535,8 @@
           "name_fr": "Demigriffon",
           "name_es": "Semigrifo",
           "points": 50,
+          "notes": {
+          }
         },
         {
           "name_en": "Griffon {empire}",
@@ -1985,6 +1993,8 @@
             "knightly-order-panther",
             "knightly-order-fiery-heart"
           ],
+          "notes": {
+          }
         }
       ],
       "items": [
@@ -2178,6 +2188,8 @@
             "knightly-order-fiery-heart",
             "knightly-order-blazing-sun"
           ],
+          "notes": {
+          }
         }
       ],
       "items": [
@@ -2362,6 +2374,8 @@
             "knightly-order-panther",
             "knightly-order-white-wolf"
           ],
+          "notes": {
+          }
         }
       ],
       "items": [
@@ -2559,6 +2573,8 @@
             "knightly-order-white-wolf",
             "knightly-order-blazing-sun"
           ],
+          "notes": {
+          }
         }
       ],
       "items": [

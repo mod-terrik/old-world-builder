@@ -9,12 +9,31 @@
     <link rel="manifest" href="/owb/rules/icons/tow/site.webmanifest">
     <link rel="shortcut icon" href="/owb/rules/icons/tow/favicon.ico">
     <meta name="theme-color" content="#ffffff">
-    <title>The Fellblade | Warhammer: The Old World</title>
-    <link rel="canonical" href="the-fellblade.html">
+    <title>Zzzzap! | Warhammer: The Old World</title>
+    <link rel="canonical" href="zzzzap.html">
     <link rel="preload" href="/owb/rules/_next/static/css/29367497e701a5f5.css" as="style">
     <link rel="stylesheet" href="/owb/rules/_next/static/css/29367497e701a5f5.css">
     <link rel="preload" href="/owb/rules/_next/static/css/0f8fcb57f7477acb.css" as="style">
     <link rel="stylesheet" href="/owb/rules/_next/static/css/0f8fcb57f7477acb.css">
+    <style>
+      /* Make weapon profile tables full width */
+      .weapon-profile-table {
+        width: 100%;
+      }
+      /* Center-align all cells in weapon profile tables */
+      .weapon-profile-table tbody td {
+        text-align: center;
+        vertical-align: middle;
+      }
+      /* Stack special rules vertically using spans */
+      .profile-table span {
+        display: block;
+        margin: 0;
+      }
+      .profile-table span:nth-of-type(n+2) {
+        margin-top: .25rem !important;
+      }
+    </style>
   </head>
   <body>
     <div id="__next">
@@ -25,16 +44,11 @@
               <p class="minimal-source">
                 <span>Source: <a href="https://tow.whfb.app" target="_blank">Warhammer: The Old World Online Rules Index</a></span>
               </p>
-              <h1 class="page-title">The Fellblade</h1>
-              <div class="rule-entry magic-item the-fellblade">
-        <div class="unit-profile__details">
-          <div class="unit-profile__details--points">
-            <span class="magic-item__type">Magic Weapon</span> &nbsp;&middot;&nbsp; <span class="magic-item__cost">100 points</span>
-          </div>
-        </div>
-        <div class="rule-entry__description"><em><p>This most terrible of weapons was forged to slay Nagash himself. No foe can stand before it and even the wielder must eventually succumb to its baleful effects.</p></em></div>
+              <h1 class="page-title">Zzzzap!</h1>
+              <div class="rule-entry special-rule zzzzap">
+        <div class="rule-entry__description"><em><p>As hordes of rats scamper in treadmills to propel a Doomwheel, warpstone generators spark into life, unleashing lethal bolts of warp lightning across the battlefield.</p></em></div>
         <div class="rule-entry__notes">
-          <p><b><i>Notes:</i></b><i> Characters whose Troop Type is </i><a href="https://tow.whfb.app/troop-types-in-detail/infantry"><i>infantry</i></a><i> only. No </i><a href="https://tow.whfb.app/special-rules/make-armour-saves-combat"><i>armour</i></a><i>, </i><a href="https://tow.whfb.app/special-rules/ward-saves"><i>Ward</i></a><i> or </i><a href="https://tow.whfb.app/special-rules/regeneration"><i>Regeneration</i></a><i> saves are permitted against wounds caused by this weapon. However, during the Command sub-phase of their turn, the wielder of the Fellblade must roll a D6. On a roll of 1, they lose a single Wound.</i></p>
+          <p>At the end of every <a href="https://tow.whfb.app/the-shooting-phase">Shooting phase</a>, after all shooting has been resolved, place up to three small (3") blast templates so that their central hole is within 6" of this model. Once placed, each template will scatter D6". Any model (friend or foe) whose base lies underneath a template's final position risks being hit and suffering a single hit, the Strength of which is determined by rolling an Artillery dice. Each hit has an <a href="https://tow.whfb.app/special-rules/armour-piercing">AP</a> of -2.</p><p>If a 'Misfire' is rolled when rolling to determine the Strength of a template, this model suffers the brunt of the warp lightning bolt. The template is removed and any models hit by it are left unharmed, but this model loses a single Wound.<br><br>The templates cannot hit the Doomwheel itself, and will stop in place if they would move onto the model.</p>
         </div>
               </div>
             </div>

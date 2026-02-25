@@ -220,9 +220,7 @@
           "name_de": "Demigreif",
           "name_fr": "Demigriffon",
           "name_es": "Semigrifo",
-          "points": 50,
-          "notes": {
-          }
+          "points": 50
         },
         {
           "name_en": "Griffon {empire}",
@@ -507,9 +505,7 @@
           "name_de": "Demigreif",
           "name_fr": "Demigriffon",
           "name_es": "Semigrifo",
-          "points": 50,
-          "notes": {
-          }
+          "points": 50
         },
         {
           "name_en": "Griffon {empire}",
@@ -1161,9 +1157,7 @@
           "name_de": "Demigreif",
           "name_fr": "Demigriffon",
           "name_es": "Semigrifo",
-          "points": 50,
-          "notes": {
-          }
+          "points": 50
         },
         {
           "name_en": "Griffon {empire}",
@@ -1534,9 +1528,7 @@
           "name_de": "Demigreif",
           "name_fr": "Demigriffon",
           "name_es": "Semigrifo",
-          "points": 50,
-          "notes": {
-          }
+          "points": 50
         },
         {
           "name_en": "Griffon {empire}",
@@ -1992,11 +1984,9 @@
           "armyComposition": [
             "knightly-order-panther",
             "knightly-order-fiery-heart"
-          ],
-          "notes": {
-          }
+          ]
         }
-      ],
+      ], 
       "items": [
         {
           "name_en": "Magic Items",
@@ -2187,11 +2177,9 @@
             "knightly-order-panther",
             "knightly-order-fiery-heart",
             "knightly-order-blazing-sun"
-          ],
-          "notes": {
-          }
+        ]
         }
-      ],
+      ], 
       "items": [
         {
           "name_en": "Magic Items",
@@ -2373,11 +2361,9 @@
           "armyComposition": [
             "knightly-order-panther",
             "knightly-order-white-wolf"
-          ],
-          "notes": {
-          }
+         ]
         }
-      ],
+      ], 
       "items": [
         {
           "name_en": "Magic Items",
@@ -2572,11 +2558,9 @@
             "knightly-order-panther",
             "knightly-order-white-wolf",
             "knightly-order-blazing-sun"
-          ],
-          "notes": {
-          }
+         ]
         }
-      ],
+      ], 
       "items": [
         {
           "name_en": "Magic Items",

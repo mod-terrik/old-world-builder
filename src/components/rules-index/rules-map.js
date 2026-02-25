@@ -1,6 +1,39 @@
 import rulesIndexExport from "./rules-index-export.json";
 
 const additionalOWBRules = {
+  "zzzzap": { fullUrl: "https://owapps.grra.me/owb/rules/special-rules/zzzzap.html?minimal=true" },
+  "doomwheel": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/doomwheel.html?minimal=true",
+    stats: [
+      { Name: "Doomwheel", M: "3D6", WS: "-", BS: "-", S: "5", T: "5", W: "4", I: "-", A: "-", Ld: "-" },
+      { Name: "Warlock (x1)", M: "-", WS: "3", BS: "3", S: "3", T: "-", W: "-", I: "3", A: "1", Ld: "7" },
+      { Name: "Rats", M: "-", WS: "2", BS: "0", S: "2", T: "-", W: "-", I: "4", A: "2D6", Ld: "5" }
+    ]
+  },
+  "hippogryph": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/hippogryph.html?minimal=true",
+    stats: [
+      { Name: "Hippogryph", M: "7", WS: "5", BS: "-", S: "5", T: "(+1)", W: "(+3)", I: "5", A: "4", Ld: "-" }
+    ]
+  },
+  "imperial griffon": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/imperial-griffon.html?minimal=true",
+    stats: [
+      { Name: "Imperial Griffon", M: "6", WS: "5", BS: "-", S: "6", T: "(+1)", W: "(+4)", I: "4", A: "4", Ld: "-" }
+    ]
+  },
+  "griffon high elves": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/griffon-high-elves.html?minimal=true",
+    stats: [
+      { Name: "Griffon", M: "6", WS: "5", BS: "-", S: "5", T: "(+2)", W: "(+3)", I: "5", A: "4", Ld: "-" }
+    ]
+  },
+  "griffon empire": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/griffon-empire.html?minimal=true",
+    stats: [
+      { Name: "Griffon", M: "6", WS: "5", BS: "-", S: "5", T: "(+1)", W: "(+3)", I: "5", A: "4", Ld: "-" }
+    ]
+  },
   "serrated maw": { fullUrl: "https://owapps.grra.me/owb/rules/weapons-of-war/serrated-maw.html?minimal=true" },
   "chaos trolls": {
     fullUrl: "https://owapps.grra.me/owb/rules/unit/chaos-trolls.html?minimal=true",

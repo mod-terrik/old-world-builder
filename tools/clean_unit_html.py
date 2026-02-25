@@ -3,7 +3,7 @@
 clean_unit_html.py -- Generate static HTML pages mirroring tow.whfb.app
 
 Usage:
-  python3 clean_unit_html.py --fetch <slug> [--type unit|weapons-of-war|magic-item] [--out <dir>]
+  python3 clean_unit_html.py --fetch <slug> [--type unit|weapons-of-war|magic-item|special-rule] [--out <dir>]
 
   --type   defaults to 'unit' for backward compatibility.
            Use 'magic-item' (singular) to match the live site URL.
@@ -16,6 +16,7 @@ Examples:
   python3 clean_unit_html.py --fetch halberd --type weapons-of-war
   python3 clean_unit_html.py --fetch the-fellblade --type magic-item
   python3 clean_unit_html.py --fetch the-fellblade --type magic-item --debug
+  python3 clean_unit_html.py --fetch fly --type special-rule
   python3 clean_unit_html.py --fetch grave-guard
 """
 
@@ -31,6 +32,7 @@ FETCH_ROUTES = {
     "unit":           "unit",
     "weapons-of-war": "weapons-of-war",
     "magic-item":     "magic-item",    # singular -- matches tow.whfb.app/magic-item/<slug>
+    "special-rule":   "special-rules",  # fetch route uses plural
 }
 
 # Default local output dirs relative to this script
@@ -39,6 +41,7 @@ DEFAULT_OUT_DIRS = {
     "weapons-of-war": "../rules/weapons-of-war",
     "magic-item":     "../rules/magic-items",   # stored locally under magic-items (plural)
     "magic-items":    "../rules/magic-items",
+    "special-rule":   "../rules/special-rules",
 }
 
 # rules-map fullUrl subdirectory names (what the hosted app expects)
@@ -47,6 +50,7 @@ RULES_MAP_SUBDIRS = {
     "weapons-of-war": "weapons-of-war",
     "magic-item":     "magic-items",
     "magic-items":    "magic-items",
+    "special-rule":   "special-rules",
 }
 
 # Base URL for rules-map fullUrl entries
@@ -536,6 +540,85 @@ def html_shell(title_text, body_html, canonical_path):
         </div>
       </div>
     </div>
+    <style>
+      /* Minimal mode styling - matches tow.whfb.app minimal header */
+      body.minimal-mode .minimal-source {{
+        font-size: 14px;
+        margin: 10px 0;
+        padding: 0;
+      }}
+      
+      body.minimal-mode .minimal-source span {{
+        display: none;
+      }}
+      
+      body.minimal-mode .minimal-source::before {{
+        content: 'Back';
+        color: #0066cc;
+        text-decoration: none;
+        margin-right: 20px;
+        cursor: pointer;
+      }}
+      
+      body.minimal-mode .minimal-source::after {{
+        content: 'Source: ';
+        margin-left: 0;
+      }}
+      
+      body.minimal-mode .minimal-source a {{
+        color: #0066cc;
+        text-decoration: none;
+        font-weight: normal;
+      }}
+      
+      body.minimal-mode .minimal-source a:hover {{
+        text-decoration: underline;
+      }}
+      
+      /* Hide the full header elements in minimal mode */
+      body.minimal-mode .css-1kvywv3 {{
+        padding: 10px;
+      }}
+    </style>
+    <script>
+      // Check for minimal=true parameter and apply minimal mode
+      (function() {{
+        const urlParams = new URLSearchParams(window.location.search);
+        const isMinimal = urlParams.get('minimal') === 'true';
+        
+        if (isMinimal) {{
+          document.body.classList.add('minimal-mode');
+          
+          // Add back button functionality
+          const minimalSource = document.querySelector('.minimal-source');
+          if (minimalSource) {{
+            minimalSource.style.cursor = 'pointer';
+            minimalSource.addEventListener('click', function(e) {{
+              if (e.target === this || e.offsetX < 60) {{
+                window.history.back();
+              }}
+            }});
+          }}
+          
+          // Add minimal=true to all tow.whfb.app links for consistent navigation
+          document.querySelectorAll('a[href^="https://tow.whfb.app"]').forEach(function(link) {{
+            const href = link.getAttribute('href');
+            
+            // Skip if already has minimal parameter
+            if (href.includes('minimal=')) return;
+            
+            // Skip asset files (images, icons, css, etc)
+            const skipExtensions = ['.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico', '.css', '.js', '.woff', '.woff2', '.ttf', '.webmanifest', '.json'];
+            if (skipExtensions.some(ext => href.toLowerCase().endsWith(ext))) return;
+            if (href.includes('/icons/') || href.includes('/static/') || href.includes('/_next/')) return;
+            
+            // Add minimal=true parameter
+            const separator = href.includes('?') ? '&' : '?';
+            link.setAttribute('href', href + separator + 'minimal=true');
+          }});
+        }}
+      }})();
+    </script>
   </body>
 </html>
 """
@@ -876,6 +959,45 @@ def render_magic_item(fields, slug):
     return html_shell(name, body, f"{slug}.html")
 
 
+# -- special-rule page renderer -----------------------------------------------
+
+def render_special_rule(fields, slug):
+    """
+    Render a special-rule page.
+    Layout (matching live site):
+      h1  name
+      [breadcrumb timestamp]
+      div.rule-entry.special-rule
+        [description para -- italic flavour text]
+        div.rule-entry__notes  <body rich-text with paragraphs and lists>
+    """
+    name     = fields.get("name", slug)
+    last_upd = fields.get("lastUpdated", "")
+
+    # Flavour / description text (italic, above the body)
+    desc_val  = first_field(fields, DESCRIPTION_FIELD_CANDIDATES)
+    desc_html = f'\n        <div class="rule-entry__description"><em>{rt_to_html(desc_val)}</em></div>' if desc_val else ""
+
+    # Body text (main rule content)
+    body_val  = first_field(fields, NOTES_FIELD_CANDIDATES)
+    body_html = rt_to_html(body_val)
+    notes_block = (
+        f'\n        <div class="rule-entry__notes">'
+        f'\n          {body_html}'
+        f'\n        </div>'
+    ) if body_html else ""
+
+    body = (
+        f'              <h1 class="page-title">{esc(name)}</h1>'
+        f'{render_timestamp(last_upd)}'
+        f'\n              <div class="rule-entry special-rule {slug}">'
+        f'{desc_html}'
+        f'{notes_block}'
+        f'\n              </div>'
+    )
+    return html_shell(name, body, f"{slug}.html")
+
+
 # -- interactive stat editing (unit only) -------------------------------------
 
 def edit_single_unit(unit_profile, unit_idx):
@@ -1163,6 +1285,14 @@ def fetch_and_save(slug, content_type, build_id, out_dir, rules_map_path, debug=
     elif content_type == "magic-item":
         stats      = None
         html       = render_magic_item(fields, slug)
+        desc_key   = next((k for k in DESCRIPTION_FIELD_CANDIDATES if fields.get(k)), None)
+        notes_key  = next((k for k in NOTES_FIELD_CANDIDATES       if fields.get(k)), None)
+        print(f"  Description field : {desc_key  or '(none)'}")
+        print(f"  Notes field       : {notes_key or '(none)'}")
+
+    elif content_type == "special-rule":
+        stats      = None
+        html       = render_special_rule(fields, slug)
         desc_key   = next((k for k in DESCRIPTION_FIELD_CANDIDATES if fields.get(k)), None)
         notes_key  = next((k for k in NOTES_FIELD_CANDIDATES       if fields.get(k)), None)
         print(f"  Description field : {desc_key  or '(none)'}")

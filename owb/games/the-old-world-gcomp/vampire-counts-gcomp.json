@@ -793,11 +793,11 @@
         "name_fr": "Sombre Vitalité, Inflammable, Haine (Tous les ennemis), Indomptable (1), Domaine de la Non-vie, Mort-vivant Nécromantique, Attaques Empoisonnées, Régénération (5+), La Soif Rouge"
       },
       "notes": {
-        "name_en": "0-1 per 1000 points. If your general is a Strigoi Ghoul King, improve the Weaopon Skill and Regeneration Value of Strigoi Ghoul Kings, Crypt Horrors, Vargheists and Varghulfs by 1",
-        "name_cn": "每1000分0-1. If your general is a Strigoi Ghoul King, improve the Weaopon Skill and Regeneration Value of Strigoi Ghoul Kings, Crypt Horrors, Vargheists and Varghulfs by 1",
-        "name_de": "0-1 pro 1000 Punkte. If your general is a Strigoi Ghoul King, improve the Weaopon Skill and Regeneration Value of Strigoi Ghoul Kings, Crypt Horrors, Vargheists and Varghulfs by 1",
-        "name_es": "0-1 per 1000 points. If your general is a Strigoi Ghoul King, improve the Weaopon Skill and Regeneration Value of Strigoi Ghoul Kings, Crypt Horrors, Vargheists and Varghulfs by 1",
-        "name_fr": "0-1 par tranche de 1000 points. If your general is a Strigoi Ghoul King, improve the Weaopon Skill and Regeneration Value of Strigoi Ghoul Kings, Crypt Horrors, Vargheists and Varghulfs by 1"
+        "name_en": "0-1 per 1000 points.",
+        "name_cn": "每1000分0-1.",
+        "name_de": "0-1 pro 1000 Punkte.",
+        "name_es": "0-1 per 1000 points.",
+        "name_fr": "0-1 par tranche de 1000 points."
       }
     },
     {

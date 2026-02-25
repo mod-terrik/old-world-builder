@@ -1,6 +1,51 @@
 import rulesIndexExport from "./rules-index-export.json";
 
 const additionalOWBRules = {
+  "saurus scar veteran": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/saurus-scar-veteran.html?minimal=true",
+    stats: [
+      { Name: "Saurus Scar-Veteran", M: "4", WS: "5", BS: "0", S: "5", T: "5", W: "2", I: "3", A: "4", Ld: "8" }
+    ]
+  },
+  "saurus oldblood": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/saurus-oldblood.html?minimal=true",
+    stats: [
+      { Name: "Saurus Oldblood", M: "4", WS: "6", BS: "0", S: "5", T: "5", W: "3", I: "3", A: "5", Ld: "8" }
+    ]
+  },
+  "saurus warriors": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/saurus-warriors.html?minimal=true",
+    stats: [
+      { Name: "Saurus Warrior", M: "4", WS: "3", BS: "0", S: "4", T: "4", W: "1", I: "1", A: "2", Ld: "8" },
+      { Name: "Spawn Leader", M: "4", WS: "3", BS: "0", S: "4", T: "4", W: "1", I: "1", A: "3", Ld: "8" }
+    ]
+  },
+  "crypt horrors": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/crypt-horrors.html?minimal=true",
+    stats: [
+      { Name: "Crypt Horror", M: "6", WS: "3", BS: "0", S: "4", T: "5", W: "3", I: "2", A: "3", Ld: "5" },
+      { Name: "Crypt Haunter", M: "6", WS: "3", BS: "0", S: "4", T: "5", W: "3", I: "2", A: "4", Ld: "5" }
+    ]
+  },
+  "varghulf": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/varghulf.html?minimal=true",
+    stats: [
+      { Name: "Varghulf", M: "8", WS: "5", BS: "0", S: "5", T: "5", W: "4", I: "4", A: "4", Ld: "4" }
+    ]
+  },
+  "vargheists": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/vargheists.html?minimal=true",
+    stats: [
+      { Name: "Vargheist", M: "6", WS: "4", BS: "0", S: "5", T: "4", W: "3", I: "4", A: "3", Ld: "7" },
+      { Name: "Vargoyle", M: "6", WS: "4", BS: "0", S: "5", T: "4", W: "3", I: "4", A: "4", Ld: "7" }
+    ]
+  },
+  "strigoi ghoul king": {
+    fullUrl: "https://owapps.grra.me/owb/rules/unit/strigoi-ghoul-king.html?minimal=true",
+    stats: [
+      { Name: "Strigoi Ghoul King", M: "6", WS: "6", BS: "3", S: "5", T: "5", W: "3", I: "7", A: "5", Ld: "8" }
+    ]
+  },
   "zzzzap": { fullUrl: "https://owapps.grra.me/owb/rules/special-rules/zzzzap.html?minimal=true" },
   "doomwheel": {
     fullUrl: "https://owapps.grra.me/owb/rules/unit/doomwheel.html?minimal=true",

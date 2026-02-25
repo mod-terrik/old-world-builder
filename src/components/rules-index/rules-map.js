@@ -1,8 +1,6 @@
 import rulesIndexExport from "./rules-index-export.json";
 
 const additionalOWBRules = {
-  "vanguard": { fullUrl: "https://owapps.grra.me/owb/rules/special-rules/vanguard.html?minimal=true" },
-  "thrusting spear": { fullUrl: "https://owapps.grra.me/owb/rules/weapons-of-war/thrusting-spear.html?minimal=true" },
   "saurus scar veteran": {
     fullUrl: "https://owapps.grra.me/owb/rules/unit/saurus-scar-veteran.html?minimal=true",
     stats: [
@@ -259,7 +257,7 @@ const additionalOWBRules = {
   handguns: { url: "weapons-of-war/handgun" },
   lances: { url: "weapons-of-war/lance" },
   shortbows: { url: "weapons-of-war/shortbow" },
-  "thrusting spears": { url: "weapons-of-war/thrusting-spear" },
+  "thrusting spears": { fullUrl: "https://owapps.grra.me/owb/rules/weapons-of-war/thrusting-spear.html?minimal=true" },
   javelins: { url: "weapons-of-war/javelin" },
   longbows: { url: "weapons-of-war/longbow" },
   pistols: { url: "weapons-of-war/pistol" },

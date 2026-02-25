@@ -77,13 +77,12 @@ const isGraveGuard = (unit) => {
 };
 
 /**
- * Check if the army is Renegade Vampire Counts (gcomp)
+ * Check if the army is German Comp (gcomp) Vampire Counts
+ * This checks if the army ID ends with -gcomp and contains vampire-counts
  */
-const isRenegadeVampireCounts = (list) => {
-  return list.armyComposition === "renegade-vampire-counts" || 
-         list.armyComposition === "vampire-counts-renegade" ||
-         (list.armyComposition && list.armyComposition.includes("renegade") && 
-          list.armyComposition.includes("vampire-counts"));
+const isGcompVampireCounts = (list) => {
+  const army = list.army || "";
+  return army.includes("vampire-counts") && army.includes("-gcomp");
 };
 
 export const validateList = ({ list, language, intl }) => {
@@ -607,9 +606,9 @@ export const validateList = ({ list, language, intl }) => {
       });
   }
 
-  // Renegade Vampire Counts (gcomp) - Grave Guard 400 points limit (Core section only)
-  // This restriction applies ONLY to the Renegade Vampire Counts army composition
-  if (isRenegadeVampireCounts(list) && list?.core?.length) {
+  // German Comp (gcomp) Vampire Counts - Grave Guard 400 points limit (Core section only)
+  // This restriction applies ONLY when the army is vampire-counts-gcomp
+  if (isGcompVampireCounts(list) && list?.core?.length) {
     let coreGraveGuardPoints = 0;
     list.core.forEach((unit) => {
       if (isGraveGuard(unit)) {

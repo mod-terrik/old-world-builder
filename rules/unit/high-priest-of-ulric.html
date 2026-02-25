@@ -107,5 +107,84 @@
         </div>
       </div>
     </div>
+    <style>
+      /* Minimal mode styling - matches tow.whfb.app minimal header */
+      body.minimal-mode .minimal-source {
+        font-size: 14px;
+        margin: 10px 0;
+        padding: 0;
+      }
+      
+      body.minimal-mode .minimal-source span {
+        display: none;
+      }
+      
+      body.minimal-mode .minimal-source::before {
+        content: 'Back';
+        color: #0066cc;
+        text-decoration: none;
+        margin-right: 20px;
+        cursor: pointer;
+      }
+      
+      body.minimal-mode .minimal-source::after {
+        content: 'Source: ';
+        margin-left: 0;
+      }
+      
+      body.minimal-mode .minimal-source a {
+        color: #0066cc;
+        text-decoration: none;
+        font-weight: normal;
+      }
+      
+      body.minimal-mode .minimal-source a:hover {
+        text-decoration: underline;
+      }
+      
+      /* Hide the full header elements in minimal mode */
+      body.minimal-mode .css-1kvywv3 {
+        padding: 10px;
+      }
+    </style>
+    <script>
+      // Check for minimal=true parameter and apply minimal mode
+      (function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const isMinimal = urlParams.get('minimal') === 'true';
+        
+        if (isMinimal) {
+          document.body.classList.add('minimal-mode');
+          
+          // Add back button functionality
+          const minimalSource = document.querySelector('.minimal-source');
+          if (minimalSource) {
+            minimalSource.style.cursor = 'pointer';
+            minimalSource.addEventListener('click', function(e) {
+              if (e.target === this || e.offsetX < 60) {
+                window.history.back();
+              }
+            });
+          }
+          
+          // Add minimal=true to all tow.whfb.app links for consistent navigation
+          document.querySelectorAll('a[href^="https://tow.whfb.app"]').forEach(function(link) {
+            const href = link.getAttribute('href');
+            
+            // Skip if already has minimal parameter
+            if (href.includes('minimal=')) return;
+            
+            // Skip asset files (images, icons, css, etc)
+            const skipExtensions = ['.png', '.jpg', '.jpeg', '.gif', '.svg', '.ico', '.css', '.js', '.woff', '.woff2', '.ttf', '.webmanifest', '.json'];
+            if (skipExtensions.some(ext => href.toLowerCase().endsWith(ext))) return;
+            if (href.includes('/icons/') || href.includes('/static/') || href.includes('/_next/')) return;
+            
+            // Add minimal=true parameter
+            const separator = href.includes('?') ? '&' : '?';
+            link.setAttribute('href', href + separator + 'minimal=true');
+          });
+        }
+      })();
+    </script>
   </body>
 </html>

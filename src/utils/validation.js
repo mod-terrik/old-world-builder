@@ -68,6 +68,14 @@ const hasSharedCombinedArmsLimit = (otherUnit, unitToValidate) => {
   );
 };
 
+/**
+ * Check if a unit is Grave Guard (case-insensitive)
+ */
+const isGraveGuard = (unit) => {
+  const unitName = unit.name_en || unit.name || "";
+  return unitName.toLowerCase().includes("grave") && unitName.toLowerCase().includes("guard");
+};
+
 export const validateList = ({ list, language, intl }) => {
   const errors = [];
   const generals = !list?.characters?.length
@@ -587,6 +595,29 @@ export const validateList = ({ list, language, intl }) => {
           });
         }
       });
+  }
+
+  // Vampire Counts - Grave Guard 400 points limit (Core section only)
+  if (list.army === "vampire-counts" && list?.core?.length) {
+    let coreGraveGuardPoints = 0;
+    list.core.forEach((unit) => {
+      if (isGraveGuard(unit)) {
+        const unitPoints = getUnitPoints(
+          { ...unit, type: "core" },
+          {
+            armyComposition: list.armyComposition || list.army,
+          },
+        );
+        coreGraveGuardPoints += unitPoints;
+      }
+    });
+
+    if (coreGraveGuardPoints > 400) {
+      errors.push({
+        message: "You cannot have more than 400 points of Grave Guard",
+        section: "core",
+      });
+    }
   }
 
   let used0XUnits = [];

@@ -142,14 +142,14 @@
           "selected": [],
           "maxPoints": 0,
           "notes": {
-        "name_en": "Ignore point costs from Big Names on Bruiser and Tyrant",
+        "name_en": "Big Names are free on tyrant",
         "name_de": "Ignoriere Punktkosten für Große Namen für Tyrann und Brecher"
       }
         }
       ],
       "lores": [],
       "specialRules": {
-        "name_en": "Armour Bane (1), Bull Charge, Fear, Impact Hits (2), Ogre Charge",
+        "name_en": "Armour Bane (1), Bull Charge, Fear, Impact Hits (2), Ogre Charge, Magic Resistance (1), Regeneration (6+)",
         "name_cn": "碎甲攻击(1), 蛮牛冲锋, 恐惧, 撞击(2), 食人魔冲锋",
         "name_fr": "Arme Perforante (1), Charge Buffle, Peur, Touches d'Impact (2), Charge Ogre",
         "name_de": "Rüstungsfluch (1), Walze, Angst, Aufpralltreffer (2), Ogerangriff"
@@ -314,14 +314,14 @@
           "selected": [],
           "maxPoints": 0,
           "notes": {
-        "name_en": "Ignore point costs from Big Names on Bruiser and Tyrant",
+        "name_en": "Big Names are free on Bruiser",
         "name_de": "Ignoriere Punktkosten für Große Namen für Tyrann und Brecher"
       }
         }
       ],
       "lores": [],
       "specialRules": {
-        "name_en": "Armour Bane (1), Bull Charge, Fear, Impact Hits (2), Ogre Charge",
+        "name_en": "Armour Bane (1), Bull Charge, Fear, Impact Hits (2), Ogre Charge, Magic Resistance (1), Regeneration (6+)",
         "name_cn": "碎甲攻击(1), 蛮牛冲锋, 恐惧, 撞击(2), 食人魔冲锋",
         "name_fr": "Arme Perforante (1), Charge Buffle, Peur, Touches d'Impact (2), Charge Ogre",
         "name_de": "Rüstungsfluch (1), Walze, Angst, Aufpralltreffer (2), Ogerangriff"
@@ -435,7 +435,7 @@
       ],
       "lores": ["battle-magic", "elementalism", "illusion"],
       "specialRules": {
-        "name_en": "Armour Bane (1), Fear, Impact Hits (2), Lore of the Great Maw, Ogre Charge",
+        "name_en": "Armour Bane (1), Fear, Impact Hits (2), Lore of the Great Maw, Ogre Charge, Magic Resistance (1), Regeneration (6+)",
         "name_cn": "碎甲攻击(1), 恐惧, 撞击(2), 大胃之神法系, 食人魔冲锋",
         "name_fr": "Arme Perforante (1), Peur, Touches d'Impact (2), Domaine de La Gueule, Charge Ogre",
         "name_de": "Rüstungsfluch (1), Angst, Aufpralltreffer (2), Lehre des Großen Schlundes, Ogerangriff"
@@ -547,7 +547,7 @@
       ],
       "lores": ["battle-magic", "elementalism", "illusion"],
       "specialRules": {
-        "name_en": "Armour Bane (1), Fear, Impact Hits (2), Lore of the Great Maw, Ogre Charge",
+        "name_en": "Armour Bane (1), Fear, Impact Hits (2), Lore of the Great Maw, Ogre Charge, Magic Resistance (1), Regeneration (6+)",
         "name_cn": "碎甲攻击(1), 恐惧, 撞击(2), 大胃之神法系, 食人魔冲锋",
         "name_fr": "Arme Perforante (1), Peur, Touches d'Impact (2), Domaine de La Gueule, Charge Ogre",
         "name_de": "Rüstungsfluch (1), Angst, Aufpralltreffer (2), Lehre des Großen Schlundes, Ogerangriff"
@@ -679,7 +679,7 @@
       ],
       "lores": [],
       "specialRules": {
-        "name_en": "Armour Bane (1), Fear, Impact Hits (1), Loner, Move Through Cover, Ogre Charge, Running with the Pack {renegade}",
+        "name_en": "Armour Bane (1), Fear, Impact Hits (1), Loner, Move Through Cover, Ogre Charge, Magic Resistance (1), Regeneration (6+), Running with the Pack {renegade}",
         "name_cn": "碎甲攻击(1), 恐惧, 撞击(1), 独行, 穿行掩体, 食人魔冲锋, 与兽同行 {renegade}",
         "name_fr": "Arme Perforante (1), Peur, Touches d'Impact (1), Solitaire, Mouvement à Couvert, Charge Ogre, Courir avec la Meute",
         "name_de": "Rüstungsfluch (1), Angst, Aufpralltreffer (1), Einzelgänger, Durch Deckung bewegen, Ogerangriff, Teil des Rudels"
@@ -774,7 +774,7 @@
       ],
       "lores": ["battle-magic", "elementalism"],
       "specialRules": {
-        "name_en": "Armour Bane (1), Blessings of the Volcano God, Fear, Flaming Attacks, Impact Hits (1), Ogre Charge",
+        "name_en": "Armour Bane (1), Blessings of the Volcano God, Fear, Flaming Attacks, Impact Hits (1), Ogre Charge, Magic Resistance (1), Regeneration (6+)",
         "name_cn": "碎甲攻击(1), 火嘴神的祝福, 恐惧, 火焰攻击, 撞击(1), 食人魔冲锋",
         "name_fr": "Arme Perforante (1), Bénédictions du Dieu Volcan, Peur, Attaques Enflammées, Touches d'Impact (1), Charge Ogre",
         "name_de": "Rüstungsfluch (1), Segen des Vulkangottes, Angst, Flammenattacken, Aufpralltreffer (1), Ogerangriff"
@@ -808,7 +808,7 @@
         "ok-renegade": {
           "category": "core",
           "specialRules": {
-            "name_en": "Armour Bane (1), Close Order, Fear, Impact Hits (1), Ogre Charge, Monstrous Ranks {renegade}",
+            "name_en": "Armour Bane (1), Close Order, Fear, Impact Hits (1), Ogre Charge, Magic Resistance (1), Monstrous Ranks {renegade}, Regeneration (6+), Warband",
             "name_cn": "碎甲攻击(1), 紧密阵型, 恐惧, 撞击(1), 食人魔冲锋, Monstrous Ranks",
             "name_de": "Rüstungsfluch (1), Geschlossene Ränge, Angst, Aufpralltreffer (1), Ogerangriff, Monstrous Ranks",
             "name_es": "Armour Bane (1), Close Order, Fear, Impact Hits (1), Ogre Charge, Monstrous Ranks",
@@ -952,7 +952,7 @@
         "ok-renegade": {
           "category": "core",
           "specialRules": {
-            "name_en": "Close Order, Fear, Impact Hits (1), Ogre Charge, Monstrous Ranks {renegade}",
+            "name_en": "Close Order, Fear, Impact Hits (1), Ogre Charge, Magic Resistance (1), Regeneration (6+), Monstrous Ranks {renegade}",
             "name_cn": "紧密阵型, 恐惧, 撞击(1), 食人魔冲锋, Monstrous Ranks",
             "name_de": "Angst, Aufpralltreffer (1), Geschlossene Ränge, Ogerangriff, Monstrous Ranks",
             "name_es": "Close Order, Fear, Impact Hits (1), Ogre Charge, Monstrous Ranks",
@@ -1297,7 +1297,7 @@
         "ok-renegade": {
           "category": "special",
           "specialRules": {
-            "name_en": "Close Order, Fear, Impact Hits (1), Ogre Charge, Monstrous Ranks {renegade}",
+            "name_en": "Close Order, Fear, Impact Hits (1), Ogre Charge, Magic Resistance (1), Regeneration (6+), Monstrous Ranks {renegade}",
             "name_cn": "紧密阵型, 恐惧, 撞击(1), 食人魔冲锋, Monstrous Ranks",
             "name_de": "Geschlossene Ränge, Angst, Aufpralltreffer (1), Ogerangriff, Monstrous Ranks",
             "name_es": "Close Order, Fear, Impact Hits (1), Ogre Charge, Monstrous Ranks",
@@ -1404,7 +1404,7 @@
         "ok-renegade": {
           "category": "special",
           "specialRules": {
-            "name_en": "Close Order, Fear, Impact Hits (1), Motley Crew, Ogre Charge, Monstrous Ranks {renegade}",
+            "name_en": "Close Order, Fear, Impact Hits (1), Motley Crew, Ogre Charge, Magic Resistance (1), Regeneration (6+), Monstrous Ranks {renegade}",
             "name_cn": "紧密阵型, 恐惧, 撞击(1), 散兵游勇, 食人魔冲锋, Monstrous Ranks",
             "name_de": "Geschlossene Ränge, Angst, Aufpralltreffer (1), Zusammengewürfelter Haufen, Ogerangriff, Monstrous Ranks",
             "name_es": "Close Order, Fear, Impact Hits (1), Motley Crew, Ogre Charge, Monstrous Ranks",
@@ -1717,7 +1717,7 @@
       "items": [],
       "lores": [],
       "specialRules": {
-        "name_en": "Armoured Hide (1), Close Order, Fear, Impact Hits (D3), Mournfang Charge, Swiftstride",
+        "name_en": "Armoured Hide (1), Close Order, Fear, Impact Hits (D3), Mournfang Charge, Swiftstride, Magic Resistance (1), Regeneration (6+)",
         "name_cn": "坚硬皮肤(1), 紧密阵型, 恐惧, 撞击(D3), 丧牙兽冲锋, 快速行进",
         "name_de": "Zähe Haut (1), Geschlossene Ränge, Angst, Aufpralltreffer (W3), Trauerfangangriff, Schnelle Bewegung",
         "name_es": "Armoured Hide (1), Close Order, Fear, Impact Hits (D3), Mournfang Charge, Swiftstride",
@@ -1984,7 +1984,7 @@
       "items": [],
       "lores": [],
       "specialRules": {
-        "name_en": "Armour Bane (2 - Stonehorn only), Close Order, First Charge, Howdah, Impact Hits (D6+1), Large Target, Stone Skeleton, Swiftstride, Terror, Thunderous Charge",
+        "name_en": "Armour Bane (2 - Stonehorn only), Close Order, First Charge, Howdah, Impact Hits (D6+1), Large Target, Magic Resistance (1), Regeneration (6+), Stone Skeleton, Swiftstride, Terror, Thunderous Charge",
         "name_cn": "碎甲攻击(2 - 仅限石角兽), 紧密阵型, 先行冲锋, 驼轿, 撞击(D6+1), 大型目标, 石化骨架, 快速行进, 惊骇, 雷霆冲锋",
         "name_de": "Rüstungsfluch (2 - Nur Steinyak), Geschlossene Ränge, Erster Angriff, Sänfte, Aufpralltreffer (W6+1), Großes Ziel, Steinernes Skelett, Schnelle Bewegung, Entsetzen, Donnernder Angriff",
         "name_es": "Armour Bane (2 - Stonehorn only), Close Order, First Charge, Howdah, Impact Hits (D6+1), Large Target, Stone Skeleton, Swiftstride, Terror, Thunderous Charge",
@@ -2047,7 +2047,7 @@
       "items": [],
       "lores": [],
       "specialRules": {
-        "name_en": "Close Order, First Charge, Howdah, Impact Hits (D3), Large Target, Numbing Chill, Stomp Attacks (3), Swiftstride, Terror",
+        "name_en": "Close Order, First Charge, Howdah, Impact Hits (D3), Large Target, Magic Resistance (1), Numbing Chill, Regeneration (6+), Stomp Attacks (3), Swiftstride, Terror",
         "name_cn": "紧密阵型, 先行冲锋, 驼轿, 撞击(D3), 大型目标, 麻木寒意, 践踏攻击(3), 快速行进, 惊骇",
         "name_de": "Geschlossene Ränge, Erster Angriff, Sänfte, Aufpralltreffer (W3), Großes Ziel, Lähmende Kälte, Stampfattacken (3), Schnelle Bewegung, Entsetzen",
         "name_es": "Close Order, First Charge, Howdah, Impact Hits (D3), Large Target, Numbing Chill, Stomp Attacks (3), Swiftstride, Terror",
@@ -2201,7 +2201,7 @@
       "items": [],
       "lores": [],
       "specialRules": {
-        "name_en": "Ambushers, Close Order, Fear, Frenzy, Ravenous Hunger, Regeneration (6+), Swiftstride, Unbreakable",
+        "name_en": "Ambushers, Close Order, Fear, Frenzy, Ravenous Hunger, Magic Resistance (1), Regeneration (6+), Swiftstride, Unbreakable",
         "name_cn": "伏击, 紧密阵型, 恐惧, 狂暴, 贪婪饥渴, 重生(6+), 快速行进, 永不战败",
         "name_de": "Überfall, Geschlossene Ränge, Angst, Raserei, Ausgehungert, Regeneration (6+), Schnelle Bewegung, Unerschütterlich",
         "name_es": "Ambushers, Close Order, Fear, Frenzy, Ravenous Hunger, Regeneration (6+), Swiftstride, Unbreakable",

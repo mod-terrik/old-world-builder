@@ -218,12 +218,32 @@ export const getUnitPoints = (unit, settings) => {
       },
     );
   }
-
   return unitPoints;
 };
 
 const getMagicItemPoints = ({ item, unit }) => {
+
+  if (item.type === 'big-name') {
+    const freeBigNameUnits = ['tyrant', 'bruiser'];
+    
+    // Try multiple possible name properties
+    const unitName = (unit?.name || unit?.name_en || '').toLowerCase();
+    
+    if (freeBigNameUnits.includes(unitName)) {
+      return 0;
+    }
+  }
+
   let unitPoints = 0;
+
+  // Check if this is a big-name item and unit gets it for free
+  if (item.type === 'big-name') {
+    const freeBigNameUnits = ['tyrant', 'bruiser'];
+    if (unit?.name && freeBigNameUnits.includes(unit.name.toLowerCase())) {
+      return 0; // Big names are free for Tyrants and Bruisers
+    }
+    // For other units (Slaughtermaster, Butcher), fall through to normal pricing
+  }
 
   // Units with points per model
   if (unit.type !== "characters" && item.perModel) {

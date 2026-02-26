@@ -2001,7 +2001,7 @@
     "url": "special-rules/relentless-warriors",
     "page": "AJ:WoC, p. 39"
   },
-  "frenzy": { "url": "special-rules/frenzy", "page": "RB, p. 170" },
+  "frenzy": { "fullUrl": "https://www.owapps.grra.me/owb/rules/special-rules/frenzy.html?minimal=true", "page": "RB, p. 170" },
   "furious charge": {
     "url": "special-rules/furious-charge",
     "page": "RB, p. 171"

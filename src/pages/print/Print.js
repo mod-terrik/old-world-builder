@@ -12,8 +12,11 @@ import { useLanguage } from "../../utils/useLanguage";
 import { getStats, getUnitName } from "../../utils/unit";
 import { nameMap } from "../magic";
 import { getGameSystems } from "../../utils/game-systems";
+import { getUnitCompNotes } from "../../utils/comp-notes-handler";
+import { rulesMap } from "../../components/rules-index/rules-map";
 
 import "./Print.css";
+import "../../styles/comp-notes.css";
 import classNames from "classnames";
 
 export const Print = () => {
@@ -29,6 +32,7 @@ export const Print = () => {
   const [useTwoColumns, setUseTwoColumns] = useState(false);
   const [useThreeColumns, setUseThreeColumns] = useState(false);
   const [showHeadings, setShowHeadings] = useState(true);
+  const [showCompNotes, setShowCompNotes] = useState(true);
   const list = useSelector((state) =>
     state.lists.find(({ id }) => listId === id)
   );
@@ -102,6 +106,14 @@ export const Print = () => {
       },
     },
     {
+      name: "Show Comp Notes",
+      id: "compNotes",
+      checked: showCompNotes,
+      callback: () => {
+        setShowCompNotes(!showCompNotes);
+      },
+    },
+    {
       name: intl.formatMessage({
         id: "export.visibleList",
       }),
@@ -165,6 +177,7 @@ export const Print = () => {
       <>
         {units.map((unit) => {
           const stats = getStats(unit, armyComposition);
+          const compNotes = showCompNotes ? getUnitCompNotes(unit, rulesMap) : [];
 
           return (
             <li key={unit.id}>
@@ -268,6 +281,13 @@ export const Print = () => {
                       <FormattedMessage id="unit.customNote" />:
                     </b>{" "}
                     {unit.customNote}
+                  </i>
+                </p>
+              )}
+              {showCompNotes && compNotes.length > 0 && (
+                <p className="print__comp-notes">
+                  <i>
+                    <b>Comp Notes:</b> {compNotes.join(", ")}
                   </i>
                 </p>
               )}

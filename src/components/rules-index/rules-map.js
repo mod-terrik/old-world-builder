@@ -55,55 +55,6 @@ const additionalOWBRules = {
       { Name: "Rats", M: "-", WS: "2", BS: "0", S: "2", T: "-", W: "-", I: "4", A: "2D6", Ld: "5" }
     ]
   },
-  "hippogryph": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/hippogryph.html?minimal=true",
-    stats: [
-      { Name: "Hippogryph", M: "7", WS: "5", BS: "-", S: "5", T: "(+1)", W: "(+3)", I: "5", A: "4", Ld: "-" }
-    ]
-  },
-  "imperial griffon": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/imperial-griffon.html?minimal=true",
-    stats: [
-      { Name: "Imperial Griffon", M: "6", WS: "5", BS: "-", S: "6", T: "(+1)", W: "(+4)", I: "4", A: "4", Ld: "-" }
-    ]
-  },
-  "griffon high elves": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/griffon-high-elves.html?minimal=true",
-    stats: [
-      { Name: "Griffon", M: "6", WS: "5", BS: "-", S: "5", T: "(+2)", W: "(+3)", I: "5", A: "4", Ld: "-" }
-    ]
-  },
-  "griffon empire": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/griffon-empire.html?minimal=true",
-    stats: [
-      { Name: "Griffon", M: "6", WS: "5", BS: "-", S: "5", T: "(+1)", W: "(+3)", I: "5", A: "4", Ld: "-" }
-    ]
-  },
-  "serrated maw": { fullUrl: "https://owapps.grra.me/owb/rules/weapons-of-war/serrated-maw.html?minimal=true" },
-  "chaos trolls": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/chaos-trolls.html?minimal=true",
-    stats: [
-      { Name: "Chaos Troll", M: "6", WS: "3", BS: "1", S: "5", T: "4", W: "3", I: "2", A: "4", Ld: "4" }
-    ]
-  },
-  "common troll mob": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/common-troll-mob.html?minimal=true",
-    stats: [
-      { Name: "Common Troll", M: "6", WS: "3", BS: "1", S: "5", T: "4", W: "3", I: "2", A: "4", Ld: "4" }
-    ]
-  },
-  "river troll mob": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/river-troll-mob.html?minimal=true",
-    stats: [
-      { Name: "River Troll", M: "6", WS: "3", BS: "1", S: "5", T: "4", W: "4", I: "1", A: "4", Ld: "4" }
-    ]
-  },
-  "stone troll mob": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/stone-troll-mob.html?minimal=true",
-    stats: [
-      { Name: "Stone Troll", M: "6", WS: "3", BS: "1", S: "5", T: "4", W: "3", I: "1", A: "4", Ld: "5" }
-    ]
-  },
   "the fellblade": { fullUrl: "https://owapps.grra.me/owb/rules/magic-items/the-fellblade.html?minimal=true" },
   "plagueclaw catapult": {
     fullUrl: "https://owapps.grra.me/owb/rules/unit/plagueclaw-catapult.html?minimal=true",
@@ -158,15 +109,15 @@ const additionalOWBRules = {
     ]
   },
   "sea guard garrison commander": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/sea-guard-garrison-commander.html?minimal=true",
+    url: "unit/sea-guard-garrison-commander",
     stats: [
       { Name: "Sea Guard Garrison Commander", M: "5", WS: "6", BS: "7", S: "4", T: "3", W: "3", I: "5", A: "3", Ld: "9" }
     ]
   },
   "demigryph": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/demigryph.html?minimal=true",
+    url:  "unit/demigryph",
     stats: [
-      { Name: "Demigryph", M: "7", WS: "4", BS: "-", S: "5", T: "-", W: "(+1)", I: "4", A: "3", Ld: "-" }
+      { Name: "Demigryph", M: "7", WS: "4", BS: "-", S: "5", T: "(+1)", W: "(+1)", I: "4", A: "3", Ld: "-" }
     ]
   },
   "shieldbearers": {
@@ -184,47 +135,47 @@ const additionalOWBRules = {
     ]
   },
   "wildwood rangers": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/wildwood-rangers.html?minimal=true",
+    url: "unit/wildwood-rangers",
     stats: [
       { Name: "Wildwood Ranger", M: "5", WS: "5", BS: "4", S: "4", T: "3", W: "1", I: "4", A: "1", Ld: "9" },
       { Name: "Wildwood Warden", M: "5", WS: "5", BS: "4", S: "4", T: "3", W: "1", I: "4", A: "2", Ld: "9" }
     ]
   },
   "kharibdyss": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/kharibdyss.html?minimal=true",
+    url: "unit/kharibdyss.html",
     stats: [
       { Name: "Kharibdyss", M: "6", WS: "5", BS: "0", S: "7", T: "6", W: "5", I: "3", A: "5", Ld: "6" },
       { Name: "Beastmaster Handlers (x2)", M: "6", WS: "4", BS: "-", S: "3", T: "-", W: "-", I: "4", A: "1", Ld: "8" }
     ]
   },
   "war hydra": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/war-hydra.html?minimal=true",
+    url: "unit/war-hydra",
     stats: [
       { Name: "War Hydra", M: "6", WS: "4", BS: "0", S: "5", T: "6", W: "5", I: "3", A: "2", Ld: "6" },
       { Name: "Beastmaster Handlers (x2)", M: "6", WS: "4", BS: "-", S: "3", T: "-", W: "-", I: "4", A: "1", Ld: "8" }
     ]
   },
   "cygor": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/cygor.html?minimal=true",
+    url: "unit/cygor",
     stats: [
       { Name: "Cygor", M: "7", WS: "2", BS: "1", S: "6", T: "6", W: "6", I: "3", A: "4", Ld: "8" }
     ]
   },
   "dragon ogre shaggoth": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/dragon-ogre-shaggoth.html?minimal=true",
+    url: "units/dragon-ogre-shaggoth",
     stats: [
       { Name: "Shaggoth", M: "7", WS: "6", BS: "2", S: "6", T: "6", W: "6", I: "4", A: "5", Ld: "9" }
     ]
   },
   "bloodletters of khorne": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/bloodletters-of-khorne.html?minimal=true",
+    url: "unit/bloodletters-of-khorne",
     stats: [
       { Name: "Bloodletter", M: "5", WS: "5", BS: "3", S: "4", T: "4", W: "1", I: "4", A: "1", Ld: "7" },
       { Name: "Bloodreaper", M: "5", WS: "5", BS: "3", S: "4", T: "4", W: "1", I: "4", A: "2", Ld: "7" },
     ],
   },
   "gnoblar scraplauncher": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/gnoblar-scraplauncher.html?minimal=true",
+    url: "unit/gnoblar-scraplauncher",
     stats: [
       { Name: "Scraplauncher", M: "-", WS: "-", BS: "-", S: "5", T: "6", W: "5", I: "-", A: "-", Ld: "-" },
       { Name: "Gnoblar Scrapper (x7)", M: "-", WS: "2", BS: "3", S: "2", T: "-", W: "-", I: "3", A: "1", Ld: "5" },
@@ -232,7 +183,7 @@ const additionalOWBRules = {
     ],
   },
   "questing knights": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/questing-knights.html?minimal=true",
+    url: "unit/questing-knights",
     stats: [
       { Name: "Questing Knight", M: "-", WS: "5", BS: "2", S: "4", T: "3", W: "1", I: "4", A: "2", Ld: "8" },
       { Name: "Paragon", M: "-", WS: "5", BS: "2", S: "4", T: "3", W: "1", I: "4", A: "3", Ld: "8" },

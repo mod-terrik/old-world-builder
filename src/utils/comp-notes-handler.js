@@ -4,6 +4,36 @@
  */
 
 /**
+ * Extracts name from an item that might have multi-language properties
+ * @param {*} item - Item that could be string, or object with name/name_en/name_cn etc.
+ * @returns {string|null} - The extracted name or null
+ */
+function extractName(item) {
+  if (!item) return null;
+  
+  // If it's a string, return it
+  if (typeof item === 'string') {
+    return item;
+  }
+  
+  // If it's an object, try various name properties
+  if (typeof item === 'object') {
+    // Try multi-language names (your app uses this structure)
+    if (item.name_en) return item.name_en;
+    if (item.name_cn) return item.name_cn;
+    if (item.name_de) return item.name_de;
+    if (item.name_es) return item.name_es;
+    if (item.name_fr) return item.name_fr;
+    if (item.name_it) return item.name_it;
+    
+    // Try regular name property
+    if (item.name) return item.name;
+  }
+  
+  return null;
+}
+
+/**
  * Collects composition notes from a unit and all its equipment/special rules
  * @param {Object} unit - The unit object with selected equipment and rules
  * @param {Object} rulesMap - The rules mapping object
@@ -24,83 +54,84 @@ export function getUnitCompNotes(unit, rulesMap) {
     }
   };
   
-  // Check the unit itself
-  if (unit.name) {
-    addCompNote(unit.name);
+  // Check the unit itself by all possible name fields
+  const unitName = extractName(unit);
+  if (unitName) {
+    addCompNote(unitName);
   }
   
   // Check mount if present
   if (unit.mount) {
-    addCompNote(unit.mount);
+    const mountName = extractName(unit.mount);
+    if (mountName) {
+      addCompNote(mountName);
+    }
   }
   
   // Check special rules
-  if (unit.specialRules && Array.isArray(unit.specialRules)) {
-    unit.specialRules.forEach(rule => {
-      if (typeof rule === 'string') {
-        addCompNote(rule);
-      } else if (rule.name) {
-        addCompNote(rule.name);
-      }
-    });
+  if (unit.specialRules) {
+    if (Array.isArray(unit.specialRules)) {
+      unit.specialRules.forEach(rule => {
+        const ruleName = extractName(rule);
+        if (ruleName) addCompNote(ruleName);
+      });
+    } else {
+      // specialRules might be a single object
+      const ruleName = extractName(unit.specialRules);
+      if (ruleName) addCompNote(ruleName);
+    }
   }
   
   // Check weapons
   if (unit.weapons && Array.isArray(unit.weapons)) {
     unit.weapons.forEach(weapon => {
-      if (typeof weapon === 'string') {
-        addCompNote(weapon);
-      } else if (weapon.name) {
-        addCompNote(weapon.name);
-      }
+      const weaponName = extractName(weapon);
+      if (weaponName) addCompNote(weaponName);
     });
   }
   
   // Check equipment
   if (unit.equipment && Array.isArray(unit.equipment)) {
     unit.equipment.forEach(item => {
-      if (typeof item === 'string') {
-        addCompNote(item);
-      } else if (item.name) {
-        addCompNote(item.name);
-      }
+      const itemName = extractName(item);
+      if (itemName) addCompNote(itemName);
     });
   }
   
   // Check magic items
   if (unit.magicItems && Array.isArray(unit.magicItems)) {
     unit.magicItems.forEach(item => {
-      if (typeof item === 'string') {
-        addCompNote(item);
-      } else if (item.name) {
-        addCompNote(item.name);
-      }
+      const itemName = extractName(item);
+      if (itemName) addCompNote(itemName);
     });
   }
   
   // Check armor
   if (unit.armor) {
-    if (typeof unit.armor === 'string') {
-      addCompNote(unit.armor);
-    } else if (Array.isArray(unit.armor)) {
+    if (Array.isArray(unit.armor)) {
       unit.armor.forEach(armor => {
-        if (typeof armor === 'string') {
-          addCompNote(armor);
-        } else if (armor.name) {
-          addCompNote(armor.name);
-        }
+        const armorName = extractName(armor);
+        if (armorName) addCompNote(armorName);
       });
+    } else {
+      const armorName = extractName(unit.armor);
+      if (armorName) addCompNote(armorName);
     }
   }
   
   // Check options (if your units have an options field)
   if (unit.options && Array.isArray(unit.options)) {
     unit.options.forEach(option => {
-      if (typeof option === 'string') {
-        addCompNote(option);
-      } else if (option.name) {
-        addCompNote(option.name);
-      }
+      const optionName = extractName(option);
+      if (optionName) addCompNote(optionName);
+    });
+  }
+  
+  // Check mounts array (some units might have mounts in an array)
+  if (unit.mounts && Array.isArray(unit.mounts)) {
+    unit.mounts.forEach(mount => {
+      const mountName = extractName(mount);
+      if (mountName) addCompNote(mountName);
     });
   }
   

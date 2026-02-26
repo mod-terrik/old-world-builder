@@ -77,6 +77,11 @@ export const NewList = ({ isMobile }) => {
     const selectedArmyData = armies.find(({ id }) => id === army);
     const armyNameFromGameData = selectedArmyData?.[`name_${language}`] || selectedArmyData?.name_en;
     
+    // Add GermanComp Ruleset to description if gcomp game system is selected
+    const finalDescription = game === 'the-old-world-gcomp'
+      ? (description ? `${description} GermanComp Ruleset` : 'GermanComp Ruleset')
+      : description;
+    
     const newList = {
       name:
         name ||
@@ -87,7 +92,7 @@ export const NewList = ({ isMobile }) => {
         (nameMap[army] && nameMap[army][`name_${language}`]) ||
         nameMap[army]?.name_en ||
         army,
-      description: description,
+      description: finalDescription,
       game: game,
       points: points,
       army: army,

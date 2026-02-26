@@ -1,0 +1,9 @@
+  [build] Auto-detecting BUILD_ID from tow.whfb.app ...
+  [build] Detected BUILD_ID: Z8fFjDNe5IyXteSHILQuO
+
+Fetching: monstrous-infantry  (type: troop-types-in-detail)
+  [json] https://tow.whfb.app/_next/data/Z8fFjDNe5IyXteSHILQuO/troop-types-in-detail/monstrous-infantry.json
+  [meta] Description field: (none)
+  [meta] Notes field      : body
+  [write] Saved: ../rules/troop-types-in-detail/monstrous-infantry.html  (6,428 bytes)
+  [rules-map] Injected "monstrous infantry" -> https://owapps.grra.me/owb/rules/troop-types-in-detail/monstrous-infantry.html?minimal=true

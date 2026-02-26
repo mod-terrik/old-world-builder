@@ -179,6 +179,27 @@ export const Print = () => {
           const stats = getStats(unit, armyComposition);
           const compNotes = showCompNotes ? getUnitCompNotes(unit, rulesMap) : [];
 
+          // ENHANCED DEBUG OUTPUT
+          console.log('\n=== UNIT DEBUG ===');
+          console.log('Full unit object:', unit);
+          console.log('Unit name (from getUnitName):', getUnitName({ unit, language }));
+          console.log('Equipment items:');
+          if (unit.equipment) {
+            unit.equipment.forEach((item, i) => {
+              console.log(`  [${i}] name_en:`, item.name_en);
+              // Check if this item is in rulesMap
+              const normalized = item.name_en?.toLowerCase().trim();
+              if (rulesMap[normalized]) {
+                console.log(`    ✓ Found in rulesMap:`, rulesMap[normalized]);
+                if (rulesMap[normalized].compNote) {
+                  console.log(`    ✓✓ HAS COMP NOTE:`, rulesMap[normalized].compNote);
+                }
+              }
+            });
+          }
+          console.log('Comp notes found:', compNotes);
+          console.log('==================\n');
+
           return (
             <li key={unit.id}>
               <h3>

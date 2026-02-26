@@ -1,0 +1,117 @@
+/**
+ * Composition Notes Styling
+ * Styles for displaying comp notes in army sheets
+ */
+
+.comp-notes-section {
+  margin-top: 12px;
+  padding: 10px 12px;
+  background-color: #f8f9fa;
+  border-left: 4px solid #4a90e2;
+  border-radius: 4px;
+}
+
+.comp-notes-section h4 {
+  margin: 0 0 8px 0;
+  font-size: 0.95em;
+  font-weight: bold;
+  color: #2c3e50;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.comp-notes-section p {
+  margin: 0;
+  font-style: italic;
+  color: #555;
+  line-height: 1.5;
+  font-size: 0.9em;
+}
+
+/* Print-specific styles */
+@media print {
+  .comp-notes-section {
+    background-color: transparent;
+    border-left: 3px solid #333;
+    page-break-inside: avoid;
+    margin-top: 8px;
+    padding: 6px 8px;
+  }
+  
+  .comp-notes-section h4 {
+    font-size: 0.9em;
+    margin-bottom: 4px;
+  }
+  
+  .comp-notes-section p {
+    font-size: 0.85em;
+    color: #000;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .comp-notes-section {
+    background-color: #2d3748;
+    border-left-color: #63b3ed;
+  }
+  
+  .comp-notes-section h4 {
+    color: #e2e8f0;
+  }
+  
+  .comp-notes-section p {
+    color: #cbd5e0;
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .comp-notes-section {
+    padding: 8px 10px;
+    margin-top: 10px;
+  }
+  
+  .comp-notes-section h4 {
+    font-size: 0.9em;
+  }
+  
+  .comp-notes-section p {
+    font-size: 0.85em;
+  }
+}
+
+/* Alternative compact style (add 'compact' class for tighter spacing) */
+.comp-notes-section.compact {
+  margin-top: 8px;
+  padding: 6px 10px;
+}
+
+.comp-notes-section.compact h4 {
+  font-size: 0.85em;
+  margin-bottom: 4px;
+}
+
+.comp-notes-section.compact p {
+  font-size: 0.8em;
+}
+
+/* Warning style for critical comp notes */
+.comp-notes-section.warning {
+  border-left-color: #f39c12;
+  background-color: #fff8e1;
+}
+
+.comp-notes-section.warning h4 {
+  color: #e67e22;
+}
+
+/* Error style for restricted items */
+.comp-notes-section.error {
+  border-left-color: #e74c3c;
+  background-color: #ffebee;
+}
+
+.comp-notes-section.error h4 {
+  color: #c0392b;
+}

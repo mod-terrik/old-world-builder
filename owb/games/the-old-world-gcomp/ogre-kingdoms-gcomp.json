@@ -142,7 +142,7 @@
           "selected": [],
           "maxPoints": 0,
           "notes": {
-        "name_en": "Ignore point costs from Big Names on Bruiser and Tyrant",
+        "name_en": "Big Names are free on tyrant",
         "name_de": "Ignoriere Punktkosten für Große Namen für Tyrann und Brecher"
       }
         }
@@ -314,7 +314,7 @@
           "selected": [],
           "maxPoints": 0,
           "notes": {
-        "name_en": "Ignore point costs from Big Names on Bruiser and Tyrant",
+        "name_en": "Big Names are free on Bruiser",
         "name_de": "Ignoriere Punktkosten für Große Namen für Tyrann und Brecher"
       }
         }

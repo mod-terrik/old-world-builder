@@ -69,9 +69,19 @@ export const NewList = ({ isMobile }) => {
       : [500, 1000, 1500, 2000, 2500];
   const createList = () => {
     const newId = getRandomId();
+    
+    // Check if this is a Renegade composition in gcomp ruleset
+    const isRenegadeComposition = armyComposition.endsWith('-renegade') && game.endsWith('-gcomp');
+    
+    // Get the army name from the game system data
+    const selectedArmyData = armies.find(({ id }) => id === army);
+    const armyNameFromGameData = selectedArmyData?.[`name_${language}`] || selectedArmyData?.name_en;
+    
     const newList = {
       name:
         name ||
+        // For Renegade compositions in gcomp, use the army name instead of "Renegade"
+        (isRenegadeComposition && armyNameFromGameData) ||
         nameMap[armyComposition]?.[`name_${language}`] ||
         nameMap[armyComposition]?.name_en ||
         (nameMap[army] && nameMap[army][`name_${language}`]) ||
@@ -325,4 +335,3 @@ export const NewList = ({ isMobile }) => {
     </>
   );
 };
-

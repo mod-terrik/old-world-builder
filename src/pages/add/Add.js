@@ -274,7 +274,7 @@ export const Add = ({ isMobile }) => {
             })}
           />
         )}
-        {type === "allies" && (
+        {type === "allies" && !list.game.endsWith('-gcomp') && ( 
           <>
             <p className="unit__notes">
               <Icon symbol="error" className="unit__notes-icon" />

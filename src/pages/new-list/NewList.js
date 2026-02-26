@@ -26,8 +26,8 @@ export const NewList = ({ isMobile }) => {
   const { language } = useLanguage();
   const gameSystems = getGameSystems();
   const lists = useSelector((state) => state.lists);
-  const [game, setGame] = useState("the-old-world");
-  const [army, setArmy] = useState("beastmen-brayherds");
+  const [game, setGame] = useState("the-old-world-gcomp");
+  const [army, setArmy] = useState("beastmen-brayherds-gcomp");
   const [compositionRule, setCompositionRule] = useState("open-war");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");

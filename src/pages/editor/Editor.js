@@ -630,7 +630,8 @@ export const Editor = ({ isMobile }) => {
           mercenariesData &&
           armyComposition &&
           list?.army !== "daemons-of-chaos" &&
-          list?.army !== "vampire-counts" && (
+          list?.army !== "vampire-counts" &&
+	  !list.game.endsWith('-gcomp') && (
             <section className="editor__section">
               <header className="editor__header">
                 <h2>

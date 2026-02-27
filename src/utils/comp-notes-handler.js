@@ -91,10 +91,13 @@ export function getUnitCompNotes(unit, rulesMap) {
   }
   
   // Check equipment
-  if (unit.equipment && Array.isArray(unit.equipment)) {
-    unit.equipment.forEach(item => {
-      const itemName = extractName(item);
-      if (itemName) addCompNote(itemName);
+  if (unit.equipment) {
+    unit.equipment.forEach((item) => {
+      if (!item.active) return;
+      const normalized = item.name_en?.toLowerCase().trim().replace(/[{}]/g, '');
+      if (rulesMap[normalized]?.compNote) {
+        compNotes.add(rulesMap[normalized].compNote);
+      }
     });
   }
   
@@ -128,10 +131,13 @@ export function getUnitCompNotes(unit, rulesMap) {
   }
   
   // Check mounts array (some units might have mounts in an array)
-  if (unit.mounts && Array.isArray(unit.mounts)) {
-    unit.mounts.forEach(mount => {
-      const mountName = extractName(mount);
-      if (mountName) addCompNote(mountName);
+   if (unit.mounts) {
+    unit.mounts.forEach((mount) => {
+      if (!mount.active) return;
+      const normalized = mount.name_en?.toLowerCase().trim().replace(/[{}]/g, '');
+      if (rulesMap[normalized]?.compNote) {
+        compNotes.add(rulesMap[normalized].compNote);
+      }
     });
   }
   

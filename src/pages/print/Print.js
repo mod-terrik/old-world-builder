@@ -188,7 +188,7 @@ export const Print = () => {
             unit.equipment.forEach((item, i) => {
               console.log(`  [${i}] name_en:`, item.name_en);
               // Check if this item is in rulesMap
-              const normalized = item.name_en?.toLowerCase().trim();
+              const normalized = item.name_en?.toLowerCase().trim().replace(/[{}]/g, '');
               if (rulesMap[normalized]) {
                 console.log(`    ✓ Found in rulesMap:`, rulesMap[normalized]);
                 if (rulesMap[normalized].compNote) {
@@ -273,6 +273,13 @@ export const Print = () => {
                     })}
                 </>
               ) : null}
+              {showCompNotes && compNotes.length > 0 && (
+                <p className="print__comp-notes">
+                 <i>
+                   <b>Comp Notes:</b> {compNotes.join(", ")}
+                </i>
+             </p>
+            )}
               {showStats &&
                 (stats?.length > 0 ? (
                   <Stats isPrintPage values={stats} />
@@ -304,21 +311,14 @@ export const Print = () => {
                     {unit.customNote}
                   </i>
                 </p>
-              )}
-              {showCompNotes && compNotes.length > 0 && (
-                <p className="print__comp-notes">
-                  <i>
-                    <b>Comp Notes:</b> {compNotes.join(", ")}
-                  </i>
-                </p>
-              )}
-            </li>
+              )}            
+           </li>
           );
         })}
       </>
     );
   };
-
+ 
   return (
     <>
       <div className="hide-for-printing">

@@ -120,12 +120,6 @@ const additionalOWBRules = {
       { Name: "Demigryph", M: "7", WS: "4", BS: "-", S: "5", T: "(+1)", W: "(+1)", I: "4", A: "3", Ld: "-" }
     ]
   },
-  "shieldbearers": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/shieldbearers.html?minimal=true",
-    stats: [
-      { Name: "Shieldbearers", M: "3", WS: "5", BS: "-", S: "4", T: "-", W: "(+3)", I: "2", A: "3", Ld: "-" }
-    ]
-  },
   "grail reliquae": { fullUrl: "https://owapps.grra.me/owb/rules/unit/grail-reliquae.html?minimal=true" },
   "the green knight": {
     fullUrl: "https://owapps.grra.me/owb/rules/unit/the-green-knight.html?minimal=true",
@@ -190,6 +184,7 @@ const additionalOWBRules = {
       { Name: "Bretonnian Warhorse", M: "8", WS: "3", BS: "-", S: "3", T: "-", W: "-", I: "3", A: "1", Ld: "-" },
     ],
   },
+  "shieldbearers": { url: "unit/shieldbearers","compNotes": "Shieldbearers have US4" },
   "throwing spears": { url: "weapons-of-war/throwing-spear" },
   halberds: { url: "weapons-of-war/halberd" },
   "additional hand weapons": {

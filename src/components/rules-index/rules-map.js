@@ -17,7 +17,7 @@ const additionalOWBRules = {
   handguns: { url: "weapons-of-war/handgun" },
   lances: { url: "weapons-of-war/lance" },
   shortbows: { url: "weapons-of-war/shortbow" },
-  "thrusting spears": { fullUrl: "https://owapps.grra.me/owb/rules/weapons-of-war/thrusting-spear.html?minimal=true" },
+  "thrusting spears": { url: "weapons-of-war/thrusting-spear", compNote: "Thrusting spear adds +1S when charged in the front arc" },
   javelins: { url: "weapons-of-war/javelin" },
   longbows: { url: "weapons-of-war/longbow" },
   pistols: { url: "weapons-of-war/pistol" },

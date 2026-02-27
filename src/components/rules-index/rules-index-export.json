@@ -5343,7 +5343,7 @@
     "url": "magic-item/the-dolorous-blade",
     "page": "AJ:KoB, p. 37"
   },
-  "the fellblade": { "url": "magic-item/the-fellblade", "page": "SK, p. 20", "CompNote": "During the Command sub-phase of their turn, the wielder must roll a D6. On a roll of 1, they lose a single Wound" },
+  "the fellblade": { "url": "magic-item/the-fellblade", "page": "SK, p. 20", "compNote": "Fellblade: Roll a D6 to test to wound the wielder" },
   "the fires of nan-gau": {
     "url": "magic-item/the-fires-of-nan-gau",
     "page": "AJ:DotSD, p. 48"

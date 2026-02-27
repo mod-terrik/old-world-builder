@@ -46,7 +46,7 @@ export function getUnitCompNotes(unit, rulesMap) {
   const addCompNote = (ruleName) => {
     if (!ruleName) return;
     
-    const normalizedName = ruleName.toLowerCase().trim();
+    const normalizedName = ruleName.toLowerCase().trim().replace(/[{}]/g, '');    
     const ruleEntry = rulesMap[normalizedName];
     
     if (ruleEntry && ruleEntry.compNote) {
@@ -108,6 +108,17 @@ export function getUnitCompNotes(unit, rulesMap) {
       if (itemName) addCompNote(itemName);
     });
   }
+
+ if (unit.items && Array.isArray(unit.items)) {
+  unit.items.forEach(itemCategory => {
+    if (itemCategory.selected && Array.isArray(itemCategory.selected)) {
+      itemCategory.selected.forEach(item => {
+        const itemName = extractName(item);
+        if (itemName) addCompNote(itemName);
+      });
+    }
+  });
+} 
   
   // Check armor
   if (unit.armor) {

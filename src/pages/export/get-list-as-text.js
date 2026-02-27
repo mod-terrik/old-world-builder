@@ -1,3 +1,5 @@
+import { getUnitCompNotes } from "../../utils/comp-notes-handler";
+import { rulesMap } from "../../components/rules-index/rules-map";
 import { getAllOptions } from "../../utils/unit";
 import { getUnitPoints, getPoints, getAllPoints } from "../../utils/points";
 import { getStats, getUnitName } from "../../utils/unit";
@@ -102,6 +104,7 @@ const getUnitsString = ({
   isShowList,
   isCompactList,
   showSpecialRules,
+  showCompNotes,
   showPageNumbers,
   isMarkdownList,
   intl,
@@ -195,6 +198,17 @@ const getUnitsString = ({
           isMarkdownList ? unit.customNote.replace(/\n/g, "") : unit.customNote
         }${isMarkdownList ? "*" : ""}\n`;
       }
+       if (showCompNotes) {
+        const compNotes = getUnitCompNotes(unit, rulesMap);
+        if (compNotes.length > 0) {
+          optionsString += `${isMarkdownList ? " - __" : ""}${intl.formatMessage({
+            id: "unit.compNotes",
+          })}:${isMarkdownList ? "__ *" : " "}${compNotes.join(", ")}${
+            isMarkdownList ? "*" : ""
+          }\n`;
+        }
+      }
+
       if (showStats) {
         const stats = getStats(unit, armyComposition);
 
@@ -232,6 +246,7 @@ export const getListAsText = ({
   intl,
   language,
   showSpecialRules,
+  showCompNotes,
   showPageNumbers,
   showStats,
   isMarkdownList,
@@ -346,6 +361,7 @@ ${game.name}, ${armyName}${armyCompositionString}, ${compositionRuleString}
     listString += `${getUnitsString({
       isCompactList,
       showSpecialRules,
+      showCompNotes,
       showPageNumbers,
       isMarkdownList,
       showCustomNotes,
@@ -372,6 +388,7 @@ ${game.name}, ${armyName}${armyCompositionString}, ${compositionRuleString}
     listString += `${getUnitsString({
       isCompactList,
       showSpecialRules,
+      showCompNotes,
       showPageNumbers,
       isMarkdownList,
       showCustomNotes,
@@ -398,6 +415,7 @@ ${game.name}, ${armyName}${armyCompositionString}, ${compositionRuleString}
     listString += `${getUnitsString({
       isCompactList,
       showSpecialRules,
+      showCompNotes,
       showPageNumbers,
       isMarkdownList,
       showCustomNotes,
@@ -424,6 +442,7 @@ ${game.name}, ${armyName}${armyCompositionString}, ${compositionRuleString}
     listString += `${getUnitsString({
       isCompactList,
       showSpecialRules,
+      showCompNotes,
       showPageNumbers,
       isMarkdownList,
       showCustomNotes,
@@ -451,6 +470,7 @@ ${game.name}, ${armyName}${armyCompositionString}, ${compositionRuleString}
     listString += `${getUnitsString({
       isCompactList,
       showSpecialRules,
+      showCompNotes,
       showPageNumbers,
       isMarkdownList,
       showCustomNotes,
@@ -478,6 +498,7 @@ ${game.name}, ${armyName}${armyCompositionString}, ${compositionRuleString}
     listString += `${getUnitsString({
       isCompactList,
       showSpecialRules,
+      showCompNotes,
       showPageNumbers,
       isMarkdownList,
       showCustomNotes,
@@ -505,6 +526,7 @@ ${game.name}, ${armyName}${armyCompositionString}, ${compositionRuleString}
     listString += `${getUnitsString({
       isCompactList,
       showSpecialRules,
+      showCompNotes,
       showPageNumbers,
       isMarkdownList,
       showCustomNotes,

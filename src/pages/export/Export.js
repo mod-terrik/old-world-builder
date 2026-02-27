@@ -42,6 +42,7 @@ export const Export = ({ isMobile }) => {
   const [shareOwbError, setOwbShareError] = useState(false);
   const [showStats, setShowStats] = useState(false);
   const [showSpecialRules, setShowSpecialRules] = useState(false);
+  const [showCompNotes, setShowCompNotes] = useState(false);
   const [showPageNumbers, setShowPageNumbers] = useState(false);
   const [showCustomNotes, setShowCustomNotes] = useState(false);
   const [listType, setListType] = useState("regular");
@@ -56,6 +57,7 @@ export const Export = ({ isMobile }) => {
         isMarkdownList: listFormatting === "markdown",
         isShowList: hideItems,
         showSpecialRules,
+        showCompNotes,
         showPageNumbers,
         showCustomNotes,
         intl,
@@ -246,6 +248,19 @@ export const Export = ({ isMobile }) => {
             <FormattedMessage id="export.specialRules" />
           </label>
         </div>
+ <div className="checkbox export__visible-checkbox">
+  <input
+    type="checkbox"
+    id="showCompNotes"
+    onChange={() => setShowCompNotes(!showCompNotes)}
+    checked={showCompNotes}
+    className="checkbox__input"
+    disabled={isSimpleList}
+  />
+  <label htmlFor="showCompNotes" className="checkbox__label">
+    <FormattedMessage id="export.showCompNotes" />
+  </label>
+</div>
         <div className="checkbox export__visible-checkbox">
           <input
             type="checkbox"

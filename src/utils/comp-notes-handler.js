@@ -89,17 +89,20 @@ export function getUnitCompNotes(unit, rulesMap) {
       if (weaponName) addCompNote(weaponName);
     });
   }
-  
   // Check equipment
   if (unit.equipment) {
     unit.equipment.forEach((item) => {
-      if (!item.active) return;
-      const normalized = item.name_en?.toLowerCase().trim().replace(/[{}]/g, '');
-      if (rulesMap[normalized]?.compNote) {
+    if (!item.active) return;
+    const itemName = item.name_en?.replace(/[{}]/g, '') || '';
+    // Split by comma to handle multiple items on one line
+    const items = itemName.split(',').map(i => i.toLowerCase().trim());
+    items.forEach(normalized => {
+      if (normalized && rulesMap[normalized]?.compNote) {
         compNotes.add(rulesMap[normalized].compNote);
       }
     });
-  }
+  });
+}
   
   // Check magic items
   if (unit.magicItems && Array.isArray(unit.magicItems)) {

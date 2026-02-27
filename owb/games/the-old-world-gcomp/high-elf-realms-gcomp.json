@@ -364,8 +364,8 @@
           }
         },
         {
-          "name_en": "Griffon",
-          "name_cn": "狮鹫 {high elves}",
+          "name_en": "Griffon {high elves}",
+          "name_cn": "狮鹫 {high elves",
           "name_it": "Grifone {high elves}",
           "name_de": "Greif",
           "name_fr": "Griffon",

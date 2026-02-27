@@ -17764,7 +17764,6 @@
   },
   "shieldbearers": {
     "url": "unit/shieldbearers",
-    "compNotes": "Shieldbearers are US4.",
     "stats": [
       {
         "A": "3",

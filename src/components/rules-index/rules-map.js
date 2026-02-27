@@ -64,49 +64,35 @@ const additionalOWBRules = {
     ]
   },
   "poisoned wind globadiers": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/poisoned-wind-globadiers.html?minimal=true",
+    url: "unit/poisoned-wind-globadiers",
     stats: [
       { Name: "Globadier", M: "5", WS: "3", BS: "4", S: "3", T: "3", W: "1", I: "4", A: "1", Ld: "5" }
     ]
   },"warplock jezzails": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/warplock-jezzails.html?minimal=true",
+    url: "unit/warplock-jezzails",
     stats: [
       { Name: "Jezzail Team", M: "5", WS: "3", BS: "4", S: "3", T: "3", W: "1", I: "3", A: "2", Ld: "5" }
     ]
   },
   "high priest of ulric": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/high-priest-of-ulric.html?minimal=true",
-    stats: [
-      { Name: "High Priest of Ulric", M: "4", WS: "5", BS: "3", S: "4", T: "4", W: "3", I: "5", A: "3", Ld: "9" }
-    ]
+    url: "unit/high-priest-of-ulric",
+    compNote: "May attempt to cast two different prayers during the player's command phase, instead of the usual one."
   },
   "lector of sigmar": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/lector-of-sigmar.html?minimal=true",
-    stats: [
-      { Name: "Lector of Sigmar", M: "4", WS: "5", BS: "3", S: "4", T: "4", W: "3", I: "5", A: "3", Ld: "9" }
-    ]
+    url: "unit/lector-of-sigmar",
+    compNote: "May attempt to cast two different prayers during the player's command phase, instead of the usual one."
   },
   "sisters of the thorn": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/sisters-of-the-thorn.html?minimal=true",
-    stats: [
-      { Name: "Sister of the Thorn", M: "-", WS: "4", BS: "5", S: "3", T: "3", W: "1", I: "4", A: "1", Ld: "9" },
-      { Name: "Handmaiden of the Thorn", M: "-", WS: "4", BS: "6", S: "3", T: "3", W: "1", I: "4", A: "2", Ld: "9" },
-      { Name: "Steed of Isha", M: "8", WS: "3", BS: "-", S: "4", T: "-", W: "-", I: "4", A: "1", Ld: "-" }
-    ]
+    url: "unit/sisters-of-the-thorn",
+    compNote: "May select their spell from their chosen lore or the lore of Athel Loren"
   },
   "grave guard": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/grave-guard.html?minimal=true",
-    stats: [
-      { Name: "Grave Guard", M: "4", WS: "3", BS: "3", S: "4", T: "4", W: "1", I: "3", A: "1", Ld: "7" },
-      { Name: "Seneschal", M: "4", WS: "3", BS: "3", S: "4", T: "4", W: "1", I: "3", A: "2", Ld: "7" }
-    ]
+    url: "unit/grave-guard",
+  compNote: "Count as heavy cavalry for the purpose of ressurecting models with Invocation of Nehek"
   },
   "tomb guard": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/tomb-guard.html?minimal=true",
-    stats: [
-      { Name: "Tomb Guard", M: "4", WS: "3", BS: "3", S: "4", T: "4", W: "1", I: "2", A: "1", Ld: "7" },
-      { Name: "Tomb Captain", M: "4", WS: "3", BS: "3", S: "4", T: "4", W: "1", I: "3", A: "2", Ld: "7" }
-    ]
+    url: "unit/tomb-guard",
+    compNote: "Count as heavy cavalry for the purpose of ressurecting models with Arise!"
   },
   "sea guard garrison commander": {
     url: "unit/sea-guard-garrison-commander",
@@ -120,13 +106,10 @@ const additionalOWBRules = {
       { Name: "Demigryph", M: "7", WS: "4", BS: "-", S: "5", T: "(+1)", W: "(+1)", I: "4", A: "3", Ld: "-" }
     ]
   },
-  "grail reliquae": { fullUrl: "https://owapps.grra.me/owb/rules/unit/grail-reliquae.html?minimal=true" },
+  "grail reliquae": { url: "unit/grail-reliquae", compNote: "Has US6 and the unit it is part of has Blessings of the Lady"},
   "the green knight": {
-    fullUrl: "https://owapps.grra.me/owb/rules/unit/the-green-knight.html?minimal=true",
-    stats: [
-      { Name: "The Green Knight", M: "-", WS: "7", BS: "3", S: "4", T: "4", W: "4", I: "6", A: "4", Ld: "9" },
-      { Name: "The Shadow Steed", M: "8", WS: "4", BS: "-", S: "4", T: "-", W: "-", I: "4", A: "1", Ld: "-" }
-    ]
+    url: "unit/the-green-knight",
+    compNote: "If slain at least once, gives up half of his VP (full VP when defeated or not on the table at the end of the game) and he may charge in turn one combat only if the controlling player goes second"
   },
   "wildwood rangers": {
     url: "unit/wildwood-rangers",
@@ -184,7 +167,7 @@ const additionalOWBRules = {
       { Name: "Bretonnian Warhorse", M: "8", WS: "3", BS: "-", S: "3", T: "-", W: "-", I: "3", A: "1", Ld: "-" },
     ],
   },
-  "shieldbearers": { url: "unit/shieldbearers","compNotes": "Shieldbearers have US4" },
+  "shieldbearers": { url: "unit/shieldbearers","compNote": "Unit has US4" },
   "throwing spears": { url: "weapons-of-war/throwing-spear" },
   halberds: { url: "weapons-of-war/halberd" },
   "additional hand weapons": {

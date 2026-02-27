@@ -688,6 +688,7 @@
   },
   "grail reliquae": {
     "url": "special-rules/grail-reliquae",
+    "compNote": "Has US6 and the unit it is part of has Blessings of the Lady",
     "page": "FoF, p. 94"
   },
   "forgefire": { "url": "special-rules/forgefire", "page": "FoF, p. 16" },
@@ -1356,7 +1357,7 @@
     "url": "special-rules/eye-of-the-dragon",
     "page": "AJ:AoGC, p. 34"
   },
-  "zzzzap!": { "fullUrl": "https://owapps.grra.me/owb/rules/special-rules/zzzzap.html", "page": "SK, p. 17" },
+  "zzzzap!": { "url": "special-rules/zzzzap", "page": "SK, p. 17" },
   "skilled duellist": {
     "url": "special-rules/skilled-duellist",
     "page": "AJ:EoM, p. 35"
@@ -3079,6 +3080,7 @@
   },
   "plagueclaw catapult": {
     "url": "unit/plagueclaw-catapult",
+    "compNote": "Add Multiple Wounds (D3+1) to the template, same rules as a stone thrower",
     "stats": [
       {
         "A": "-",
@@ -5341,7 +5343,7 @@
     "url": "magic-item/the-dolorous-blade",
     "page": "AJ:KoB, p. 37"
   },
-  "the fellblade": { "url": "magic-item/the-fellblade", "page": "SK, p. 20" },
+  "the fellblade": { "url": "magic-item/the-fellblade", "page": "SK, p. 20", "CompNote": "During the Command sub-phase of their turn, the wielder must roll a D6. On a roll of 1, they lose a single Wound" },
   "the fires of nan-gau": {
     "url": "magic-item/the-fires-of-nan-gau",
     "page": "AJ:DotSD, p. 48"
@@ -6680,7 +6682,7 @@
         "I": "4",
         "M": "5",
         "S": "4",
-        "T": "3",
+        "T": "4",
         "W": "1",
         "BS": "3",
         "Ld": "7",
@@ -6692,7 +6694,7 @@
         "I": "4",
         "M": "5",
         "S": "4",
-        "T": "3",
+        "T": "4",
         "W": "1",
         "BS": "3",
         "Ld": "7",
@@ -8666,6 +8668,7 @@
   },
   "crypt horrors": {
     "url": "unit/crypt-horrors",
+    "CompNote": " If your general is a Strigoi Ghoul King, improve Weapon Skill and Regeneration by +1. In addition, while in Command Range of a Strigoi Ghoul King, add Reserve Move and add +1 to Regeneration Save",
     "stats": [
       {
         "A": "3",
@@ -8703,7 +8706,7 @@
         "I": "3",
         "M": "7",
         "S": "6",
-        "T": "5",
+        "T": "6",
         "W": "6",
         "BS": "1",
         "Ld": "8",
@@ -9243,7 +9246,7 @@
         "I": "4",
         "M": "7",
         "S": "5",
-        "T": "-",
+        "T": "(+1)",
         "W": "(+1)",
         "BS": "-",
         "Ld": "-",
@@ -9442,6 +9445,7 @@
   },
   "doomwheel": {
     "url": "unit/doomwheel",
+    "compNote": "It's own Zzzzap! templates cannot hit the Doomwheel itself, and will stop in place if they would move onto the model",
     "stats": [
       {
         "A": "-",
@@ -9522,7 +9526,7 @@
         "I": "4",
         "M": "7",
         "S": "6",
-        "T": "5",
+        "T": "6",
         "W": "6",
         "BS": "2",
         "Ld": "9",
@@ -11213,7 +11217,7 @@
         "I": "-",
         "M": "-",
         "S": "5",
-        "T": "5",
+        "T": "6",
         "W": "5",
         "BS": "-",
         "Ld": "-",
@@ -11753,6 +11757,7 @@
   },
   "grave guard": {
     "url": "unit/grave-guard",
+    "compNote": "Count as heavy cavalry for the purpose of ressurecting models with Invocation of Nehek",
     "stats": [
       {
         "A": "1",
@@ -12600,7 +12605,8 @@
       }
     ],
     "troopType": "RI",
-    "page": "FoF, p. 53"
+    "page": "FoF, p. 53",
+    "compNote": "May attempt to cast two different prayers during the player's command phase, instead of the usual one."
   },
   "hippogryph": {
     "url": "unit/hippogryph",
@@ -13507,7 +13513,7 @@
         "I": "3",
         "M": "6",
         "S": "7",
-        "T": "5",
+        "T": "6",
         "W": "5",
         "BS": "0",
         "Ld": "6",
@@ -13883,6 +13889,7 @@
       }
     ],
     "troopType": "RI",
+    "compNote": "May attempt to cast two different prayers during the player's command phase, instead of the usual one.",
     "page": "FoF, p. 52"
   },
   "lion chariot of chrace": {
@@ -16457,7 +16464,7 @@
         "S": "3",
         "T": "3",
         "W": "1",
-        "BS": "3",
+        "BS": "4",
         "Ld": "5",
         "WS": "3",
         "Name": "Globadier"
@@ -16720,7 +16727,7 @@
     "url": "unit/questing-knights",
     "stats": [
       {
-        "A": "1",
+        "A": "2",
         "I": "4",
         "M": "-",
         "S": "4",
@@ -16732,7 +16739,7 @@
         "Name": "Questing Knight"
       },
       {
-        "A": "2",
+        "A": "3",
         "I": "4",
         "M": "-",
         "S": "4",
@@ -17285,6 +17292,7 @@
   },
   "saurus oldblood": {
     "url": "unit/saurus-oldblood",
+    "compNote": " For each Saurus Hero in your army, 0-1 Saurus Warriors and/or Carnosaur have +1 Weapon Skill and +1 Initiative",
     "stats": [
       {
         "A": "5",
@@ -17304,6 +17312,7 @@
   },
   "saurus scar-veteran": {
     "url": "unit/saurus-scar-veteran",
+    "compNote": " For each Saurus Hero in your army, 0-1 Saurus Warriors and/or Carnosaur have +1 Weapon Skill and +1 Initiative",
     "stats": [
       {
         "A": "4",
@@ -17504,7 +17513,7 @@
         "M": "5",
         "S": "4",
         "T": "3",
-        "W": "2",
+        "W": "3",
         "BS": "7",
         "Ld": "9",
         "WS": "6",
@@ -18012,6 +18021,7 @@
   },
   "sisters of the thorn": {
     "url": "unit/sisters-of-the-thorn",
+    "compNote": "May select their spell from their chosen lore or the lore of Athel Loren",
     "stats": [
       {
         "A": "1",
@@ -19332,6 +19342,7 @@
   },
   "strigoi ghoul king": {
     "url": "unit/strigoi-ghoul-king",
+    "compNote": "If this unit is your general, it gains +1 Weapon Skill and +1 to Regeneration",
     "stats": [
       {
         "A": "5",
@@ -19651,6 +19662,7 @@
   },
   "the green knight": {
     "url": "unit/the-green-knight",
+    "compNote": "If slain at least once, gives up half of his VP (full VP when defeated or not on the table at the end of the game) and he may charge in turn one combat only if the controlling player goes second",
     "stats": [
       {
         "A": "4",
@@ -19856,6 +19868,7 @@
   },
   "tomb guard": {
     "url": "unit/tomb-guard",
+    "compNote": "Count as heavy cavalry for the purpose of ressurecting models with Arise!",
     "stats": [
       {
         "A": "1",
@@ -20387,6 +20400,7 @@
   },
   "vargheists": {
     "url": "unit/vargheists",
+    "CompNote": "If your general is a Strigoi Ghoul King, improve Weapon Skill and Regeneration by +1. In addition, while in Command Range of a Strigoi Ghoul King,lose Frenzy, add +1 to Attacks, and gain Impetuous.",
     "stats": [
       {
         "A": "3",
@@ -20418,6 +20432,7 @@
   },
   "varghulf": {
     "url": "unit/varghulf",
+    "CompNote": "If your general is a Strigoi Ghoul King, improve Weapon Skill and Regeneration by +1. In addition, while in Command Range of a Strigoi Ghoul King,lose Frenzy, add +1 to Attacks, and gain Impetuous.",
     "stats": [
       {
         "A": "4",
@@ -20641,7 +20656,7 @@
         "I": "3",
         "M": "6",
         "S": "5",
-        "T": "5",
+        "T": "6",
         "W": "5",
         "BS": "0",
         "Ld": "6",
@@ -20969,7 +20984,7 @@
         "S": "3",
         "T": "3",
         "W": "2",
-        "BS": "3",
+        "BS": "4",
         "Ld": "5",
         "WS": "3",
         "Name": "Jezzail Team"
@@ -21185,7 +21200,7 @@
         "A": "1",
         "I": "4",
         "M": "5",
-        "S": "3",
+        "S": "4",
         "T": "3",
         "W": "1",
         "BS": "4",
@@ -21197,7 +21212,7 @@
         "A": "2",
         "I": "4",
         "M": "5",
-        "S": "3",
+        "S": "4",
         "T": "3",
         "W": "1",
         "BS": "4",

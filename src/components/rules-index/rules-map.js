@@ -52,13 +52,6 @@ const additionalOWBRules = {
   "level 2 wizard": { url: "magic/levels-of-wizardry" },
   "level 3 wizard": { url: "magic/levels-of-wizardry" },
   "level 4 wizard": { url: "magic/levels-of-wizardry" },
-  "skaven renegade": { url: "magic/lore-of-the-horned-rat-renegade" },
-  "ogre kingdoms renegade": { url: "magic/lore-of-the-great-maw-renegade" },
-  "dark elves renegade": { url: "magic/lore-of-naggaroth-renegade" },
-  "daemons of chaos {renegade}": { url: "magic/lore-of-daemons-renegade" },
-  "vampire counts renegade": { url: "magic/lore-of-undeath-renegade" },
-  "chaos dwarfs renegade": { url: "magic/lore-of-hashut-renegade" },
-  "lizardmen renegade": { url: "magic/lore-of-lustria-renegade" },
 
   "storm call warriors": {
     url: "special-rules/storm-call",

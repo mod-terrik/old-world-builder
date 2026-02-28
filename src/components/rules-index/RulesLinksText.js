@@ -7,7 +7,7 @@ import { openRulesIndex } from "../../state/rules-index";
 
 import { rulesMap, synonyms } from "./rules-map";
 
-export const RulesLinksText = ({ textObject, showPageNumbers }) => {
+export const RulesLinksText = ({ textObject, showPageNumbers, isRenegade }) => {
   const dispatch = useDispatch();
   const { language } = useLanguage();
 
@@ -21,8 +21,17 @@ export const RulesLinksText = ({ textObject, showPageNumbers }) => {
 
   return ruleButtons.map((rule, index) => {
     const normalizedName = normalizeRuleName(textEn[index]);
+    const renegadeName = isRenegade
+      ? normalizeRuleName(`${textEn[index]} renegade`)
+      : null;
     const synonym = synonyms[normalizedName];
-    const ruleData = rulesMap[synonym || normalizedName];
+    const ruleData =
+      (renegadeName && rulesMap[renegadeName]) ||
+      rulesMap[synonym || normalizedName];
+    const activeRuleName =
+      renegadeName && rulesMap[renegadeName]
+        ? `${textEn[index]} renegade`
+        : textEn[index];
 
     return (
       <Fragment key={rule}>
@@ -31,7 +40,7 @@ export const RulesLinksText = ({ textObject, showPageNumbers }) => {
             <button
               className="unit__rule"
               onClick={() =>
-                dispatch(openRulesIndex({ activeRule: textEn[index] }))
+                dispatch(openRulesIndex({ activeRule: activeRuleName }))
               }
             >
               {rule.replace(/ *\{[^)]*\}/g, "")}

@@ -1,5 +1,7 @@
 .new-list {
   margin-top: 1rem;
+  padding-bottom: 600px;
+  min-height: 100vh;
 }
 
 .new-list__radio.radio {

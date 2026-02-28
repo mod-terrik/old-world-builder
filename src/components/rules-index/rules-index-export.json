@@ -688,7 +688,7 @@
   },
   "grail reliquae": {
     "url": "special-rules/grail-reliquae",
-    "compNote": "Has US6 and the unit it is part of has Blessings of the Lady",
+    "compNote": "Grail Reliqaue has US6 and any unit it is attatched to has Blessings of the Lady",
     "page": "FoF, p. 94"
   },
   "forgefire": { "url": "special-rules/forgefire", "page": "FoF, p. 16" },
@@ -1336,6 +1336,7 @@
   },
   "ensorcelled weapons": {
     "url": "special-rules/ensorcelled-weapons",
+    "compNote": "Ensorcelled weapons applies to two hand weapons",
     "page": "CD, p. 20, RH, p. 81 & 115"
   },
   "backstab": { "url": "special-rules/backstab", "page": "CD, p. 20" },
@@ -1718,6 +1719,7 @@
   },
   "ithilmar weapons": {
     "url": "special-rules/ithilmar-weapons",
+    "compNote": "Ithilmar weapons applies to two hand weapons",
     "page": "FoF, p. 185"
   },
   "dive bomb": { "url": "special-rules/dive-bomb", "page": "FoF, p. 28" },
@@ -1835,6 +1837,7 @@
   },
   "obsidian blades": {
     "url": "special-rules/obsidian-blades",
+    "compNote": "Obsidian blades applies to two hand weapons",
     "page": "LM, p. 20"
   },
   "whirling doom": {
@@ -1902,6 +1905,7 @@
   },
   "warpstone weapons": {
     "url": "special-rules/warpstone-weapons",
+    "compNote": "Warpstone weapons applies to two hand weapons",
     "page": "SK, p. 23"
   },
   "feigned flight": {
@@ -1922,6 +1926,7 @@
   },
   "gromril weapons": {
     "url": "special-rules/gromril-weapons",
+    "compNote": "Gromril weapons applies to two hand weapons",
     "page": "FoF, p. 39"
   },
   "enough for everyone": {
@@ -3076,6 +3081,7 @@
   },
   "ironfist renegade": {
     "url": "weapons-of-war/ironfist-renegade",
+    "compNotes": "Models with ironfists can use Parry if they are infantry and are wielding an ordinary hand weapon with it, models with magic weapons can use ironfists alongside them, models with access to magic items can buy magic shields if they have access to ironfists", 
     "page": "TRLP, p. 16"
   },
   "plagueclaw catapult": {
@@ -4343,10 +4349,6 @@
     "page": "AJ:AoGC, p. 43"
   },
   "icon of morr": { "url": "magic-item/icon-of-morr", "page": "AJ:EoM, p. 47" },
-  "icon of rakaph": {
-    "url": "magic-item/icon-of-rakaph",
-    "page": "RH, p. 151"
-  },
   "icon of rulership": {
     "url": "magic-item/icon-of-rulership",
     "page": "RH, p. 152"
@@ -4358,6 +4360,11 @@
   "icon of the sacred eye": {
     "url": "magic-item/icon-of-the-sacred-eye",
     "page": "RH, p. 151"
+  },
+  "icon of rakaph": {
+    "url": "magic-item/icon-of-rakaph",
+    "compNote": "Icon of Rakaph cannot be used to pursue into a fresh enemy", 
+    "page": "RH p. 151"
   },
   "idol of gork": {
     "url": "magic-item/idol-of-gork",
@@ -14647,6 +14654,7 @@
   },
   "minotaur herd": {
     "url": "unit/minotaur-herd",
+    "compNotes": "Characters in this unit also get counter charge",
     "stats": [
       {
         "A": "3",
@@ -17773,6 +17781,7 @@
   },
   "shieldbearers": {
     "url": "unit/shieldbearers",
+    "compNote": "Shieldbearers have a unit strength of 4",
     "stats": [
       {
         "A": "3",
@@ -20312,6 +20321,7 @@
   },
   "ushabti": {
     "url": "unit/ushabti",
+    "compNotes": "Do not get press of battle",
     "stats": [
       {
         "A": "3",
@@ -20788,6 +20798,7 @@
   },
   "warhawk riders": {
     "url": "unit/warhawk-riders",
+    "compNotes": "Can score if above US10",
     "stats": [
       {
         "A": "1",
@@ -21555,7 +21566,7 @@
     "url": "spell/ancestral-warriors",
     "page": "AJ:AoGC, p. 47"
   },
-  "apotheosis": { "url": "spell/apotheosis", "page": "LM, p. 21" },
+  "apotheosis": { "url": "spell/apotheosis", "page": "LM, p. 21", "compNote": "Apostheosis can target units of the Monster troop type, but will only recover 1 wound."},
   "arcane urgency": { "url": "spell/arcane-urgency", "page": "RB, p. 321" },
   "ariel's blessing": {
     "url": "spell/ariels-blessing",

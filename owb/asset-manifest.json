@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/owb/static/css/main.9d726ef8.css",
-    "main.js": "/owb/static/js/main.6ed8e060.js",
+    "main.css": "/owb/static/css/main.aea652a0.css",
+    "main.js": "/owb/static/js/main.5c7d5f7d.js",
     "static/js/206.957159ff.chunk.js": "/owb/static/js/206.957159ff.chunk.js",
     "static/media/spain.svg": "/owb/static/media/spain.fe46f7a778fdc34b4cb31895f52d2247.svg",
     "service-worker.js": "/owb/service-worker.js",
@@ -34,7 +34,7 @@
     "static/media/france.svg": "/owb/static/media/france.bf26b172fbb19d5193a5a0a28e69c4ba.svg"
   },
   "entrypoints": [
-    "static/css/main.9d726ef8.css",
-    "static/js/main.6ed8e060.js"
+    "static/css/main.aea652a0.css",
+    "static/js/main.5c7d5f7d.js"
   ]
 }

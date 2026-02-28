@@ -69,18 +69,28 @@ export function getUnitCompNotes(unit, rulesMap) {
   }
   
   // Check special rules
-  if (unit.specialRules) {
-    if (Array.isArray(unit.specialRules)) {
-      unit.specialRules.forEach(rule => {
-        const ruleName = extractName(rule);
-        if (ruleName) addCompNote(ruleName);
-      });
-    } else {
-      // specialRules might be a single object
-      const ruleName = extractName(unit.specialRules);
-      if (ruleName) addCompNote(ruleName);
+  // Check special rules
+if (unit.specialRules) {
+  if (Array.isArray(unit.specialRules)) {
+    unit.specialRules.forEach(rule => {
+      const ruleName = extractName(rule);
+      if (ruleName) {
+        // Split by comma and check each rule separately
+        const rules = ruleName.split(',').map(r => r.trim());
+        rules.forEach(r => addCompNote(r));
+      }
+    });
+  } else {
+    // specialRules might be a single object with comma-separated names
+    const ruleName = extractName(unit.specialRules);
+    if (ruleName) {
+      // Split by comma and check each rule separately
+      const rules = ruleName.split(',').map(r => r.trim());
+      rules.forEach(r => addCompNote(r));
     }
   }
+}
+
   
   // Check weapons
   if (unit.weapons && Array.isArray(unit.weapons)) {
@@ -154,7 +164,19 @@ export function getUnitCompNotes(unit, rulesMap) {
       }
     });
   }
-  
+  // Check command items (champions, musicians, standard bearers, etc.)
+  if (unit.command && Array.isArray(unit.command)) {
+    unit.command.forEach((commandItem) => {
+      if (!commandItem.active) return;
+      const commandName = extractName(commandItem);
+      if (commandName) {
+      // Split by comma in case there are multiple items
+      const items = commandName.split(',').map(i => i.trim());
+      items.forEach(item => addCompNote(item));
+    }
+  });
+}
+
   return Array.from(compNotes);
 }
 

@@ -817,10 +817,10 @@
       ],
       "lores": [],
       "specialRules": {
-        "name_en": "Chaos Armour {warriors of chaos} (5+), Ensorcelled Weapons (HW/2HW), Gaze of the Gods, Rallying Cry, Veteran",
+        "name_en": "Chaos Armour {warriors of chaos} (5+), Ensorcelled Weapons, Gaze of the Gods, Rallying Cry, Veteran",
         "name_cn": "混沌甲 {warriors of chaos}(5+), 附魔武器, 诸神凝视, 集结战吼, Veteran",
         "name_de": "Chaosrüstung (5+), Verzauberte Waffen, Blick der Götter, Sammelruf, Veteran",
-        "name_es": "Chaos Armour (5+), Ensorcelled Weapons (HW/2HW), Gaze of the Gods, Rallying Cry, Veteran",
+        "name_es": "Chaos Armour (5+), Ensorcelled Weapons, Gaze of the Gods, Rallying Cry, Veteran",
         "name_fr": "Armure du Chaos (5+), Armes Ensorcelées, Regard des Dieux, Cri de Ralliement, Veteran"
       }
     },
@@ -1136,7 +1136,7 @@
         "name_en": "Chaos Armour {warriors of chaos} (5+), Ensorcelled Weapons, Gaze of the Gods, Lore of Chaos",
         "name_cn": "混沌甲 {warriors of chaos}(5+), 附魔武器, 诸神凝视, 混沌法系",
         "name_de": "Chaosrüstung (5+), Verzauberte Waffen, Blick der Götter, Lehre des Chaos",
-        "name_es": "Chaos Armour (5+), Ensorcelled Weapons (HW/2HW), Gaze of the Gods, Lore of Chaos",
+        "name_es": "Chaos Armour (5+), Ensorcelled Weapons, Gaze of the Gods, Lore of Chaos",
         "name_fr": "Armure du Chaos (5+), Armes Ensorcelées, Regard des Dieux, Domaine du Chaos"
       }
     },
@@ -1596,10 +1596,10 @@
       ],
       "lores": [],
       "specialRules": {
-        "name_en": "Chaos Armour {warriors of chaos} (5+), Ensorcelled Weapons (HW/2HW), Gaze of the Gods, Rallying Cry",
+        "name_en": "Chaos Armour {warriors of chaos} (5+), Ensorcelled Weapons, Gaze of the Gods, Rallying Cry",
         "name_cn": "混沌甲 {warriors of chaos}(5+), 附魔武器, 诸神凝视, 集结战吼",
         "name_de": "Chaosrüstung (5+), Verzauberte Waffen, Blick der Götter, Sammelruf",
-        "name_es": "Chaos Armour (5+), Ensorcelled Weapons (HW/2HW), Gaze of the Gods, Rallying Cry",
+        "name_es": "Chaos Armour (5+), Ensorcelled Weapons, Gaze of the Gods, Rallying Cry",
         "name_fr": "Armure du Chaos (5+), Armes Ensorcelées, Regard des Dieux, Cri de Ralliement"
       }
     },
@@ -1875,7 +1875,7 @@
         "name_en": "Chaos Armour {warriors of chaos} (5+), Ensorcelled Weapons, Gaze of the Gods, Lore of Chaos",
         "name_cn": "混沌甲 {warriors of chaos}(5+), 附魔武器, 诸神凝视, 混沌法系",
         "name_de": "Chaosrüstung (5+), Verzauberte Waffen, Blick der Götter, Lehre des Chaos",
-        "name_es": "Chaos Armour (5+), Ensorcelled Weapons (HW/2HW), Gaze of the Gods, Lore of Chaos",
+        "name_es": "Chaos Armour (5+), Ensorcelled Weapons, Gaze of the Gods, Lore of Chaos",
         "name_fr": "Armure du Chaos (5+), Armes Ensorcelées, Regard des Dieux, Domaine du Chaos"
       }
     },
@@ -2299,10 +2299,10 @@
       ],
       "lores": [],
       "specialRules": {
-        "name_en": "Chaos Armour {warriors of chaos} (5+), Ensorcelled Weapons (HW/2HW), Gaze of the Gods, Rallying Cry",
+        "name_en": "Chaos Armour {warriors of chaos} (5+), Ensorcelled Weapons, Gaze of the Gods, Rallying Cry",
         "name_cn": "混沌甲 {warriors of chaos}(5+), 附魔武器, 诸神凝视, 集结战吼",
         "name_de": "Chaosrüstung (5+), Verzauberte Waffen, Blick der Götter, Sammelruf",
-        "name_es": "Chaos Armour (5+), Ensorcelled Weapons (HW/2HW), Gaze of the Gods, Rallying Cry",
+        "name_es": "Chaos Armour (5+), Ensorcelled Weapons, Gaze of the Gods, Rallying Cry",
         "name_fr": "Armure du Chaos (5+), Armes Ensorcelées, Regard des Dieux, Cri de Ralliement"
       }
     },
@@ -2646,10 +2646,10 @@
         "name_en": "Ambushers, Chainmaker, Chaos Armour {warriors of chaos} (5+), Commander & Captain, Ensorcelled Weapons, Gaze of the Gods, Impact Hits (1), Mark of Chaos Undivided, Peerless Raider, Rallying Cry",
         "name_cn": "伏击, 铸链者, 混沌甲 {warriors of chaos}(5+), 领航指挥官, 附魔武器, 诸神凝视, 撞击(1), 混沌无分之印, 无双掠袭者, 集结战吼",
         "name_de": "Überfall, Kettenmacherin, Chaosrüstung (5+), Kommandantin und Kapitänin, Verzauberte Waffen, Blick der Götter, Aufpralltreffer (1), Mal des Ungeteilten Chaos, Räuberin ohnegleichen, Sammelruf",
-        "name_es": "Ambushers, Chainmaker, Chaos Armour (5+), Commander & Captain, Ensorcelled Weapons (HW/2HW), Gaze of the Gods, Impact Hits (1), Mark of Chaos Undivided, Peerless Raider, Rallying Cry",
+        "name_es": "Ambushers, Chainmaker, Chaos Armour (5+), Commander & Captain, Ensorcelled Weapons, Gaze of the Gods, Impact Hits (1), Mark of Chaos Undivided, Peerless Raider, Rallying Cry",
         "name_fr": "Embusqueurs, Forgechaîne, Armure du Chaos (5+), Commandante & Capitaine, Armes Ensorcelées, Regard des Dieux, Touches d’Impact (1), Marque du Chaos Universel, Pillarde Inégalée, Cri de Ralliement",
-        "name_it": "Ambushers, Chainmaker, Chaos Armour (5+), Commander & Captain, Ensorcelled Weapons (HW/2HW), Gaze of the Gods, Impact Hits (1), Mark of Chaos Undivided, Peerless Raider, Rallying Cry",
-        "name_pl": "Ambushers, Chainmaker, Chaos Armour (5+), Commander & Captain, Ensorcelled Weapons (HW/2HW), Gaze of the Gods, Impact Hits (1), Mark of Chaos Undivided, Peerless Raider, Rallying Cry"
+        "name_it": "Ambushers, Chainmaker, Chaos Armour (5+), Commander & Captain, Ensorcelled Weapons, Gaze of the Gods, Impact Hits (1), Mark of Chaos Undivided, Peerless Raider, Rallying Cry",
+        "name_pl": "Ambushers, Chainmaker, Chaos Armour (5+), Commander & Captain, Ensorcelled Weapons, Gaze of the Gods, Impact Hits (1), Mark of Chaos Undivided, Peerless Raider, Rallying Cry"
       },
       "notes": {
         "name_en": "",
@@ -2943,10 +2943,10 @@
       ],
       "lores": [],
       "specialRules": {
-        "name_en": "Close Order, Ensorcelled Weapons (HW/2HW)",
+        "name_en": "Close Order, Ensorcelled Weapons",
         "name_cn": "紧密阵型, 附魔武器",
         "name_de": "Geschlossene Ränge, Verzauberte Waffen",
-        "name_es": "Close Order, Ensorcelled Weapons (HW/2HW)",
+        "name_es": "Close Order, Ensorcelled Weapons",
         "name_fr": "Ordre Serré, Armes Ensorcelées"
       }
     },
@@ -3128,7 +3128,7 @@
         "name_en": "Close Order, Ensorcelled Weapons, First Charge, Swiftstride, Counter Charge",
         "name_cn": "紧密阵型, 附魔武器, 先行冲锋, 快速行进, 反制冲锋",
         "name_de": "Geschlossene Ränge, Verzauberte Waffen, Erster Angriff, Schnelle Bewegung, Gegenangriff",
-        "name_es": "Close Order, Ensorcelled Weapons (HW/2HW), First Charge, Swiftstride, Counter Charge",
+        "name_es": "Close Order, Ensorcelled Weapons, First Charge, Swiftstride, Counter Charge",
         "name_fr": "Ordre Serré, Armes Ensorcelées, Première Charge, Rapide, Contre-charge"
       }
     },
@@ -3929,7 +3929,7 @@
         "name_en": "Chaos Armour {warriors of chaos} (5+), Ensorcelled Weapons, Furious Charge, Immune to Psychology, Impetuous, Loner, Open Order, Rampant Mutation, Random Attacks, Stubborn",
         "name_cn": "混沌甲 {warriors of chaos}(5+), 附魔武器, 狂怒冲锋, 心理免疫, 鲁莽, 独行, 开放阵型, 疯狂变异, 随机攻击, 坚毅",
         "name_de": "Chaosrüstung (5+), Verzauberte Waffen, Rasender Angriff, Immun gegen Psychologie, Ungestüm, Einzelgänger, Offene Ränge, Ungezügelte Mutationen, Zufällige Attacken, Unnachgiebig",
-        "name_es": "Chaos Armour (5+), Ensorcelled Weapons (HW/2HW), Furious Charge, Immune to Psychology, Impetuous, Loner, Open Order, Rampant Mutation, Random Attacks, Stubborn",
+        "name_es": "Chaos Armour (5+), Ensorcelled Weapons, Furious Charge, Immune to Psychology, Impetuous, Loner, Open Order, Rampant Mutation, Random Attacks, Stubborn",
         "name_fr": "Armure du Chaos (5+), Armes Ensorcelées, Charge Dévastatrice, Immunisé à la Psychologie, Impétueux, Solitaire, Ordre Dispersé, Mutations Étranges, Attaques Aléatoires, Obstiné"
       }
     },
@@ -4192,7 +4192,7 @@
         "name_en": "Close Order, Ensorcelled Weapons, First Charge, Impact Hits (D6+1)",
         "name_cn": "紧密阵型, 附魔武器, 先行冲锋, 撞击(D6+1)",
         "name_de": "Geschlossene Ränge, Verzauberte Waffen, Erster Angriff, Aufpralltreffer (W6+1)",
-        "name_es": "Close Order, Ensorcelled Weapons (HW/2HW), First Charge, Impact Hits (D6+1)",
+        "name_es": "Close Order, Ensorcelled Weapons, First Charge, Impact Hits (D6+1)",
         "name_fr": "Ordre Serré, Armes Ensorcelées, Première Charge, Touches d’Impact (D6+1)"
       }
     }
@@ -4412,10 +4412,10 @@
       ],
       "lores": [],
       "specialRules": {
-        "name_en": "Chaos Armour {warriors of chaos} (6+), Close Order, Ensorcelled Weapons (HW/2HW), Stubborn",
+        "name_en": "Chaos Armour {warriors of chaos} (6+), Close Order, Ensorcelled Weapons, Stubborn",
         "name_cn": "混沌甲 {warriors of chaos}(6+), 紧密阵型, 附魔武器, 坚毅",
         "name_de": "Chaosrüstung (6+), Geschlossene Ränge, Verzauberte Waffen, Unnachgiebig",
-        "name_es": "Chaos Armour (6+), Close Order, Ensorcelled Weapons (HW/2HW), Stubborn",
+        "name_es": "Chaos Armour (6+), Close Order, Ensorcelled Weapons, Stubborn",
         "name_fr": "Armure du Chaos (6+), Ordre Serré, Armes Ensorcelées, Obstiné"
       },
       "notes": {
@@ -4617,7 +4617,7 @@
         "name_en": "Chaos Armour {warriors of chaos} (6+), Close Order, Counter Charge, Ensorcelled Weapons, First Charge, Stubborn, Swiftstride",
         "name_cn": "混沌甲 {warriors of chaos}(6+), 紧密阵型, 反制冲锋, 附魔武器, 先行冲锋, 坚毅, 快速行进",
         "name_de": "Chaosrüstung (6+), Geschlossene Ränge, Gegenangriff, Verzauberte Waffen, Erster Angriff, Unnachgiebig, Schnelle Bewegung",
-        "name_es": "Chaos Armour (6+), Close Order, Counter Charge, Ensorcelled Weapons (HW/2HW), First Charge, Stubborn, Swiftstride",
+        "name_es": "Chaos Armour (6+), Close Order, Counter Charge, Ensorcelled Weapons, First Charge, Stubborn, Swiftstride",
         "name_fr": "Armure du Chaos (6+), Ordre Serré, Contre-charge, Armes Ensorcelées, Première Charge, Obstiné, Rapide"
       },
       "notes": {
@@ -4741,10 +4741,10 @@
         "name_en": "Close Order, Counter Charge, Ensorcelled Weapons, First Charge, Impact Hits (D6+1 - Chariot only), Mark of Chaos Undivided",
         "name_cn": "紧密阵型, 反制冲锋, 附魔武器, 先行冲锋, 撞击(D6+1 - Chariot only), 混沌无分之印",
         "name_de": "Geschlossene Ränge, Gegenangriff, Verzauberte Waffen, Erster Angriff, Aufpralltreffer (W6+1 - Chariot only), Mal des Ungeteilten Chaos",
-        "name_es": "Close Order, Counter Charge, Ensorcelled Weapons (HW/2HW), First Charge, Impact Hits (D6+1 - Chariot only), Mark of Chaos Undivided",
+        "name_es": "Close Order, Counter Charge, Ensorcelled Weapons, First Charge, Impact Hits (D6+1 - Chariot only), Mark of Chaos Undivided",
         "name_fr": "Ordre Serré, Contre-charge, Armes Ensorcelées, Première Charge, Touches d’Impact (D6+1 - Char uniquement), Marque du Chaos Universel",
-        "name_it": "Close Order, Counter Charge, Ensorcelled Weapons (HW/2HW), First Charge, Impact Hits (D6+1 - Chariot only), Mark of Chaos Undivided",
-        "name_pl": "Close Order, Counter Charge, Ensorcelled Weapons (HW/2HW), First Charge, Impact Hits (D6+1 - Chariot only), Mark of Chaos Undivided"
+        "name_it": "Close Order, Counter Charge, Ensorcelled Weapons, First Charge, Impact Hits (D6+1 - Chariot only), Mark of Chaos Undivided",
+        "name_pl": "Close Order, Counter Charge, Ensorcelled Weapons, First Charge, Impact Hits (D6+1 - Chariot only), Mark of Chaos Undivided"
       },
       "notes": {
         "name_en": "0-1 Chosen Chaos Chariot per 1000 points",
@@ -4837,7 +4837,7 @@
         "name_en": "Close Order, Ensorcelled Weapons, First Charge, Impact Hits (D6+1)",
         "name_cn": "紧密阵型, 附魔武器, 先行冲锋, 撞击(D6+1)",
         "name_de": "Geschlossene Ränge, Verzauberte Waffen, Erster Angriff, Aufpralltreffer (W6+1)",
-        "name_es": "Close Order, Ensorcelled Weapons (HW/2HW), First Charge, Impact Hits (D6+1)",
+        "name_es": "Close Order, Ensorcelled Weapons, First Charge, Impact Hits (D6+1)",
         "name_fr": "Ordre Serré, Armes Ensorcelées, Première Charge, Touches d’Impact (D6+1)"
       }
     },
@@ -5345,10 +5345,10 @@
       ],
       "lores": [],
       "specialRules": {
-        "name_en": "Armour Bane (1), Armoured Hide (2), Close Order, Fear, Ensorcelled Weapons (HW/2HW), Immune to Psychology, Stomp Attacks (2), The Quickening Storm",
+        "name_en": "Armour Bane (1), Armoured Hide (2), Close Order, Fear, Ensorcelled Weapons, Immune to Psychology, Stomp Attacks (2), The Quickening Storm",
         "name_cn": "碎甲攻击(1), 坚硬皮肤(2), 紧密阵型, 恐惧, 附魔武器, 心理免疫, 践踏攻击(2), 风暴加剧",
         "name_de": "Rüstungsfluch (1), Zähe Haut (2), Geschlossene Ränge, Angst, Verzauberte Waffen, Immun gegen Psychologie, Stampfattacken (2), The Quickening Storm",
-        "name_es": "Armour Bane (1), Armoured Hide (2), Close Order, Fear, Ensorcelled Weapons (HW/2HW), Immune to Psychology, Stomp Attacks (2), Belebender Sturm",
+        "name_es": "Armour Bane (1), Armoured Hide (2), Close Order, Fear, Ensorcelled Weapons, Immune to Psychology, Stomp Attacks (2), Belebender Sturm",
         "name_fr": "Arme Perforante (1), Peau Blindée (2), Ordre Serré, Peur, Armes Ensorcelées, Immunisé à la Psychologie, Attaques de Piétinement (2), Orage Revitalisant"
       }
     },
@@ -5875,7 +5875,7 @@
         "name_en": "Armour Bane (1 - Gorebeast only), Close Order, Ensorcelled Weapons, First Charge, Impact Hits (D6+2), Killing Blow (Gorebeast only)",
         "name_cn": "碎甲攻击(1 - Gorebeast only), 紧密阵型, 附魔武器, 先行冲锋, 撞击(D6+2), 一击必杀(Gorebeast only)",
         "name_de": "Rüstungsfluch (1, nur Blutbestie, Geschlossene Ränge, Verzauberte Waffen, Erster Angriff, Aufpralltreffer (W6+2), Todesstoss (nur Blutbestie)",
-        "name_es": "Armour Bane (1 - Gorebeast only), Close Order, Ensorcelled Weapons (HW/2HW), First Charge, Impact Hits (D6+2), Killing Blow (Gorebeast only)",
+        "name_es": "Armour Bane (1 - Gorebeast only), Close Order, Ensorcelled Weapons, First Charge, Impact Hits (D6+2), Killing Blow (Gorebeast only)",
         "name_fr": "Arme Perforante (1 - Éventreur uniquement), Ordre Serré, Armes Ensorcelées, Première Charge, Touches d’Impact (D6+2), Coup Fatal (Éventreur uniquement)"
       }
     },
@@ -6030,10 +6030,10 @@
       ],
       "lores": [],
       "specialRules": {
-        "name_en": "Armour Bane (2), Armoured Hide (2), Close Order, Ensorcelled Weapons (HW/2HW), Immune to Psychology, Large Target, Stomp Attacks (D3+1), Storm Call {warriors}, Terror, The Quickening Storm",
+        "name_en": "Armour Bane (2), Armoured Hide (2), Close Order, Ensorcelled Weapons, Immune to Psychology, Large Target, Stomp Attacks (D3+1), Storm Call {warriors}, Terror, The Quickening Storm",
         "name_cn": "碎甲攻击(2), 坚硬皮肤(2), 紧密阵型, 附魔武器, 心理免疫, 大型目标, 践踏攻击(D3+1), 召唤风暴 {warriors}, 惊骇, 风暴加剧",
         "name_de": "Rüstungsfluch (2), Zähe Haut (2), Geschlossene Ränge, Verzauberte Waffen, Immun gegen Psychologie, Großes Ziel, Stampfattacken (D3+1), Sturmrufer, Entsetzen, Belebender Sturm",
-        "name_es": "Armour Bane (2), Armoured Hide (2), Close Order, Ensorcelled Weapons (HW/2HW), Immune to Psychology, Large Target, Stomp Attacks (D3+1), Storm Call, Terror, The Quickening Storm",
+        "name_es": "Armour Bane (2), Armoured Hide (2), Close Order, Ensorcelled Weapons, Immune to Psychology, Large Target, Stomp Attacks (D3+1), Storm Call, Terror, The Quickening Storm",
         "name_fr": "Arme Perforante (2), Peau Blindée (2), Ordre Serré, Armes Ensorcelées, Immunisé à la Psychologie, Grande Cible, Attaques de Piétinement (D3+1), Appeler la Tempête, Terreur, Orage Revitalisant"
       },
       "notes": {

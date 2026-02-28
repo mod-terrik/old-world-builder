@@ -1253,7 +1253,7 @@ export const Unit = ({ isMobile, previewData = {} }) => {
                     <div className="list__inner unit__detachments-header">
                       <b className="unit__magic-headline">
                         {detachment[`name_${language}`] || name_en}
-                        <RuleWithIcon
+                         <RuleWithIcon
                           name={name_en}
                           isDark
                           className="unit__rules"
@@ -1805,11 +1805,15 @@ export const Unit = ({ isMobile, previewData = {} }) => {
                   />
                   <label htmlFor={`lore-${lore}`} className="radio__label">
                     {nameMap[lore][`name_${language}`] || nameMap[lore].name_en}
-                    <RuleWithIcon
-                      name={nameMap[lore].name_en}
-                      isDark
-                      className="unit__rules"
-                    />
+                  <RuleWithIcon
+  		    name={
+                      listArmyComposition?.includes("gcomp")
+                      ? `${nameMap[lore].name_en} renegade`
+                      : nameMap[lore].name_en
+                   }
+                   isDark
+                   className="unit__rules"
+                  />
                   </label>
                 </div>
               ))}

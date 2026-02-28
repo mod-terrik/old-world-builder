@@ -535,10 +535,10 @@
         "illusion"
       ],
       "specialRules": {
-        "name_en": "Lore of the Horned Rat, Magical Attacks, Magic Resistance (-1), Scurry Away, Verminous Valour, Warband, Warpstone Weapons (not for the mount)",
+        "name_en": "Lore of the Horned Rat {renegade}, Magical Attacks, Magic Resistance (-1), Scurry Away, Verminous Valour, Warband, Warpstone Weapons (not for the mount)",
         "name_cn": "大角鼠法系, 魔法攻击, 魔法抗性(-1), 抱头鼠窜, 首鼠两端, 战帮, 次元石武器(不适用于此模型的坐骑)",
-        "name_de": "Lore of the Horned Rat, Magical Attacks, Magic Resistance (-1), Scurry Away, Verminous Valour, Warband, Warpstone Weapons (not for the mount)",
-        "name_es": "Lore of the Horned Rat, Magical Attacks, Magic Resistance (-1), Scurry Away, Verminous Valour, Warband, Warpstone Weapons (not for the mount)",
+        "name_de": "Lore of the Horned Rat {renegade}, Magical Attacks, Magic Resistance (-1), Scurry Away, Verminous Valour, Warband, Warpstone Weapons (not for the mount)",
+        "name_es": "Lore of the Horned Rat {renegade}, Magical Attacks, Magic Resistance (-1), Scurry Away, Verminous Valour, Warband, Warpstone Weapons (not for the mount)",
         "name_fr": "Domaine du Rat Cornu, Attaques Magiques, Résistance à la Magie (-1), Sauve qui Peut!, Courageux mais pas Téméraire, Bande de Guerre, Armes à base de Malepierre (ne s'applique pas à la monture)"
       },
       "notes": {
@@ -661,10 +661,10 @@
       ],
       "lores": ["battle-magic", "elementalism"],
       "specialRules": {
-        "name_en": "Lore of the Horned Rat, Magical Attacks, Scurry Away, Verminous Valour, Warband, Warpstone Weapons",
+        "name_en": "Lore of the Horned Rat {renegade}, Magical Attacks, Scurry Away, Verminous Valour, Warband, Warpstone Weapons",
         "name_cn": "大角鼠法系, 魔法攻击, 抱头鼠窜, 首鼠两端, 战帮, 次元石武器",
-        "name_de": "Lore of the Horned Rat, Magical Attacks, Scurry Away, Verminous Valour, Warband, Warpstone Weapons",
-        "name_es": "Lore of the Horned Rat, Magical Attacks, Scurry Away, Verminous Valour, Warband, Warpstone Weapons",
+        "name_de": "Lore of the Horned Rat {renegade}, Magical Attacks, Scurry Away, Verminous Valour, Warband, Warpstone Weapons",
+        "name_es": "Lore of the Horned Rat {renegade}, Magical Attacks, Scurry Away, Verminous Valour, Warband, Warpstone Weapons",
         "name_fr": "Domaine du Rat Cornu, Attaques Magiques, Sauve qui Peut!, Courageux mais pas Téméraire, Bande de Guerre, Armes à base de Malepierre"
       }
     },
@@ -861,10 +861,10 @@
       ],
       "lores": ["daemonology", "battle-magic", "dark-magic"],
       "specialRules": {
-        "name_en": "Cloud of Flies, Frenzy, Lore of the Horned Rat, Magical Attacks, Scurry Away, Verminous Valour, Warband, Warpstone Weapons (not for the mount)",
+        "name_en": "Cloud of Flies, Frenzy, Lore of the Horned Rat {renegade}, Magical Attacks, Scurry Away, Verminous Valour, Warband, Warpstone Weapons (not for the mount)",
         "name_cn": "蝇之云, 狂暴, 大角鼠法系, 魔法攻击, 抱头鼠窜, 首鼠两端, 战帮, 次元石武器(不适用于此模型的坐骑)",
-        "name_de": "Cloud of Flies, Frenzy, Lore of the Horned Rat, Magical Attacks, Scurry Away, Verminous Valour, Warband, Warpstone Weapons (not for the mount)",
-        "name_es": "Cloud of Flies, Frenzy, Lore of the Horned Rat, Magical Attacks, Scurry Away, Verminous Valour, Warband, Warpstone Weapons (not for the mount)",
+        "name_de": "Cloud of Flies, Frenzy, Lore of the Horned Rat {renegade}, Magical Attacks, Scurry Away, Verminous Valour, Warband, Warpstone Weapons (not for the mount)",
+        "name_es": "Cloud of Flies, Frenzy, Lore of the Horned Rat {renegade}, Magical Attacks, Scurry Away, Verminous Valour, Warband, Warpstone Weapons (not for the mount)",
         "name_fr": "Nuage de Mouches, Frénésie, Domaine du Rat Cornu, Attaques Magiques, Sauve qui Peut!, Courageux mais pas Téméraire, Bande de Guerre, Armes à base de Malepierre (ne s'applique pas à la monture)"
       }
     }

@@ -1806,7 +1806,7 @@ export const Unit = ({ isMobile, previewData = {} }) => {
                     {nameMap[lore][`name_${language}`] || nameMap[lore].name_en}
                   <RuleWithIcon
   		    name={
-                      listArmyComposition?.includes("gcomp")
+                      listArmyComposition?.includes("renegade")
                       ? `${nameMap[lore].name_en} renegade`
                       : nameMap[lore].name_en
                    }
@@ -1922,7 +1922,7 @@ export const Unit = ({ isMobile, previewData = {} }) => {
             <p>
               <RulesLinksText
                 textObject={specialRules}
-                isRenegade={listArmyComposition?.includes("gcomp")}
+                isRenegade={listArmyComposition?.includes("renegade")}
               />
             </p>
           </>

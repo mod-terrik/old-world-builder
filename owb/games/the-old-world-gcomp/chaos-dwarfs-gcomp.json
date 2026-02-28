@@ -15,10 +15,10 @@
         "cd-renegade": {
           "category": "characters",
           "specialRules": {
-            "name_en": "Blackshard Armour, Ensorcelled Weapons, Infernal Engineer, Lore of Hashut {renegade}, Resolute, Sorcerer's Curse, Stubborn",
+            "name_en": "Blackshard Armour, Ensorcelled Weapons, Infernal Engineer, Lore of Hashut {renegade} {renegade}, Resolute, Sorcerer's Curse, Stubborn",
             "name_cn": "黑铁鳞甲, 附魔武器, 地狱工程师, 哈苏特法系, 坚决, 术士诅咒, 坚毅",
-            "name_de": "Blackshard Armour, Ensorcelled Weapons, Infernal Engineer, Lore of Hashut, Resolute, Sorcerer's Curse, Stubborn",
-            "name_es": "Blackshard Armour, Ensorcelled Weapons, Infernal Engineer, Lore of Hashut, Resolute, Sorcerer's Curse, Stubborn",
+            "name_de": "Blackshard Armour, Ensorcelled Weapons, Infernal Engineer, Lore of Hashut {renegade}, Resolute, Sorcerer's Curse, Stubborn",
+            "name_es": "Blackshard Armour, Ensorcelled Weapons, Infernal Engineer, Lore of Hashut {renegade}, Resolute, Sorcerer's Curse, Stubborn",
             "name_fr": "Armure Sombréclat, Armes Ensorcelées, Ingénieur Infernal, Domaine d’Hashut, Résolu, Malédiction du Sorcier, Obstiné"
           }
         }
@@ -204,10 +204,10 @@
       ],
       "lores": ["daemonology", "dark-magic", "elementalism"],
       "specialRules": {
-        "name_en": "Blackshard Armour, Ensorcelled Weapons, Infernal Engineer, Lore of Hashut, Resolute, Sorcerer's Curse, Stubborn",
+        "name_en": "Blackshard Armour, Ensorcelled Weapons, Infernal Engineer, Lore of Hashut {renegade}, Resolute, Sorcerer's Curse, Stubborn",
         "name_cn": "黑铁鳞甲, 附魔武器, 地狱工程师, 哈苏特法系, 坚决, 术士诅咒, 坚毅",
-        "name_de": "Blackshard Armour, Ensorcelled Weapons, Infernal Engineer, Lore of Hashut, Resolute, Sorcerer's Curse, Stubborn",
-        "name_es": "Blackshard Armour, Ensorcelled Weapons, Infernal Engineer, Lore of Hashut, Resolute, Sorcerer's Curse, Stubborn",
+        "name_de": "Blackshard Armour, Ensorcelled Weapons, Infernal Engineer, Lore of Hashut {renegade}, Resolute, Sorcerer's Curse, Stubborn",
+        "name_es": "Blackshard Armour, Ensorcelled Weapons, Infernal Engineer, Lore of Hashut {renegade}, Resolute, Sorcerer's Curse, Stubborn",
         "name_fr": "Armure Sombréclat, Armes Ensorcelées, Ingénieur Infernal, Domaine d’Hashut, Résolu, Malédiction du Sorcier, Obstiné"
       },
       "notes": {
@@ -233,10 +233,10 @@
         "cd-renegade": {
           "category": "characters",
           "specialRules": {
-            "name_en": "Blackshard Armour, Ensorcelled Weapons, Infernal Engineer, Lore of Hashut {renegade}, Resolute, Sorcerer's Curse, Stubborn",
+            "name_en": "Blackshard Armour, Ensorcelled Weapons, Infernal Engineer, Lore of Hashut {renegade} {renegade}, Resolute, Sorcerer's Curse, Stubborn",
             "name_cn": "黑铁鳞甲, 附魔武器, 地狱工程师, 哈苏特法系, 坚决, 术士诅咒, 坚毅",
-            "name_de": "Blackshard Armour, Ensorcelled Weapons, Infernal Engineer, Lore of Hashut, Resolute, Sorcerer's Curse, Stubborn",
-            "name_es": "Blackshard Armour, Ensorcelled Weapons, Infernal Engineer, Lore of Hashut, Resolute, Sorcerer's Curse, Stubborn",
+            "name_de": "Blackshard Armour, Ensorcelled Weapons, Infernal Engineer, Lore of Hashut {renegade}, Resolute, Sorcerer's Curse, Stubborn",
+            "name_es": "Blackshard Armour, Ensorcelled Weapons, Infernal Engineer, Lore of Hashut {renegade}, Resolute, Sorcerer's Curse, Stubborn",
             "name_fr": "Armure Sombréclat, Armes Ensorcelées, Ingénieur Infernal, Domaine d’Hashut, Résolu, Malédiction du Sorcier, Obstiné"
           }
         }
@@ -414,10 +414,10 @@
       ],
       "lores": ["daemonology", "dark-magic", "elementalism"],
       "specialRules": {
-        "name_en": "Blackshard Armour, Ensorcelled Weapons, Infernal Engineer, Lore of Hashut, Resolute, Sorcerer's Curse, Stubborn",
+        "name_en": "Blackshard Armour, Ensorcelled Weapons, Infernal Engineer, Lore of Hashut {renegade}, Resolute, Sorcerer's Curse, Stubborn",
         "name_cn": "黑铁鳞甲, 附魔武器, 地狱工程师, 哈苏特法系, 坚决, 术士诅咒, 坚毅",
-        "name_de": "Blackshard Armour, Ensorcelled Weapons, Infernal Engineer, Lore of Hashut, Resolute, Sorcerer's Curse, Stubborn",
-        "name_es": "Blackshard Armour, Ensorcelled Weapons, Infernal Engineer, Lore of Hashut, Resolute, Sorcerer's Curse, Stubborn",
+        "name_de": "Blackshard Armour, Ensorcelled Weapons, Infernal Engineer, Lore of Hashut {renegade}, Resolute, Sorcerer's Curse, Stubborn",
+        "name_es": "Blackshard Armour, Ensorcelled Weapons, Infernal Engineer, Lore of Hashut {renegade}, Resolute, Sorcerer's Curse, Stubborn",
         "name_fr": "Armure Sombréclat, Armes Ensorcelées, Ingénieur Infernal, Domaine d’Hashut, Résolu, Malédiction du Sorcier, Obstiné"
       },
       "notes": {

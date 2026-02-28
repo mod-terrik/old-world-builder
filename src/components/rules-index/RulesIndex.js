@@ -27,7 +27,7 @@ export const RulesIndex = () => {
     dispatch(closeRulesIndex());
   };
   
-  const isRenegadeArmy = listArmyComposition?.includes("gcomp");
+  const isRenegadeArmy = listArmyComposition?.includes("renegade");
   const normalizedName =
     activeRule.includes("renegade") && isRenegadeArmy
       ? normalizeRuleName(activeRule)

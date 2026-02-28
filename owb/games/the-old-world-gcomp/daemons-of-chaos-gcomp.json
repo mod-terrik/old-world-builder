@@ -17,13 +17,13 @@
         "doc-renegade": {
           "category": "characters",
           "specialRules": {
-            "name_en": "Chaos Armour {daemons of chaos}, Daemonic {renegade}, Infernal Favour (2), Lore of Daemons, Regeneration (5+)",
+            "name_en": "Chaos Armour {daemons of chaos}, Daemonic {renegade}, Infernal Favour (2), Lore of Daemons {renegade}, Regeneration (5+)",
             "name_cn": "混沌甲, 恶魔, 炼狱恩宠(2), 恶魔法系, 重生(5+)",
-            "name_de": "Chaos Armour, Daemonic, Infernal Favour (2), Lore of Daemons, Regeneration (5+)",
-            "name_es": "Chaos Armour, Daemonic, Infernal Favour (2), Lore of Daemons, Regeneration (5+)",
+            "name_de": "Chaos Armour, Daemonic, Infernal Favour (2), Lore of Daemons {renegade}, Regeneration (5+)",
+            "name_es": "Chaos Armour, Daemonic, Infernal Favour (2), Lore of Daemons {renegade}, Regeneration (5+)",
             "name_fr": "Armure du Chaos, Démoniaque, Faveur Infernale (2), Domaine des Démons, Régénération (5+)",
-            "name_it": "Chaos Armour, Daemonic, Infernal Favour (2), Lore of Daemons, Regeneration (5+)",
-            "name_pl": "Chaos Armour, Daemonic, Infernal Favour (2), Lore of Daemons, Regeneration (5+)"
+            "name_it": "Chaos Armour, Daemonic, Infernal Favour (2), Lore of Daemons {renegade}, Regeneration (5+)",
+            "name_pl": "Chaos Armour, Daemonic, Infernal Favour (2), Lore of Daemons {renegade}, Regeneration (5+)"
           }
         }
       },
@@ -360,13 +360,13 @@
       ],
       "lores": ["none", "battle-magic", "daemonology", "dark-magic"],
       "specialRules": {
-        "name_en": "Chaos Armour {daemons of chaos}, Daemonic {renegade}, Infernal Favour (2), Lore of Daemons",
+        "name_en": "Chaos Armour {daemons of chaos}, Daemonic {renegade}, Infernal Favour (2), Lore of Daemons {renegade}",
         "name_cn": "混沌甲, 恶魔, 炼狱恩宠(2), 恶魔法系",
-        "name_de": "Chaos Armour, Daemonic, Infernal Favour (2), Lore of Daemons",
-        "name_es": "Chaos Armour, Daemonic, Infernal Favour (2), Lore of Daemons",
+        "name_de": "Chaos Armour, Daemonic, Infernal Favour (2), Lore of Daemons {renegade}",
+        "name_es": "Chaos Armour, Daemonic, Infernal Favour (2), Lore of Daemons {renegade}",
         "name_fr": "Armure du Chaos, Démoniaque, Faveur Infernale (2), Domaine des Démons",
-        "name_it": "Chaos Armour, Daemonic, Infernal Favour (2), Lore of Daemons",
-        "name_pl": "Chaos Armour, Daemonic, Infernal Favour (2), Lore of Daemons"
+        "name_it": "Chaos Armour, Daemonic, Infernal Favour (2), Lore of Daemons {renegade}",
+        "name_pl": "Chaos Armour, Daemonic, Infernal Favour (2), Lore of Daemons {renegade}"
       },
       "notes": {
         "name_en": "0-1 Daemon Prince per 1000 points",
@@ -694,13 +694,13 @@
         "doc-renegade": {
           "category": "characters",
           "specialRules": {
-            "name_en": "Daemonic {renegade}, Daemon of Nurgle, Infernal Favour (2), Large Target, Lore of Daemons, Poisoned Attacks, Regeneration (5+), Stomp Attacks (D3+1), Terror, Close Order",
+            "name_en": "Daemonic {renegade}, Daemon of Nurgle, Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Poisoned Attacks, Regeneration (5+), Stomp Attacks (D3+1), Terror, Close Order",
             "name_cn": "恶魔, 纳垢恶魔, 炼狱恩宠(2), 大型目标, 恶魔法系, 淬毒攻击, 重生(5+), 践踏攻击(D3+1), 惊骇, 紧密阵型",
-            "name_de": "Daemonic, Daemon of Nurgle, Infernal Favour (2), Large Target, Lore of Daemons, Poisoned Attacks, Regeneration (5+), Stomp Attacks (D3+1), Terror, Close Order",
-            "name_es": "Daemonic, Daemon of Nurgle, Infernal Favour (2), Large Target, Lore of Daemons, Poisoned Attacks, Regeneration (5+), Stomp Attacks (D3+1), Terror, Close Order",
+            "name_de": "Daemonic, Daemon of Nurgle, Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Poisoned Attacks, Regeneration (5+), Stomp Attacks (D3+1), Terror, Close Order",
+            "name_es": "Daemonic, Daemon of Nurgle, Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Poisoned Attacks, Regeneration (5+), Stomp Attacks (D3+1), Terror, Close Order",
             "name_fr": "Démoniaque, Démon de Nurgle, Faveur Infernale (2), Grande Cible, Domaine des Démons, Attaques Empoisonnées, Régénération (5+), Attaques de Piétinement (D3+1), Terreur, Close Order",
-            "name_it": "Daemonic, Daemon of Nurgle, Infernal Favour (2), Large Target, Lore of Daemons, Poisoned Attacks, Regeneration (5+), Stomp Attacks (D3+1), Terror, Close Order",
-            "name_pl": "Daemonic, Daemon of Nurgle, Infernal Favour (2), Large Target, Lore of Daemons, Poisoned Attacks, Regeneration (5+), Stomp Attacks (D3+1), Terror, Close Order"
+            "name_it": "Daemonic, Daemon of Nurgle, Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Poisoned Attacks, Regeneration (5+), Stomp Attacks (D3+1), Terror, Close Order",
+            "name_pl": "Daemonic, Daemon of Nurgle, Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Poisoned Attacks, Regeneration (5+), Stomp Attacks (D3+1), Terror, Close Order"
           },
           "notes": {
             "name_en": "0-1 Greater Daemon (of Khorne, Nurgle, Slaanesh or Tzeentch) per 1000 points and per unit with the same demonic alignment",
@@ -837,13 +837,13 @@
       ],
       "lores": ["daemonology", "battle-magic", "dark-magic"],
       "specialRules": {
-        "name_en": "Daemonic {renegade}, Daemon of Nurgle, Infernal Favour (2), Large Target, Lore of Daemons, Poisoned Attacks, Regeneration (5+), Stomp Attacks (D3+1), Terror",
+        "name_en": "Daemonic {renegade}, Daemon of Nurgle, Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Poisoned Attacks, Regeneration (5+), Stomp Attacks (D3+1), Terror",
         "name_cn": "恶魔, 纳垢恶魔, 炼狱恩宠(2), 大型目标, 恶魔法系, 淬毒攻击, 重生(5+), 践踏攻击(D3+1), 惊骇",
-        "name_de": "Daemonic, Daemon of Nurgle, Infernal Favour (2), Large Target, Lore of Daemons, Poisoned Attacks, Regeneration (5+), Stomp Attacks (D3+1), Terror",
-        "name_es": "Daemonic, Daemon of Nurgle, Infernal Favour (2), Large Target, Lore of Daemons, Poisoned Attacks, Regeneration (5+), Stomp Attacks (D3+1), Terror",
+        "name_de": "Daemonic, Daemon of Nurgle, Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Poisoned Attacks, Regeneration (5+), Stomp Attacks (D3+1), Terror",
+        "name_es": "Daemonic, Daemon of Nurgle, Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Poisoned Attacks, Regeneration (5+), Stomp Attacks (D3+1), Terror",
         "name_fr": "Démoniaque, Démon de Nurgle, Faveur Infernale (2), Grande Cible, Domaine des Démons, Attaques Empoisonnées, Régénération (5+), Attaques de Piétinement (D3+1), Terreur",
-        "name_it": "Daemonic, Daemon of Nurgle, Infernal Favour (2), Large Target, Lore of Daemons, Poisoned Attacks, Regeneration (5+), Stomp Attacks (D3+1), Terror",
-        "name_pl": "Daemonic, Daemon of Nurgle, Infernal Favour (2), Large Target, Lore of Daemons, Poisoned Attacks, Regeneration (5+), Stomp Attacks (D3+1), Terror"
+        "name_it": "Daemonic, Daemon of Nurgle, Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Poisoned Attacks, Regeneration (5+), Stomp Attacks (D3+1), Terror",
+        "name_pl": "Daemonic, Daemon of Nurgle, Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Poisoned Attacks, Regeneration (5+), Stomp Attacks (D3+1), Terror"
       }
     },
     {
@@ -1050,13 +1050,13 @@
         }
       ],
       "specialRules": {
-        "name_en": "Daemonic {renegade}, Daemon of Nurgle, Infernal Favour (1), Lore of Daemons, Poisoned Attacks, Regeneration (6+)",
+        "name_en": "Daemonic {renegade}, Daemon of Nurgle, Infernal Favour (1), Lore of Daemons {renegade}, Poisoned Attacks, Regeneration (6+)",
         "name_cn": "恶魔, 纳垢恶魔, 炼狱恩宠(1), 恶魔法系, 淬毒攻击, 重生(6+)",
-        "name_de": "Daemonic, Daemon of Nurgle, Infernal Favour (1), Lore of Daemons, Poisoned Attacks, Regeneration (6+)",
-        "name_es": "Daemonic, Daemon of Nurgle, Infernal Favour (1), Lore of Daemons, Poisoned Attacks, Regeneration (6+)",
+        "name_de": "Daemonic, Daemon of Nurgle, Infernal Favour (1), Lore of Daemons {renegade}, Poisoned Attacks, Regeneration (6+)",
+        "name_es": "Daemonic, Daemon of Nurgle, Infernal Favour (1), Lore of Daemons {renegade}, Poisoned Attacks, Regeneration (6+)",
         "name_fr": "Démoniaque, Démon de Nurgle, Faveur Infernale (1), Domaine des Démons, Attaques Empoisonnées, Régénération (6+)",
-        "name_it": "Daemonic, Daemon of Nurgle, Infernal Favour (1), Lore of Daemons, Poisoned Attacks, Regeneration (6+)",
-        "name_pl": "Daemonic, Daemon of Nurgle, Infernal Favour (1), Lore of Daemons, Poisoned Attacks, Regeneration (6+)"
+        "name_it": "Daemonic, Daemon of Nurgle, Infernal Favour (1), Lore of Daemons {renegade}, Poisoned Attacks, Regeneration (6+)",
+        "name_pl": "Daemonic, Daemon of Nurgle, Infernal Favour (1), Lore of Daemons {renegade}, Poisoned Attacks, Regeneration (6+)"
       },
       "notes": {
         "name_en": "0-1 Daemonic Herald of Nurgle per unit with the same Daemonic Alignment",
@@ -1094,13 +1094,13 @@
         "doc-renegade": {
           "category": "characters",
           "specialRules": {
-            "name_en": "Daemonic {renegade}, Daemon of Slaanesh, Infernal Favour (2), Large Target, Lore of Daemons, Stomp Attacks (D3), Swiftstride, Terror, Close Order",
+            "name_en": "Daemonic {renegade}, Daemon of Slaanesh, Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Stomp Attacks (D3), Swiftstride, Terror, Close Order",
             "name_cn": "恶魔, 色孽恶魔, 炼狱恩宠(2), 大型目标, 恶魔法系, 践踏攻击(D3), 快速行进, 惊骇, 紧密阵型",
-            "name_de": "Daemonic, Daemon of Slaanesh, Infernal Favour (2), Large Target, Lore of Daemons, Stomp Attacks (D3), Swiftstride, Terror, Close Order",
-            "name_es": "Daemonic, Daemon of Slaanesh, Infernal Favour (2), Large Target, Lore of Daemons, Stomp Attacks (D3), Swiftstride, Terror, Close Order",
+            "name_de": "Daemonic, Daemon of Slaanesh, Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Stomp Attacks (D3), Swiftstride, Terror, Close Order",
+            "name_es": "Daemonic, Daemon of Slaanesh, Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Stomp Attacks (D3), Swiftstride, Terror, Close Order",
             "name_fr": "Démoniaque, Démon de Slaanesh, Faveur Infernale (2), Grande Cible, Domaine des Démons, Attaques de Piétinement (D3), Rapide, Terreur, Close Order",
-            "name_it": "Daemonic, Daemon of Slaanesh, Infernal Favour (2), Large Target, Lore of Daemons, Stomp Attacks (D3), Swiftstride, Terror, Close Order",
-            "name_pl": "Daemonic, Daemon of Slaanesh, Infernal Favour (2), Large Target, Lore of Daemons, Stomp Attacks (D3), Swiftstride, Terror, Close Order"
+            "name_it": "Daemonic, Daemon of Slaanesh, Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Stomp Attacks (D3), Swiftstride, Terror, Close Order",
+            "name_pl": "Daemonic, Daemon of Slaanesh, Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Stomp Attacks (D3), Swiftstride, Terror, Close Order"
           },
           "notes": {
             "name_en": "0-1 Greater Daemon (of Khorne, Nurgle, Slaanesh or Tzeentch) per 1000 points and per unit with the same demonic alignment",
@@ -1198,13 +1198,13 @@
       ],
       "lores": ["dark-magic", "daemonology", "illusion"],
       "specialRules": {
-        "name_en": "Daemonic {renegade}, Daemon of Slaanesh, Infernal Favour (2), Large Target, Lore of Daemons, Stomp Attacks (D3), Swiftstride, Terror",
+        "name_en": "Daemonic {renegade}, Daemon of Slaanesh, Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Stomp Attacks (D3), Swiftstride, Terror",
         "name_cn": "恶魔, 色孽恶魔, 炼狱恩宠(2), 大型目标, 恶魔法系, 践踏攻击(D3), 快速行进, 惊骇",
-        "name_de": "Daemonic, Daemon of Slaanesh, Infernal Favour (2), Large Target, Lore of Daemons, Stomp Attacks (D3), Swiftstride, Terror",
-        "name_es": "Daemonic, Daemon of Slaanesh, Infernal Favour (2), Large Target, Lore of Daemons, Stomp Attacks (D3), Swiftstride, Terror",
+        "name_de": "Daemonic, Daemon of Slaanesh, Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Stomp Attacks (D3), Swiftstride, Terror",
+        "name_es": "Daemonic, Daemon of Slaanesh, Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Stomp Attacks (D3), Swiftstride, Terror",
         "name_fr": "Démoniaque, Démon de Slaanesh, Faveur Infernale (2), Grande Cible, Domaine des Démons, Attaques de Piétinement (D3), Rapide, Terreur",
-        "name_it": "Daemonic, Daemon of Slaanesh, Infernal Favour (2), Large Target, Lore of Daemons, Stomp Attacks (D3), Swiftstride, Terror",
-        "name_pl": "Daemonic, Daemon of Slaanesh, Infernal Favour (2), Large Target, Lore of Daemons, Stomp Attacks (D3), Swiftstride, Terror"
+        "name_it": "Daemonic, Daemon of Slaanesh, Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Stomp Attacks (D3), Swiftstride, Terror",
+        "name_pl": "Daemonic, Daemon of Slaanesh, Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Stomp Attacks (D3), Swiftstride, Terror"
       }
     },
     {
@@ -1418,13 +1418,13 @@
         }
       ],
       "specialRules": {
-        "name_en": "Daemonic {renegade}, Daemon of Slaanesh, Infernal Favour (1), Lore of Daemons",
+        "name_en": "Daemonic {renegade}, Daemon of Slaanesh, Infernal Favour (1), Lore of Daemons {renegade}",
         "name_cn": "恶魔, 色孽恶魔, 炼狱恩宠(1), 恶魔法系",
-        "name_de": "Daemonic, Daemon of Slaanesh, Infernal Favour (1), Lore of Daemons",
-        "name_es": "Daemonic, Daemon of Slaanesh, Infernal Favour (1), Lore of Daemons",
+        "name_de": "Daemonic, Daemon of Slaanesh, Infernal Favour (1), Lore of Daemons {renegade}",
+        "name_es": "Daemonic, Daemon of Slaanesh, Infernal Favour (1), Lore of Daemons {renegade}",
         "name_fr": "Démoniaque, Démon de Slaanesh, Faveur Infernale (1), Domaine des Démons",
-        "name_it": "Daemonic, Daemon of Slaanesh, Infernal Favour (1), Lore of Daemons",
-        "name_pl": "Daemonic, Daemon of Slaanesh, Infernal Favour (1), Lore of Daemons"
+        "name_it": "Daemonic, Daemon of Slaanesh, Infernal Favour (1), Lore of Daemons {renegade}",
+        "name_pl": "Daemonic, Daemon of Slaanesh, Infernal Favour (1), Lore of Daemons {renegade}"
       },
       "notes": {
         "name_en": "0-1 Daemonic Herald of Slaanesh per unit with the same Daemonic Alignment",
@@ -1462,13 +1462,13 @@
         "doc-renegade": {
           "category": "characters",
           "specialRules": {
-            "name_en": "Daemonic {renegade}, Daemon of Tzeentch, Flaming Attacks, Fly (9), Infernal Favour (2), Large Target, Lore of Daemons, Stomp Attacks (D3), Swiftstride, Terror, Close Order",
+            "name_en": "Daemonic {renegade}, Daemon of Tzeentch, Flaming Attacks, Fly (9), Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Stomp Attacks (D3), Swiftstride, Terror, Close Order",
             "name_cn": "恶魔, 奸奇恶魔, 火焰攻击, 飞行(9), 炼狱恩宠(2), 大型目标, 恶魔法系, 践踏攻击(D3), 快速行进, 惊骇, 紧密阵型",
-            "name_de": "Daemonic, Daemon of Tzeentch, Flaming Attacks, Fly (9), Infernal Favour (2), Large Target, Lore of Daemons, Stomp Attacks (D3), Swiftstride, Terror, Close Order",
-            "name_es": "Daemonic, Daemon of Tzeentch, Flaming Attacks, Fly (9), Infernal Favour (2), Large Target, Lore of Daemons, Stomp Attacks (D3), Swiftstride, Terror, Close Order",
+            "name_de": "Daemonic, Daemon of Tzeentch, Flaming Attacks, Fly (9), Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Stomp Attacks (D3), Swiftstride, Terror, Close Order",
+            "name_es": "Daemonic, Daemon of Tzeentch, Flaming Attacks, Fly (9), Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Stomp Attacks (D3), Swiftstride, Terror, Close Order",
             "name_fr": "Démoniaque, Démon de Tzeentch, Attaques Enflammées, Vol (9), Faveur Infernale (2), Grande Cible, Domaine des Démons, Attaques de Piétinement (D3), Rapide, Terreur, Close Order",
-            "name_it": "Daemonic, Daemon of Tzeentch, Flaming Attacks, Fly (9), Infernal Favour (2), Large Target, Lore of Daemons, Stomp Attacks (D3), Swiftstride, Terror, Close Order",
-            "name_pl": "Daemonic, Daemon of Tzeentch, Flaming Attacks, Fly (9), Infernal Favour (2), Large Target, Lore of Daemons, Stomp Attacks (D3), Swiftstride, Terror, Close Order"
+            "name_it": "Daemonic, Daemon of Tzeentch, Flaming Attacks, Fly (9), Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Stomp Attacks (D3), Swiftstride, Terror, Close Order",
+            "name_pl": "Daemonic, Daemon of Tzeentch, Flaming Attacks, Fly (9), Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Stomp Attacks (D3), Swiftstride, Terror, Close Order"
           },
           "notes": {
             "name_en": "0-1 Greater Daemon (of Khorne, Nurgle, Slaanesh or Tzeentch) per 1000 points and per unit with the same demonic alignment",
@@ -1572,13 +1572,13 @@
         "illusion"
       ],
       "specialRules": {
-        "name_en": "Daemonic, Daemon of Tzeentch, Flaming Attacks, Fly (9), Infernal Favour (2), Large Target, Lore of Daemons, Stomp Attacks (D3), Swiftstride, Terror",
+        "name_en": "Daemonic, Daemon of Tzeentch, Flaming Attacks, Fly (9), Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Stomp Attacks (D3), Swiftstride, Terror",
         "name_cn": "恶魔, 奸奇恶魔, 火焰攻击, 飞行(9), 炼狱恩宠(2), 大型目标, 恶魔法系, 践踏攻击(D3), 快速行进, 惊骇",
-        "name_de": "Daemonic, Daemon of Tzeentch, Flaming Attacks, Fly (9), Infernal Favour (2), Large Target, Lore of Daemons, Stomp Attacks (D3), Swiftstride, Terror",
-        "name_es": "Daemonic, Daemon of Tzeentch, Flaming Attacks, Fly (9), Infernal Favour (2), Large Target, Lore of Daemons, Stomp Attacks (D3), Swiftstride, Terror",
+        "name_de": "Daemonic, Daemon of Tzeentch, Flaming Attacks, Fly (9), Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Stomp Attacks (D3), Swiftstride, Terror",
+        "name_es": "Daemonic, Daemon of Tzeentch, Flaming Attacks, Fly (9), Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Stomp Attacks (D3), Swiftstride, Terror",
         "name_fr": "Démoniaque, Démon de Tzeentch, Attaques Enflammées, Vol (9), Faveur Infernale (2), Grande Cible, Domaine des Démons, Attaques de Piétinement (D3), Rapide, Terreur",
-        "name_it": "Daemonic, Daemon of Tzeentch, Flaming Attacks, Fly (9), Infernal Favour (2), Large Target, Lore of Daemons, Stomp Attacks (D3), Swiftstride, Terror",
-        "name_pl": "Daemonic, Daemon of Tzeentch, Flaming Attacks, Fly (9), Infernal Favour (2), Large Target, Lore of Daemons, Stomp Attacks (D3), Swiftstride, Terror"
+        "name_it": "Daemonic, Daemon of Tzeentch, Flaming Attacks, Fly (9), Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Stomp Attacks (D3), Swiftstride, Terror",
+        "name_pl": "Daemonic, Daemon of Tzeentch, Flaming Attacks, Fly (9), Infernal Favour (2), Large Target, Lore of Daemons {renegade}, Stomp Attacks (D3), Swiftstride, Terror"
       }
     },
     {
@@ -1774,13 +1774,13 @@
         "illusion"
       ],
       "specialRules": {
-        "name_en": "Daemonic, Daemon of Tzeentch, Infernal Favour (1), Lore of Daemons",
+        "name_en": "Daemonic, Daemon of Tzeentch, Infernal Favour (1), Lore of Daemons {renegade}",
         "name_cn": "恶魔, 奸奇恶魔, 炼狱恩宠(1), 恶魔法系",
-        "name_de": "Daemonic, Daemon of Tzeentch, Infernal Favour (1), Lore of Daemons",
-        "name_es": "Daemonic, Daemon of Tzeentch, Infernal Favour (1), Lore of Daemons",
+        "name_de": "Daemonic, Daemon of Tzeentch, Infernal Favour (1), Lore of Daemons {renegade}",
+        "name_es": "Daemonic, Daemon of Tzeentch, Infernal Favour (1), Lore of Daemons {renegade}",
         "name_fr": "Démoniaque, Démon de Tzeentch, Faveur Infernale (1), Domaine des Démons",
-        "name_it": "Daemonic, Daemon of Tzeentch, Infernal Favour (1), Lore of Daemons",
-        "name_pl": "Daemonic, Daemon of Tzeentch, Infernal Favour (1), Lore of Daemons"
+        "name_it": "Daemonic, Daemon of Tzeentch, Infernal Favour (1), Lore of Daemons {renegade}",
+        "name_pl": "Daemonic, Daemon of Tzeentch, Infernal Favour (1), Lore of Daemons {renegade}"
       },
       "notes": {
         "name_en": "0-1 Daemonic Herald of Tzeentch per unit with the same Daemonic Alignment",
@@ -4048,13 +4048,13 @@
         "illusion"
       ],
       "specialRules": {
-        "name_en": "Daemonic {renegade}, Daemons of Tzeentch, Flaming Attacks, Infernal Favour (1 - Exalted Flamer only), Lore of Daemons (Exalted Flamer only), Move Through Cover, Skirmishers",
+        "name_en": "Daemonic {renegade}, Daemons of Tzeentch, Flaming Attacks, Infernal Favour (1 - Exalted Flamer only), Lore of Daemons {renegade} (Exalted Flamer only), Move Through Cover, Skirmishers",
         "name_cn": "恶魔, 奸奇恶魔, 火焰攻击, 炼狱恩宠（1，仅高阶火妖), 恶魔法系（仅高阶火妖）, 穿行掩体, 散兵",
-        "name_de": "Daemonic, Daemons of Tzeentch, Flaming Attacks, Infernal Favour (1 - Exalted Flamer only), Lore of Daemons (Exalted Flamer only), Move Through Cover, Skirmishers",
-        "name_es": "Daemonic, Daemons of Tzeentch, Flaming Attacks, Infernal Favour (1 - Exalted Flamer only), Lore of Daemons (Exalted Flamer only), Move Through Cover, Skirmishers",
+        "name_de": "Daemonic, Daemons of Tzeentch, Flaming Attacks, Infernal Favour (1 - Exalted Flamer only), Lore of Daemons {renegade} (Exalted Flamer only), Move Through Cover, Skirmishers",
+        "name_es": "Daemonic, Daemons of Tzeentch, Flaming Attacks, Infernal Favour (1 - Exalted Flamer only), Lore of Daemons {renegade} (Exalted Flamer only), Move Through Cover, Skirmishers",
         "name_fr": "Démoniaque, Démons de Tzeentch, Attaques Enflammées, Faveur Infernale (1 - Incendiaire Exalté uniquement), Domaine des Démons (Incendiaire Exalté uniquement), Mouvement à Couvert, Tirailleurs",
-        "name_it": "Daemonic, Daemons of Tzeentch, Flaming Attacks, Infernal Favour (1 - Exalted Flamer only), Lore of Daemons (Exalted Flamer only), Move Through Cover, Skirmishers",
-        "name_pl": "Daemonic, Daemons of Tzeentch, Flaming Attacks, Infernal Favour (1 - Exalted Flamer only), Lore of Daemons (Exalted Flamer only), Move Through Cover, Skirmishers"
+        "name_it": "Daemonic, Daemons of Tzeentch, Flaming Attacks, Infernal Favour (1 - Exalted Flamer only), Lore of Daemons {renegade} (Exalted Flamer only), Move Through Cover, Skirmishers",
+        "name_pl": "Daemonic, Daemons of Tzeentch, Flaming Attacks, Infernal Favour (1 - Exalted Flamer only), Lore of Daemons {renegade} (Exalted Flamer only), Move Through Cover, Skirmishers"
       }
     }
   ],
@@ -4608,13 +4608,13 @@
         "illusion"
       ],
       "specialRules": {
-        "name_en": "Daemonic {renegade}, Daemons of Tzeentch, Flaming Attacks, Infernal Favour (1 - Exalted Flamer only), Lore of Daemons (Exalted Flamer only), Move Through Cover, Skirmishers",
+        "name_en": "Daemonic {renegade}, Daemons of Tzeentch, Flaming Attacks, Infernal Favour (1 - Exalted Flamer only), Lore of Daemons {renegade} (Exalted Flamer only), Move Through Cover, Skirmishers",
         "name_cn": "恶魔, 奸奇恶魔, 火焰攻击, 炼狱恩宠（1，仅高阶火妖), 恶魔法系（仅高阶火妖）, 穿行掩体, 散兵",
-        "name_de": "Daemonic, Daemons of Tzeentch, Flaming Attacks, Infernal Favour (1 - Exalted Flamer only), Lore of Daemons (Exalted Flamer only), Move Through Cover, Skirmishers",
-        "name_es": "Daemonic, Daemons of Tzeentch, Flaming Attacks, Infernal Favour (1 - Exalted Flamer only), Lore of Daemons (Exalted Flamer only), Move Through Cover, Skirmishers",
+        "name_de": "Daemonic, Daemons of Tzeentch, Flaming Attacks, Infernal Favour (1 - Exalted Flamer only), Lore of Daemons {renegade} (Exalted Flamer only), Move Through Cover, Skirmishers",
+        "name_es": "Daemonic, Daemons of Tzeentch, Flaming Attacks, Infernal Favour (1 - Exalted Flamer only), Lore of Daemons {renegade} (Exalted Flamer only), Move Through Cover, Skirmishers",
         "name_fr": "Démoniaque, Démons de Tzeentch, Attaques Enflammées, Faveur Infernale (1 - Incendiaire Exalté uniquement), Domaine des Démons (Incendiaire Exalté uniquement), Mouvement à Couvert, Tirailleurs",
-        "name_it": "Daemonic, Daemons of Tzeentch, Flaming Attacks, Infernal Favour (1 - Exalted Flamer only), Lore of Daemons (Exalted Flamer only), Move Through Cover, Skirmishers",
-        "name_pl": "Daemonic, Daemons of Tzeentch, Flaming Attacks, Infernal Favour (1 - Exalted Flamer only), Lore of Daemons (Exalted Flamer only), Move Through Cover, Skirmishers"
+        "name_it": "Daemonic, Daemons of Tzeentch, Flaming Attacks, Infernal Favour (1 - Exalted Flamer only), Lore of Daemons {renegade} (Exalted Flamer only), Move Through Cover, Skirmishers",
+        "name_pl": "Daemonic, Daemons of Tzeentch, Flaming Attacks, Infernal Favour (1 - Exalted Flamer only), Lore of Daemons {renegade} (Exalted Flamer only), Move Through Cover, Skirmishers"
       },
       "notes": {
         "name_en": "",
@@ -4764,13 +4764,13 @@
       ],
       "lores": ["daemonology", "dark-magic", "elementalism", "illusion"],
       "specialRules": {
-        "name_en": "Close Order, Daemonic {renegade}, Daemon of Tzeentch, Fly (9), Impact Hits (D6+1), Lore of Daemons, Slashing Attack (Screamers only)",
+        "name_en": "Close Order, Daemonic {renegade}, Daemon of Tzeentch, Fly (9), Impact Hits (D6+1), Lore of Daemons {renegade}, Slashing Attack (Screamers only)",
         "name_cn": "紧密阵型, 恶魔, 奸奇恶魔, 飞行(9), 撞击(D6+1), 恶魔法系, 鞭笞打击(仅尖啸飞鲨)",
-        "name_de": "Close Order, Daemonic, Daemon of Tzeentch, Fly (9), Impact Hits (D6+1), Lore of Daemons, Slashing Attack (Screamers only)",
-        "name_es": "Close Order, Daemonic, Daemon of Tzeentch, Fly (9), Impact Hits (D6+1), Lore of Daemons, Slashing Attack (Screamers only)",
+        "name_de": "Close Order, Daemonic, Daemon of Tzeentch, Fly (9), Impact Hits (D6+1), Lore of Daemons {renegade}, Slashing Attack (Screamers only)",
+        "name_es": "Close Order, Daemonic, Daemon of Tzeentch, Fly (9), Impact Hits (D6+1), Lore of Daemons {renegade}, Slashing Attack (Screamers only)",
         "name_fr": "Ordre Serré, Démoniaque, Démon de Tzeentch, Vol (9), Touches d'Impact (D6+1), Domaine des Démons, Attaque au Passage (Hurleurs uniquement)",
-        "name_it": "Close Order, Daemonic, Daemon of Tzeentch, Fly (9), Impact Hits (D6+1), Lore of Daemons, Slashing Attack (Screamers only)",
-        "name_pl": "Close Order, Daemonic, Daemon of Tzeentch, Fly (9), Impact Hits (D6+1), Lore of Daemons, Slashing Attack (Screamers only)"
+        "name_it": "Close Order, Daemonic, Daemon of Tzeentch, Fly (9), Impact Hits (D6+1), Lore of Daemons {renegade}, Slashing Attack (Screamers only)",
+        "name_pl": "Close Order, Daemonic, Daemon of Tzeentch, Fly (9), Impact Hits (D6+1), Lore of Daemons {renegade}, Slashing Attack (Screamers only)"
       },
       "notes": {
         "name_en": "",

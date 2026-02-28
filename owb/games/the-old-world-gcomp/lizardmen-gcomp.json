@@ -15,10 +15,10 @@
         "lm-renegade": {
           "category": "characters",
           "specialRules": {
-            "name_en": "Arcane Shield, Cold Blooded {renegade}, Fly (8), Lore of Lustria, Wisdom of the Old Ones {renegade}, Palanquin {renegade}",
+            "name_en": "Arcane Shield, Cold Blooded {renegade}, Fly (8), Lore of Lustria {renegade}, Wisdom of the Old Ones {renegade}, Palanquin {renegade}",
             "name_cn": "奥术护盾, 冷血 {renegade}, 飞行(8), 露丝契亚法系, 古圣之智 {renegade}, 御座 {renegade}",
-            "name_de": "Arcane Shield, Cold Blooded, Fly (8), Lore of Lustria, Wisdom of the Old Ones, Palanquin",
-            "name_es": "Arcane Shield, Cold Blooded, Fly (8), Lore of Lustria, Wisdom of the Old Ones, Palanquin",
+            "name_de": "Arcane Shield, Cold Blooded, Fly (8), Lore of Lustria {renegade}, Wisdom of the Old Ones, Palanquin",
+            "name_es": "Arcane Shield, Cold Blooded, Fly (8), Lore of Lustria {renegade}, Wisdom of the Old Ones, Palanquin",
             "name_fr": "Bouclier Arcanique, Sang Froid, Vol (8), Domaine de Lustrie, Sagesse des Anciens, Palanquin"
           },
           "notes": {
@@ -116,10 +116,10 @@
         "illusion"
       ],
       "specialRules": {
-        "name_en": "Arcane Shield, Cold Blooded {renegade}, Close Order, Fly (8), Large Target, Lore of Lustria",
+        "name_en": "Arcane Shield, Cold Blooded {renegade}, Close Order, Fly (8), Large Target, Lore of Lustria {renegade}",
         "name_cn": "奥术护盾, 冷血 {renegade}, 紧密阵型, 飞行(8), 大型目标, 露丝契亚法系",
-        "name_de": "Arcane Shield, Cold Blooded, Close Order, Fly (8), Large Target, Lore of Lustria",
-        "name_es": "Arcane Shield, Cold Blooded, Close Order, Fly (8), Large Target, Lore of Lustria",
+        "name_de": "Arcane Shield, Cold Blooded, Close Order, Fly (8), Large Target, Lore of Lustria {renegade}",
+        "name_es": "Arcane Shield, Cold Blooded, Close Order, Fly (8), Large Target, Lore of Lustria {renegade}",
         "name_fr": "Bouclier Arcanique, Sang Froid, Ordre Serré, Vol (8), Grande Cible, Domaine de Lustrie"
       }
     },
@@ -611,10 +611,10 @@
       ],
       "lores": ["elementalism", "battle-magic", "illusion"],
       "specialRules": {
-        "name_en": "Arcane Vassal, Aquatic**, Cold Blooded {renegade}, Lore of Lustria",
+        "name_en": "Arcane Vassal, Aquatic**, Cold Blooded {renegade}, Lore of Lustria {renegade}",
         "name_cn": "奥术构造, 水生**, 冷血 {renegade}, 露丝契亚法系",
-        "name_de": "Arcane Vassal, Aquatic**, Cold Blooded, Lore of Lustria",
-        "name_es": "Arcane Vassal, Aquatic**, Cold Blooded, Lore of Lustria",
+        "name_de": "Arcane Vassal, Aquatic**, Cold Blooded, Lore of Lustria {renegade}",
+        "name_es": "Arcane Vassal, Aquatic**, Cold Blooded, Lore of Lustria {renegade}",
         "name_fr": "Vassal Magique, Aquatique**, Sang Froid, Domaine de Lustrie"
       },
       "notes": {
@@ -2030,10 +2030,10 @@
       "items": [],
       "lores": [],
       "specialRules": {
-        "name_en": "Arcane Vassal, Aquatic, Close Order, Cold Blooded {renegade}, Immune to Psychology, Large Target, Lore of Lustria, Primeval Roar, Stomp Attacks (2), Stubborn, Terror",
+        "name_en": "Arcane Vassal, Aquatic, Close Order, Cold Blooded {renegade}, Immune to Psychology, Large Target, Lore of Lustria {renegade}, Primeval Roar, Stomp Attacks (2), Stubborn, Terror",
         "name_cn": "奥术构造, 水生, 紧密阵型, 冷血 {renegade}, 心理免疫, 大型目标, 露丝契亚法系, Primeval Roar, 践踏攻击(2), 坚毅, 惊骇",
-        "name_de": "Arcane Vassal, Aquatic, Close Order, Cold Blooded, Immune to Psychology, Large Target, Lore of Lustria, Primeval Roar, Stomp Attacks (2), Stubborn, Terror",
-        "name_es": "Arcane Vassal, Aquatic, Close Order, Cold Blooded, Immune to Psychology, Large Target, Lore of Lustria, Primeval Roar, Stomp Attacks (2), Stubborn, Terror",
+        "name_de": "Arcane Vassal, Aquatic, Close Order, Cold Blooded, Immune to Psychology, Large Target, Lore of Lustria {renegade}, Primeval Roar, Stomp Attacks (2), Stubborn, Terror",
+        "name_es": "Arcane Vassal, Aquatic, Close Order, Cold Blooded, Immune to Psychology, Large Target, Lore of Lustria {renegade}, Primeval Roar, Stomp Attacks (2), Stubborn, Terror",
         "name_fr": "Vassal Magique, Aquatique, Ordre Serré, Sang Froid, Immunisé à la Psychologie, Grande Cible, Domaine de Lustrie, Rugissement Primal, Attaques de Piétinement (2), Obstiné, Terreur"
       }
     },

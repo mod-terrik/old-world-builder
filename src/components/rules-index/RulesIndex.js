@@ -27,10 +27,11 @@ export const RulesIndex = () => {
     dispatch(closeRulesIndex());
   };
   
+  const isRenegadeArmy = listArmyComposition?.includes("gcomp");
   const normalizedName =
-    activeRule.includes("renegade") && listArmyComposition?.includes("renegade")
+    activeRule.includes("renegade") && isRenegadeArmy
       ? normalizeRuleName(activeRule)
-      : normalizeRuleName(activeRule.replace(" {renegade}", ""));
+      : normalizeRuleName(activeRule.replace(" {renegade}", ""));  
   const synonym = synonyms[normalizedName];
   const ruleData = rulesMap[normalizedName] || rulesMap[synonym];
   const rulePath = ruleData?.url;

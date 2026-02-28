@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/owb/static/css/main.01771802.css",
-    "main.js": "/owb/static/js/main.d9a0f16a.js",
-    "static/js/453.2225aa02.chunk.js": "/owb/static/js/453.2225aa02.chunk.js",
+    "main.css": "/owb/static/css/main.9d726ef8.css",
+    "main.js": "/owb/static/js/main.63185cee.js",
+    "static/js/206.957159ff.chunk.js": "/owb/static/js/206.957159ff.chunk.js",
     "static/media/spain.svg": "/owb/static/media/spain.fe46f7a778fdc34b4cb31895f52d2247.svg",
     "service-worker.js": "/owb/service-worker.js",
     "static/media/symbol-defs.svg": "/owb/static/media/symbol-defs.b63db73bab285fb87f387671451f5909.svg",
@@ -31,13 +31,10 @@
     "static/media/germany.svg": "/owb/static/media/germany.d9625f93cc14fcc164d63bed94bec76e.svg",
     "static/media/italy.svg": "/owb/static/media/italy.bb2033dcda58d584b313a60a850a36cb.svg",
     "static/media/polen.svg": "/owb/static/media/polen.0882b3e3846c9861e7150d74c94a7ee9.svg",
-    "static/media/france.svg": "/owb/static/media/france.bf26b172fbb19d5193a5a0a28e69c4ba.svg",
-    "main.01771802.css.map": "/owb/static/css/main.01771802.css.map",
-    "main.d9a0f16a.js.map": "/owb/static/js/main.d9a0f16a.js.map",
-    "453.2225aa02.chunk.js.map": "/owb/static/js/453.2225aa02.chunk.js.map"
+    "static/media/france.svg": "/owb/static/media/france.bf26b172fbb19d5193a5a0a28e69c4ba.svg"
   },
   "entrypoints": [
-    "static/css/main.01771802.css",
-    "static/js/main.d9a0f16a.js"
+    "static/css/main.9d726ef8.css",
+    "static/js/main.63185cee.js"
   ]
 }

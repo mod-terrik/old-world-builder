@@ -176,6 +176,20 @@ if (unit.specialRules) {
     }
   });
 }
+  // Check command magic items (banners, etc.)
+  if (unit.command && Array.isArray(unit.command)) {
+  unit.command.forEach((commandItem) => {
+    if (!commandItem.active) return;
+    
+    // Check magic items selected within command (e.g., banners on standard bearers)
+    if (commandItem.magic && commandItem.magic.selected && Array.isArray(commandItem.magic.selected)) {
+      commandItem.magic.selected.forEach(magicItem => {
+        const itemName = extractName(magicItem);
+        if (itemName) addCompNote(itemName);
+      });
+    }
+  });
+}
 
   return Array.from(compNotes);
 }

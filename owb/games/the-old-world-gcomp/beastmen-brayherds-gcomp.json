@@ -1390,6 +1390,49 @@
         "name_es": "Drunken, Father of Beasts, Gaze of the Gods, Mark of Chaos Undivided, Move Through Cover, Primal Fury, Stomp Attacks (D3), Swiftstride, The Sons of Ghorros, Warband",
         "name_fr": "Ivres, Père des Bêtes, Regard des Dieux, Marque du Chaos Universel, Mouvement à Couvert, Fureur Primale, Attaques de Piétinement (D3), Rapide, Les Fils de Ghorros, Bande de Guerre"
       }
+    },
+       {
+      "name_en": "Herdstone",
+      "name_cn": "Herdstone",
+      "name_de": "Herdstone",
+      "name_es": "Herdstone",
+      "name_fr": "Pierre de Harde",
+      "id": "herdstone",
+      "points": 100,
+      "armyComposition": {
+        "beastmen-brayherds": {
+          "category": "characters"
+        },
+        "minotaur-blood-herd": {
+          "category": "core"
+        },
+        "wild-herd": {
+          "category": "characters"
+        }
+      },
+      "notes": {
+        "name_en": "0-1 per army",
+        "name_cn": "0-1 per army",
+        "name_de": "0-1 per army",
+        "name_es": "0-1 per army",
+        "name_it": "0-1 per army",
+        "name_fr": "0-1 par armée"
+      },
+      "command": [],
+      "equipment": [],
+      "armor": [],
+      "options": [],
+      "mounts": [],
+      "items": [],
+      "lores": [],
+      "specialRules": {
+        "name_en": "A Tingle in the Air, Bestial Fury {beastmen}, Dark Sorcery, Fearsome Edifice",
+        "name_cn": "A Tingle in the Air, Bestial Fury, Dark Sorcery, Fearsome Edifice",
+        "name_de": "A Tingle in the Air, Bestial Fury, Dark Sorcery, Fearsome Edifice",
+        "name_es": "A Tingle in the Air, Bestial Fury, Dark Sorcery, Fearsome Edifice",
+        "name_it": "A Tingle in the Air, Bestial Fury, Dark Sorcery, Fearsome Edifice",
+        "name_fr": "Un Picotement dans l’Air, Fureur Bestiale, Noire Sorcellerie, Édifice Effrayant"
+      }
     }
   ],
   "core": [
@@ -3491,14 +3534,8 @@
       "id": "herdstone",
       "points": 100,
       "armyComposition": {
-        "beastmen-brayherds": {
-          "category": "special"
-        },
         "minotaur-blood-herd": {
           "category": "core"
-        },
-        "wild-herd": {
-          "category": "special"
         }
       },
       "notes": {

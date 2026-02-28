@@ -681,7 +681,7 @@
     "url": "special-rules/the-wandering-duelists",
     "page": "AJ:TWoSF, p. 37"
   },
-  "dark coven": { "url": "special-rules/dark-coven", "page": "AJ:BB, p. 33" },
+  "dark coven": { "url": "special-rules/dark-coven", "compNote":"Dark Coven may only be used once per player turn per shaman","page": "AJ:BB, p. 33" },
   "clouds of soot & smoke": {
     "url": "special-rules/clouds-of-soot-and-smoke",
     "page": "FoF, p. 54"
@@ -2007,7 +2007,7 @@
     "url": "special-rules/relentless-warriors",
     "page": "AJ:WoC, p. 39"
   },
-  "frenzy": { "fullUrl": "https://owapps.grra.me/owb/rules/special-rules/frenzy.html?minimal=true", "page": "RB, p. 170" },
+  "frenzy": { "url: "special-rules/frenzy","compNote": "+1A from Frenzy always applies", "page": "RB, p. 170" },
   "furious charge": {
     "url": "special-rules/furious-charge",
     "page": "RB, p. 171"
@@ -5350,7 +5350,7 @@
     "url": "magic-item/the-dolorous-blade",
     "page": "AJ:KoB, p. 37"
   },
-  "the fellblade": { "url": "magic-item/the-fellblade", "page": "SK, p. 20", "compNote": "Fellblade: Roll a D6 to test to wound the wielder" },
+  "the fellblade": { "url": "magic-item/the-fellblade", "page": "SK, p. 20", "compNote": "Fellblade wounds the wielder on a D6"},
   "the fires of nan-gau": {
     "url": "magic-item/the-fires-of-nan-gau",
     "page": "AJ:DotSD, p. 48"

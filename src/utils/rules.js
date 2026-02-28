@@ -3859,7 +3859,7 @@ export const rules = {
       ],
     },
     core: {
-      minPercent: 25,
+      minPercent: 33,
       units: [
         {
           ids: ["jade-lancers-core"],

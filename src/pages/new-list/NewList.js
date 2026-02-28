@@ -213,21 +213,20 @@ export const NewList = ({ isMobile }) => {
       />
       <label htmlFor={id} className="radio__label">
         <span className="new-list__game-name">{name}</span>
-      </label>
-    </div>
-  ))}
-<p className="new-list__gcomp-link">
-  <center><a 
-    href="https://drive.google.com/file/d/172mG0ep6EgJClJiGijulksZSr1eDLZl5/view" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="new-list__external-link"
-  >
-    Latest German Comp Ruleset PDF
-  </a></center>
-</p>
-<hr />
-
+        </label>
+       </div>
+     ))}
+       <p className="new-list__gcomp-link">
+       <a 
+       href="https://drive.google.com/file/d/172mG0ep6EgJClJiGijulksZSr1eDLZl5/view" 
+             target="_blank" 
+             rel="noopener noreferrer"
+    	     className="new-list__external-link"
+            >
+             Latest German Comp Ruleset PDF
+            </a>
+           </p>
+           <hr />
 	   <label htmlFor="army">
             <FormattedMessage id="new.army" />
           </label>

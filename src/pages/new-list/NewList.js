@@ -190,44 +190,47 @@ export const NewList = ({ isMobile }) => {
           />
         )}
         <form onSubmit={handleSubmit} className="new-list">
-               {gameSystems
-  .filter(({ id }) => id === "the-old-world-gcomp")
-  .map(({ name, id }, index) => (
-    <div
-      className={classNames(
-        "radio",
-        "new-list__radio",
-        index === 0 && "new-list__radio--last-item",
-      )}
-      key={id}
-    >
-      <input
-        type="radio"
-        id={id}
-        name="new-list"
-        value={id}
-        onChange={handleSystemChange}
-        checked={id === game}
-        className="radio__input"
-        aria-label={name}
-      />
-      <label htmlFor={id} className="radio__label">
-        <span className="new-list__game-name">{name}</span>
-        </label>
-       </div>
-     ))}
-       <p className="new-list__gcomp-link">
-       <a 
-       href="https://drive.google.com/file/d/172mG0ep6EgJClJiGijulksZSr1eDLZl5/view" 
-             target="_blank" 
-             rel="noopener noreferrer"
-    	     className="new-list__external-link"
+                   {gameSystems
+            .filter(({ id }) => id === "the-old-world-gcomp")
+            .map(({ name, id }, index) => (
+              <div
+                className={classNames(
+                  "radio",
+                  "new-list__radio",
+                  index === 0 && "new-list__radio--last-item",
+                )}
+                key={id}
+              >
+                <input
+                  type="radio"
+                  id={id}
+                  name="new-list"
+                  value={id}
+                  onChange={handleSystemChange}
+                  checked={id === game}
+                  className="radio__input"
+                  aria-label={name}
+                />
+                <label htmlFor={id} className="radio__label">
+                  <span className="new-list__game-name">{name}</span>
+                </label>
+              </div>
+            ))}
+          <p className="new-list__gcomp-link" style={{ textAlign: "center" }}>
+            <a 
+              href="https://drive.google.com/file/d/172mG0ep6EgJClJiGijulksZSr1eDLZl5/view" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="new-list__external-link"
             >
-             Latest German Comp Ruleset PDF
+              Latest German Comp Ruleset PDF
             </a>
-           </p>
-           <hr />
-	   <label htmlFor="army">
+          </p>
+          <hr />
+          <label htmlFor="army">
+            <FormattedMessage id="new.army" />
+          </label>
+	        <label htmlFor="army">
             <FormattedMessage id="new.army" />
           </label>
           <Select

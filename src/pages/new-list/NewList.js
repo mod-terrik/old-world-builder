@@ -190,7 +190,7 @@ export const NewList = ({ isMobile }) => {
           />
         )}
         <form onSubmit={handleSubmit} className="new-list">
-                   {gameSystems
+            {gameSystems
             .filter(({ id }) => id === "the-old-world-gcomp")
             .map(({ name, id }, index) => (
               <div
@@ -227,10 +227,7 @@ export const NewList = ({ isMobile }) => {
             </a>
           </p>
           <hr />
-          <label htmlFor="army">
-            <FormattedMessage id="new.army" />
-          </label>
-	        <label htmlFor="army">
+	  <label htmlFor="army">
             <FormattedMessage id="new.army" />
           </label>
           <Select

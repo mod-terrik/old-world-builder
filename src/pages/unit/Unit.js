@@ -1189,7 +1189,6 @@ export const Unit = ({ isMobile, previewData = {} }) => {
                                       key: `options-${id}-${optionIndex}-note`,
                                       className: "unit__option-note",
                                       language,
-                                      disabled: option.disabled,
                                     })}
                                     {optionIndex === options.length - 1 && (
                                       <hr className="unit__command-option-hr" />
@@ -1921,7 +1920,10 @@ export const Unit = ({ isMobile, previewData = {} }) => {
               <FormattedMessage id="unit.specialRules" />
             </h2>
             <p>
-              <RulesLinksText textObject={specialRules} />
+              <RulesLinksText
+                textObject={specialRules}
+                isRenegade={listArmyComposition?.includes("gcomp")}
+              />
             </p>
           </>
         ) : null}

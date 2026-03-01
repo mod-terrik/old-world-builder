@@ -36,6 +36,11 @@ export const RulesIndex = () => {
   const ruleData = rulesMap[normalizedName] || rulesMap[synonym];
   const rulePath = ruleData?.url;
 
+    //Check if this is a full URL or a relative path
+  const iframeUrl = ruleData?.isFullUrl
+    ? rulePath  // Use the full URL directly
+    : `https://tow.whfb.app/${rulePath}?minimal=true&utm_source=owb&utm_medium=referral`;
+
   return (
     <Dialog open={open} onClose={handleClose}>
       {rulePath ? (

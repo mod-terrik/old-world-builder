@@ -93,6 +93,10 @@ const additionalOWBRules = {
   "screaming skull catapult weapon": {
     url: "weapons-of-war/screaming-skull-catapult",
   },
+   "german-comp": {
+    url: "https://drive.google.com/drive/folders/1uirimYTyJLWEOs4zN_Id4AQMr4bjGH7g",
+    isFullUrl: true,
+  },
   "open-war": {
     url: "matched-play/open-war",
   },

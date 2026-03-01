@@ -28,7 +28,7 @@ export const NewList = ({ isMobile }) => {
   const lists = useSelector((state) => state.lists);
   const [game, setGame] = useState("the-old-world-gcomp");
   const [army, setArmy] = useState("beastmen-brayherds-gcomp");
-  const [compositionRule, setCompositionRule] = useState("open-war");
+  const [compositionRule, setCompositionRule] = useState("german-comp");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [points, setPoints] = useState(2500);
@@ -39,6 +39,11 @@ export const NewList = ({ isMobile }) => {
     .armies.sort((a, b) => a.id.localeCompare(b.id));
   const journalArmies = armies.find(({ id }) => army === id || id === army + '-gcomp' || army === id + '-gcomp')?.armyComposition;
   const compositionRules = [
+
+    {
+    id: "german-comp", 
+    name_en: intl.formatMessage({ id: "misc.german-comp" }),
+    },
     {
       id: "open-war",
       name_en: intl.formatMessage({ id: "misc.open-war" }),
@@ -218,7 +223,7 @@ export const NewList = ({ isMobile }) => {
             ))}
           <p className="new-list__gcomp-link" style={{ textAlign: "center" }}>
             <a 
-              href="https://drive.google.com/file/d/172mG0ep6EgJClJiGijulksZSr1eDLZl5/view" 
+              href="https://drive.google.com/drive/folders/1uirimYTyJLWEOs4zN_Id4AQMr4bjGH7g" 
               target="_blank" 
               rel="noopener noreferrer"
               className="new-list__external-link"

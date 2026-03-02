@@ -35,42 +35,23 @@ export const RulesIndex = () => {
   const synonym = synonyms[normalizedName];
   const ruleData = rulesMap[normalizedName] || rulesMap[synonym];
   const rulePath = ruleData?.url;
-  const compNote = ruleData?.compNote;
+  const compNote = ruleData?.compNote; // 👈 NEW LINE
 
-  // Check if this is a full URL or a relative path
   const iframeUrl = ruleData?.isFullUrl
-    ? rulePath  // Use the full URL directly
+    ? rulePath
     : `https://tow.whfb.app/${rulePath}?minimal=true&utm_source=owb&utm_medium=referral`;
 
   React.useEffect(() => {
     if (open && ruleData?.isFullUrl && rulePath) {
-      window.open(rulePath, '_blank', 'noopener,noreferrer');
+      window.open(rulePath, "_blank", "noopener,noreferrer");
       handleClose();
     }
   }, [open, ruleData?.isFullUrl, rulePath]);
-
-  // Get display name for the rule (remove tags like {renegade})
-  const displayRuleName = activeRule.replace(/ *\{[^)]*\}/g, "");
 
   return (
     <Dialog open={open} onClose={handleClose}>
       {rulePath ? (
         <>
-          {compNote && (
-            <div className="rules-index__comp-note" style={{
-              padding: "12px",
-              backgroundColor: "#f5f5f5",
-              borderBottom: "1px solid #ddd",
-              marginBottom: "8px"
-            }}>
-              <p style={{ margin: "0 0 8px 0" }}>
-                <span className="rules-index__comp-note-title">{displayRuleName}</span>
-              </p>
-              <p style={{ margin: 0, fontSize: "18px" }}>
-                <i>{compNote}</i>
-              </p>
-            </div>
-          )}
           <iframe
             onLoad={() => setIsLoading(false)}
             className={classNames(
@@ -84,15 +65,8 @@ export const RulesIndex = () => {
           />
           {isLoading && <Spinner className="rules-index__spinner" />}
         </>
-      ) : compNote ? (
-        <div style={{ padding: "20px" }}>
-          <p style={{ margin: "0 0 18px 0" }}>
-            <b>{displayRuleName}</b>
-          </p>
-          <p style={{ margin: 0, fontSize: "14px" }}>
-            <i>{compNote}</i>
-          </p>
-        </div>
+      ) : compNote ? ( // 👈 NEW BRANCH
+        <p className="rules-index__comp-note">{compNote}</p>
       ) : (
         <p>
           <FormattedMessage id="editor.noRuleFound" />

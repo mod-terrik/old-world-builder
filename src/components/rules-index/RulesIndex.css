@@ -14,3 +14,8 @@
 .rules-index__iframe--show {
   opacity: 1;
 }
+
+.rules-index__comp-note-title {
+  font-size: 28px;
+  font-weight: bold;
+}

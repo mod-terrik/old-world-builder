@@ -171,6 +171,7 @@ export const Print = () => {
     window.print();
   };
   const getSection = ({ type }) => {
+
     const units = list[type];
 
     return (
@@ -190,9 +191,9 @@ export const Print = () => {
               // Check if this item is in rulesMap
               const normalized = item.name_en?.toLowerCase().trim().replace(/[{}]/g, '');
               if (rulesMap[normalized]) {
-                console.log(`    ✓ Found in rulesMap:`, rulesMap[normalized]);
+                console.log(`Found in rulesMap:`, rulesMap[normalized]);
                 if (rulesMap[normalized].compNote) {
-                  console.log(`    ✓✓ HAS COMP NOTE:`, rulesMap[normalized].compNote);
+                  console.log(`HAS COMP NOTE:`, rulesMap[normalized].compNote);
                 }
               }
             });
@@ -227,19 +228,30 @@ export const Print = () => {
                 pageNumbers: showPageNumbers,
                 armyComposition,
               })}
-              {showSpecialRules && unit.specialRules ? (
-                <>
-                  <p className="print__special-rules">
+
+             {showSpecialRules && unit.specialRules ? (
+               <>
+                 <p className="print__special-rules">
                     <i>
-                      <b>
-                        <FormattedMessage id="unit.specialRules" />:
-                      </b>{" "}
-                      {(
-                        unit.specialRules[`name_${language}`] ||
-                        unit.specialRules.name_en
-                      )?.replace(/ *\{[^)]*\}/g, "")}
-                    </i>
-                  </p>
+                       <b>
+                          <FormattedMessage id="unit.specialRules" />:
+                       </b>{" "}
+                       {(() => {
+                          // Check for army composition specific special rules first
+                          const compositionSpecialRules = 
+                             unit.armyComposition?.[armyComposition]?.specialRules;
+          
+          const rulesText = compositionSpecialRules 
+            ? (compositionSpecialRules[`name_${language}`] || 
+               compositionSpecialRules.name_en)
+            : (unit.specialRules[`name_${language}`] || 
+               unit.specialRules.name_en);
+          
+          return rulesText?.replace(/ *\{[^)]*\}/g, "");
+        })()}
+      </i>
+    </p>
+
                   {unit.detachments &&
                     unit.detachments.map((detachment) => {
                       const specialRulesDetachment =

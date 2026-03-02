@@ -137,7 +137,6 @@ export const NewList = ({ isMobile }) => {
     setArmyComposition(
       armies.find(({ id }) => value === id).armyComposition[0],
     );
-    setCompositionRule("open-war");
   };
   const handleArcaneJournalChange = (value) => {
     setArmyComposition(value);

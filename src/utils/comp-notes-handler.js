@@ -1,3 +1,5 @@
+import { rulesMap, synonyms } from '../components/rules-index/rules-map';
+
 /**
  * Composition Notes Handler
  * Collects and formats composition notes for army sheet printing
@@ -43,16 +45,23 @@ export function getUnitCompNotes(unit, rulesMap) {
   const compNotes = new Set();
   
   // Helper function to add comp note from a rule entry
-  const addCompNote = (ruleName) => {
-    if (!ruleName) return;
-    
-    const normalizedName = ruleName.toLowerCase().trim().replace(/[{}]/g, '');    
-    const ruleEntry = rulesMap[normalizedName];
-    
-    if (ruleEntry && ruleEntry.compNote) {
-      compNotes.add(ruleEntry.compNote);
-    }
-  };
+    const addCompNote = (ruleName) => {
+  if (!ruleName) return;
+  
+  let normalizedName = ruleName.toLowerCase().trim().replace(/[{}]/g, '');
+  
+  // Apply synonym mapping if it exists
+  if (synonyms[normalizedName]) {
+    normalizedName = synonyms[normalizedName];
+  }
+  
+  const ruleEntry = rulesMap[normalizedName];
+  
+  if (ruleEntry && ruleEntry.compNote) {
+    compNotes.add(ruleEntry.compNote);
+  }
+};
+
   
   // Check the unit itself by all possible name fields
   const unitName = extractName(unit);
@@ -99,16 +108,44 @@ if (unit.specialRules) {
       if (weaponName) addCompNote(weaponName);
     });
   }
+ 
   // Check equipment
-  if (unit.equipment) {
-    unit.equipment.forEach((item) => {
+if (unit.equipment) {
+  unit.equipment.forEach((item) => {
     if (!item.active) return;
-    const itemName = item.name_en?.replace(/[{}]/g, '') || '';
+    
+    // Keep the full name including {tags} for initial processing
+    const fullItemName = item.name_en || '';
+    
+    // Also get normalized version without tags as fallback
+    const itemNameNoTags = fullItemName.replace(/ *\{[^}]*\}/g, '');
+    
     // Split by comma to handle multiple items on one line
-    const items = itemName.split(',').map(i => i.toLowerCase().trim());
-    items.forEach(normalized => {
-      if (normalized && rulesMap[normalized]?.compNote) {
-        compNotes.add(rulesMap[normalized].compNote);
+    const fullItems = fullItemName.split(',').map(i => i.toLowerCase().trim());
+    const noTagItems = itemNameNoTags.split(',').map(i => i.toLowerCase().trim());
+    
+    // Try with full name first (including {renegade} etc)
+    fullItems.forEach(normalized => {
+      // Remove just the braces but keep the content (e.g. "ironfists {renegade}" -> "ironfists renegade")
+      const keyWithTag = normalized.replace(/[{}]/g, '');
+      
+      // Apply synonym if exists
+      const mappedKey = synonyms[keyWithTag] || keyWithTag;
+      
+      if (mappedKey && rulesMap[mappedKey]?.compNote) {
+        compNotes.add(rulesMap[mappedKey].compNote);
+        return; // Found it, don't try fallback
+      }
+      
+      // Fallback: try without tags
+      const indexInFull = fullItems.indexOf(normalized);
+      if (indexInFull !== -1 && noTagItems[indexInFull]) {
+        const keyNoTag = noTagItems[indexInFull];
+        const mappedKeyNoTag = synonyms[keyNoTag] || keyNoTag;
+        
+        if (mappedKeyNoTag && rulesMap[mappedKeyNoTag]?.compNote) {
+          compNotes.add(rulesMap[mappedKeyNoTag].compNote);
+        }
       }
     });
   });

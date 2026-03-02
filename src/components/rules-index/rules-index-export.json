@@ -3081,7 +3081,7 @@
   },
   "ironfist renegade": {
     "url": "weapons-of-war/ironfist-renegade",
-    "compNotes": "Models with ironfists can use Parry if they are infantry and are wielding an ordinary hand weapon with it, models with magic weapons can use ironfists alongside them, models with access to magic items can buy magic shields if they have access to ironfists", 
+    "compNote": "Models with ironfists can use Parry if they are infantry and are wielding an ordinary hand weapon with it, models with magic weapons can use ironfists alongside them, models with access to magic items can buy magic shields if they have access to ironfists", 
     "page": "TRLP, p. 16"
   },
   "plagueclaw catapult": {
@@ -3115,10 +3115,6 @@
     ],
     "troopType": "WM",
     "page": "SK, p. 19"
-  },
-  "ironfist": {
-    "url": "weapons-of-war/ironfist",
-    "page": "OK, p. 26, AJ:O&GT, p. 40"
   },
   "thrusting spear": {
     "url": "weapons-of-war/thrusting-spear",

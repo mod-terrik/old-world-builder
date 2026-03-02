@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.10ed8655.css",
-    "main.js": "/static/js/main.7b8d735e.js",
+    "main.js": "/static/js/main.3891ac34.js",
     "static/js/206.957159ff.chunk.js": "/static/js/206.957159ff.chunk.js",
     "service-worker.js": "/service-worker.js",
     "static/media/symbol-defs.svg": "/static/media/symbol-defs.b63db73bab285fb87f387671451f5909.svg",
@@ -28,6 +28,6 @@
   },
   "entrypoints": [
     "static/css/main.10ed8655.css",
-    "static/js/main.7b8d735e.js"
+    "static/js/main.3891ac34.js"
   ]
 }

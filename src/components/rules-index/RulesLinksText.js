@@ -20,21 +20,30 @@ export const RulesLinksText = ({ textObject, showPageNumbers, isRenegade }) => {
   let ruleButtons = ruleString.split(", ");
 
   return ruleButtons.map((rule, index) => {
-    const normalizedName = normalizeRuleName(textEn[index]);
+    // Remove {renegade} tag from the rule name for normalization
+    const cleanedRuleEn = textEn[index].replace(/ *\{[^)]*\}/g, "");
+    const normalizedName = normalizeRuleName(cleanedRuleEn);
     const renegadeName = isRenegade
-      ? normalizeRuleName(`${textEn[index]} renegade`)
+      ? normalizeRuleName(`${cleanedRuleEn} renegade`)
       : null;
     const synonym = synonyms[normalizedName];
+    
+    // Try to find the rule in this order:
+    // 1. Renegade version (if isRenegade is true)
+    // 2. Synonym version
+    // 3. Regular version
     const ruleData =
       (renegadeName && rulesMap[renegadeName]) ||
       rulesMap[synonym || normalizedName];
+    
+    // Determine which rule name to use when opening the rules index
     const activeRuleName =
       renegadeName && rulesMap[renegadeName]
-        ? `${textEn[index]} renegade`
-        : textEn[index];
+        ? `${cleanedRuleEn} renegade`
+        : cleanedRuleEn;
 
     return (
-      <Fragment key={rule}>
+      <Fragment key={`${rule}-${index}`}>
         {ruleData ? (
           <>
             <button
@@ -50,7 +59,7 @@ export const RulesLinksText = ({ textObject, showPageNumbers, isRenegade }) => {
           </>
         ) : (
           <>
-            {rule}
+            {rule.replace(/ *\{[^)]*\}/g, "")}
             {index !== ruleButtons.length - 1 && ", "}
           </>
         )}
@@ -58,3 +67,4 @@ export const RulesLinksText = ({ textObject, showPageNumbers, isRenegade }) => {
     );
   });
 };
+

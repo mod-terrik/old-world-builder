@@ -580,7 +580,7 @@ export const Unit = ({ isMobile, previewData = {} }) => {
 
   // Check if Blessed Brood is required and active for Saurus Warriors (calculated once)
   const blessedBroodOption = unit.options?.find(
-    (opt) => opt.id === "blessed brood",
+    (opt) => opt.name_en === "Blessed Brood",
   );
   const isSaurusWarriors = unit.name_en === "Saurus Warriors";
   const isBlessedBroodActive = blessedBroodOption?.active === true;

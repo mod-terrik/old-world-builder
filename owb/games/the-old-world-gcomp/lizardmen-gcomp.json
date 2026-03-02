@@ -450,7 +450,7 @@
         "name_fr": "Sang Froid, Charge Dévastatrice, Lames d'Obsidienne, Cri de Ralliement, Armoured Hide (1)"
       },
       "notes": {
-        "name_en": "*Note that this special rule does not apply to this model's mount (should it have one)",
+        "name_en": "",
         "name_cn": "*注：此特殊规则不会应用于此模型的坐骑(若其拥有的话)",
         "name_de": "*Note that this special rule does not apply to this model's mount (should it have one)",
         "name_es": "*Note that this special rule does not apply to this model's mount (should it have one)",
@@ -1671,7 +1671,7 @@
         "name_fr": "Arme Perforante (1 - Sang-froid uniquement), Peau Blindée (1), Ordre Serré, Sang Froid, Peur, Lames d'Obsidienne, Stupidité, Rapide, Counter Charge"
       },
       "notes": {
-        "name_en": "Cold One Riders have Counter Charge and may take a magic banner up to 50 pts",
+        "name_en": "",
         "name_cn": "",
         "name_de": "",
         "name_es": "",

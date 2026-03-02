@@ -16,7 +16,7 @@ const getFile = ({ list, listText, asText }) => {
   const fileName = `${list?.name
     .toLowerCase()
     .replace(/ /g, "-")
-    .replace(/,/g, "")}.${asText ? "txt" : "owb.json"}`;
+    .replace(/,/g, "")}-gcomp.${asText ? "txt" : "owb.json"}`;
   const file = new File([asText ? listText : JSON.stringify(list)], fileName, {
     type: asText ? "text/plain" : "application/json",
   });
@@ -248,19 +248,19 @@ export const Export = ({ isMobile }) => {
             <FormattedMessage id="export.specialRules" />
           </label>
         </div>
- <div className="checkbox export__visible-checkbox">
-  <input
-    type="checkbox"
-    id="showCompNotes"
-    onChange={() => setShowCompNotes(!showCompNotes)}
-    checked={showCompNotes}
-    className="checkbox__input"
-    disabled={isSimpleList}
-  />
-  <label htmlFor="showCompNotes" className="checkbox__label">
-    <FormattedMessage id="export.showCompNotes" />
-  </label>
-</div>
+        <div className="checkbox export__visible-checkbox">
+          <input
+            type="checkbox"
+            id="showCompNotes"
+            onChange={() => setShowCompNotes(!showCompNotes)}
+            checked={showCompNotes}
+            className="checkbox__input"
+            disabled={isSimpleList}
+          />
+          <label htmlFor="showCompNotes" className="checkbox__label">
+            <FormattedMessage id="export.showCompNotes" />
+          </label>
+        </div>
         <div className="checkbox export__visible-checkbox">
           <input
             type="checkbox"

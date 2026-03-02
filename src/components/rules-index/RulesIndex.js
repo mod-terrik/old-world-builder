@@ -56,21 +56,6 @@ export const RulesIndex = () => {
     <Dialog open={open} onClose={handleClose}>
       {rulePath ? (
         <>
-          {compNote && (
-            <div className="rules-index__comp-note" style={{
-              padding: "12px",
-              backgroundColor: "#f5f5f5",
-              borderBottom: "1px solid #ddd",
-              marginBottom: "8px"
-            }}>
-		<p style={{ margin: "0 0 8px 0" }}>
-  		<span className="rules-index__comp-note-title">{displayRuleName}</span>
-		</p>   
-              <p style={{ margin: 0, fontSize: "18px" }}>
-                {compNote}
-              </p>
-            </div>
-          )}
           <iframe
             onLoad={() => setIsLoading(false)}
             className={classNames(
@@ -83,12 +68,24 @@ export const RulesIndex = () => {
             width="700"
           />
           {isLoading && <Spinner className="rules-index__spinner" />}
+          {compNote && (
+            <div className="rules-index__comp-note" style={{
+              padding: "12px",
+              backgroundColor: "#f5f5f5",
+              borderTop: "1px solid #ddd",
+              marginTop: "8px"
+            }}>
+              <p style={{ margin: 0, fontSize: "14px" }}>
+                {compNote}
+              </p>
+            </div>
+          )}
         </>
       ) : compNote ? (
         <div style={{ padding: "20px" }}>
-           <span className="rules-index__comp-note-title" style={{ display: "block", margin: "0 0 12px 0" }}>
-	   {displayRuleName}
-           </span>
+          <span className="rules-index__comp-note-title" style={{ display: "block", margin: "0 0 12px 0" }}>
+            {displayRuleName}
+          </span>
           <p style={{ margin: 0, fontSize: "14px" }}>
             {compNote}
           </p>
@@ -101,4 +98,3 @@ export const RulesIndex = () => {
     </Dialog>
   );
 };
-

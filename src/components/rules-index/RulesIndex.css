@@ -16,6 +16,9 @@
 }
 
 .rules-index__comp-note-title {
-  font-size: 28px;
+  font-size: 28px !important;
   font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+  font-family: var(--font-family);
 }

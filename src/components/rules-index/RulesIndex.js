@@ -63,11 +63,11 @@ export const RulesIndex = () => {
               borderBottom: "1px solid #ddd",
               marginBottom: "8px"
             }}>
-              <p style={{ margin: "0 0 8px 0" }}>
-                <span className="rules-index__comp-note-title">{displayRuleName}</span>
-              </p>
+		<p style={{ margin: "0 0 8px 0" }}>
+  		<span className="rules-index__comp-note-title">{displayRuleName}</span>
+		</p>   
               <p style={{ margin: 0, fontSize: "18px" }}>
-                <i>{compNote}</i>
+                {compNote}
               </p>
             </div>
           )}
@@ -86,11 +86,11 @@ export const RulesIndex = () => {
         </>
       ) : compNote ? (
         <div style={{ padding: "20px" }}>
-          <p style={{ margin: "0 0 18px 0" }}>
-            <b>{displayRuleName}</b>
-          </p>
+           <span className="rules-index__comp-note-title" style={{ display: "block", margin: "0 0 12px 0" }}>
+	   {displayRuleName}
+           </span>
           <p style={{ margin: 0, fontSize: "14px" }}>
-            <i>{compNote}</i>
+            {compNote}
           </p>
         </div>
       ) : (

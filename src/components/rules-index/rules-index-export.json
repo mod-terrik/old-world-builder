@@ -11764,7 +11764,7 @@
   },
   "grave guard": {
     "url": "unit/grave-guard",
-    "compNote": "Count as heavy cavalry for the purpose of ressurecting models with Invocation of Nehek",
+    "compNote": "Count as heavy cavalry (wizard level +1) for the purpose of ressurecting models with Invocation of Nehek",
     "stats": [
       {
         "A": "1",
@@ -14654,7 +14654,6 @@
   },
   "minotaur herd": {
     "url": "unit/minotaur-herd",
-    "compNotes": "Characters in this unit also get counter charge",
     "stats": [
       {
         "A": "3",
@@ -17062,6 +17061,7 @@
   },
   "ripperdactyl": {
     "url": "unit/ripperdactyl",
+    "compNote": "Can score with a minimum US10",
     "stats": [
       {
         "A": "2",
@@ -19877,7 +19877,7 @@
   },
   "tomb guard": {
     "url": "unit/tomb-guard",
-    "compNote": "Count as heavy cavalry for the purpose of ressurecting models with Arise!",
+    "compNote": "Count as heavy cavalry (wizard level +1) for the purpose of ressurecting models with Arise!",
     "stats": [
       {
         "A": "1",
@@ -20109,6 +20109,7 @@
   },
   "troglodon": {
     "url": "unit/troglodon",
+    "compNote": "Can score with a minimum US10",
     "stats": [
       {
         "A": "3",
@@ -20798,7 +20799,7 @@
   },
   "warhawk riders": {
     "url": "unit/warhawk-riders",
-    "compNotes": "Can score if above US10",
+    "compNotes": "Can score with a minimum US10",
     "stats": [
       {
         "A": "1",

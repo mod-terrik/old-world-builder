@@ -2124,7 +2124,7 @@
       "mounts": [],
       "items": [],
       "specialRules": {
-        "name_en": "Elven Reflexes, Fast Cavalry, Fire & Flee, Open Order, Skirmishers, Swiftstride",
+        "name_en": "Elven Reflexes, Fast Cavalry, Fire & Flee, Move through Cover, Open Order, Skirmishers, Swiftstride",
         "name_cn": "精灵反应, 快速骑兵, 游击, 开放阵型, 散兵, 快速行进",
         "name_de": "Elfenreflexe, Wendige Kavallerie, Schießen und Verschwinden, Offene Ränge, Plänkler, Schnelle Bewegung",
         "name_es": "",
@@ -3050,7 +3050,7 @@
       "mounts": [],
       "items": [],
       "specialRules": {
-        "name_en": "Elven Reflexes, Evasive, Fear, Feigned Flight, Fire & Flee, Fly (10), Skirmishers, Swiftstride, Reserve Move",
+        "name_en": "Elven Reflexes, Evasive, Fear, Feigned Flight, Fire & Flee, Fly (10), Reserve Move, Skirmishers, Swiftstride",
         "name_cn": "精灵反应, 闪避, 恐惧, 诱敌诈退, 游击, 飞行(10), 散兵, 快速行进, Reserve Move",
         "name_de": "Elfenreflexe, Ausweichen, Angst, Vorgetäuschte Flucht, Schießen und Verschwinden, Fliegen (10), Plänkler, Schnelle Bewegung, Reserve Move",
         "name_es": "",

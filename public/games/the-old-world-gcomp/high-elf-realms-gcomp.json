@@ -2262,7 +2262,7 @@
             "name_fr": "0-1 Tisseur de Tempête par tranche de 1000 points"
           },
       "specialRules": {
-        "name_en": "Elven Reflexes, Ithilmar Weapons, Lore of Saphery, Valour of Ages",
+        "name_en": "Elven Reflexes, Ithilmar Weapons, Lileath's Blessing, Lore of Saphery, Valour of Ages",
         "name_cn": "精灵反应, 伊瑟拉玛武器, 萨芙睿法系, 岁月的荣耀",
         "name_it": "Riflessi Elfici, Ithilmar Weapons, Lore of Saphery, Valore delle Ere",
         "name_fr": "Réflexes Elfiques, Armes en Ithilmar, Domaine de Saphery, Valeur des Âges",
@@ -2278,7 +2278,7 @@
             "name_fr": "0-1 Chef de Guerre Chracien ou Tisseur de Tempête par tranche de 1000 points"
           },
       "specialRules": {
-        "name_en": "Elven Reflexes, Ithilmar Weapons, Lore of Saphery, Valour of Ages, Lileath's Blessing",
+        "name_en": "Elven Reflexes, Ithilmar Weapons, Lileath's Blessing, Lore of Saphery, Valour of Ages",
         "name_cn": "精灵反应, 伊瑟拉玛武器, 萨芙睿法系, 岁月的荣耀, Lileath's Blessing",
         "name_it": "Riflessi Elfici, Ithilmar Weapons, Lore of Saphery, Valore delle Ere, Lileath's Blessing",
         "name_fr": "Réflexes Elfiques, Armes en Ithilmar, Domaine de Saphery, Valeur des Âges, Lileath's Blessing",
@@ -2289,7 +2289,7 @@
         "sea-guard-garrison": {
           "category": "characters",
       "specialRules": {
-        "name_en": "Elven Reflexes, Ithilmar Weapons, Lore of Saphery, Valour of Ages, Lileath's Blessing, Naval Discipline",
+        "name_en": "Elven Reflexes, Ithilmar Weapons, Lileath's Blessing, Lore of Saphery, Naval Discipline, Valour of Ages",
         "name_cn": "精灵反应, 伊瑟拉玛武器, 萨芙睿法系, 岁月的荣耀",
         "name_it": "Riflessi Elfici, Ithilmar Weapons, Lore of Saphery, Valore delle Ere, Lileath's Blessing, Naval Discipline",
         "name_fr": "Réflexes Elfiques, Armes en Ithilmar, Domaine de Saphery, Valeur des Âges, Lileath's Blessing, Naval Discipline",

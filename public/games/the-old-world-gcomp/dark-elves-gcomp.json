@@ -1612,7 +1612,7 @@
       "items": [],
       "lores": [],
       "specialRules": {
-        "name_en": "Close Order, Elven Reflexes, Frenzy, Hatred (High Elves), Horde, Loner, Murderous {renegade}, Poisoned Attacks",
+        "name_en": "Close Order, Elven Reflexes, Frenzy, Hatred (High Elves), Horde, Loner, Murderous {renegade}, Poisoned Attacks, Warband",
         "name_cn": "紧密阵型, 精灵反应, 狂暴, 仇恨(高等精灵), 部群, 独行, 嗜血（叛变）, 淬毒攻击",
         "name_de": "Close Order, Elven Reflexes, Frenzy, Hatred (High Elves), Horde, Loner, Murderous, Poisoned Attacks",
         "name_es": "Orden cerrado, Reflejos élficos, Furia asesina, Odio (Altos elfos), Horda, Solitario, Destreza asesina, Ataques envenenados",
@@ -2129,7 +2129,7 @@
       "items": [],
       "lores": [],
       "specialRules": {
-        "name_en": "Armour Bane (1 - Cold One only), Armoured Hide (1), Close Order, Elven Reflexes, Fear, First Charge, Hatred (High Elves), Stupidity, Swiftstride, Counter Charge",
+        "name_en": "Armour Bane (1 - Cold One only), Armoured Hide (1), Close Order, Counter Charge, Elven Reflexes, Fear, First Charge, Hatred (High Elves), Stupidity, Swiftstride",
         "name_cn": "碎甲攻击(1 - Cold One only), 坚硬皮肤(1), 紧密阵型, 精灵反应, 恐惧, 先行冲锋, 仇恨(高等精灵), 愚笨, 快速行进, Counter Charge",
         "name_de": "Armour Bane (1 - Cold One only), Armoured Hide (1), Close Order, Elven Reflexes, Fear, First Charge, Hatred (High Elves), Stupidity, Swiftstride, Counter Charge",
         "name_es": "Penetración de armadura (1 - solo el gélido), Piel dura (1), Orden cerrado, Reflejos élficos, Miedo, Primera carga, Odio (Altos elfos), Estupidez, Rápido, Counter Charge",
@@ -2235,7 +2235,7 @@
       "items": [],
       "lores": [],
       "specialRules": {
-        "name_en": "Armour Bane (1 - Cold One only), Close Order, Elven Reflexes, Fear,  First Charge, Hatred (High Elves), Impact Hits (D6+1), Stupidity, Counter Charge",
+        "name_en": "Armour Bane (1 - Cold One only), Close Order, Counter Charge, Elven Reflexes, Fear, First Charge, Hatred (High Elves), Impact Hits (D6+1), Stupidity, Counter Charge",
         "name_cn": "碎甲攻击(1 - Cold One only), 紧密阵型, 精灵反应, 恐惧, 先行冲锋, 仇恨(高等精灵), 撞击(D6+1), 愚笨, Counter Charge",
         "name_de": "Armour Bane (1 - Cold One only), Close Order, Elven Reflexes, Fear,  First Charge, Hatred (High Elves), Impact Hits (D6+1), Stupidity, Counter Charge",
         "name_es": "Penetración de armadura (1 - solo el gélido), Orden cerrado, Reflejos élficos, Miedo, Primera carga, Odio (Altos elfos), Golpes de impacto (D6+1), Estupidez, Counter Charge",
@@ -2413,7 +2413,7 @@
       "items": [],
       "lores": [],
       "specialRules": {
-        "name_en": "Dance of Death, Elven Reflexes, Hatred (High Elves), Impetuous, Loner, Murderous {renegade}, Open Order",
+        "name_en": "Dance of Death, Elven Reflexes, Hatred (High Elves), Impetuous, Loner, Murderous {renegade}, Open Order, Warband",
         "name_cn": "死亡之舞, 精灵反应, 仇恨(高等精灵), 鲁莽, 独行, 嗜血（叛变）, 开放阵型",
         "name_de": "Dance of Death, Elven Reflexes, Hatred (High Elves), Impetuous, Loner, Murderous, Open Order",
         "name_es": "Danza de la muerte, Reflejos élficos, Odio (Altos elfos), Impetuoso, Solitario, Destreza homicida, Orden abierto",
@@ -2594,7 +2594,7 @@
       "command": [],
       "equipment": [
         {
-          "name_en": "Hand weapon, Petrifying gaze, Terror",
+          "name_en": "Hand weapon, Halberds, Petrifying gaze, Terror",
           "name_cn": "单手武器, 石化凝视, 惊骇",
           "name_de": "Hand weapon, Petrifying gaze",
           "name_es": "arma de mano, Mirada petrificante, Terror",

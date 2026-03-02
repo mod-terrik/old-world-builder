@@ -2285,7 +2285,7 @@ export const rules = {
       ],
     },
     core: {
-      minPercent: 33,
+      minPercent: 25,
       units: [
         {
           ids: ["white-lions"],
@@ -2360,7 +2360,7 @@ export const rules = {
       ],
     },
     core: {
-      minPercent: 33,
+      minPercent: 25,
       units: [
         {
           ids: ["shadow-warriors"],

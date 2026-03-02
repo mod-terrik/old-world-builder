@@ -1983,7 +1983,7 @@
         "skaven": {
           "category": "special",
           "notes": {
-            "name_en": "0-1 unit of Warplock Jezzails per Clan Skryre Warlock Engineer taken. Increase Ballistic Skill to 4",
+            "name_en": "0-1 unit of Warplock Jezzails per Clan Skryre Warlock Engineer taken.",
             "name_cn": "每选取一个史库里氏族工程术士，则0-1个单位的次元抬枪队. Increase Ballistic Skill to 4",
             "name_de": "0-1 Einheit Warpschloss Jezzails pro Clan Skryre Warlocktechniker. Increase Ballistic Skill to 4",
             "name_es": "0-1 unit of Warplock Jezzails per Clan Skryre Warlock Engineer taken. Increase Ballistic Skill to 4",
@@ -2056,7 +2056,7 @@
         "skaven": {
           "category": "special",
           "notes": {
-            "name_en": "0-1 unit of Poisoned Wind Globadiers per Clan Skryre Warlock Engineer taken. Increase Ballistic Skill to 4",
+            "name_en": "0-1 unit of Poisoned Wind Globadiers per Clan Skryre Warlock Engineer taken.",
             "name_cn": "每选取一个史库里氏族工程术士，则0-1个单位的毒风掷弹手. Increase Ballistic Skill to 4",
             "name_de": "0-1 Einheit Giftwindkrieger pro Clan Skryre Warlocktechniker. Increase Ballistic Skill to 4",
             "name_es": "0-1 unit of Poisoned Wind Globadiers per Clan Skryre Warlock Engineer taken. Increase Ballistic Skill to 4",
@@ -2317,7 +2317,7 @@
         "name_fr": "Attaques Aléatoires, Tirailleurs, Obstiné"
       },
       "notes": {
-        "name_en": "If your army includes one or more Clan Pestilens Plague Priests, 0-1 Plagueclaw Catapult or unit of Plague Censer Bearers may be taken per 1000 points. D3+1 Damage (under hole, only one model)",
+        "name_en": "If your army includes one or more Clan Pestilens Plague Priests, 0-1 Plagueclaw Catapult or unit of Plague Censer Bearers may be taken per 1000 points.",
         "name_cn": "如果你的军队包含一个或更多的疫病氏族瘟疫祭司, 每1000分可以选取0-1个瘟疫利爪投石机或瘟疫香炉僧. D3+1 Damage (under hole, only one model)",
         "name_de": "Wenn deine Armee mindestes einen Clan Pestilens Seuchenpriester enthält, können 0-1 Seuchenklauen Katapult oder Seuchenschläuderer gewählt werden. D3+1 Damage (under hole, only one model)",
         "name_es": "If your army includes one or more Clan Pestilens Plague Priests, 0-1 Plagueclaw Catapult or unit of Plague Censer Bearers may be taken per 1000 points. D3+1 Damage (under hole, only one model)",

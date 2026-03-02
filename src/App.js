@@ -7,20 +7,20 @@ import { Home } from "./pages/home";
 import { Unit } from "./pages/unit";
 import { EditList } from "./pages/edit-list";
 import { Magic } from "./pages/magic";
-import { About } from "./pages/about";
+// import { About } from "./pages/about";
 import { Add } from "./pages/add";
-import { Help } from "./pages/help";
+// import { Help } from "./pages/help";
 import { Export } from "./pages/export";
 import { Print } from "./pages/print";
 import { DuplicateList } from "./pages/duplicate-list";
 import { Rename } from "./pages/rename";
-import { Datasets } from "./pages/datasets";
+// import { Datasets } from "./pages/datasets";
 import { NotFound } from "./pages/not-found";
-import { Privacy } from "./pages/privacy";
-import { Changelog } from "./pages/changelog";
+// import { Privacy } from "./pages/privacy";
+// import { Changelog } from "./pages/changelog";
 import { Import } from "./pages/import";
 import { GameView } from "./pages/game-view";
-import { CustomDatasets } from "./pages/custom-datasets";
+// import { CustomDatasets } from "./pages/custom-datasets";
 import { Header, Main } from "./components/page";
 
 import "./App.css";
@@ -67,12 +67,6 @@ export const App = () => {
           <Route path="/editor/:listId">{<Editor isMobile />}</Route>
           <Route path="/import">{<Import isMobile />}</Route>
           <Route path="/new">{<NewList isMobile />}</Route>
-          <Route path="/about">{<About />}</Route>
-          <Route path="/help">{<Help />}</Route>
-          <Route path="/custom-datasets">{<CustomDatasets />}</Route>
-          <Route path="/privacy">{<Privacy />}</Route>
-          <Route path="/datasets">{<Datasets isMobile />}</Route>
-          <Route path="/changelog">{<Changelog />}</Route>
           <Route path="/print/:listId">{<Print />}</Route>
           <Route path="/game-view/:listId">{<GameView />}</Route>
           <Route path="/" exact>
@@ -82,12 +76,6 @@ export const App = () => {
         </Switch>
       ) : (
         <Switch>
-          <Route path="/about">{<About />}</Route>
-          <Route path="/help">{<Help />}</Route>
-          <Route path="/custom-datasets">{<CustomDatasets />}</Route>
-          <Route path="/privacy">{<Privacy />}</Route>
-          <Route path="/datasets">{<Datasets />}</Route>
-          <Route path="/changelog">{<Changelog />}</Route>
           <Route path="/print/:listId">{<Print />}</Route>
           <Route path="/game-view/:listId">{<GameView />}</Route>
           <Route path="/">

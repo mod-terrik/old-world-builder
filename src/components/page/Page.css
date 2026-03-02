@@ -41,33 +41,6 @@
   align-items: center;
 }
 
-.footer__languages {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 0.5rem;
-}
-
-.footer__languages .radio {
-  margin-bottom: 0;
-  margin-top: 1rem;
-  margin-left: 1rem;
-}
-
-.footer__languages .radio:first-child {
-  margin-left: 0;
-}
-
-.footer__languages label {
-  padding: 0;
-}
-
-.footer__language-icon {
-  width: 24px;
-  margin-right: 0.5rem;
-  border-radius: 2px;
-}
-
 .footer a {
   margin: 0 0.5rem;
   white-space: nowrap;

@@ -71,7 +71,6 @@ export const RulesIndex = () => {
           {compNote && (
             <div className="rules-index__comp-note" style={{
               padding: "12px",
-              backgroundColor: "#fff",
               borderTop: "1px solid #ddd"
             }}>
               <p style={{ margin: 0, fontSize: "14px" }}>

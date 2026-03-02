@@ -728,6 +728,15 @@ export const Unit = ({ isMobile, previewData = {} }) => {
                       magic.maxPoints;
                   }
 
+                  // Check if Blessed Brood is required and active for Saurus Warriors
+                  const blessedBroodOption = unit.options?.find(
+                    (opt) => opt.id === "blessed-brood",
+                  );
+                  const isSaurusWarriors = unit.name_en === "Saurus Warriors";
+                  const isBlessedBroodActive = blessedBroodOption?.active === true;
+                  const disableMagicBanner =
+                    isSaurusWarriors && !isBlessedBroodActive;
+
                   return (
                     <Fragment key={id}>
                       <div
@@ -785,7 +794,7 @@ export const Unit = ({ isMobile, previewData = {} }) => {
                             active={location.pathname.includes(
                               `magic/${index}`,
                             )}
-                            disabled={detachmentActive}
+                            disabled={detachmentActive || disableMagicBanner}
                           >
                             <div className="editor__list-inner">
                               <b>

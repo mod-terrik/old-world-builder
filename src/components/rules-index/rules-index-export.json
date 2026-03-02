@@ -985,7 +985,7 @@
   },
   "blessed brood": {
     "url": "",
-    "compNote": "For each Saurus Hero, 0-1 Saurus Warriors have +1WS, +1I, and may take a magic banner up to 50pts"
+    "compNote": "Blessed Brood allows 0-1 Saurus Warrior units +1WS, +1I, and a magic banner up to 50pts for each Saurus hero purchased"
   },
   "blessed knight": {
     "url": "special-rules/blessed-knight",
@@ -17300,7 +17300,7 @@
   },
   "saurus oldblood": {
     "url": "unit/saurus-oldblood",
-    "compNote": " For each Saurus Hero in your army, 0-1 Saurus Warriors and/or Carnosaur have +1 Weapon Skill and +1 Initiative",
+    "compNote": "For each Saurus hero in your army, 0-1 Saurus Warriors and/or Carnosaur have +1 Weapon Skill and +1 Initiative",
     "stats": [
       {
         "A": "5",
@@ -17320,7 +17320,7 @@
   },
   "saurus scar-veteran": {
     "url": "unit/saurus-scar-veteran",
-    "compNote": " For each Saurus Hero in your army, 0-1 Saurus Warriors and/or Carnosaur have +1 Weapon Skill and +1 Initiative",
+    "compNote": "For each Saurus hero in your army, 0-1 Saurus Warriors and/or Carnosaur have +1 Weapon Skill and +1 Initiative",
     "stats": [
       {
         "A": "4",

@@ -824,7 +824,7 @@
       "name_it": "Saurus Warriors",
       "id": "saurus-warrior",
       "notes": {
-        "name_en": ""
+        "name_en": "For each Saurus Hero, 0-1 Saurus Warriors may have WS4 and I2 (Blessed Brood) and are allowed to take a magic banner up to 50 pts"
       },
       "points": 14,
       "minimum": 10,
@@ -855,7 +855,7 @@
             "types": ["banner"],
             "maxPoints": 50,
           "notes": {
-            "name_en": "For each Saurus hero, 0-1 Saurus Warriors are allowed to take a magic banner up to 50 pts"
+            "name_en": "For each Saurus Hero, 0-1 Saurus Warriors are allowed to take a magic banner up to 50 pts"
           }
           }
         },
@@ -932,7 +932,7 @@
           "name_fr": "Blessed Brood",
           "points": 0,
           "notes": {
-            "name_en": "0-1 for each Saurus hero",
+            "name_en": "For each Saurus Hero, 0-1 Saurus Warriors have WS4, I2 and is allowed to take a magic banner up to 50 pts",
             "name_cn": "For each Saurus Hero, 0-1 Saurus Warriors have WS4, I2 and is allowed to take a magic banner up to 50 pts",
             "name_de": "For each Saurus Hero, 0-1 Saurus Warriors have WS4, I2 and is allowed to take a magic banner up to 50 pts",
             "name_es": "For each Saurus Hero, 0-1 Saurus Warriors have WS4, I2 and is allowed to take a magic banner up to 50 pts",
@@ -1422,7 +1422,7 @@
         "lizardmen": {
           "category": "special",
           "notes": {
-            "name_en": "0-1 unit of Terradon Riders per Skink hero taken",
+            "name_en": "0-1 unit of Terradon Riders per Skink Hero taken",
             "name_cn": "0-1个单位的Terradon Riders per Skink Hero taken",
             "name_de": "0-1 unit of Terradon Riders per Skink Hero taken",
             "name_es": "0-1 unit of Terradon Riders per Skink Hero taken",
@@ -1504,7 +1504,7 @@
         "lizardmen": {
           "category": "special",
           "notes": {
-            "name_en": "0-1 unit of Ripperdactyl Riders per Skink hero taken",
+            "name_en": "0-1 unit of Ripperdactyl Riders per Skink Hero taken",
             "name_cn": "0-1个单位的Ripperdactyl Riders per Skink Hero taken",
             "name_de": "0-1 unit of Ripperdactyl Riders per Skink Hero taken",
             "name_es": "0-1 unit of Ripperdactyl Riders per Skink Hero taken",

@@ -221,16 +221,6 @@ export const NewList = ({ isMobile }) => {
                 </label>
               </div>
             ))}
-          <p className="new-list__gcomp-link" style={{ textAlign: "center" }}>
-            <a 
-              href="https://drive.google.com/drive/folders/1uirimYTyJLWEOs4zN_Id4AQMr4bjGH7g" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="new-list__external-link"
-            >
-              Latest German Comp Ruleset PDF
-            </a>
-          </p>
           <hr />
 	  <label htmlFor="army">
             <FormattedMessage id="new.army" />

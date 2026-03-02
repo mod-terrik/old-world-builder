@@ -41,6 +41,13 @@ export const RulesIndex = () => {
     ? rulePath  // Use the full URL directly
     : `https://tow.whfb.app/${rulePath}?minimal=true&utm_source=owb&utm_medium=referral`;
 
+      React.useEffect(() => {
+    if (open && ruleData?.isFullUrl && rulePath) {
+      window.open(rulePath, '_blank', 'noopener,noreferrer');
+      handleClose();
+    }
+  }, [open, ruleData?.isFullUrl, rulePath]);
+
   return (
     <Dialog open={open} onClose={handleClose}>
       {rulePath ? (
@@ -51,7 +58,7 @@ export const RulesIndex = () => {
               "rules-index__iframe",
               !isLoading && "rules-index__iframe--show"
             )}
-            src={`https://tow.whfb.app/${rulePath}?minimal=true&utm_source=owb&utm_medium=referral`}
+            src={iframeUrl}
             title="Warhammer: The Old World Online Rules Index"
             height="500"
             width="700"

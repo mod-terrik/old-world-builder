@@ -3505,8 +3505,8 @@
         "slayer-host": {
           "category": "special",
           "notes": {
-            "name_de": "0-4 Doomseekers per Daemon Slayer or Dragon Slayer taken",
-            "name_en": "0-4 Doomseekers per Daemon Slayer or Dragon Slayer taken",
+            "name_de": "0-6 Doomseekers per army",
+            "name_en": "0-4 Doomseekers per army",
             "name_cn": "0-4 Doomseekers per Daemon Slayer or Dragon Slayer taken",
             "name_fr": "0-4 Cherche-mort par Tueur de Démons ou Tueur de Dragons sélectionné"
           }

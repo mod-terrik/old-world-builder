@@ -490,7 +490,7 @@ export const Unit = ({ isMobile, previewData = {} }) => {
     if (!list || !game) return;
     if (army && army.id === list.army) return;
 
-    const isCustom = game.id !== "the-old-world";
+    const isCustom = game.id !== "the-old-world" && game.id !== "the-old-world-gcomp";
 
     if (isCustom) {
       const data = getCustomDatasetData(list.army);

@@ -1813,11 +1813,12 @@ export const Unit = ({ isMobile, previewData = {} }) => {
                   <label htmlFor={`lore-${lore}`} className="radio__label">
                     {nameMap[lore][`name_${language}`] || nameMap[lore].name_en}
                   <RuleWithIcon
-  		    name={
-                      listArmyComposition?.includes("renegade")
-                      ? `${nameMap[lore].name_en} renegade`
-                      : nameMap[lore].name_en
-                   }
+                       name={nameMap[lore].name_en}
+  		    // name={
+                      // listArmyComposition?.includes("renegade")
+                      // ? `${nameMap[lore].name_en} renegade`
+                      // : nameMap[lore].name_en
+                   // }
                    isDark
                    className="unit__rules"
                   />

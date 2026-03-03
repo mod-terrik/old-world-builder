@@ -2140,6 +2140,11 @@
     "url": "special-rules/stomp-attacks",
     "page": "RB, p. 177"
   },
+  "vanguard": {
+     "url": "special-rules/vanguard",
+     "compNote": "Units that vanguard move can charge in the first battle round, but not on the first player's turn",
+     "page": "RB, p. 180"
+  },
   "strike first": { "url": "special-rules/strike-first", "page": "RB, p. 177" },
   "strike last": { "url": "special-rules/strike-last", "page": "RB, p. 178" },
   "stubborn": { "url": "special-rules/stubborn", "page": "RB, p. 178" },
@@ -2149,7 +2154,6 @@
   "timmm-berrr!": { "url": "special-rules/timmm-berrr", "page": "RB, p. 179" },
   "unbreakable": { "url": "special-rules/unbreakable", "page": "RB, p. 179" },
   "unstable": { "url": "special-rules/unstable", "page": "RB, p. 180" },
-  "vanguard": { "url": "special-rules/vanguard", "page": "RB, p. 180" },
   "veteran": { "url": "special-rules/veteran", "page": "RB, p. 180" },
   "volley fire": { "url": "special-rules/volley-fire", "page": "RB, p. 180" },
   "warband": { "url": "special-rules/warband", "page": "RB, p. 180" },
@@ -20799,7 +20803,7 @@
   },
   "warhawk riders": {
     "url": "unit/warhawk-riders",
-    "compNotes": "Can score with a minimum US10",
+    "compNote": "Can score with a minimum US10",
     "stats": [
       {
         "A": "1",

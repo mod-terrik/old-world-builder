@@ -14,19 +14,9 @@ export const About = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-
-    loadScript("https://www.paypalobjects.com/donate/sdk/donate-sdk.js", () => {
-      window.PayPal.Donation.Button({
-        env: "production",
-        hosted_button_id: "VU2Z6Q32Q656A",
-        image: {
-          src: "https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif",
-          alt: "Donate with PayPal button",
-          title: "PayPal - The safer, easier way to pay online!",
-        },
-      }).render("#donate-button");
-    });
-  }, [location.pathname]);
+    [location.pathname]);
+   }
+ };
 
   return (
     <>

@@ -35,7 +35,8 @@ export const RulesIndex = () => {
   const synonym = synonyms[normalizedName];
   const ruleData = rulesMap[normalizedName] || rulesMap[synonym];
   const rulePath = ruleData?.url;
-  const compNote = ruleData?.compNote;
+  // compNote is used only in print/export — not rendered in the iframe popup
+  const ruleNote = ruleData?.ruleNote;
 
   // Check if this is a full URL or a relative path
   const iframeUrl = ruleData?.isFullUrl
@@ -68,24 +69,24 @@ export const RulesIndex = () => {
             width="700"
           />
           {isLoading && <Spinner className="rules-index__spinner" />}
-          {compNote && (
+          {ruleNote && (
             <div className="rules-index__comp-note" style={{
               padding: "12px",
               borderTop: "1px solid #ddd"
             }}>
               <p style={{ margin: 0, fontSize: "14px" }}>
-                {`* ${compNote}`}
+                {`* ${ruleNote}`}
               </p>
             </div>
           )}
         </>
-      ) : compNote ? (
+      ) : ruleNote ? (
         <div style={{ padding: "20px" }}>
           <span className="rules-index__comp-note-title" style={{ display: "block", margin: "0 0 12px 0" }}>
             {displayRuleName}
           </span>
           <p style={{ margin: 0, fontSize: "14px" }}>
-            {compNote}
+            {ruleNote}
           </p>
         </div>
       ) : (

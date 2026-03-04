@@ -7,7 +7,7 @@ import { Home } from "./pages/home";
 import { Unit } from "./pages/unit";
 import { EditList } from "./pages/edit-list";
 import { Magic } from "./pages/magic";
-// import { About } from "./pages/about";
+import { About } from "./pages/about";
 import { Add } from "./pages/add";
 // import { Help } from "./pages/help";
 import { Export } from "./pages/export";
@@ -72,12 +72,16 @@ export const App = () => {
           <Route path="/" exact>
             {<Home isMobile />}
           </Route>
+          <Route path="/about">{<About isMobile />}</Route>
           <Route path="*">{<NotFound />}</Route>
         </Switch>
       ) : (
         <Switch>
           <Route path="/print/:listId">{<Print />}</Route>
           <Route path="/game-view/:listId">{<GameView />}</Route>
+          <Route path="/about">
+      		<About />
+         </Route>
           <Route path="/">
             <Header headline="Old World Builder" hasMainNavigation />
             <Main isDesktop>

@@ -1401,13 +1401,13 @@
       "points": 100,
       "armyComposition": {
         "beastmen-brayherds": {
-          "category": "characters"
+          "category": "special"
         },
         "minotaur-blood-herd": {
           "category": "core"
         },
         "wild-herd": {
-          "category": "characters"
+          "category": "special"
         }
       },
       "notes": {

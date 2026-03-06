@@ -19,7 +19,6 @@ const additionalOWBRules = {
   shortbows: { url: "weapons-of-war/shortbow" },
   "thrusting spears": {
     url: "weapons-of-war/thrusting-spear",
-    compNote: "Thrusting spear adds +1S when unit is charged in the front arc",
     ruleNote: "Thrusting spear adds +1S when unit is charged in the front arc",
   },
   javelins: { url: "weapons-of-war/javelin" },

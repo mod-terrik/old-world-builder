@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.10ed8655.css",
-    "main.js": "/static/js/main.5498e67c.js",
+    "main.css": "/static/css/main.9f492640.css",
+    "main.js": "/static/js/main.04507370.js",
     "static/js/206.957159ff.chunk.js": "/static/js/206.957159ff.chunk.js",
     "service-worker.js": "/service-worker.js",
     "static/media/symbol-defs.svg": "/static/media/symbol-defs.b63db73bab285fb87f387671451f5909.svg",
@@ -27,7 +27,7 @@
     "static/media/renegade.svg": "/static/media/renegade.acc9366d70bf05847d8cc5b3a54cd971.svg"
   },
   "entrypoints": [
-    "static/css/main.10ed8655.css",
-    "static/js/main.5498e67c.js"
+    "static/css/main.9f492640.css",
+    "static/js/main.04507370.js"
   ]
 }

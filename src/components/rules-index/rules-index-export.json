@@ -681,7 +681,7 @@
     "url": "special-rules/the-wandering-duelists",
     "page": "AJ:TWoSF, p. 37"
   },
-  "dark coven": { "url": "special-rules/dark-coven", "compNote":"Dark Coven may only be used once per player turn per shaman","page": "AJ:BB, p. 33" },
+  "dark coven": { "url": "special-rules/dark-coven", "page": "AJ:BB, p. 33" },
   "clouds of soot & smoke": {
     "url": "special-rules/clouds-of-soot-and-smoke",
     "page": "FoF, p. 54"
@@ -689,6 +689,7 @@
   "grail reliquae": {
     "url": "special-rules/grail-reliquae",
     "compNote": "Grail Reliqaue has US6 and any unit it is attatched to has Blessings of the Lady",
+	"ruleNote": "Grail Reliqaue has US6 and any unit it is attatched to has Blessings of the Lady",
     "page": "FoF, p. 94"
   },
   "forgefire": { "url": "special-rules/forgefire", "page": "FoF, p. 16" },
@@ -1340,7 +1341,7 @@
   },
   "ensorcelled weapons": {
     "url": "special-rules/ensorcelled-weapons",
-    "compNote": "Ensorcelled weapons applies to two hand weapons",
+    "ruleNote": "Ensorcelled weapons applies to two hand weapons",
     "page": "CD, p. 20, RH, p. 81 & 115"
   },
   "backstab": { "url": "special-rules/backstab", "page": "CD, p. 20" },
@@ -1723,7 +1724,7 @@
   },
   "ithilmar weapons": {
     "url": "special-rules/ithilmar-weapons",
-    "compNote": "Ithilmar weapons applies to two hand weapons",
+    "ruleNote": "Ithilmar weapons applies to two hand weapons",
     "page": "FoF, p. 185"
   },
   "dive bomb": { "url": "special-rules/dive-bomb", "page": "FoF, p. 28" },
@@ -1841,7 +1842,7 @@
   },
   "obsidian blades": {
     "url": "special-rules/obsidian-blades",
-    "compNote": "Obsidian blades applies to two hand weapons",
+    "ruleNote": "Obsidian blades applies to two hand weapons",
     "page": "LM, p. 20"
   },
   "whirling doom": {
@@ -1909,7 +1910,7 @@
   },
   "warpstone weapons": {
     "url": "special-rules/warpstone-weapons",
-    "compNote": "Warpstone weapons applies to two hand weapons",
+    "ruleNote": "Warpstone weapons applies to two hand weapons",
     "page": "SK, p. 23"
   },
   "feigned flight": {
@@ -1930,7 +1931,7 @@
   },
   "gromril weapons": {
     "url": "special-rules/gromril-weapons",
-    "compNote": "Gromril weapons applies to two hand weapons",
+    "ruleNote": "Gromril weapons applies to two hand weapons",
     "page": "FoF, p. 39"
   },
   "enough for everyone": {
@@ -2011,7 +2012,7 @@
     "url": "special-rules/relentless-warriors",
     "page": "AJ:WoC, p. 39"
   },
-  "frenzy": { "url": "special-rules/frenzy","compNote": "+1A from Frenzy always applies", "page": "RB, p. 170" },
+  "frenzy": { "url": "special-rules/frenzy","ruleNote": "+1A from Frenzy always applies", "page": "RB, p. 170" },
   "furious charge": {
     "url": "special-rules/furious-charge",
     "page": "RB, p. 171"
@@ -2142,7 +2143,7 @@
   },
   "vanguard": {
      "url": "special-rules/vanguard",
-     "compNote": "Units that vanguard move can charge in the first battle round, but not on the first player's turn",
+     "ruleNote": "Units that vanguard move can charge in the first battle round, but not on the first player's turn.",
      "page": "RB, p. 180"
   },
   "strike first": { "url": "special-rules/strike-first", "page": "RB, p. 177" },
@@ -2405,6 +2406,8 @@
   },
   "serrated maw": {
     "url": "weapons-of-war/serrated-maw",
+	"ruleNote": "Serrated Maw has AP1.",
+
     "page": "DE, p. 18, FoF, p. 70, 100, 138, 139, 173 & 177"
   },
   "drakegun": { "url": "weapons-of-war/drakegun", "page": "FoF, p. 24" },
@@ -3793,7 +3796,7 @@
     "page": "CD, p. 19"
   },
   "bull standard": { "url": "magic-item/bull-standard", "page": "OK, p. 22" },
-  "burning blade": { "url": "magic-item/burning-blade", "page": "RB, p. 339" },
+  "burning blade": { "url": "magic-item/burning-blade", "ruleNote": "Characters can choose to use this weapon or a mundane weapon.", "page": "RB, p. 339" },
   "buzgob's knobbly staff": {
     "url": "magic-item/buzgobs-knobbly-staff",
     "page": "RH, p. 44"
@@ -4067,6 +4070,7 @@
   "dragon helm": { "url": "magic-item/dragon-helm", "page": "FoF, p. 182" },
   "dragon slaying sword": {
     "url": "magic-item/dragon-slaying-sword",
+	"ruleNote": "Characters can choose to use this weapon or a mundane weapon.",
     "page": "RB, p. 338"
   },
   "dragon's eye banner": {
@@ -5915,6 +5919,7 @@
   },
   "badlands ogre bulls": {
     "url": "unit/badlands-ogre-bulls",
+	"ruleNote": "All Ogres have MR (1) and Regeneration (6+).",
     "stats": [
       {
         "A": "3",
@@ -6248,6 +6253,7 @@
   },
   "black ark corsairs": {
     "url": "unit/black-ark-corsairs",
+	"ruleNote": "Have Ambush and Vanguard.",
     "stats": [
       {
         "A": "1",
@@ -6756,6 +6762,7 @@
   },
   "bloodwrack medusa": {
     "url": "unit/bloodwrack-medusa",
+	"ruleNote": "Have Terror and are equipped with Halberds.",
     "stats": [
       {
         "A": "3",
@@ -7161,6 +7168,7 @@
   },
   "bruiser": {
     "url": "unit/bruiser",
+	"ruleNote": "All Ogres have MR (1) and Regeneration (6+).",
     "stats": [
       {
         "A": "4",
@@ -7304,6 +7312,7 @@
   },
   "butcher": {
     "url": "unit/butcher",
+	"ruleNote": "All Ogres have MR (1) and Regeneration (6+).",
     "stats": [
       {
         "A": "3",
@@ -7847,6 +7856,7 @@
   },
   "chaos ogres": {
     "url": "unit/chaos-ogres",
+	"ruleNote": "All Ogres have MR (1) and Regeneration (6+).",
     "stats": [
       {
         "A": "3",
@@ -7916,6 +7926,7 @@
   },
   "chaos trolls": {
     "url": "unit/chaos-trolls",
+	"ruleNote": "All Trolls have Extra Attack (1) and Stubborn.",
     "stats": [
       {
         "A": "3",
@@ -8357,6 +8368,7 @@
   },
   "cockatrice": {
     "url": "unit/cockatrice",
+	"ruleNote": "Has Wicked Claws (AP2)",
     "stats": [
       {
         "A": "6",
@@ -8376,6 +8388,7 @@
   },
   "cold one dark elves": {
     "url": "unit/cold-one-dark-elves",
+	
     "stats": [
       {
         "A": "2",
@@ -8543,6 +8556,7 @@
   },
   "common troll mob": {
     "url": "unit/common-troll-mob",
+	"ruleNote": "All Trolls have Extra Attack (1) and Stubborn.",
     "stats": [
       {
         "A": "3",
@@ -8711,6 +8725,7 @@
   },
   "cygor": {
     "url": "unit/cygor",
+	"ruleNote": "Has +1T and is Behemoth troop type.",
     "stats": [
       {
         "A": "4",
@@ -9531,6 +9546,7 @@
   },
   "dragon ogre shaggoth": {
     "url": "unit/dragon-ogre-shaggoth",
+	"ruleNote": "Has +1T and is Behemoth troop type.",
     "stats": [
       {
         "A": "5",
@@ -10420,6 +10436,7 @@
   },
   "firebelly": {
     "url": "unit/firebelly",
+	"ruleNote": "All Ogres have MR (1) and Regeneration (6+).",
     "stats": [
       {
         "A": "3",
@@ -11687,6 +11704,7 @@
   },
   "gorger": {
     "url": "unit/gorger",
+	"ruleNote": "All Ogres have MR (1) and Regeneration (6+).",
     "stats": [
       {
         "A": "4",
@@ -12826,6 +12844,7 @@
   },
   "hunter": {
     "url": "unit/hunter",
+	"ruleNote": "All Ogres have MR (1) and Regeneration (6+).",
     "stats": [
       {
         "A": "4",
@@ -12896,6 +12915,7 @@
   },
   "imperial ogres": {
     "url": "unit/imperial-ogres",
+	"ruleNote": "All Ogres have MR (1) and Regeneration (6+).",
     "stats": [
       {
         "A": "3",
@@ -13218,6 +13238,7 @@
   },
   "ironguts": {
     "url": "unit/ironguts",
+	"ruleNote": "All Ogres have MR (1) and Regeneration (6+).",
     "stats": [
       {
         "A": "3",
@@ -13399,6 +13420,7 @@
   },
   "k'daai fireborn": {
     "url": "unit/kdaai-fireborn",
+	"ruleNote": "Have a 5+ Ward Save against non-magical attacks (Dark Runes).",
     "stats": [
       {
         "A": "3",
@@ -13518,6 +13540,7 @@
   },
   "kharibdyss": {
     "url": "unit/kharibdyss",
+	"ruleNote": "Has +1T",
     "stats": [
       {
         "A": "5",
@@ -13823,6 +13846,7 @@
   },
   "leadbelchers": {
     "url": "unit/leadbelchers",
+	"ruleNote": "All Ogres have MR (1) and Regeneration (6+).",
     "stats": [
       {
         "A": "3",
@@ -14191,6 +14215,7 @@
   },
   "maneaters": {
     "url": "unit/maneaters",
+	"ruleNote": "All Ogres have MR (1) and Regeneration (6+).",
     "stats": [
       {
         "A": "4",
@@ -14658,6 +14683,7 @@
   },
   "minotaur herd": {
     "url": "unit/minotaur-herd",
+	"ruleNote": "Units in Blood Herd get Counter Charge, including characters in the unit.",
     "stats": [
       {
         "A": "3",
@@ -14887,6 +14913,7 @@
   },
   "mournfang cavalry": {
     "url": "unit/mournfang-cavalry",
+	"ruleNote": "All Ogres have MR (1) and Regeneration (6+).",
     "stats": [
       {
         "A": "3",
@@ -15506,6 +15533,7 @@
   },
   "ogre bulls": {
     "url": "unit/ogre-bulls",
+	"ruleNote": "All Ogres have MR (1) and Regeneration (6+).",
     "stats": [
       {
         "A": "3",
@@ -16736,6 +16764,7 @@
   },
   "questing knights": {
     "url": "unit/questing-knights",
+	"ruleNote": "Have +1A",
     "stats": [
       {
         "A": "2",
@@ -17128,6 +17157,7 @@
   },
   "river troll mob": {
     "url": "unit/river-troll-mob",
+	"ruleNote": "All Trolls have Extra Attack (1) and Stubborn.",
     "stats": [
       {
         "A": "3",
@@ -18748,6 +18778,7 @@
   },
   "slaughtermaster": {
     "url": "unit/slaughtermaster",
+	"ruleNote": "All Ogres have MR (1) and Regeneration (6+).",
     "stats": [
       {
         "A": "4",
@@ -19174,6 +19205,7 @@
   },
   "stone troll mob": {
     "url": "unit/stone-troll-mob",
+	"ruleNote": "All Trolls have Extra Attack (1) and Stubborn.",
     "stats": [
       {
         "A": "3",
@@ -19212,6 +19244,7 @@
   },
   "stonehorn riders": {
     "url": "unit/stonehorn-riders",
+	"ruleNote": "All Ogres have MR (1) and Regeneration (6+).",
     "stats": [
       {
         "A": "4",
@@ -19675,7 +19708,7 @@
   },
   "the green knight": {
     "url": "unit/the-green-knight",
-    "compNote": "If slain at least once, gives up half of his VP (full VP when defeated or not on the table at the end of the game) and he may charge in turn one combat only if the controlling player goes second",
+    "ruleNote": "If slain at least once, gives up half of his VP (full VP when defeated or not on the table at the end of the game) and he may charge in turn one combat only if the controlling player goes second",
     "stats": [
       {
         "A": "4",
@@ -20219,6 +20252,7 @@
   },
   "tyrant": {
     "url": "unit/tyrant",
+	"ruleNote": "All Ogres have MR (1) and Regeneration (6+).",
     "stats": [
       {
         "A": "5",
@@ -20665,6 +20699,7 @@
   },
   "war hydra": {
     "url": "unit/war-hydra",
+	"ruleNote": "Has +1T",
     "stats": [
       {
         "A": "2",
@@ -20942,6 +20977,7 @@
   },
   "warped gors": {
     "url": "unit/warped-gors",
+	"ruleNote": "Have Bestial Charge and Chaos Armour (5+).",
     "stats": [
       {
         "A": "D3",
@@ -21261,6 +21297,7 @@
   },
   "witch elves": {
     "url": "unit/witch-elves",
+	"ruleNote": "Have Warband.",
     "stats": [
       {
         "A": "1",

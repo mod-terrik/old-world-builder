@@ -79,14 +79,11 @@ export const validateList = ({ list, language, intl }) => {
             (command) => command.active && command.name_en === "General",
           ),
       );
+
   // The general must be one of the characters with the highest leadership
   let highestLeadership = 0;
-  // The hierophant must be one of the liche priests with the highest wizard level
-  let highestLichePriestLevel = 0;
-
   if (list?.characters?.length) {
     list.characters.forEach((unit) => {
-      // Highest leadership for general
       if (
         unit.command &&
         unit.command.find(
@@ -107,36 +104,8 @@ export const validateList = ({ list, language, intl }) => {
           highestLeadership = leadership;
         }
       }
-
-      // Highest liche priest level
-      if (
-        unit.command &&
-        unit.command.find(
-          (command) =>
-            command.name_en === "The Hierophant" &&
-            (!command.armyComposition ||
-              equalsOrIncludes(command.armyComposition, list.armyComposition)),
-        )
-      ) {
-        const wizardLevel = getWizardLevels(unit).lastIndexOf(1);
-        if (wizardLevel && wizardLevel > highestLichePriestLevel) {
-          // Settra is always the Hierophant
-          highestLichePriestLevel =
-            unit.name_en === "Settra the Imperishable" ? 6 : wizardLevel;
-        }
-      }
     });
   }
-
-  const hierophants = !list?.characters?.length
-    ? []
-    : list.characters.filter(
-        (unit) =>
-          unit.command &&
-          unit.command.find(
-            (command) => command.active && command.name_en === "The Hierophant",
-          ),
-      );
 
   const BSBs = !list.characters?.length
     ? []
@@ -237,13 +206,6 @@ export const validateList = ({ list, language, intl }) => {
       section: "characters",
     });
 
-  // Multiple hierophants
-  hierophants.length > 1 &&
-    errors.push({
-      message: "misc.error.multipleHierophants",
-      section: "characters",
-    });
-
   // General doesn't have highest leadership in the army
   const unitLeadership =
     generalsCount === 1 && getUnitLeadership(generals[0].name_en);
@@ -253,21 +215,6 @@ export const validateList = ({ list, language, intl }) => {
     unitLeadership < highestLeadership &&
     errors.push({
       message: "misc.error.generalLeadership",
-      section: "characters",
-    });
-
-  // Hierophant doesn't have highest wizard level
-  const hierophantLevel =
-    hierophants.length > 0 &&
-    (hierophants[0].name_en === "Settra the Imperishable"
-      ? 6
-      : getWizardLevels(hierophants[0]).lastIndexOf(1));
-
-  hierophants.length > 0 &&
-    hierophantLevel &&
-    hierophantLevel < highestLichePriestLevel &&
-    errors.push({
-      message: "misc.error.hierophantLevel",
       section: "characters",
     });
 
@@ -643,59 +590,6 @@ export const validateList = ({ list, language, intl }) => {
       });
   }
 
-  let used0XUnits = [];
-
-  const checkRules = ({ ruleUnit, type }) => {
-    const unitsInList = (
-      ruleUnit?.requiredByType === "all"
-        ? [...list.characters, ...list.core, ...list.special, ...list.rare]
-        : list[type]
-    ).filter(
-      (unit) => ruleUnit.ids && ruleUnit.ids.includes(unit.id.split(".")[0]),
-    );
-    const requiredUnitsInList =
-      ruleUnit.requiresType &&
-      (ruleUnit.requiresType === "all"
-        ? [...list.characters, ...list.core, ...list.special, ...list.rare]
-        : list[ruleUnit.requiresType]
-      ).filter(
-        (unit) =>
-          ruleUnit.requires &&
-          ruleUnit.requires.includes(unit.id.split(".")[0]),
-      );
-    const namesInList = joinWithOr(
-      uniq(unitsInList.map((unit) => getUnitName({ unit, language }))),
-    );
-    const unitNames =
-      ruleUnit.min > 0 &&
-      joinWithOr(
-        uniq(
-          ruleUnit.ids.map((id) => {
-            const name = intl.formatMessage({ id });
-
-            return getUnitName({ unit: { name }, language });
-          }),
-        ),
-      );
-    const requiredNames =
-      ruleUnit.requires &&
-      joinWithOr(
-        uniq(
-          ruleUnit.requires.map((id) => {
-            const name = intl.formatMessage({ id });
-
-            return getUnitName({ unit: { name }, language });
-          }),
-        ),
-      );
-    const points = ruleUnit.points;
-    const min = points
-      ? Math.floor(list.points / points) * ruleUnit.min
-      : ruleUnit.min;
-    const max = points
-      ? Math.floor(list.points / points) * ruleUnit.max
-      : ruleUnit.max;
-
     // Not enough units
     if (
       (!ruleUnit.requires || (ruleUnit.requires && ruleUnit.requiresGeneral)) &&
@@ -854,7 +748,7 @@ export const validateList = ({ list, language, intl }) => {
           ruleUnit.requiresCommand.unit === character.id.split(".")[0],
       );
       const characterWithCommand = charactersInList.find((character) =>
-        character.command.find(
+        character.commands.find(
           (command) =>
             command.id === ruleUnit.requiresCommand.id && command.active,
         ),

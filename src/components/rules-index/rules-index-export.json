@@ -3093,7 +3093,8 @@
   "ironfist renegade": {
     "url": "weapons-of-war/ironfist-renegade",
     "compNote": "Models with ironfists can use Parry if they are infantry and are wielding an ordinary hand weapon with it, models with magic weapons can use ironfists alongside them, models with access to magic items can buy magic shields if they have access to ironfists", 
-    "page": "TRLP, p. 16"
+    "ruleNote": "Models with ironfists can use Parry if they are infantry and are wielding an ordinary hand weapon with it, models with magic weapons can use ironfists alongside them, models with access to magic items can buy magic shields if they have access to ironfists",
+	"page": "TRLP, p. 16"
   },
   "plagueclaw catapult": {
     "url": "unit/plagueclaw-catapult",
@@ -4372,6 +4373,7 @@
   "icon of rakaph": {
     "url": "magic-item/icon-of-rakaph",
     "compNote": "Icon of Rakaph cannot be used to pursue into a fresh enemy", 
+	"ruleNote": "Icon of Rakaph cannot be used to pursue into a fresh enemy", 
     "page": "RH p. 151"
   },
   "idol of gork": {
@@ -5358,7 +5360,7 @@
     "url": "magic-item/the-dolorous-blade",
     "page": "AJ:KoB, p. 37"
   },
-  "the fellblade": { "url": "magic-item/the-fellblade", "page": "SK, p. 20", "compNote": "Fellblade wounds the wielder on a D6"},
+  "the fellblade": { "url": "magic-item/the-fellblade", "page": "SK, p. 20", "compNote": "Fellblade wounds the wielder on a D6", "ruleNote": "The bearer of the Fellblade rolls a d6 instead of a d3 to determine if they lose a wound."},
   "the fires of nan-gau": {
     "url": "magic-item/the-fires-of-nan-gau",
     "page": "AJ:DotSD, p. 48"
@@ -6693,6 +6695,7 @@
   },
   "bloodletters of khorne": {
     "url": "unit/bloodletters-of-khorne",
+	"ruleNote": "Have +1T",
     "stats": [
       {
         "A": "1",
@@ -9266,6 +9269,7 @@
   },
   "demigryph": {
     "url": "unit/demigryph",
+	"ruleNote": "Give (+1T)",
     "stats": [
       {
         "A": "3",
@@ -9472,6 +9476,7 @@
   "doomwheel": {
     "url": "unit/doomwheel",
     "compNote": "It's own Zzzzap! templates cannot hit the Doomwheel itself, and will stop in place if they would move onto the model",
+	"ruleNote": "It's own Zzzzap! templates cannot hit the Doomwheel itself, and will stop in place if they would move onto the model.",
     "stats": [
       {
         "A": "-",
@@ -12635,7 +12640,8 @@
     ],
     "troopType": "RI",
     "page": "FoF, p. 53",
-    "compNote": "May attempt to cast two different prayers during the player's command phase, instead of the usual one."
+    "compNote": "May attempt to cast two different prayers during the player's command phase, instead of the usual one.",
+	"ruleNote": "May attempt to cast two different prayers during the player's command phase, instead of the usual one."
   },
   "hippogryph": {
     "url": "unit/hippogryph",
@@ -13925,6 +13931,7 @@
     ],
     "troopType": "RI",
     "compNote": "May attempt to cast two different prayers during the player's command phase, instead of the usual one.",
+	"ruleNote": "May attempt to cast two different prayers during the player's command phase, instead of the usual one.",
     "page": "FoF, p. 52"
   },
   "lion chariot of chrace": {
@@ -17548,6 +17555,7 @@
   },
   "sea guard garrison commander": {
     "url": "unit/sea-guard-garrison-commander",
+	"ruleNote": "Has +1W",
     "stats": [
       {
         "A": "3",
@@ -17815,7 +17823,7 @@
   },
   "shieldbearers": {
     "url": "unit/shieldbearers",
-    "compNote": "Shieldbearers have a unit strength of 4",
+    "ruleNote": "Shieldbearers have a unit strength of 4.",
     "stats": [
       {
         "A": "3",

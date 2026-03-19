@@ -6462,7 +6462,7 @@
       "name_cn": "大胃朝圣者",
       "name_fr": "Cherche-gueule",
       "name_it": "Mawseeker",
-      "points": 0,
+      "points": 30,
       "type": "big-name",
       "onePerArmy": false,
       "name": "mawseeker"
@@ -6473,7 +6473,7 @@
       "name_cn": "吞山者",
       "name_fr": "Mange-montagne",
       "name_it": "Mountaineater",
-      "points": 0,
+      "points": 25,
       "type": "big-name",
       "onePerArmy": false,
       "name": "mountaineater"
@@ -6484,7 +6484,7 @@
       "name_cn": "巨人击破者",
       "name_fr": "Brise-géant",
       "name_it": "Giantbreaker",
-      "points": 0,
+      "points": 20,
       "type": "big-name",
       "onePerArmy": false,
       "name": "giantbreaker"
@@ -6495,7 +6495,7 @@
       "name_cn": "噬亲者",
       "name_fr": "Mâche-frère",
       "name_it": "Kineater",
-      "points": 0,
+      "points": 15,
       "type": "big-name",
       "onePerArmy": false,
       "name": "kineater"
@@ -6506,7 +6506,7 @@
       "name_cn": "远行者",
       "name_fr": "Longues-jambes",
       "name_it": "Longstrider",
-      "points": 0,
+      "points": 10,
       "type": "big-name",
       "onePerArmy": false,
       "name": "longstrider"
@@ -6517,7 +6517,7 @@
       "name_cn": "屠兽者",
       "name_fr": "Trucide-fauve",
       "name_it": "Beastkiller",
-      "points": 0,
+      "points": 5,
       "type": "big-name",
       "onePerArmy": false,
       "name": "beastkiller"
@@ -6528,7 +6528,7 @@
       "name_cn": "诈死者",
       "name_fr": "Trompe-la-mort",
       "name_it": "Deathcheater",
-      "points": 0,
+      "points": 5,
       "type": "big-name",
       "onePerArmy": false,
       "name": "deathcheater"

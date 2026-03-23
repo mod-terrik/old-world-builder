@@ -213,7 +213,12 @@ export const downloadRemoteDataFromDropbox = ({ dispatch }) => {
 };
 
 export const syncLists = ({ dispatch }) => {
-  const settings = JSON.parse(localStorage.getItem("owb.settings")) || {};
+  let settings = JSON.parse(localStorage.getItem("owb.settings")) || {};
+
+  if (!settings.lastChanged) {
+    settings.lastChanged = new Date().toString();
+    localStorage.setItem("owb.settings", JSON.stringify(settings));
+  }
 
   if (isSyncing || !dbx) {
     return;

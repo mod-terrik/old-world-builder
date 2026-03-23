@@ -77,9 +77,7 @@ export const useDropboxAuthentication = () => {
       dbxAuth.setCodeVerifier(window.sessionStorage.getItem("codeVerifier"));
       dbxAuth
         .getAccessTokenFromCode(
-          process.env.NODE_ENV === "development"
-            ? "https://ow-dev.whfb.net"
-            : "https://owb.whfb.net",
+          window.location.origin + "/",
           code,
         )
         .then((response) => {
@@ -118,9 +116,7 @@ export const useDropboxAuthentication = () => {
 export const login = ({ dispatch }) => {
   dbxAuth
     .getAuthenticationUrl(
-      process.env.NODE_ENV === "development"
-        ? "https://ow-dev.whfb.net"
-        : "https://owb.whfb.net",
+      window.location.origin + "/",
       null,
       "code",
       "offline",
@@ -353,10 +349,7 @@ export const syncLists = ({ dispatch }) => {
         updateLogin({ isSyncing: false, loggedIn: false, loginLoading: false }),
       );
       isSyncing = false;
-      window.location.href =
-        process.env.NODE_ENV === "development"
-          ? "https://ow-dev.whfb.net"
-          : "https://owb.whfb.net";
+      window.location.href = window.location.origin + "/";
       localStorage.setItem("owb.accessToken", "");
       localStorage.setItem("owb.refreshToken", "");
     });

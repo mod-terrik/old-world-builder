@@ -139,25 +139,27 @@ export const login = ({ dispatch }) => {
 
 export const uploadLocalDataToDropbox = ({ dispatch, settings }) => {
   const localLists = JSON.parse(localStorage.getItem("owb.lists")) || [];
+  const lastChanged = new Date().toString();
+  const updatedSettings = { ...settings, lastChanged };
 
-  uploadSyncFile(settings.lastChanged)
+  uploadSyncFile(lastChanged)
     .then(() => {
       uploadDataFile({
         lists: localLists,
-        settings,
+        settings: updatedSettings,
       })
         .then(() => {
           dispatch(updateLogin({ isSyncing: false, syncConflict: false }));
           dispatch(
             updateSetting({
-              lastSynced: settings.lastChanged,
+              lastSynced: lastChanged,
             }),
           );
           localStorage.setItem(
             "owb.settings",
             JSON.stringify({
-              ...settings,
-              lastSynced: settings.lastChanged,
+              ...updatedSettings,
+              lastSynced: lastChanged,
             }),
           );
           isSyncing = false;
@@ -296,7 +298,9 @@ export const syncLists = ({ dispatch }) => {
                       const localLists =
                         JSON.parse(localStorage.getItem("owb.lists")) || [];
 
-                      if (
+                      if (remoteLastChanged > localLastChanged) {
+                        downloadRemoteDataFromDropbox({ dispatch });
+                      } else if (
                         JSON.stringify(localLists) !==
                         JSON.stringify(remoteData.lists)
                       ) {

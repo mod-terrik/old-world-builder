@@ -8,7 +8,7 @@ import { setLists } from "../state/lists";
 import { getSyncFile, getDataFile } from "./file";
 import { parseQueryString } from "../utils/query-string";
 
-const clientId = "7l38e9ahse786da";
+const clientId = import.meta.env.VITE_DROPBOX_CLIENT_ID;
 const dbxAuth = new DropboxAuth({
   clientId,
 });
@@ -78,8 +78,8 @@ export const useDropboxAuthentication = () => {
       dbxAuth
         .getAccessTokenFromCode(
           process.env.NODE_ENV === "development"
-            ? "http://localhost:5173/"
-            : "https://owb.whfb.net/",
+            ? "https://ow-dev.whfb.net"
+            : "https://owb.whfb.net",
           code,
         )
         .then((response) => {
@@ -119,8 +119,8 @@ export const login = ({ dispatch }) => {
   dbxAuth
     .getAuthenticationUrl(
       process.env.NODE_ENV === "development"
-        ? "http://localhost:5173/"
-        : "https://owb.whfb.net/",
+        ? "https://ow-dev.whfb.net"
+        : "https://owb.whfb.net",
       null,
       "code",
       "offline",
@@ -355,8 +355,8 @@ export const syncLists = ({ dispatch }) => {
       isSyncing = false;
       window.location.href =
         process.env.NODE_ENV === "development"
-          ? "http://localhost:5173/"
-          : "https://owb.whfb.net/";
+          ? "https://ow-dev.whfb.net"
+          : "https://owb.whfb.net";
       localStorage.setItem("owb.accessToken", "");
       localStorage.setItem("owb.refreshToken", "");
     });

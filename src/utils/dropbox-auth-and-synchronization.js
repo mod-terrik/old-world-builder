@@ -23,7 +23,7 @@ const uploadSyncFile = (sync) => {
 
     dbx
       .filesUpload({
-        path: "/owb-sync.txt",
+        path: SYNC_FILE_PATH,
         contents: file,
         mode: { ".tag": "overwrite" },
       })
@@ -31,17 +31,18 @@ const uploadSyncFile = (sync) => {
       .catch((err) => reject(err));
   });
 };
+
 const uploadDataFile = (data) => {
   return new Promise((resolve, reject) => {
     const { file } = getDataFile(data);
 
-     dbx
+    dbx
       .filesUpload({
-        path: "/owb-sync.txt",
+        path: DATA_FILE_PATH,
         contents: file,
         mode: { ".tag": "overwrite" },
       })
-      .then((response) => {
+      .then(() => {
         resolve();
       })
       .catch((err) => {
@@ -89,7 +90,7 @@ export const useDropboxAuthentication = () => {
           dbxAuth.setAccessToken(response.result.access_token);
           dbxAuth.setRefreshToken(response.result.refresh_token);
           localStorage.setItem("owb.accessToken", response.result.access_token);
-          localStorage.setItem("owb.refreshToken", response.result.refresh_token,);
+          localStorage.setItem("owb.refreshToken", response.result.refresh_token);
           dbx = new Dropbox({
             auth: dbxAuth,
           });
@@ -194,7 +195,6 @@ export const downloadRemoteDataFromDropbox = ({ dispatch }) => {
           lastSynced: downloadedDataFile.settings.lastChanged,
         };
 
-        // Update local lists
         dispatch(setLists(downloadedDataFile.lists));
         dispatch(setSettings(newSettings));
         dispatch(updateLogin({ isSyncing: false, syncConflict: false }));
@@ -215,8 +215,6 @@ export const downloadRemoteDataFromDropbox = ({ dispatch }) => {
 };
 
 export const syncLists = ({ dispatch }) => {
-	console.log("settings in localStorage:",
-	JSON.parse(localStorage.getItem("owb.settings")));
   let settings = JSON.parse(localStorage.getItem("owb.settings")) || {};
 
   if (!settings.lastChanged) {
@@ -230,12 +228,10 @@ export const syncLists = ({ dispatch }) => {
 
   dispatch(updateLogin({ isSyncing: true, syncError: false }));
   isSyncing = true;
-  console.log("calling filesListFolder...");
-  
+
   dbx
     .filesListFolder({ path: "" })
     .then(function (response) {
-	  console.log("filesListFolder response:", response);
       const entries = response?.result?.entries;
       const localLists = JSON.parse(localStorage.getItem("owb.lists")) || [];
 
@@ -245,76 +241,81 @@ export const syncLists = ({ dispatch }) => {
           ({ name }) => name === "owb-data.json",
         );
 
-		  // Upload new files if none exist remotely
-	if (syncFiles.length === 0 || dataFiles.length === 0) {
-		const lastChanged = settings.lastChanged || new Date().toString();
-		const newSettings = {
-		...settings,
-		lastChanged,
-		lastSynced: lastChanged,
-	};
+        // Upload new files if none exist remotely
+        if (syncFiles.length === 0 || dataFiles.length === 0) {
+          const lastChanged = settings.lastChanged || new Date().toString();
+          const newSettings = {
+            ...settings,
+            lastChanged,
+            lastSynced: lastChanged,
+          };
 
-  uploadSyncFile(lastChanged)
-    .then(() => uploadDataFile({ lists: localLists, settings: newSettings }))
-    .then(() => {
-      dispatch(updateLogin({ isSyncing: false }));
-      dispatch(
-        updateSetting({
-          lastChanged: newSettings.lastChanged,
-          lastSynced: newSettings.lastSynced,
-        }),
-      );
-      localStorage.setItem("owb.settings", JSON.stringify(newSettings));
-      isSyncing = false;
-    })
-    .catch(() => {
-      dispatch(updateLogin({ isSyncing: false, syncError: true }));
-      isSyncing = false;
-    });
-}
+          uploadSyncFile(lastChanged)
+            .then(() => uploadDataFile({ lists: localLists, settings: newSettings }))
+            .then(() => {
+              dispatch(updateLogin({ isSyncing: false }));
+              dispatch(
+                updateSetting({
+                  lastChanged: newSettings.lastChanged,
+                  lastSynced: newSettings.lastSynced,
+                }),
+              );
+              localStorage.setItem("owb.settings", JSON.stringify(newSettings));
+              isSyncing = false;
+            })
+            .catch(() => {
+              dispatch(updateLogin({ isSyncing: false, syncError: true }));
+              isSyncing = false;
+            });
+        } else {
+          // Download existing sync file to compare timestamps
+          dbx
+            .filesDownload({ path: SYNC_FILE_PATH })
+            .then(function (response) {
+              const reader = new FileReader();
 
-        // Download existing file
-       else {
-  dbx.filesDownload({ path: SYNC_FILE_PATH })
-    .then(function (response) {
-      const reader = new FileReader();
-      let syncConflict = false;
+              reader.readAsText(response.result.fileBlob, "UTF-8");
 
-      reader.readAsText(response.result.fileBlob, "UTF-8");
-      
-      reader.onload = (event) => {
-        const downloadedSyncFile = event.target.result;
-        const remoteLastChanged = new Date(downloadedSyncFile).getTime();
-        const localLastChanged = new Date(settings.lastChanged).getTime() || 0;
-        const lastSynced = settings.lastSynced ? new Date(settings.lastSynced).getTime() : 0;
+              reader.onload = (event) => {
+                const downloadedSyncFile = event.target.result;
+                const remoteLastChanged = new Date(downloadedSyncFile).getTime();
+                const localLastChanged = new Date(settings.lastChanged).getTime() || 0;
+                const lastSynced = settings.lastSynced
+                  ? new Date(settings.lastSynced).getTime()
+                  : 0;
 
-        // Download remote data file to compare actual content
-        dbx.filesDownload({ path: DATA_FILE_PATH })
-          .then((response) => {
-            const reader2 = new FileReader();
-            reader2.readAsText(response.result.fileBlob, "UTF-8");
-            
-            reader2.onload = (event2) => {
-              const remoteData = JSON.parse(event2.target.result);
-              const localLists = JSON.parse(localStorage.getItem("owb.lists")) || [];
+                // Download remote data file to compare actual content
+                dbx
+                  .filesDownload({ path: DATA_FILE_PATH })
+                  .then((response) => {
+                    const reader2 = new FileReader();
+                    reader2.readAsText(response.result.fileBlob, "UTF-8");
 
-              if (JSON.stringify(localLists) !== JSON.stringify(remoteData.lists)) {
-                uploadLocalDataToDropbox({ dispatch, settings });
-              } else {
-                uploadSyncFile(settings.lastChanged)
-                  .then(() => downloadRemoteDataFromDropbox({ dispatch }))
-                  .catch(() => {
-                    dispatch(updateLogin({ isSyncing: false, syncError: true }));
-                    isSyncing = false;
+                    reader2.onload = (event2) => {
+                      const remoteData = JSON.parse(event2.target.result);
+                      const localLists =
+                        JSON.parse(localStorage.getItem("owb.lists")) || [];
+
+                      if (
+                        JSON.stringify(localLists) !==
+                        JSON.stringify(remoteData.lists)
+                      ) {
+                        uploadLocalDataToDropbox({ dispatch, settings });
+                      } else {
+                        uploadSyncFile(settings.lastChanged)
+                          .then(() => downloadRemoteDataFromDropbox({ dispatch }))
+                          .catch(() => {
+                            dispatch(
+                              updateLogin({ isSyncing: false, syncError: true }),
+                            );
+                            isSyncing = false;
+                          });
+                      }
+                    };
                   });
-              }
-            };
-          });  // Closed inner .then()
-      };
-    });  // Closed outer .then()
-    
-  // These logout lines seem misplaced—move them to appropriate spot
-  window.location.href = window.location.origin + "/";
-  localStorage.setItem("owb.accessToken", "");
-  localStorage.setItem("owb.refreshToken", "");
-}
+              };
+            });
+        }
+      }
+    });
+};

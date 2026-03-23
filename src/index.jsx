@@ -42,26 +42,26 @@ try {
 } catch {}
 
 // Language detection
+const supportedLanguages = ["en"];
+const localStorageLanguage = localStorage.getItem("lang");
+const locale = (
+  localStorageLanguage ||
+  navigator.language ||
+  navigator.userLanguage
+).slice(0, 2);
+const language = supportedLanguages.indexOf(locale) === -1 ? "en" : locale;
+
+localStorage.setItem("lang", language);
+document.documentElement.setAttribute("lang", language);
+document
+  .querySelector("meta[name=description]")
+  .setAttribute("content", metaDescription[language]);
+
 const messages = English;
 
-const darkColorScheme = window.matchMedia(
-  "(prefers-color-scheme: dark)",
-).matches;
-const localStorageColorScheme = JSON.parse(
-  localStorage.getItem("owb.settings"),
-)?.colorScheme;
-let colorScheme;
+document.documentElement.classList.add("light");
 
-if (localStorageColorScheme === "auto" || !localStorageColorScheme) {
-  colorScheme = darkColorScheme ? "dark" : "light";
-} else {
-  colorScheme = localStorageColorScheme;
-}
-
-document.documentElement.classList.add(colorScheme);
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+ReactDOM.render(
   <IntlProvider locale={locale} messages={messages}>
     <ReduxProvider store={store}>
       <React.StrictMode>

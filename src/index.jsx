@@ -42,37 +42,7 @@ try {
 } catch {}
 
 // Language detection
-const supportedLanguages = ["en", "de", "fr", "es", "it", "pl", "cn"];
-const localStorageLanguage = localStorage.getItem("lang");
-const locale = (
-  localStorageLanguage ||
-  navigator.language ||
-  navigator.userLanguage
-).slice(0, 2);
-const language = supportedLanguages.indexOf(locale) === -1 ? "en" : locale;
-
-localStorage.setItem("lang", language);
-document.documentElement.setAttribute("lang", language);
-document
-  .querySelector("meta[name=description]")
-  .setAttribute("content", metaDescription[language]);
-
-let messages;
-if (language === "de") {
-  messages = German;
-} else if (language === "es") {
-  messages = Spanish;
-} else if (language === "fr") {
-  messages = French;
-} else if (language === "it") {
-  messages = Italian;
-} else if (language === "pl") {
-  messages = Polish;
-} else if (language === "cn") {
-  messages = Chinese;
-} else {
-  messages = English;
-}
+const messages = English;
 
 const darkColorScheme = window.matchMedia(
   "(prefers-color-scheme: dark)",

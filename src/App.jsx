@@ -111,15 +111,9 @@ export const App = () => {
           <Route path="/import">{<Import isMobile />}</Route>
           <Route path="/new">{<NewList isMobile />}</Route>
           <Route path="/about">{<About />}</Route>
-          <Route path="/help">{<Help />}</Route>
-          <Route path="/custom-datasets">{<CustomDatasets />}</Route>
           <Route path="/settings">{<Settings />}</Route>
-          <Route path="/privacy">{<Privacy />}</Route>
-          <Route path="/datasets">{<Datasets isMobile />}</Route>
-          <Route path="/changelog">{<Changelog />}</Route>
           <Route path="/print/:listId">{<Print />}</Route>
           <Route path="/game-view/:listId">{<GameView />}</Route>
-          <Route path="/battletavern">{<BattleTavern />}</Route>
           <Route path="/" exact>
             {<Home isMobile />}
           </Route>
@@ -128,15 +122,9 @@ export const App = () => {
       ) : (
         <Switch>
           <Route path="/about">{<About />}</Route>
-          <Route path="/help">{<Help />}</Route>
-          <Route path="/custom-datasets">{<CustomDatasets />}</Route>
           <Route path="/settings">{<Settings />}</Route>
-          <Route path="/privacy">{<Privacy />}</Route>
-          <Route path="/datasets">{<Datasets />}</Route>
-          <Route path="/changelog">{<Changelog />}</Route>
           <Route path="/print/:listId">{<Print />}</Route>
           <Route path="/game-view/:listId">{<GameView />}</Route>
-          <Route path="/battletavern">{<BattleTavern />}</Route>
           <Route path="/">
             <Header headline="Old World Builder" hasMainNavigation />
             <Main isDesktop>

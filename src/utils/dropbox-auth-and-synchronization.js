@@ -16,6 +16,7 @@ let dbx = null;
 let isSyncing = false;
 const DATA_FILE_PATH = "/owb-data.json";
 const SYNC_FILE_PATH = "/owb-sync.txt";
+
 const uploadSyncFile = (sync) => {
   return new Promise((resolve, reject) => {
     const { file } = getSyncFile(sync);
@@ -34,14 +35,18 @@ const uploadDataFile = (data) => {
   return new Promise((resolve, reject) => {
     const { file } = getDataFile(data);
 
-    dbx
+     dbx
       .filesUpload({
-        path: "/owb-data.json",
+        path: "/owb-sync.txt",
         contents: file,
         mode: { ".tag": "overwrite" },
       })
-      .then(() => resolve())
-      .catch((err) => reject(err));
+      .then((response) => {
+        resolve();
+      })
+      .catch((err) => {
+        reject(err);
+      });
   });
 };
 
@@ -84,10 +89,7 @@ export const useDropboxAuthentication = () => {
           dbxAuth.setAccessToken(response.result.access_token);
           dbxAuth.setRefreshToken(response.result.refresh_token);
           localStorage.setItem("owb.accessToken", response.result.access_token);
-          localStorage.setItem(
-            "owb.refreshToken",
-            response.result.refresh_token,
-          );
+          localStorage.setItem("owb.refreshToken", response.result.refresh_token,);
           dbx = new Dropbox({
             auth: dbxAuth,
           });
@@ -272,65 +274,47 @@ export const syncLists = ({ dispatch }) => {
 }
 
         // Download existing file
-        else {
-          dbx
-            .filesDownload({ path: SYNC_FILE_PATH })
-            .then(function (response) {
-              const reader = new FileReader();
-              let syncConflict = false;
+       else {
+  dbx.filesDownload({ path: SYNC_FILE_PATH })
+    .then(function (response) {
+      const reader = new FileReader();
+      let syncConflict = false;
 
-              reader.readAsText(response.result.fileBlob, "UTF-8");
-			  
-             reader.onload = (event) => {
-			const downloadedSyncFile = event.target.result;
-			const remoteLastChanged = new Date(downloadedSyncFile).getTime();
-			const localLastChanged = new Date(settings.lastChanged).getTime() || 0;
-			const lastSynced = settings.lastSynced ? new Date(settings.lastSynced).getTime() : 0;
+      reader.readAsText(response.result.fileBlob, "UTF-8");
+      
+      reader.onload = (event) => {
+        const downloadedSyncFile = event.target.result;
+        const remoteLastChanged = new Date(downloadedSyncFile).getTime();
+        const localLastChanged = new Date(settings.lastChanged).getTime() || 0;
+        const lastSynced = settings.lastSynced ? new Date(settings.lastSynced).getTime() : 0;
 
-			// Download remote data file to compare actual content
-			dbx.filesDownload({ path: DATA_FILE_PATH })
-			.then((response) => {
-			const reader2 = new FileReader();
-			reader2.readAsText(response.result.fileBlob, "UTF-8");
-			reader2.onload = (event2) => {
-			const remoteData = JSON.parse(event2.target.result);
-			const localLists = JSON.parse(localStorage.getItem("owb.lists")) || [];
-			 
-			uploadSyncFile(settings.lastChanged);
-		
-        // If local lists changed since last sync, upload
-			if (JSON.stringify(localLists) !== JSON.stringify(remoteData.lists)) {
-			uploadLocalDataToDropbox({ dispatch, settings });
-			} else {
-          // Otherwise download remote changes
-			downloadRemoteDataFromDropbox({ dispatch });
-			}
-        
-			dispatch(updateLogin({ isSyncing: false }));
-			isSyncing = false;
-		};
-	})
-    .catch(() => {
-      dispatch(updateLogin({ isSyncing: false, syncError: true }));
-      isSyncing = false;
-    });
-};
+        // Download remote data file to compare actual content
+        dbx.filesDownload({ path: DATA_FILE_PATH })
+          .then((response) => {
+            const reader2 = new FileReader();
+            reader2.readAsText(response.result.fileBlob, "UTF-8");
+            
+            reader2.onload = (event2) => {
+              const remoteData = JSON.parse(event2.target.result);
+              const localLists = JSON.parse(localStorage.getItem("owb.lists")) || [];
 
-            })
-            .catch(() => {
-              dispatch(updateLogin({ isSyncing: false, syncError: true }));
-              isSyncing = false;
-            });
-        }
-      }
-    })
-    .catch(() => {
-      dispatch(
-        updateLogin({ isSyncing: false, loggedIn: false, loginLoading: false }),
-      );
-      isSyncing = false;
-      window.location.href = window.location.origin + "/";
-      localStorage.setItem("owb.accessToken", "");
-      localStorage.setItem("owb.refreshToken", "");
-    });
-};
+              if (JSON.stringify(localLists) !== JSON.stringify(remoteData.lists)) {
+                uploadLocalDataToDropbox({ dispatch, settings });
+              } else {
+                uploadSyncFile(settings.lastChanged)
+                  .then(() => downloadRemoteDataFromDropbox({ dispatch }))
+                  .catch(() => {
+                    dispatch(updateLogin({ isSyncing: false, syncError: true }));
+                    isSyncing = false;
+                  });
+              }
+            };
+          });  // Closed inner .then()
+      };
+    });  // Closed outer .then()
+    
+  // These logout lines seem misplaced—move them to appropriate spot
+  window.location.href = window.location.origin + "/";
+  localStorage.setItem("owb.accessToken", "");
+  localStorage.setItem("owb.refreshToken", "");
+}

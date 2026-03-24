@@ -77,6 +77,8 @@ export const useDropboxAuthentication = () => {
       dispatch(
         updateLogin({ loggedIn: true, loginLoading: false, loginError: false }),
       );
+
+      syncLists({ dispatch });
     } else if (hasRedirectedFromAuth()) {
       const code = getCodeFromUrl();
 

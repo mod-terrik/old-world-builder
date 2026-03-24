@@ -623,7 +623,8 @@ export const Home = ({ isMobile }) => {
           <>
             <img
               src={owb}
-              alt=""\n              width="100"
+              alt=""
+	      width="100"
               height="100"
               className="home__logo"
             />

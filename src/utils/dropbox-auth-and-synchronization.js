@@ -11,9 +11,6 @@ import { parseQueryString } from "../utils/query-string";
 //const clientId = "7l38e9ahse786da";
 
 const clientId = import.meta.env.VITE_DROPBOX_CLIENT_ID;
-const REDIRECT_URI = import.meta.env.DEV
-  ? "https://ow-dev.whfb.net"
-  : "https://owb.whfb.net";
 const dbxAuth = new DropboxAuth({
   clientId,
 });
@@ -81,7 +78,7 @@ export const useDropboxAuthentication = () => {
 
       dbxAuth.setCodeVerifier(window.sessionStorage.getItem("codeVerifier"));
       dbxAuth
-        .getAccessTokenFromCode(REDIRECT_URI, code)
+        .getAccessTokenFromCode(window.location.origin, code)
         .then((response) => {
           dbxAuth.setAccessToken(response.result.access_token);
           dbxAuth.setRefreshToken(response.result.refresh_token);
@@ -118,7 +115,7 @@ export const useDropboxAuthentication = () => {
 export const login = ({ dispatch }) => {
   dbxAuth
     .getAuthenticationUrl(
-      REDIRECT_URI,
+      window.location.origin,
       null,
       "code",
       "offline",
@@ -351,7 +348,7 @@ export const syncLists = ({ dispatch }) => {
         updateLogin({ isSyncing: false, loggedIn: false, loginLoading: false }),
       );
       isSyncing = false;
-      window.location.href = REDIRECT_URI;
+      window.location.href = window.location.origin;
       localStorage.setItem("owb.accessToken", "");
       localStorage.setItem("owb.refreshToken", "");
     });

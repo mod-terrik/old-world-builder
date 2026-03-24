@@ -243,32 +243,39 @@ export const syncLists = ({ dispatch }) => {
           ({ name }) => name === "owb-data.json",
         );
 
-        // Upload new files if none exist remotely
+        // No remote files exist yet
         if (syncFiles.length === 0 || dataFiles.length === 0) {
-          const lastChanged = settings.lastChanged || new Date().toString();
-          const newSettings = {
-            ...settings,
-            lastChanged,
-            lastSynced: lastChanged,
-          };
+          // Fresh or cleared browser — ask the user which to keep
+          if (!settings.lastSynced) {
+            dispatch(updateLogin({ isSyncing: false, syncConflict: true }));
+            isSyncing = false;
+          } else {
+            // Browser has synced before — safe to upload local data
+            const lastChanged = settings.lastChanged || new Date().toString();
+            const newSettings = {
+              ...settings,
+              lastChanged,
+              lastSynced: lastChanged,
+            };
 
-          uploadSyncFile(lastChanged)
-            .then(() => uploadDataFile({ lists: localLists, settings: newSettings }))
-            .then(() => {
-              dispatch(updateLogin({ isSyncing: false }));
-              dispatch(
-                updateSetting({
-                  lastChanged: newSettings.lastChanged,
-                  lastSynced: newSettings.lastSynced,
-                }),
-              );
-              localStorage.setItem("owb.settings", JSON.stringify(newSettings));
-              isSyncing = false;
-            })
-            .catch(() => {
-              dispatch(updateLogin({ isSyncing: false, syncError: true }));
-              isSyncing = false;
-            });
+            uploadSyncFile(lastChanged)
+              .then(() => uploadDataFile({ lists: localLists, settings: newSettings }))
+              .then(() => {
+                dispatch(updateLogin({ isSyncing: false }));
+                dispatch(
+                  updateSetting({
+                    lastChanged: newSettings.lastChanged,
+                    lastSynced: newSettings.lastSynced,
+                  }),
+                );
+                localStorage.setItem("owb.settings", JSON.stringify(newSettings));
+                isSyncing = false;
+              })
+              .catch(() => {
+                dispatch(updateLogin({ isSyncing: false, syncError: true }));
+                isSyncing = false;
+              });
+          }
         } else {
           // Download existing sync file to compare timestamps
           dbx

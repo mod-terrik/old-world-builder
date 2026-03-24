@@ -148,3 +148,9 @@
   margin-bottom: 0.5rem;
   display: block;
 }
+.header__sync-conflict-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+}

@@ -12,6 +12,7 @@ import { getGameSystems } from "../../utils/game-systems";
 import { getRandomId } from "../../utils/id";
 import { useLanguage } from "../../utils/useLanguage";
 import { setLists } from "../../state/lists";
+import { updateSetting } from "../../state/settings";
 import { RulesIndex, RuleWithIcon } from "../../components/rules-index";
 
 import { nameMap } from "../magic";
@@ -26,6 +27,7 @@ export const NewList = ({ isMobile }) => {
   const { language } = useLanguage();
   const gameSystems = getGameSystems();
   const lists = useSelector((state) => state.lists);
+  const settings = useSelector((state) => state.settings);
   const [game, setGame] = useState("the-old-world-gcomp");
   const [army, setArmy] = useState("beastmen-brayherds-gcomp");
   const [compositionRule, setCompositionRule] = useState("german-comp");
@@ -39,10 +41,9 @@ export const NewList = ({ isMobile }) => {
     .armies.sort((a, b) => a.id.localeCompare(b.id));
   const journalArmies = armies.find(({ id }) => army === id || id === army + '-gcomp' || army === id + '-gcomp')?.armyComposition;
   const compositionRules = [
-
     {
-    id: "german-comp", 
-    name_en: intl.formatMessage({ id: "misc.german-comp" }),
+      id: "german-comp",
+      name_en: intl.formatMessage({ id: "misc.german-comp" }),
     },
     {
       id: "open-war",
@@ -74,10 +75,10 @@ export const NewList = ({ isMobile }) => {
       : [500, 1000, 1500, 2000, 2500];
   const createList = () => {
     const newId = getRandomId();
-    
+
     // Check if this is a Renegade composition in gcomp ruleset
     const isRenegadeComposition = armyComposition.endsWith('-renegade') && game.endsWith('-gcomp');
-    
+
     // Get the army name from the game system data
     const selectedArmyData = armies.find(({ id }) => id === army);
     const armyNameFromGameData = selectedArmyData?.[`name_${language}`] || selectedArmyData?.name_en;
@@ -86,7 +87,7 @@ export const NewList = ({ isMobile }) => {
     const finalDescription = game === 'the-old-world-gcomp'
       ? (description ? `${description} GermanComp Ruleset` : 'GermanComp Ruleset')
       : description;
-    
+
     const newList = {
       name:
         name ||
@@ -112,9 +113,12 @@ export const NewList = ({ isMobile }) => {
       compositionRule,
     };
     const newLists = [newList, ...lists];
+    const newSettings = { ...settings, lastChanged: new Date().toString() };
 
     localStorage.setItem("owb.lists", JSON.stringify(newLists));
+    localStorage.setItem("owb.settings", JSON.stringify(newSettings));
     dispatch(setLists(newLists));
+    dispatch(updateSetting({ lastChanged: newSettings.lastChanged }));
 
     setRedirect(newId);
   };
@@ -125,7 +129,7 @@ export const NewList = ({ isMobile }) => {
       .filter(({ id }) => id === newGameId)[0]
       .armies.sort((a, b) => a.id.localeCompare(b.id));
     const firstArmy = newArmies[0];
-  
+
     setGame(newGameId);
     setArmy(firstArmy.id);
     setArmyComposition(firstArmy.armyComposition?.[0] || firstArmy.id);
@@ -167,12 +171,12 @@ export const NewList = ({ isMobile }) => {
   }, [location.pathname]);
 
   useEffect(() => {
-  if (army && armies.length > 0) {
-    const selectedArmy = armies.find(({ id }) => id === army);
-    if (selectedArmy?.armyComposition) {
-      setArmyComposition(selectedArmy.armyComposition[0]);
+    if (army && armies.length > 0) {
+      const selectedArmy = armies.find(({ id }) => id === army);
+      if (selectedArmy?.armyComposition) {
+        setArmyComposition(selectedArmy.armyComposition[0]);
+      }
     }
-  }
   }, [game, army, armies]);
 
   return (
@@ -194,7 +198,7 @@ export const NewList = ({ isMobile }) => {
           />
         )}
         <form onSubmit={handleSubmit} className="new-list">
-            {gameSystems
+          {gameSystems
             .filter(({ id }) => id === "the-old-world-gcomp")
             .map(({ name, id }, index) => (
               <div
@@ -221,7 +225,7 @@ export const NewList = ({ isMobile }) => {
               </div>
             ))}
           <hr />
-	  <label htmlFor="army">
+          <label htmlFor="army">
             <FormattedMessage id="new.army" />
           </label>
           <Select
@@ -307,7 +311,6 @@ export const NewList = ({ isMobile }) => {
               </Button>
             ))}
           </p>
-
           <label htmlFor="name">
             <FormattedMessage id="misc.name" />
           </label>

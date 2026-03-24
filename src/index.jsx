@@ -1,0 +1,88 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider as ReduxProvider } from "react-redux";
+import { IntlProvider } from "react-intl";
+import { HelmetProvider } from "react-helmet-async";
+import * as Sentry from "@sentry/react";
+
+import reportWebVitals from "./reportWebVitals";
+// import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import { App } from "./App";
+import store from "./store";
+
+import English from "./i18n/en.json";
+
+// Sentry error tracking
+if (process.env.NODE_ENV !== "development") {
+  Sentry.init({
+    dsn: "https://3947feb62e2f5348c1759e8d4d9ed084@o314295.ingest.sentry.io/4506569636642816",
+    integrations: [],
+    environment: process.env.NODE_ENV,
+    release: `owb@${import.meta.env.VITE_VERSION}`,
+  });
+}
+
+const metaDescription = {
+  de: "Armeebauer für Warhammer: The Old World.",
+  en: "Army builder for Warhammer: The Old World.",
+  fr: "Un créateur de liste d'armée pour 'Warhammer: The Old World'.",
+  es: "Creador de listas de ejército para Warhammer: The Old World.",
+  it: "Costruttore di eserciti per Warhammer: The Old World.",
+  pl: "Konstruktor armii dla Warhammer: The Old World.",
+  cn: "《战锤：旧世界》的军队建造者。",
+};
+
+try {
+  const timezone = Intl.DateTimeFormat()
+    .resolvedOptions()
+    .timeZone.toLowerCase()
+    .split("/")[0];
+
+  localStorage.setItem("owb.timezone", timezone);
+} catch {}
+
+// Language detection
+const supportedLanguages = ["en"];
+const localStorageLanguage = localStorage.getItem("lang");
+const locale = (
+  localStorageLanguage ||
+  navigator.language ||
+  navigator.userLanguage
+).slice(0, 2);
+const language = supportedLanguages.indexOf(locale) === -1 ? "en" : locale;
+
+localStorage.setItem("lang", language);
+document.documentElement.setAttribute("lang", language);
+document
+  .querySelector("meta[name=description]")
+  .setAttribute("content", metaDescription[language]);
+
+const messages = English;
+
+document.documentElement.classList.add("light");
+
+ReactDOM.render(
+  <IntlProvider locale={locale} messages={messages}>
+    <ReduxProvider store={store}>
+      <React.StrictMode>
+        <HelmetProvider>
+          <App />
+        </HelmetProvider>
+      </React.StrictMode>
+    </ReduxProvider>
+  </IntlProvider>,
+  document.getElementById("root"),
+);
+
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
+
+// serviceWorkerRegistration.register();
+navigator?.serviceWorker &&
+  navigator.serviceWorker.getRegistrations().then((registrations) => {
+    for (const registration of registrations) {
+      registration.unregister();
+    }
+  });

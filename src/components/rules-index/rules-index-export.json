@@ -1341,7 +1341,7 @@
   },
   "ensorcelled weapons": {
     "url": "special-rules/ensorcelled-weapons",
-    "ruleNote": "Ensorcelled weapons applies to two hand weapons",
+    "ruleNote": "Ensorcelled weapons applies to additional hand weapons.",
     "page": "CD, p. 20, RH, p. 81 & 115"
   },
   "backstab": { "url": "special-rules/backstab", "page": "CD, p. 20" },
@@ -1467,7 +1467,11 @@
     "page": "FoF, p. 184"
   },
   "cumbersome": { "url": "special-rules/cumbersome", "page": "RB, p. 167" },
-  "foe render": { "url": "special-rules/foe-render", "page": "RH, p. 115" },
+  "foe render": { 
+    "url": "special-rules/foe-render",
+	"page": "RH, p. 115",
+	"ruleNote": "Foe Render applies to additional hand weapons."
+	},
   "mercenary commander": {
     "url": "special-rules/mercenary-commander",
     "page": "AJ:EoM, p. 37"
@@ -1724,7 +1728,7 @@
   },
   "ithilmar weapons": {
     "url": "special-rules/ithilmar-weapons",
-    "ruleNote": "Ithilmar weapons applies to two hand weapons",
+    "ruleNote": "Ithilmar weapons applies to additional hand weapons.",
     "page": "FoF, p. 185"
   },
   "dive bomb": { "url": "special-rules/dive-bomb", "page": "FoF, p. 28" },
@@ -1842,7 +1846,7 @@
   },
   "obsidian blades": {
     "url": "special-rules/obsidian-blades",
-    "ruleNote": "Obsidian blades applies to two hand weapons",
+    "ruleNote": "Obsidian blades applies to additional hand weapons.",
     "page": "LM, p. 20"
   },
   "whirling doom": {
@@ -1910,7 +1914,7 @@
   },
   "warpstone weapons": {
     "url": "special-rules/warpstone-weapons",
-    "ruleNote": "Warpstone weapons applies to two hand weapons",
+    "ruleNote": "Warpstone weapons applies to additional hand weapons.",
     "page": "SK, p. 23"
   },
   "feigned flight": {
@@ -1931,7 +1935,7 @@
   },
   "gromril weapons": {
     "url": "special-rules/gromril-weapons",
-    "ruleNote": "Gromril weapons applies to two hand weapons",
+    "ruleNote": "Gromril weapons applies to additional hand weapons.",
     "page": "FoF, p. 39"
   },
   "enough for everyone": {
@@ -8728,7 +8732,7 @@
   },
   "cygor": {
     "url": "unit/cygor",
-	"ruleNote": "Has +1T and is Behemoth troop type.",
+	"ruleNote": "Unit has +1T",
     "stats": [
       {
         "A": "4",

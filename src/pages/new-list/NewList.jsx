@@ -1,0 +1,351 @@
+import { useState, useEffect, Fragment } from "react";
+import { useLocation, Redirect } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { FormattedMessage, useIntl } from "react-intl";
+import classNames from "classnames";
+
+import { Button } from "../../components/button";
+import { Header, Main } from "../../components/page";
+import { Select } from "../../components/select";
+import { NumberInput } from "../../components/number-input";
+import { getGameSystems } from "../../utils/game-systems";
+import { getRandomId } from "../../utils/id";
+import { useLanguage } from "../../utils/useLanguage";
+import { setLists } from "../../state/lists";
+import { updateSetting } from "../../state/settings";
+import { RulesIndex, RuleWithIcon } from "../../components/rules-index";
+
+import { nameMap } from "../magic";
+
+import "./NewList.css";
+
+export const NewList = ({ isMobile }) => {
+  const MainComponent = isMobile ? Main : Fragment;
+  const location = useLocation();
+  const dispatch = useDispatch();
+  const intl = useIntl();
+  const { language } = useLanguage();
+  const gameSystems = getGameSystems();
+  const lists = useSelector((state) => state.lists);
+  const settings = useSelector((state) => state.settings);
+  const [game, setGame] = useState("the-old-world-gcomp");
+  const [army, setArmy] = useState("beastmen-brayherds-gcomp");
+  const [compositionRule, setCompositionRule] = useState("german-comp");
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [points, setPoints] = useState(2500);
+  const [armyComposition, setArmyComposition] = useState("beastmen-brayherds");
+  const [redirect, setRedirect] = useState(null);
+  const armies = gameSystems
+    .filter(({ id }) => id === game)[0]
+    .armies.sort((a, b) => a.id.localeCompare(b.id));
+  const journalArmies = armies.find(({ id }) => army === id || id === army + '-gcomp' || army === id + '-gcomp')?.armyComposition;
+  const compositionRules = [
+    {
+      id: "german-comp",
+      name_en: intl.formatMessage({ id: "misc.german-comp" }),
+    },
+    {
+      id: "open-war",
+      name_en: intl.formatMessage({ id: "misc.open-war" }),
+    },
+    {
+      id: "grand-melee",
+      name_en: intl.formatMessage({ id: "misc.grand-melee" }),
+    },
+    {
+      id: "combined-arms",
+      name_en: intl.formatMessage({ id: "misc.combined-arms" }),
+    },
+    {
+      id: "grand-melee-combined-arms",
+      name_en: intl.formatMessage({ id: "misc.grand-melee-combined-arms" }),
+    },
+    {
+      id: "battle-march",
+      name_en: intl.formatMessage({ id: "misc.battle-march" }),
+    },
+  ];
+  const listsPoints = [...lists.map((list) => list.points)].reverse();
+  const quickActions =
+    compositionRule === "battle-march"
+      ? [500, 600, 750]
+      : lists.length
+      ? [...new Set([...listsPoints, 500, 1000, 1500, 2000, 2500])].slice(0, 5)
+      : [500, 1000, 1500, 2000, 2500];
+  const createList = () => {
+    const newId = getRandomId();
+
+    // Check if this is a Renegade composition in gcomp ruleset
+    const isRenegadeComposition = armyComposition.endsWith('-renegade') && game.endsWith('-gcomp');
+
+    // Get the army name from the game system data
+    const selectedArmyData = armies.find(({ id }) => id === army);
+    const armyNameFromGameData = selectedArmyData?.[`name_${language}`] || selectedArmyData?.name_en;
+
+    // Add GermanComp Ruleset to description if gcomp game system is selected
+    const finalDescription = game === 'the-old-world-gcomp'
+      ? (description ? `${description} GermanComp Ruleset` : 'GermanComp Ruleset')
+      : description;
+
+    const newList = {
+      name:
+        name ||
+        // For Renegade compositions in gcomp, use the army name instead of "Renegade"
+        (isRenegadeComposition && armyNameFromGameData) ||
+        nameMap[armyComposition]?.[`name_${language}`] ||
+        nameMap[armyComposition]?.name_en ||
+        (nameMap[army] && nameMap[army][`name_${language}`]) ||
+        nameMap[army]?.name_en ||
+        army,
+      description: finalDescription,
+      game: game,
+      points: points,
+      army: army,
+      characters: [],
+      core: [],
+      special: [],
+      rare: [],
+      mercenaries: [],
+      allies: [],
+      id: newId,
+      armyComposition,
+      compositionRule,
+    };
+    const newLists = [newList, ...lists];
+    const newSettings = { ...settings, lastChanged: new Date().toString() };
+
+    localStorage.setItem("owb.lists", JSON.stringify(newLists));
+    localStorage.setItem("owb.settings", JSON.stringify(newSettings));
+    dispatch(setLists(newLists));
+    dispatch(updateSetting({ lastChanged: newSettings.lastChanged }));
+
+    setRedirect(newId);
+  };
+
+  const handleSystemChange = (event) => {
+    const newGameId = event.target.value;
+    const newArmies = gameSystems
+      .filter(({ id }) => id === newGameId)[0]
+      .armies.sort((a, b) => a.id.localeCompare(b.id));
+    const firstArmy = newArmies[0];
+
+    setGame(newGameId);
+    setArmy(firstArmy.id);
+    setArmyComposition(firstArmy.armyComposition?.[0] || firstArmy.id);
+    setCompositionRule("open-war");
+  };
+
+  const handleArmyChange = (value) => {
+    setArmy(value);
+    setArmyComposition(
+      armies.find(({ id }) => value === id).armyComposition[0],
+    );
+  };
+  const handleArcaneJournalChange = (value) => {
+    setArmyComposition(value);
+  };
+  const handleCompositionRuleChange = (value) => {
+    setCompositionRule(value);
+  };
+  const handlePointsChange = (event) => {
+    setPoints(event.target.value);
+  };
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
+  const handleDescriptionChange = (event) => {
+    setDescription(event.target.value);
+  };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    createList();
+  };
+  const handleQuickActionClick = (event) => {
+    event.preventDefault();
+    setPoints(Number(event.target.value));
+  };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (army && armies.length > 0) {
+      const selectedArmy = armies.find(({ id }) => id === army);
+      if (selectedArmy?.armyComposition) {
+        setArmyComposition(selectedArmy.armyComposition[0]);
+      }
+    }
+  }, [game, army, armies]);
+
+  return (
+    <>
+      {redirect && <Redirect to={`/editor/${redirect}`} />}
+
+      {isMobile && (
+        <Header to="/" headline={intl.formatMessage({ id: "new.title" })} />
+      )}
+
+      <RulesIndex />
+
+      <MainComponent>
+        {!isMobile && (
+          <Header
+            isSection
+            to="/"
+            headline={intl.formatMessage({ id: "new.title" })}
+          />
+        )}
+        <form onSubmit={handleSubmit} className="new-list">
+          {gameSystems
+            .filter(({ id }) => id === "the-old-world-gcomp")
+            .map(({ name, id }, index) => (
+              <div
+                className={classNames(
+                  "radio",
+                  "new-list__radio",
+                  index === 0 && "new-list__radio--last-item",
+                )}
+                key={id}
+              >
+                <input
+                  type="radio"
+                  id={id}
+                  name="new-list"
+                  value={id}
+                  onChange={handleSystemChange}
+                  checked={id === game}
+                  className="radio__input"
+                  aria-label={name}
+                />
+                <label htmlFor={id} className="radio__label">
+                  <span className="new-list__game-name">{name}</span>
+                </label>
+              </div>
+            ))}
+          <hr />
+          <label htmlFor="army">
+            <FormattedMessage id="new.army" />
+          </label>
+          <Select
+            id="army"
+            options={armies}
+            onChange={handleArmyChange}
+            selected={army}
+            spaceBottom
+            required
+          />
+          {journalArmies ? (
+            <>
+              <label htmlFor="arcane-journal">
+                <FormattedMessage id="new.armyComposition" />
+              </label>
+              <Select
+                id="arcane-journal"
+                options={[
+                  ...journalArmies.map((journalArmy) => ({
+                    id: journalArmy,
+                    name_en:
+                      journalArmy === army || journalArmy === army.replace('-gcomp', '')
+                        ? intl.formatMessage({ id: "new.grandArmy" })
+                        : nameMap[journalArmy][`name_${language}`] ||
+                          nameMap[journalArmy].name_en,
+                  })),
+                ]}
+                onChange={handleArcaneJournalChange}
+                selected={armyComposition}
+                spaceBottom
+              />
+            </>
+          ) : null}
+          <label htmlFor="composition-rule">
+            <FormattedMessage id="new.armyCompositionRule" />
+          </label>
+          <Select
+            id="composition-rule"
+            options={compositionRules}
+            onChange={handleCompositionRuleChange}
+            selected={compositionRule}
+            spaceBottom
+          />
+          <p className="new-list__composition-description">
+            <i>
+              <FormattedMessage
+                id={`new.armyCompositionRuleDescription.${compositionRule}`}
+              />
+            </i>
+            <RuleWithIcon
+              name={compositionRule}
+              isDark
+              className="game-view__rule-icon"
+            />
+          </p>
+          <label htmlFor="points">
+            <FormattedMessage id="misc.points" />
+          </label>
+          <NumberInput
+            id="points"
+            min={0}
+            value={points}
+            onChange={handlePointsChange}
+            required
+            interval={50}
+          />
+          <p className="new-list__quick-actions">
+            <i className="new-list__quick-actions-label">
+              <FormattedMessage id="misc.suggestions" />
+              {": "}
+            </i>
+            {quickActions.map((points, index) => (
+              <Button
+                type="tertiary"
+                size="small"
+                color="dark"
+                className="new-list__quick-action"
+                value={points}
+                onClick={handleQuickActionClick}
+                key={index}
+              >
+                {points}
+              </Button>
+            ))}
+          </p>
+          <label htmlFor="name">
+            <FormattedMessage id="misc.name" />
+          </label>
+          <input
+            type="text"
+            id="name"
+            className="input"
+            value={name}
+            onChange={handleNameChange}
+            autoComplete="off"
+            maxLength="100"
+          />
+          <label htmlFor="description">
+            <FormattedMessage id="misc.description" />
+          </label>
+          <input
+            type="text"
+            id="description"
+            className="input"
+            value={description}
+            onChange={handleDescriptionChange}
+            autoComplete="off"
+            maxLength="255"
+          />
+          <Button
+            centered
+            icon="add-list"
+            submitButton
+            spaceBottom
+            size="large"
+          >
+            <FormattedMessage id="new.create" />
+          </Button>
+        </form>
+      </MainComponent>
+    </>
+  );
+};

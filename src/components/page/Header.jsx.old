@@ -95,6 +95,7 @@ export const Header = ({
   const logout = () => {
     localStorage.removeItem("owb.accessToken");
     localStorage.removeItem("owb.refreshToken");
+    localStorage.removeItem("owb.settings");
     dispatch(updateLogin({ loggedIn: false }));
     setIsDialogOpen(false);
   };

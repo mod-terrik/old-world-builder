@@ -11,6 +11,9 @@ import { parseQueryString } from "../utils/query-string";
 //const clientId = "7l38e9ahse786da";
 
 const clientId = import.meta.env.VITE_DROPBOX_CLIENT_ID;
+const REDIRECT_URI = import.meta.env.DEV
+  ? "https://ow-dev.whfb.net"
+  : "https://owb.whfb.net";
 const dbxAuth = new DropboxAuth({
   clientId,
 });
@@ -78,12 +81,7 @@ export const useDropboxAuthentication = () => {
 
       dbxAuth.setCodeVerifier(window.sessionStorage.getItem("codeVerifier"));
       dbxAuth
-        .getAccessTokenFromCode(
-          process.env.NODE_ENV === "development"
-            ? "https://ow-dev.whfb.net"
-            : "https://owb.whfb.net",
-          code,
-        )
+        .getAccessTokenFromCode(REDIRECT_URI, code)
         .then((response) => {
           dbxAuth.setAccessToken(response.result.access_token);
           dbxAuth.setRefreshToken(response.result.refresh_token);
@@ -120,9 +118,7 @@ export const useDropboxAuthentication = () => {
 export const login = ({ dispatch }) => {
   dbxAuth
     .getAuthenticationUrl(
-      process.env.NODE_ENV === "development"
-       ? "https://ow-dev.whfb.net"
-        : "https://owb.whfb.net",
+      REDIRECT_URI,
       null,
       "code",
       "offline",
@@ -355,10 +351,7 @@ export const syncLists = ({ dispatch }) => {
         updateLogin({ isSyncing: false, loggedIn: false, loginLoading: false }),
       );
       isSyncing = false;
-      window.location.href =
-        process.env.NODE_ENV === "development"
-       ? "https://ow-dev.whfb.net"
-        : "https://owb.whfb.net",
+      window.location.href = REDIRECT_URI;
       localStorage.setItem("owb.accessToken", "");
       localStorage.setItem("owb.refreshToken", "");
     });

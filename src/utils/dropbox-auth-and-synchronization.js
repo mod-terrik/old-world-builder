@@ -298,7 +298,13 @@ export const syncLists = ({ dispatch }) => {
                       const localLists =
                         JSON.parse(localStorage.getItem("owb.lists")) || [];
 
-                      if (remoteLastChanged > localLastChanged) {
+                      if (!settings.lastSynced) {
+                        // Fresh or cleared browser — ask the user which to keep
+                        dispatch(
+                          updateLogin({ isSyncing: false, syncConflict: true }),
+                        );
+                        isSyncing = false;
+                      } else if (remoteLastChanged > localLastChanged) {
                         downloadRemoteDataFromDropbox({ dispatch });
                       } else if (
                         JSON.stringify(localLists) !==

@@ -29,6 +29,8 @@ import "./Add.css";
 let allAllies = [];
 let allMercenaries = [];
 
+const OFFICIAL_GAME_IDS = ["the-old-world", "the-old-world-gcomp"];
+
 export const Add = ({ isMobile }) => {
   const MainComponent = isMobile ? Main : Fragment;
   const { listId, type } = useParams();
@@ -118,7 +120,7 @@ export const Add = ({ isMobile }) => {
 
   useEffect(() => {
     if (list && !army && type !== "allies") {
-      const isCustom = game.id !== "the-old-world-gcomp";
+      const isCustom = !OFFICIAL_GAME_IDS.includes(game.id);
 
       if (isCustom && !list.url) {
         const data = getCustomDatasetData(list.army);
@@ -152,7 +154,7 @@ export const Add = ({ isMobile }) => {
     } else if (list && type === "allies" && allAllies.length === 0 && allies) {
       setAlliesLoaded(false);
       allies.forEach(({ army, armyComposition, magicItemsArmy }, index) => {
-        const isCustom = game.id !== "the-old-world-gcomp";
+        const isCustom = !OFFICIAL_GAME_IDS.includes(game.id);
         const customData = isCustom && getCustomDatasetData(army);
         const customUrl =
           isCustom && game.armies.find((a) => a.id === army)?.url;
@@ -174,7 +176,7 @@ export const Add = ({ isMobile }) => {
           setAlliesLoaded(index + 1);
         } else {
           fetcher({
-            url: customUrl || `games/the-old-world-gcomp/${army}`,
+            url: customUrl || `games/${game.id}/${army}`,
             baseUrl: customUrl ? "" : undefined,
             appendJson: Boolean(!customUrl),
             version: armyData.version,
@@ -207,7 +209,7 @@ export const Add = ({ isMobile }) => {
       setMercenariesLoaded(false);
       mercenaries[list.armyComposition] &&
         mercenaries[list.armyComposition].forEach((mercenary, index) => {
-          const isCustom = game.id !== "the-old-world-gcomp";
+          const isCustom = !OFFICIAL_GAME_IDS.includes(game.id);
           const customData = isCustom && getCustomDatasetData(mercenary.army);
           const customUrl =
             isCustom &&
@@ -232,7 +234,7 @@ export const Add = ({ isMobile }) => {
             setMercenariesLoaded(index + 1);
           } else {
             fetcher({
-              url: customUrl || `games/the-old-world-gcomp/${mercenary.army}`,
+              url: customUrl || `games/${game.id}/${mercenary.army}`,
               baseUrl: customUrl ? "" : undefined,
               appendJson: Boolean(!customUrl),
               version: armyData.version,

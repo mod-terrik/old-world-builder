@@ -358,7 +358,7 @@
           "types": ["weapon", "armor", "talisman", "enchanted-item"],
           "selected": [],
           "maxPoints": 100,
-          "magicItemsArmy": "kingdom-of-bretonnia",
+          "magicItemsArmy": "kingdom-of-bretonnia-gcomp",
           "notes": {
             "name_en": "Only with the Renegade Knight Infamous Origin",
             "name_cn": "仅限变节骑士恶名起源",
@@ -374,7 +374,7 @@
           "types": ["weapon", "armor", "talisman", "enchanted-item"],
           "selected": [],
           "maxPoints": 100,
-          "magicItemsArmy": "empire-of-man",
+          "magicItemsArmy": "empire-of-man-gcomp",
           "notes": {
             "name_en": "Only with the Noble Outlaw Infamous Origin",
             "name_cn": "仅限贵族强盗恶名起源",
@@ -455,7 +455,7 @@
           "magic": {
             "types": ["banner"],
             "maxPoints": 0,
-            "magicItemsArmy": "kingdom-of-bretonnia"
+            "magicItemsArmy": "kingdom-of-bretonnia-gcomp"
           }
         },
         {
@@ -474,7 +474,7 @@
           "magic": {
             "types": ["banner"],
             "maxPoints": 0,
-            "magicItemsArmy": "empire-of-man"
+            "magicItemsArmy": "empire-of-man-gcomp"
           }
         },
         {
@@ -817,7 +817,7 @@
           "types": ["weapon", "armor", "talisman", "enchanted-item"],
           "selected": [],
           "maxPoints": 50,
-          "magicItemsArmy": "kingdom-of-bretonnia",
+          "magicItemsArmy": "kingdom-of-bretonnia-gcomp",
           "notes": {
             "name_en": "Only with the Renegade Knight Infamous Origin",
             "name_fr": "Seulement avec l’Origine d’Exilé le Chevalier Renégat"
@@ -832,7 +832,7 @@
           "types": ["weapon", "armor", "talisman", "enchanted-item"],
           "selected": [],
           "maxPoints": 50,
-          "magicItemsArmy": "empire-of-man",
+          "magicItemsArmy": "empire-of-man-gcomp",
           "notes": {
             "name_en": "Only with the Noble Outlaw Infamous Origin",
             "name_fr": "Seulement avec l’Origine d’Exilé le Noble Hors-la-Loi"
@@ -1138,7 +1138,7 @@
           ],
           "selected": [],
           "maxPoints": 75,
-          "magicItemsArmy": "kingdom-of-bretonnia",
+          "magicItemsArmy": "kingdom-of-bretonnia-gcomp",
           "notes": {
             "name_en": "Only with the Renegade Knight Infamous Origin",
             "name_cn": "仅限变节骑士恶名起源",
@@ -1160,7 +1160,7 @@
           ],
           "selected": [],
           "maxPoints": 75,
-          "magicItemsArmy": "empire-of-man",
+          "magicItemsArmy": "empire-of-man-gcomp",
           "notes": {
             "name_en": "Only with the Noble Outlaw Infamous Origin",
             "name_cn": "仅限贵族强盗恶名起源",
@@ -2155,7 +2155,7 @@
       "name_es": "Border Princes Brigands",
       "name_fr": "Brigands des Principautés Frontalières",
       "id": "border-princes-brigands",
-      "magicItemsArmy": "kingdom-of-bretonnia",
+      "magicItemsArmy": "kingdom-of-bretonnia-gcomp",
       "points": 4,
       "minimum": 10,
       "maximum": 0,

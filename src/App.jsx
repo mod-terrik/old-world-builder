@@ -145,7 +145,7 @@ export const App = () => {
                   <Route path="/editor/:listId/duplicate">
                     <DuplicateList />
                   </Route>
-                  <Route path="/editor/:listId/add/:type">{<Add />}</Route>
+                  <Route path="/editor/:listId/add/:type">{<Add isMobile={false} />}</Route>
                   <Route path="/editor/:listId/:type/:unitId">{<Unit />}</Route>
                 </Switch>
               </section>

@@ -1,45 +1,35 @@
 import { updateIds } from "./id";
 
-export const getArmyData = ({ data, armyComposition, armyId }) => {
-  // Add early return if data is not available
-  if (!data) {
-    return {
-      id: armyId,
-      lords: [],
-      heroes: [],
-      characters: [],
-      core: [],
-      special: [],
-      rare: [],
-      mercenaries: [],
-      allies: [],
-    };
-  }
-
+export const getArmyData = ({ data, armyComposition }) => {
   // Remove units that don't belong to the army composition
-  const characters = data.characters?.filter(
-    (unit) =>
-      (unit?.armyComposition && unit.armyComposition[armyComposition]) ||
-      !unit.armyComposition,
-  ) || [];
-  
-  const core = data.core?.filter(
-    (unit) =>
-      (unit?.armyComposition && unit.armyComposition[armyComposition]) ||
-      !unit.armyComposition,
-  ) || [];
-  
-  const special = data.special?.filter(
-    (unit) =>
-      (unit?.armyComposition && unit.armyComposition[armyComposition]) ||
-      !unit.armyComposition,
-  ) || [];
-  
-  const rare = data.rare?.filter(
-    (unit) =>
-      (unit?.armyComposition && unit.armyComposition[armyComposition]) ||
-      !unit.armyComposition,
-  ) || [];
+  const characters =
+    data &&
+    data.characters.filter(
+      (unit) =>
+        (unit?.armyComposition && unit.armyComposition[armyComposition]) ||
+        !unit.armyComposition,
+    );
+  const core =
+    data &&
+    data.core.filter(
+      (unit) =>
+        (unit?.armyComposition && unit.armyComposition[armyComposition]) ||
+        !unit.armyComposition,
+    );
+  const special =
+    data &&
+    data.special.filter(
+      (unit) =>
+        (unit?.armyComposition && unit.armyComposition[armyComposition]) ||
+        !unit.armyComposition,
+    );
+  const rare =
+    data &&
+    data.rare.filter(
+      (unit) =>
+        (unit?.armyComposition && unit.armyComposition[armyComposition]) ||
+        !unit.armyComposition,
+    );
 
   // Get units moving category
   const specialToCore = special.filter(
@@ -112,14 +102,27 @@ export const getArmyData = ({ data, armyComposition, armyId }) => {
   );
 
   return {
-    id: armyId,
-    lords: updateIds(data.lords || []),
-    heroes: updateIds(data.heroes || []),
+    lords: updateIds(data.lords),
+    heroes: updateIds(data.heroes),
     characters: updateIds(allCharacters),
     core: updateIds(allCore),
     special: updateIds(allSpecial),
     rare: updateIds(allRare),
-    mercenaries: updateIds(data.mercenaries || []),
-    allies: updateIds(data.allies || []),
+    mercenaries: updateIds(data.mercenaries),
+    allies: updateIds(data.allies),
   };
 };
+
+/**
+ * Gets all characters with the General command option active
+ */
+export const getGenerals = (list) =>
+  list?.characters?.length
+    ? list.characters.filter(
+        (unit) =>
+          unit.command &&
+          unit.command.find(
+            (command) => command.active && command.name_en === "General",
+          ),
+      )
+    : [];

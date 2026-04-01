@@ -486,10 +486,8 @@ export const Unit = ({ isMobile, previewData = {} }) => {
     list && updateLocalList(list);
   }, [list]);
 
-  useEffect(() => {
-    if (!list || !game) return;
-    if (army && army.id === list.army) return;
-
+useEffect(() => {
+  if (list && !army) {
     const isCustom = game.id !== "the-old-world" && game.id !== "the-old-world-gcomp";
 
     if (isCustom) {
@@ -499,7 +497,6 @@ export const Unit = ({ isMobile, previewData = {} }) => {
           getArmyData({
             data,
             armyComposition: list.armyComposition,
-            armyId: list.army,
           }),
         ),
       );
@@ -512,14 +509,14 @@ export const Unit = ({ isMobile, previewData = {} }) => {
               getArmyData({
                 data,
                 armyComposition: list.armyComposition || list.army,
-                armyId: list.army,
               }),
             ),
           );
         },
       });
     }
-  }, [list, army, dispatch, game]);
+  }
+}, [list, army, dispatch, game]);
 
   if (redirect === true) {
     return <Redirect to={`/editor/${listId}`} />;
@@ -1843,6 +1840,7 @@ export const Unit = ({ isMobile, previewData = {} }) => {
 
               if (
                 item.armyComposition &&
+                !item.magicItemsArmy &&
                 ((typeof item.armyComposition === "string" &&
                   !item.armyComposition.includes(unitArmyComposition)) ||
                   (item.armyComposition.length > 0 &&

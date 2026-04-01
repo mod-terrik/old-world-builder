@@ -118,7 +118,7 @@ export const Add = ({ isMobile }) => {
 
   useEffect(() => {
     if (list && !army && type !== "allies") {
-      const isCustom = game.id !== "the-old-world";
+      const isCustom = game.id !== "the-old-world-gcomp";
 
       if (isCustom && !list.url) {
         const data = getCustomDatasetData(list.army);
@@ -152,7 +152,7 @@ export const Add = ({ isMobile }) => {
     } else if (list && type === "allies" && allAllies.length === 0 && allies) {
       setAlliesLoaded(false);
       allies.forEach(({ army, armyComposition, magicItemsArmy }, index) => {
-        const isCustom = game.id !== "the-old-world";
+        const isCustom = game.id !== "the-old-world-gcomp";
         const customData = isCustom && getCustomDatasetData(army);
         const customUrl =
           isCustom && game.armies.find((a) => a.id === army)?.url;
@@ -174,7 +174,7 @@ export const Add = ({ isMobile }) => {
           setAlliesLoaded(index + 1);
         } else {
           fetcher({
-            url: customUrl || `games/the-old-world/${army}`,
+            url: customUrl || `games/the-old-world-gcomp/${army}`,
             baseUrl: customUrl ? "" : undefined,
             appendJson: Boolean(!customUrl),
             version: armyData.version,
@@ -207,7 +207,7 @@ export const Add = ({ isMobile }) => {
       setMercenariesLoaded(false);
       mercenaries[list.armyComposition] &&
         mercenaries[list.armyComposition].forEach((mercenary, index) => {
-          const isCustom = game.id !== "the-old-world";
+          const isCustom = game.id !== "the-old-world-gcomp";
           const customData = isCustom && getCustomDatasetData(mercenary.army);
           const customUrl =
             isCustom &&
@@ -232,7 +232,7 @@ export const Add = ({ isMobile }) => {
             setMercenariesLoaded(index + 1);
           } else {
             fetcher({
-              url: customUrl || `games/the-old-world/${mercenary.army}`,
+              url: customUrl || `games/the-old-world-gcomp/${mercenary.army}`,
               baseUrl: customUrl ? "" : undefined,
               appendJson: Boolean(!customUrl),
               version: armyData.version,

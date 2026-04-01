@@ -119,6 +119,8 @@ export const notEnoughPointsRemaining = (
   return maxMagicPoints && magicItem.points > unitPointsRemaining;
 };
 
+let magicDataFetching = false;
+
 export const Magic = ({ isMobile }) => {
   let prevItemType, isFirstItemType;
   const MainComponent = isMobile ? Main : Fragment;
@@ -134,6 +136,7 @@ export const Magic = ({ isMobile }) => {
   const unit = units && units.find(({ id }) => id === unitId);
   const armyId = unit?.army || list?.army;
   const gameSystems = getGameSystems();
+  const game = gameSystems.find((game) => game.id === list?.game);
   let army =
     list &&
     gameSystems
@@ -155,10 +158,11 @@ export const Magic = ({ isMobile }) => {
     perModel,
   }) => {
     let points = regularPoints;
+    const isCharacter = type === "characters" || (!!unit.unitType && unit.unitType === "characters");
 
-    if (type !== "characters" && perUnitPoints) {
+    if (!isCharacter && perUnitPoints) {
       points = perUnitPoints;
-    } else if (type !== "characters" && perModelPoints) {
+    } else if (!isCharacter && perModelPoints) {
       points = perModelPoints;
     }
 
@@ -179,8 +183,7 @@ export const Magic = ({ isMobile }) => {
                 id: "app.points",
               })
         }`}
-        {perModel &&
-          type !== "characters" &&
+        {perModel && !isCharacter &&
           ` ${intl.formatMessage({
             id: "unit.perModel",
           })}`}
@@ -411,14 +414,18 @@ export const Magic = ({ isMobile }) => {
   }, [unit, list, unitId, command]);
 
   useEffect(() => {
-    army &&
-      list &&
-      unit &&
-      !items &&
+    if (army && list && unit && !items && !magicDataFetching) {
+      magicDataFetching = true;
+
       fetcher({
-        url: "games/the-old-world/magic-items",
+        url: game.magicItems || "games/the-old-world/magic-items",
+        baseUrl: game.magicItems ? "" : undefined,
+        appendJson: Boolean(!game.magicItems),
+        version: game.version,
         onSuccess: (data) => {
           let itemCategories = army.items;
+
+          magicDataFetching = false;
 
           if (unit.magicItemsArmy) {
             itemCategories = itemCategories.filter(
@@ -440,7 +447,8 @@ export const Magic = ({ isMobile }) => {
           dispatch(setItems(updateIds(allItems)));
         },
       });
-  }, [army, list, unit, items, dispatch]);
+    }
+  }, [army, game, list, unit, items, dispatch]);
 
   if (!unit || !army || !items) {
     if (isMobile) {

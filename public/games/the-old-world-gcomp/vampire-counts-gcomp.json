@@ -975,7 +975,19 @@
       "name_fr": "Seigneur Revenant",
       "id": "wight-lord",
       "points": 40,
-      "command": [],
+       "command": [
+        {
+          "name_en": "Battle Standard Bearer",
+          "name_cn": "战旗手",
+          "name_de": "Armeestandartenträger",
+          "points": 25,
+          "magic": {
+            "types": ["banner"],
+            "maxPoints": 0
+          },
+          "name_fr": "Porteur de la Grande Bannière"
+        }
+      ],
       "equipment": [
         {
           "name_en": "Hand weapon",
